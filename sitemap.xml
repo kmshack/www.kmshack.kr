@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+        <url>
+            <loc>https://kmshack.github.io/about/index.html</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/category/css/</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/category/dev/</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/feed.xml</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/category/html/</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/category/jekyll/</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/category/misc/</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/search.json</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/series/index.html</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/sitemap.xml</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/category/svg/</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/tags/index.html</loc>
+        </url>
+    
+        <url>
+            <loc>https://kmshack.github.io/category/view/</loc>
+        </url>
+    
+    
+        <url>
+            <loc>https://kmshack.github.io/SpeechRecognitionView/</loc>
+        </url>
+  
+        <url>
+            <loc>https://kmshack.github.io/RoadRunner/</loc>
+        </url>
+  
+        <url>
+            <loc>https://kmshack.github.io/MaterialCalendarView/</loc>
+        </url>
+  
+</urlset>
