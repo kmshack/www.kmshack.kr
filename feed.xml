@@ -5,13 +5,27 @@
     <description></description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 29 Sep 2016 12:06:12 +0900</pubDate>
-    <lastBuildDate>Thu, 29 Sep 2016 12:06:12 +0900</lastBuildDate>
+    <pubDate>Thu, 29 Sep 2016 12:14:56 +0900</pubDate>
+    <lastBuildDate>Thu, 29 Sep 2016 12:14:56 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>SpeechRecognitionView</title>
-        <description>&lt;h3 id=&quot;speechrecognitionview&quot;&gt;SpeechRecognitionView&lt;/h3&gt; &lt;p&gt;https://github.com/zagum/SpeechRecognitionView&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/srv.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;grade&quot;&gt;Grade&lt;/h3&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile 'com.github.zagum:SpeechRecognitionView:1.0.2' &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;hr /&gt; &lt;h1 id=&quot;speechrecognitionview-1&quot;&gt;SpeechRecognitionView&lt;/h1&gt; &lt;p&gt;&lt;a href=&quot;http://android-arsenal.com/details/1/3518&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat&quot; alt=&quot;Android Arsenal&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://jitpack.io/#zagum/SpeechRecognitionView&quot;&gt;&lt;img src=&quot;https://jitpack.io/v/zagum/SpeechRecognitionView.svg&quot; alt=&quot;Release&quot; /&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;“Google Now” style animation for &lt;a href=&quot;http://developer.android.com/intl/ru/reference/android/speech/SpeechRecognizer.html&quot;&gt;Speech Recognizer&lt;/a&gt;.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/zagum/SpeechRecognitionView/master/art/speechrecognitionview.gif&quot; alt=&quot;image&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt; &lt;p&gt;This library is compatible from API 15 (Android 4.0.3).&lt;/p&gt; &lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt; &lt;p&gt;Add it in your root build.gradle at the end of repositories:&lt;/p&gt; &lt;div class=&quot;language-groovy highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;Add the dependency&lt;/p&gt; &lt;div...</description>
+        <description>&lt;h3 id=&quot;speechrecognitionview&quot;&gt;SpeechRecognitionView&lt;/h3&gt;
+&lt;p&gt;https://github.com/zagum/SpeechRecognitionView&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/srv.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;grade&quot;&gt;Grade&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile 'com.github.zagum:SpeechRecognitionView:1.0.2'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;https://raw.githubusercontent.com/zagum/SpeechRecognitionView/master/README.md&lt;/p&gt;
+</description>
         <pubDate>Thu, 29 Sep 2016 05:35:48 +0900</pubDate>
         <link>https://kmshack.github.io/SpeechRecognitionView/</link>
         <guid isPermaLink="true">https://kmshack.github.io/SpeechRecognitionView/</guid>
@@ -25,7 +39,21 @@
     
       <item>
         <title>RoadRunner</title>
-        <description>&lt;h3 id=&quot;roadrunner&quot;&gt;RoadRunner&lt;/h3&gt; &lt;p&gt;https://github.com/glomadrian/RoadRunner&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/rr.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;grade&quot;&gt;Grade&lt;/h3&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile 'com.github.glomadrian:roadrunner:1.0@aar' &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;hr /&gt; &lt;h1 id=&quot;road-runner&quot;&gt;Road Runner&lt;/h1&gt; &lt;p&gt;&lt;a href=&quot;https://bintray.com/glomadrian/maven/RoadRunner/_latestVersion&quot;&gt;&lt;img src=&quot;https://api.bintray.com/packages/glomadrian/maven/RoadRunner/images/download.svg&quot; alt=&quot;Download&quot; /&gt; &lt;/a&gt; &lt;a href=&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;&gt;&lt;img src=&quot;https://img.shields.io/hexpm/l/plug.svg&quot; alt=&quot;Hex.pm&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;http://developer.android.com/index.html&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/platform-android-green.svg&quot; alt=&quot;Platform&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/3303&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Android%20Arsenal-RoadRunner-green.svg?style=true&quot; alt=&quot;Android Arsenal&quot; /&gt;&lt;/a&gt;&lt;/p&gt; &lt;center&gt; &lt;img src=&quot;./art/roadrunnerlogo.png &quot; alt=&quot;Drawing&quot; width=&quot;250&quot; /&gt; &lt;/center&gt; &lt;p&gt;&amp;lt;/br&amp;gt;&lt;/p&gt; &lt;p&gt; Road Runner is a library for android which allow you to make your own loading animation using a SVG image &lt;p /&gt; ## Sample video [View in Youtube](https://www.youtube.com/watch?v=1ru8vBtywHE) ## Demo Application &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.github.glomadrian.pathloading&quot;&gt; &lt;img src=&quot;https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png&quot; alt=&quot;Get on google play&quot; height=&quot;60&quot; border=&quot;0&quot; /&gt; &lt;/a&gt; #### Road Runner intro...</description>
+        <description>&lt;h3 id=&quot;roadrunner&quot;&gt;RoadRunner&lt;/h3&gt;
+&lt;p&gt;https://github.com/glomadrian/RoadRunner&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/rr.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;grade&quot;&gt;Grade&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile 'com.github.glomadrian:roadrunner:1.0@aar'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;https://raw.githubusercontent.com/glomadrian/RoadRunner/master/README.md&lt;/p&gt;
+</description>
         <pubDate>Thu, 29 Sep 2016 05:35:48 +0900</pubDate>
         <link>https://kmshack.github.io/RoadRunner/</link>
         <guid isPermaLink="true">https://kmshack.github.io/RoadRunner/</guid>
@@ -39,7 +67,21 @@
     
       <item>
         <title>MaterialCalendarView</title>
-        <description>&lt;h3 id=&quot;materialcalendarview&quot;&gt;MaterialCalendarView&lt;/h3&gt; &lt;p&gt;https://github.com/prolificinteractive/material-calendarview&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/assets/img/mcv.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt; &lt;h3 id=&quot;grade&quot;&gt;Grade&lt;/h3&gt; &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile 'com.prolificinteractive:material-calendarview:1.2.1' &lt;/code&gt;&lt;/pre&gt; &lt;/div&gt; &lt;hr /&gt; &lt;p&gt;&lt;img src=&quot;/images/hero.png&quot; /&gt;&lt;/p&gt; &lt;h1 id=&quot;material-calendar-view&quot;&gt;Material Calendar View&lt;/h1&gt; &lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/1531&quot;&gt;&lt;img src=&quot;https://img.shields.io/badge/Android%20Arsenal-Material%20Calendar%20View-blue.svg?style=flat&quot; alt=&quot;Android Arsenal&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22material-calendarview%22&quot;&gt;&lt;img src=&quot;https://img.shields.io/maven-central/v/com.prolificinteractive/material-calendarview.svg?maxAge=2592000&quot; alt=&quot;Maven Central&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://travis-ci.org/prolificinteractive/material-calendarview&quot;&gt;&lt;img src=&quot;https://img.shields.io/travis/prolificinteractive/material-calendarview.svg?maxAge=2592000&quot; alt=&quot;Travis branch&quot; /&gt;&lt;/a&gt;&lt;/p&gt; &lt;p&gt;A Material design back port of Android’s CalendarView. The goal is to have a Material look and feel, rather than 100% parity with the platform’s implementation.&lt;/p&gt; &lt;p&gt;&lt;img src=&quot;/images/screencast.gif&quot; alt=&quot;Demo Screen Capture&quot; width=&quot;300px&quot; /&gt;&lt;/p&gt; &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt; &lt;ol&gt; &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;compile 'com.prolificinteractive:material-calendarview:1.4.0'&lt;/code&gt; to your dependencies.&lt;/li&gt; &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialCalendarView&lt;/code&gt; into your layouts or view hierarchy.&lt;/li&gt; &lt;li&gt;Set a &lt;code class=&quot;highlighter-rouge&quot;&gt;OnDateSelectedListener&lt;/code&gt; or...</description>
+        <description>&lt;h3 id=&quot;materialcalendarview&quot;&gt;MaterialCalendarView&lt;/h3&gt;
+&lt;p&gt;https://github.com/prolificinteractive/material-calendarview&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/mcv.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;grade&quot;&gt;Grade&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile 'com.prolificinteractive:material-calendarview:1.2.1'
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;https://raw.githubusercontent.com/prolificinteractive/material-calendarview/master/README.md&lt;/p&gt;
+</description>
         <pubDate>Thu, 29 Sep 2016 05:35:48 +0900</pubDate>
         <link>https://kmshack.github.io/MaterialCalendarView/</link>
         <guid isPermaLink="true">https://kmshack.github.io/MaterialCalendarView/</guid>
