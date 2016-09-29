@@ -5,14 +5,13 @@
     <description></description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 29 Sep 2016 12:22:02 +0900</pubDate>
-    <lastBuildDate>Thu, 29 Sep 2016 12:22:02 +0900</lastBuildDate>
+    <pubDate>Thu, 29 Sep 2016 13:58:26 +0900</pubDate>
+    <lastBuildDate>Thu, 29 Sep 2016 13:58:26 +0900</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
-        <title>SpeechRecognitionView</title>
+        <title>Speech Recognition View</title>
         <description>&lt;h3 id=&quot;speechrecognitionview&quot;&gt;SpeechRecognitionView&lt;/h3&gt;
-&lt;p&gt;https://github.com/zagum/SpeechRecognitionView&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/srv.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt;
 
@@ -30,15 +29,12 @@
         <link>https://kmshack.github.io/SpeechRecognitionView/</link>
         <guid isPermaLink="true">https://kmshack.github.io/SpeechRecognitionView/</guid>
         
-        <category>API19</category>
-        
         
       </item>
     
       <item>
         <title>RoadRunner</title>
         <description>&lt;h3 id=&quot;roadrunner&quot;&gt;RoadRunner&lt;/h3&gt;
-&lt;p&gt;https://github.com/glomadrian/RoadRunner&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/rr.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt;
 
@@ -56,15 +52,12 @@
         <link>https://kmshack.github.io/RoadRunner/</link>
         <guid isPermaLink="true">https://kmshack.github.io/RoadRunner/</guid>
         
-        <category>API21</category>
-        
         
       </item>
     
       <item>
-        <title>MaterialCalendarView</title>
+        <title>Material Calendar View</title>
         <description>&lt;h3 id=&quot;materialcalendarview&quot;&gt;MaterialCalendarView&lt;/h3&gt;
-&lt;p&gt;https://github.com/prolificinteractive/material-calendarview&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/img/mcv.gif&quot; alt=&quot;John Question&quot; /&gt;&lt;/p&gt;
 

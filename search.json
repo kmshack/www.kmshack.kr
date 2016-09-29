@@ -1,21 +1,21 @@
 [
   
     {
-      "title"    : "SpeechRecognitionView",
-      "tags"     : "API19",
+      "title"    : "Speech Recognition View",
+      "tags"     : "",
       "url"      : "/SpeechRecognitionView/",
       "date"     : "29 Sep 2016"
     } ,
   
     {
       "title"    : "RoadRunner",
-      "tags"     : "API21",
+      "tags"     : "",
       "url"      : "/RoadRunner/",
       "date"     : "29 Sep 2016"
     } ,
   
     {
-      "title"    : "MaterialCalendarView",
+      "title"    : "Material Calendar View",
       "tags"     : "",
       "url"      : "/MaterialCalendarView/",
       "date"     : "29 Sep 2016"
