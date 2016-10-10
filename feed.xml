@@ -5,164 +5,158 @@
     <description>Gather at once OpenSource Android UI.</description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Oct 2016 18:44:51 +0900</pubDate>
-    <lastBuildDate>Wed, 05 Oct 2016 18:44:51 +0900</lastBuildDate>
+    <pubDate>Mon, 10 Oct 2016 18:05:56 +0900</pubDate>
+    <lastBuildDate>Mon, 10 Oct 2016 18:05:56 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>Groupie</title>
+        <title>DateTimeSeer</title>
         <description>
 </description>
-        <pubDate>Wed, 05 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/05/groupie/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/05/groupie/</guid>
+        <pubDate>Mon, 10 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/10/DateTimeSeer/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/10/DateTimeSeer/</guid>
+        
+        <category>animator</category>
+        
+        <category>tile</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>AnimatorDurationTile</title>
+        <description>
+</description>
+        <pubDate>Mon, 10 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/10/AnimatorDurationTile/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/10/AnimatorDurationTile/</guid>
+        
+        <category>animator</category>
+        
+        <category>tile</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>RecyclerTreeView</title>
+        <description>
+</description>
+        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/07/RecyclerTreeView/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/RecyclerTreeView/</guid>
+        
+        <category>recyclerview</category>
+        
+        <category>tree</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>RecyclerRefreshLayout</title>
+        <description>
+</description>
+        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/07/RecyclerRefreshLayout/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/RecyclerRefreshLayout/</guid>
+        
+        <category>recyclerview</category>
+        
+        <category>refresh</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>OTP/PIN View</title>
+        <description>
+</description>
+        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/07/PinOtpView/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/PinOtpView/</guid>
+        
+        <category>pin</category>
+        
+        <category>otp</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>MaterialShowcaseView</title>
+        <description>
+</description>
+        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/07/MaterialShowcaseView/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/MaterialShowcaseView/</guid>
+        
+        <category>view</category>
+        
+        <category>material</category>
+        
+        <category>showcase</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Markdown View</title>
+        <description>
+</description>
+        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/07/MarkdownView/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/MarkdownView/</guid>
+        
+        <category>markdown</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Json2View</title>
+        <description>
+</description>
+        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/07/Json2View/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/Json2View/</guid>
+        
+        <category>view</category>
+        
+        <category>json</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>AnimatedSvgView</title>
+        <description>
+</description>
+        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/07/AnimatedSvgView/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/AnimatedSvgView/</guid>
+        
+        <category>svg</category>
+        
+        <category>animated</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>FocusResize</title>
+        <description>
+</description>
+        <pubDate>Thu, 06 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/06/FocusResize/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/06/FocusResize/</guid>
         
         <category>view</category>
         
         <category>adapter</category>
         
         <category>recyclerview</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Epoxy</title>
-        <description>
-</description>
-        <pubDate>Wed, 05 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/05/epoxy/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/05/epoxy/</guid>
-        
-        <category>view</category>
-        
-        <category>adapter</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Swipe Stack</title>
-        <description>
-</description>
-        <pubDate>Tue, 04 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/04/SwipeStack/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/04/SwipeStack/</guid>
-        
-        <category>view</category>
-        
-        <category>swipe</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Facebook Shimmer</title>
-        <description>
-</description>
-        <pubDate>Tue, 04 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/04/Shimmer/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/04/Shimmer/</guid>
-        
-        <category>view</category>
-        
-        <category>shimmer</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Music Player View</title>
-        <description>
-</description>
-        <pubDate>Tue, 04 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/04/MusicPlayerView/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/04/MusicPlayerView/</guid>
-        
-        <category>view</category>
-        
-        <category>music</category>
-        
-        <category>player</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>FinestWebView</title>
-        <description>
-</description>
-        <pubDate>Tue, 04 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/04/FinestWebView/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/04/FinestWebView/</guid>
-        
-        <category>view</category>
-        
-        <category>web</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Floating Navigation View</title>
-        <description>
-</description>
-        <pubDate>Mon, 03 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/03/FloatingNavigationView/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/03/FloatingNavigationView/</guid>
-        
-        <category>view</category>
-        
-        <category>navigation</category>
-        
-        <category>floating</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>DoorSignView</title>
-        <description>
-</description>
-        <pubDate>Mon, 03 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/03/DoorSignView/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/03/DoorSignView/</guid>
-        
-        <category>view</category>
-        
-        <category>animated</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Folder Reside Menu</title>
-        <description>
-</description>
-        <pubDate>Sun, 02 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/02/FolderResideMenu/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/02/FolderResideMenu/</guid>
-        
-        <category>view</category>
-        
-        <category>menu</category>
-        
-        <category>drawer</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ArcAnimator</title>
-        <description>
-</description>
-        <pubDate>Sun, 02 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/02/ArcAnimator/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/02/ArcAnimator/</guid>
-        
-        <category>view</category>
-        
-        <category>animated</category>
         
         
       </item>
