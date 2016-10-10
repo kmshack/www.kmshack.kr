@@ -5,43 +5,13 @@
     <description>Gather at once OpenSource Android UI.</description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Oct 2016 01:19:55 +0900</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2016 01:19:55 +0900</lastBuildDate>
+    <pubDate>Tue, 11 Oct 2016 01:23:39 +0900</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2016 01:23:39 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>DateTimeSeer</title>
-        <description>&lt;h1 id=&quot;datetimeseer&quot;&gt;DateTimeSeer&lt;/h1&gt;
-
-&lt;p&gt;An android seer who gets visions of the date and time you are thinking while typing.&lt;/p&gt;
-
-&lt;p&gt;It tells you what you might be thinking and helps in what modern people call as autocompletion. Unfortunately, he currently knows only english.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;demo/demo.gif&quot;&gt;Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Gradle&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Add the seer to &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; and you are good to go,&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-dependencies {
-    compile &#39;com.pv:datetimeseer:1.0.0&#39;
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;The library exposes &lt;code class=&quot;highlighter-rouge&quot;&gt;SeerFilter&lt;/code&gt; which extends android’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt; class and so can be hooked to anything which implements &lt;code class=&quot;highlighter-rouge&quot;&gt;Filterable&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;ConfigBuilder&lt;/code&gt; to provide Date/Time formats.&lt;/p&gt;
-
-&lt;p&gt;The sample app here demonstrate the usage of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;AutoCompleteTextView&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;todos&quot;&gt;TODOS&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Add more documentation&lt;/li&gt;
-  &lt;li&gt;Some dirty code clean up&lt;/li&gt;
-  &lt;li&gt;Make the library more extensible&lt;/li&gt;
-&lt;/ul&gt;
+        <description>
 </description>
         <pubDate>Mon, 10 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/10/DateTimeSeer/</link>
