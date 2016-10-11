@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>RecyclerTreeView</title>
-  <meta name="description" content="">
+  <meta name="description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..Effect[](https://raw.githubuse...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..Effect[](https://raw.githubuse...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="RecyclerTreeView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..Effect[](https://raw.githubuse...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/07/RecyclerTreeView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="RecyclerTreeView[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/br&gt;TreeView implement in Android with RecyclerView..Effect[](https://raw.githubuse..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-07-RecyclerTreeView.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,136 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-07-RecyclerTreeView.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="recyclertreeview">RecyclerTreeView</h1>
+<p><a href="https://jitpack.io/#TellH/RecyclerTreeView">[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)</a>&lt;/br&gt;
+TreeView implement in Android with RecyclerView..</p>
+
+<h2 id="effect">Effect</h2>
+<p>[](https://raw.githubusercontent.com/TellH/RecyclerTreeView/master/raw/effect.gif)</p>
+
+<h2 id="usage">Usage</h2>
+<p>### Setup
+root build.gradle
+<code class="highlighter-rouge">groovy
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+</code>
+app build.gradle
+<code class="highlighter-rouge">groovy
+dependencies {
+    compile 'com.github.TellH:RecyclerTreeView:1.1.4'
+}
+</code></p>
+
+<h3 id="quick-start">Quick Start</h3>
+
+<ul>
+  <li>Create a Java bean class and  implement the LayoutItemType, to attach item layout id to it.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dir</span> <span class="kd">implements</span> <span class="n">LayoutItemType</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">dirName</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">Dir</span><span class="o">(</span><span class="n">String</span> <span class="n">dirName</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">dirName</span> <span class="o">=</span> <span class="n">dirName</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">getLayoutId</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">item_dir</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Create a ViewBinder to bind view with the data bean. As you see, <code class="highlighter-rouge">provideViewHolder(View itemView)</code> corresponds for <code class="highlighter-rouge">onCreateViewHolder</code> in RecyclerView, and <code class="highlighter-rouge">bindView</code> corresponds for <code class="highlighter-rouge">onBindViewHolder</code> in RecyclerView.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileNodeBinder</span> <span class="kd">extends</span> <span class="n">TreeViewBinder</span><span class="o">&lt;</span><span class="n">FileNodeBinder</span><span class="o">.</span><span class="na">ViewHolder</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">ViewHolder</span> <span class="n">provideViewHolder</span><span class="o">(</span><span class="n">View</span> <span class="n">itemView</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">ViewHolder</span><span class="o">(</span><span class="n">itemView</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="n">bindView</span><span class="o">(</span><span class="n">ViewHolder</span> <span class="n">holder</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">TreeNode</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">File</span> <span class="n">fileNode</span> <span class="o">=</span> <span class="o">(</span><span class="n">File</span><span class="o">)</span> <span class="n">node</span><span class="o">.</span><span class="na">getContent</span><span class="o">();</span>
+        <span class="n">holder</span><span class="o">.</span><span class="na">tvName</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">fileNode</span><span class="o">.</span><span class="na">fileName</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">getLayoutId</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">item_file</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ViewHolder</span> <span class="kd">extends</span> <span class="n">TreeViewBinder</span><span class="o">.</span><span class="na">ViewHolder</span> <span class="o">{</span>
+        <span class="kd">public</span> <span class="n">TextView</span> <span class="n">tvName</span><span class="o">;</span>
+
+        <span class="kd">public</span> <span class="n">ViewHolder</span><span class="o">(</span><span class="n">View</span> <span class="n">rootView</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">(</span><span class="n">rootView</span><span class="o">);</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">tvName</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">rootView</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">tv_name</span><span class="o">);</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Add TreeNode to TreeViewAdapter.</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="n">List</span><span class="o">&lt;</span><span class="n">TreeNode</span><span class="o">&gt;</span> <span class="n">nodes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">TreeNode</span><span class="o">&lt;</span><span class="n">Dir</span><span class="o">&gt;</span> <span class="n">app</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"app"</span><span class="o">));</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">app</span><span class="o">);</span>
+        <span class="n">app</span><span class="o">.</span><span class="na">addChild</span><span class="o">(</span>
+                <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"manifests"</span><span class="o">))</span>
+                        <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"AndroidManifest.xml"</span><span class="o">)))</span>
+        <span class="o">);</span>
+        <span class="n">app</span><span class="o">.</span><span class="na">addChild</span><span class="o">(</span>
+                <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"java"</span><span class="o">)).</span><span class="na">addChild</span><span class="o">(</span>
+                        <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"tellh"</span><span class="o">)).</span><span class="na">addChild</span><span class="o">(</span>
+                                <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"com"</span><span class="o">)).</span><span class="na">addChild</span><span class="o">(</span>
+                                        <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"recyclertreeview"</span><span class="o">))</span>
+                                                <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"Dir"</span><span class="o">)))</span>
+                                                <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"DirectoryNodeBinder"</span><span class="o">)))</span>
+                                                <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"File"</span><span class="o">)))</span>
+                                                <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"FileNodeBinder"</span><span class="o">)))</span>
+                                                <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"TreeViewBinder"</span><span class="o">)))</span>
+                                <span class="o">)</span>
+                        <span class="o">)</span>
+                <span class="o">)</span>
+        <span class="o">);</span>
+        <span class="n">TreeNode</span><span class="o">&lt;</span><span class="n">Dir</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"res"</span><span class="o">));</span>
+        <span class="n">nodes</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">res</span><span class="o">);</span>
+        <span class="n">res</span><span class="o">.</span><span class="na">addChild</span><span class="o">(</span>
+                <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"layout"</span><span class="o">))</span>
+                        <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"activity_main.xml"</span><span class="o">)))</span>
+                        <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"item_dir.xml"</span><span class="o">)))</span>
+                        <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"item_file.xml"</span><span class="o">)))</span>
+        <span class="o">);</span>
+        <span class="n">res</span><span class="o">.</span><span class="na">addChild</span><span class="o">(</span>
+                <span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Dir</span><span class="o">(</span><span class="s">"mipmap"</span><span class="o">))</span>
+                        <span class="o">.</span><span class="na">addChild</span><span class="o">(</span><span class="k">new</span> <span class="n">TreeNode</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">"ic_launcher.png"</span><span class="o">)))</span>
+        <span class="o">);</span>
+        <span class="n">TreeViewAdapter</span> <span class="n">adapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TreeViewAdapter</span><span class="o">(</span><span class="n">nodes</span><span class="o">,</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">asList</span><span class="o">(</span><span class="k">new</span> <span class="n">FileNodeBinder</span><span class="o">(),</span> <span class="k">new</span> <span class="n">DirectoryNodeBinder</span><span class="o">()));</span>
+        <span class="n">rv</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">adapter</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<p>Please check out the Demo and source code for more information. If you have any question, feel free to raise an issue. Thanks a lot</p>
 
           <br>
           <div class="post__tags">

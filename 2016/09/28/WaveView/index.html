@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>WaveView</title>
-  <meta name="description" content="">
+  <meta name="description" content="WaveViewA view to display wave effect.ScreenshotScreenshotHow to useSetter methods: * setWaveShiftRatio - Shift the wave horizontally. * setWaterLevelRatio -...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="WaveViewA view to display wave effect.ScreenshotScreenshotHow to useSetter methods: * setWaveShiftRatio - Shift the wave horizontally. * setWaterLevelRatio -...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="WaveView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="WaveViewA view to display wave effect.ScreenshotScreenshotHow to useSetter methods: * setWaveShiftRatio - Shift the wave horizontally. * setWaterLevelRatio -...">
   <meta property="og:url" content="https://kmshack.github.io/2016/09/28/WaveView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="WaveViewA view to display wave effect.ScreenshotScreenshotHow to useSetter methods: * setWaveShiftRatio - Shift the wave horizontally. * setWaterLevelRatio -..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-28-WaveView.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,54 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-28-WaveView.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="waveview">WaveView</h1>
+<p>A view to display wave effect.</p>
+
+<h2 id="screenshot">Screenshot</h2>
+<p><a href="screenshot.gif">Screenshot</a></p>
+
+<h2 id="how-to-use">How to use</h2>
+<p>Setter methods:
+ * <code class="highlighter-rouge">setWaveShiftRatio</code> - Shift the wave horizontally.
+ * <code class="highlighter-rouge">setWaterLevelRatio</code> - Set water level.
+ * <code class="highlighter-rouge">setAmplitudeRatio</code>  - Set vertical size of wave.
+ * <code class="highlighter-rouge">setWaveLengthRatio</code> - Set horizontal size of wave.</p>
+
+<p>You can use <a href="https://developer.android.com/guide/topics/graphics/prop-animation.html">Property Animation</a> to animate WaveView.
+```
+// horizontal animation.
+// wave waves infinitely.
+ObjectAnimator waveShiftAnim = ObjectAnimator.ofFloat(
+        mWaveView, “waveShiftRatio”, 0f, 1f);
+waveShiftAnim.setRepeatCount(ValueAnimator.INFINITE);
+waveShiftAnim.setDuration(1000);
+waveShiftAnim.setInterpolator(new LinearInterpolator());</p>
+
+<p>// vertical animation.
+// water level increases from 0 to center of WaveView
+ObjectAnimator waterLevelAnim = ObjectAnimator.ofFloat(
+        mWaveView, “waterLevelRatio”, 0f, 0.5f);
+waterLevelAnim.setDuration(10000);
+waterLevelAnim.setInterpolator(new DecelerateInterpolator());
+animators.add(waterLevelAnim);</p>
+
+<p>// amplitude animation.
+// wave grows big then grows small, repeatedly
+ObjectAnimator amplitudeAnim = ObjectAnimator.ofFloat(
+        mWaveView, “amplitudeRatio”, 0f, 0.05f);
+amplitudeAnim.setRepeatCount(ValueAnimator.INFINITE);
+amplitudeAnim.setRepeatMode(ValueAnimator.REVERSE);
+amplitudeAnim.setDuration(5000);
+amplitudeAnim.setInterpolator(new LinearInterpolator());
+animators.add(amplitudeAnim);
+```</p>
 
           <br>
           <div class="post__tags">

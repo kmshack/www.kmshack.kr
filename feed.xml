@@ -5,13 +5,59 @@
     <description>Gather at once OpenSource Android UI.</description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Oct 2016 11:27:37 +0900</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2016 11:27:37 +0900</lastBuildDate>
+    <pubDate>Tue, 11 Oct 2016 17:14:27 +0900</pubDate>
+    <lastBuildDate>Tue, 11 Oct 2016 17:14:27 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>DateTimeSeer</title>
-        <description>
+        <description>&lt;h1 id=&quot;datetimeseer&quot;&gt;DateTimeSeer&lt;/h1&gt;
+&lt;p&gt;### A painless way to pick future time&lt;/p&gt;
+
+&lt;p&gt;DateTimeSeer is an android seer who gets visions of the date and time you are thinking.&lt;/p&gt;
+
+&lt;p&gt;It tells you what you might be thinking and helps in what modern people call as autocompletion. Unfortunately, he currently knows only english.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;demo/demo.gif&quot;&gt;Demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Gradle&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Add the seer to &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; and you are good to go,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.pv:datetimeseer:1.0.0&#39;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;The library exposes &lt;code class=&quot;highlighter-rouge&quot;&gt;SeerFilter&lt;/code&gt; which extends android’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt; class and so can be hooked to anything which implements &lt;code class=&quot;highlighter-rouge&quot;&gt;Filterable&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;ConfigBuilder&lt;/code&gt; to provide Date/Time formats.&lt;/p&gt;
+
+&lt;p&gt;The sample app here demonstrate the usage of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;AutoCompleteTextView&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;contributing&quot;&gt;Contributing&lt;/h3&gt;
+
+&lt;p&gt;For other languages support,&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Checkout the &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; branch&lt;/li&gt;
+  &lt;li&gt;Implement the changes for the language in &lt;a href=&quot;https://github.com/p-v/DateTimeSeer/tree/dev/library/src/main/java/com/pv/datetimeseer/parser/handler&quot;&gt;this package&lt;/a&gt;. Check the &lt;a href=&quot;https://github.com/p-v/DateTimeSeer/tree/dev/library/src/main/java/com/pv/datetimeseer/parser/handler/english&quot;&gt;english language implementation&lt;/a&gt; for reference.&lt;/li&gt;
+  &lt;li&gt;Add the &lt;code class=&quot;highlighter-rouge&quot;&gt;strings.xml&lt;/code&gt;  file for the language&lt;/li&gt;
+  &lt;li&gt;Add the language to &lt;code class=&quot;highlighter-rouge&quot;&gt;Config.java&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Update &lt;code class=&quot;highlighter-rouge&quot;&gt;getLocaleFromLanguage&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;DateTimeUtils.java&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Initialize the handlers created in &lt;code class=&quot;highlighter-rouge&quot;&gt;SeerParserInitializer.java&lt;/code&gt; for the language&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Feel free to create an issue in case of any implementation issues. Or email me at the address present on my profile.&lt;/p&gt;
+
+&lt;h3 id=&quot;todos&quot;&gt;TODOS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add more documentation&lt;/li&gt;
+  &lt;li&gt;Some dirty code clean up&lt;/li&gt;
+&lt;/ul&gt;
+
 </description>
         <pubDate>Mon, 10 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/10/DateTimeSeer/</link>
@@ -41,7 +87,129 @@
     
       <item>
         <title>RecyclerTreeView</title>
-        <description>
+        <description>&lt;h1 id=&quot;recyclertreeview&quot;&gt;RecyclerTreeView&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#TellH/RecyclerTreeView&quot;&gt;[](https://jitpack.io/v/TellH/RecyclerTreeView.svg)&lt;/a&gt;&amp;lt;/br&amp;gt;
+TreeView implement in Android with RecyclerView..&lt;/p&gt;
+
+&lt;h2 id=&quot;effect&quot;&gt;Effect&lt;/h2&gt;
+&lt;p&gt;[](https://raw.githubusercontent.com/TellH/RecyclerTreeView/master/raw/effect.gif)&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;### Setup
+root build.gradle
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+allprojects {
+    repositories {
+        jcenter()
+        maven { url &quot;https://jitpack.io&quot; }
+    }
+}
+&lt;/code&gt;
+app build.gradle
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+dependencies {
+    compile &#39;com.github.TellH:RecyclerTreeView:1.1.4&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;quick-start&quot;&gt;Quick Start&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a Java bean class and  implement the LayoutItemType, to attach item layout id to it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Dir&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LayoutItemType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;dirName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dirName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getLayoutId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;item_dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a ViewBinder to bind view with the data bean. As you see, &lt;code class=&quot;highlighter-rouge&quot;&gt;provideViewHolder(View itemView)&lt;/code&gt; corresponds for &lt;code class=&quot;highlighter-rouge&quot;&gt;onCreateViewHolder&lt;/code&gt; in RecyclerView, and &lt;code class=&quot;highlighter-rouge&quot;&gt;bindView&lt;/code&gt; corresponds for &lt;code class=&quot;highlighter-rouge&quot;&gt;onBindViewHolder&lt;/code&gt; in RecyclerView.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;FileNodeBinder&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeViewBinder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FileNodeBinder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;provideViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;itemView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;itemView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bindView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileNode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getContent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;holder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tvName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;fileName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getLayoutId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;item_file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeViewBinder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ViewHolder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tvName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ViewHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rootView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rootView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tvName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rootView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;tv_name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add TreeNode to TreeViewAdapter.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;app&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;manifests&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+                        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AndroidManifest.xml&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;java&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+                        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tellh&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+                                &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+                                        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;recyclertreeview&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+                                                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Dir&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+                                                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;DirectoryNodeBinder&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+                                                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;File&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+                                                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FileNodeBinder&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+                                                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;TreeViewBinder&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+                                &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                        &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;res&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;layout&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+                        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;activity_main.xml&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+                        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item_dir.xml&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+                        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item_file.xml&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mipmap&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+                        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addChild&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeNode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ic_launcher.png&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;TreeViewAdapter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TreeViewAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;asList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FileNodeBinder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DirectoryNodeBinder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;rv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Please check out the Demo and source code for more information. If you have any question, feel free to raise an issue. Thanks a lot&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/07/RecyclerTreeView/</link>
@@ -56,7 +224,192 @@
     
       <item>
         <title>RecyclerRefreshLayout</title>
-        <description>
+        <description>&lt;h2 id=&quot;recyclerrefreshlayout&quot;&gt;RecyclerRefreshLayout&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/3383&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RecyclerRefreshLayout-green.svg?style=true)&lt;/a&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;English&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/README-ZH.md&quot;&gt;中文版&lt;/a&gt;&lt;br /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout&quot;&gt;RecyclerRefreshLayout&lt;/a&gt; 
+based on the {@link android.support.v4.widget.SwipeRefreshLayout}
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt; should be used whenever the user can refresh the
+contents of a &lt;code class=&quot;highlighter-rouge&quot;&gt;view&lt;/code&gt; via a vertical swipe gesture. The activity that
+instantiates this view should add an &lt;code class=&quot;highlighter-rouge&quot;&gt;OnRefreshListener&lt;/code&gt; to be notified
+whenever the swipe to refresh gesture is completed. The &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt;
+will notify the listener each and every time the gesture is completed again;
+the listener is responsible for correctly determining when to actually
+initiate a refresh of its content. If the listener determines there should
+not be a refresh, it must call &lt;code class=&quot;highlighter-rouge&quot;&gt;setRefreshing(false)&lt;/code&gt; to cancel any visual
+indication of a refresh. If an activity wishes to show just the progress
+animation, it should call &lt;code class=&quot;highlighter-rouge&quot;&gt;setRefreshing(true)&lt;/code&gt;. To disable the gesture and
+progress animation, call &lt;code class=&quot;highlighter-rouge&quot;&gt;setEnabled(false)&lt;/code&gt; on the &lt;code class=&quot;highlighter-rouge&quot;&gt;view&lt;/code&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: The &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt; supports all of the views: &lt;code class=&quot;highlighter-rouge&quot;&gt;ListView&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;GridView&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;ScrollView&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;FrameLayout&lt;/code&gt;, or Even a single &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNormal.gif?width=300)
+[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutFloat.gif?width=300)
+[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutPinned.gif?width=300)&lt;br /&gt;
+[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadMore.gif?width=300)
+[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNoData.gif?width=300)
+[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadError.gif?width=300)&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Add the following dependency to your build.gradle file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;    dependencies {
+        compile &#39;com.dinuscxj:recyclerrefreshlayout:2.0.1&#39;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;h4 id=&quot;config-in-xml&quot;&gt;Config in xml&lt;/h4&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.dinuscxj.refresh.RecyclerRefreshLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/refresh_layout&quot;&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.v7.widget.RecyclerView&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/recycler_view&quot;&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+     &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/app.dinus.com.refresh.RecyclerRefreshLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;configure-the-attributes-must&quot;&gt;Configure the attributes(* must)&lt;/h4&gt;
+&lt;p&gt;Set the listener to be notified when a refresh is triggered via the swipe gesture. 
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setOnRefreshListener(OnRefreshListener);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Notify the widget that refresh state has changed. Do not call this 
+when refresh is triggered by a swipe gesture.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setRefreshing(boolean);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;configure-the-attributesoptional&quot;&gt;Configure the attributes(optional)&lt;/h4&gt;
+&lt;p&gt;Set the interpolator used by the animation that move the refresh view 
+the release point to the refreshing point.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setAnimateToRefreshInterpolator(Interpolator);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Set the interpolator used by the animation that move the refresh view 
+from the refreshing point or (the release point) to the start point.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setAnimateToStartInterpolator(Interpolator);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Set the duration used by the animation that move the refresh view 
+the release point to the refreshing point.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setAnimateToRefreshDuration(int);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Set the duration used by the animation that move the refresh view 
+from the refreshing point or (the release point) to the start point.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setAnimateToStartDuration(int);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Set the top position of the RefreshView relative to its parent.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayoutsetRefreshInitialOffset(float)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Set The minimum distance that trigger refresh
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setRefreshTargetOffset(float)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Set the style of the RefreshView
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setRefreshStyle(@NonNull RefreshStyle) 
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;customize&quot;&gt;Customize&lt;/h2&gt;
+
+&lt;p&gt;Customize a refresh view (need to implements &lt;code class=&quot;highlighter-rouge&quot;&gt;IRefreshStatus&lt;/code&gt;) for &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt;.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+public interface IRefreshStatus {
+/**
+* When the content view has reached top and refresh has been completed, view will be reset.
+*/
+void reset();
+/**
+* Refresh View is refreshing
+*/
+void refreshing();
+/**
+* Refresh View is dropped down to the refresh point
+*/
+void pullToRefresh();
+/**
+* Refresh View is released into the refresh point
+*/
+void releaseToRefresh();
+/**
+* @param pullDistance The drop-down distance of the refresh View
+* @param pullProgress The drop-down progress of the refresh View and the pullProgress may be more than 1.0f
+*                     pullProgress = pullDistance / refreshTargetOffset
+*/
+void pullProgress(float pullDistance, float pullProgress);
+}
+&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java 
+RecyclerRefreshLayout.setRefreshView(View, LayoutParams);
+&lt;/code&gt;
+Eg. &lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyclerrefreshlayout/src/main/java/com/dinuscxj/refresh/RefreshView.java&quot;&gt;RefreshView&lt;/a&gt; or &lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/tree/master/app/src/main/java/com/dinuscxj/example/demo/RefreshViewEg.java&quot;&gt;RefreshViewEg&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Customize a drag distance converter (need to implements &lt;code class=&quot;highlighter-rouge&quot;&gt;IDragDistanceConverter&lt;/code&gt;) for &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt;.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+public interface IDragDistanceConverter {
+ /**
+  * @param scrollDistance the distance between the ACTION_DOWN point and the ACTION_MOVE point
+  * @param refreshDistance the distance between the refresh point and the start point
+  * @return the real distance of the refresh view moved
+  */
+ float convert(float scrollDistance, float refreshDistance);
+}
+&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+RecyclerRefreshLayout.setDragDistanceConverter(@NonNull IDragDistanceConverter) 
+&lt;/code&gt;
+Eg. &lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyclerrefreshlayout/src/main/java/com/dinuscxj/refresh/MaterialDragDistanceConverter.java&quot;&gt;MaterialDragDistanceConverter&lt;/a&gt; or &lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/tree/master/app/src/main/java/com/dinuscxj/example/demo/DragDistanceConverterEg.java&quot;&gt;DragDistanceConverterEg&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;QQ Group:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;342748245&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2015-2019 dinus
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/07/RecyclerRefreshLayout/</link>
@@ -71,7 +424,47 @@
     
       <item>
         <title>OTP/PIN View</title>
-        <description>
+        <description>&lt;p&gt;&lt;a href=&quot;https://bintray.com/mukeshsolanki/maven/otpview/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/mukeshsolanki/maven/otpview/images/download.svg) &lt;/a&gt;
+&lt;a href=&quot;https://www.paypal.me/mukeshsolanki&quot;&gt; [PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg) &lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;android-pinview-otpview&quot;&gt;Android PinView/ OtpView&lt;/h1&gt;
+&lt;p&gt;A custom control to enter a four digit code usually in cases of authentication.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/mukeshsolanki/android-otpview-pinview/master/screenshots/Screenshot_20160622-201727.png&quot; width=&quot;500&quot; height=&quot;839&quot; /&gt;
+&lt;br /&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/mukeshsolanki/android-otpview-pinview/master/screenshots/Screenshot_20160622-201845.png&quot; width=&quot;500&quot; height=&quot;839&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-integrate-into-your-app&quot;&gt;How to integrate into your app?&lt;/h2&gt;
+
+&lt;p&gt;Integrating the library into you app is extremely easy. A few changes in the build gradle and your all ready to use otpview. Make the following changes to build.gradle inside you app.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+.....
+dependencies {
+  ...
+  compile &#39;com.mukesh:otpview:1.0.1&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-the-library&quot;&gt;How to use the library?&lt;/h2&gt;
+&lt;p&gt;Okay seems like you integrated the library in your project but &lt;strong&gt;how do you use it&lt;/strong&gt;? Well its really easy just add the following to your xml design to show the otpview&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.....
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.mukesh.OtpView&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/otp_view&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#cccccc&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:inputType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:textColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFFFFF&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:otp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1234&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:text_background_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorAccent&quot;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.mukesh.OtpView&amp;gt;&lt;/span&gt;
+.....
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That’s pretty much it and your all wrapped up.&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/07/PinOtpView/</link>
@@ -86,7 +479,108 @@
     
       <item>
         <title>MaterialShowcaseView</title>
-        <description>
+        <description>&lt;h1 id=&quot;materialshowcaseview&quot;&gt;MaterialShowcaseView&lt;/h1&gt;
+&lt;p&gt;A Material Design themed ShowcaseView for Android&lt;/p&gt;
+
+&lt;p&gt;This library is heavily inspired by the original &lt;a href=&quot;https://github.com/amlcurran/ShowcaseView&quot;&gt;ShowcaseView library&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since Google introduced the Material design philosophy I have seen quite a few apps with a nice clean, flat showcase view (the Youtube app is a good example). The only library out there however is the &lt;a href=&quot;https://github.com/amlcurran/ShowcaseView&quot;&gt;original one&lt;/a&gt;. This was a great library for a long time but the theming is now looking a bit dated.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://i.imgur.com/QIMYRJh.png&quot;&gt;Logo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://i.imgur.com/rFHENgz.gif&quot;&gt;Animation&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gradle&quot;&gt;Gradle&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#deano2390/MaterialShowcaseView&quot;&gt;[jitpack][4]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Add the jitpack repo to your your project’s build.gradle at the end of repositories &lt;a href=&quot;#why-jitpack&quot;&gt;Why?&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;/build.gradle
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+allprojects {
+	repositories {
+		jcenter()
+		maven { url &quot;https://jitpack.io&quot; }
+	}
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Then add the dependency to your module’s build.gradle:&lt;/p&gt;
+
+&lt;p&gt;/app/build.gradle
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+compile &#39;com.github.deano2390:MaterialShowcaseView:1.1.0&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;NOTE: Some people have mentioned that they needed to add the @aar suffix to get it to resolve from JitPack:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+compile &#39;com.github.deano2390:MaterialShowcaseView:1.1.0@aar&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;how-to-use&quot;&gt;How to use&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;This is the basic usage of a single showcase view, you should check out the sample app for more advanced usage.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+	&lt;span class=&quot;c1&quot;&gt;// single example&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MaterialShowcaseView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTarget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mButtonShow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDismissText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;GOT IT&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setContentText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;This is some amazing feature you should know about&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDelay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;withDelay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// optional but starting animations immediately in onCreate can make them choppy&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;singleUse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SHOWCASE_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// provide a unique ID used to ensure it is only shown once&lt;/span&gt;
+                &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                
+                
+                
+                
+    	&lt;span class=&quot;c1&quot;&gt;// sequence example            &lt;/span&gt;
+    	&lt;span class=&quot;n&quot;&gt;ShowcaseConfig&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ShowcaseConfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDelay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// half second between each showcase view&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;MaterialShowcaseSequence&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MaterialShowcaseSequence&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SHOWCASE_ID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setConfig&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addSequenceItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mButtonOne&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;This is button one&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;GOT IT&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addSequenceItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mButtonTwo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;This is button two&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;GOT IT&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addSequenceItem&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mButtonThree&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
+                &lt;span class=&quot;s&quot;&gt;&quot;This is button three&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;GOT IT&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;sequence&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;why-jitpack&quot;&gt;Why Jitpack&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;p&gt;Publishing libraries to Maven is a chore that takes time and effort. Jitpack.io allows me to release without ever leaving GitHub so I can release easily and more often.&lt;/p&gt;
+
+&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
+&lt;hr /&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2015 Dean Wild
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/07/MaterialShowcaseView/</link>
@@ -103,7 +597,61 @@
     
       <item>
         <title>Markdown View</title>
-        <description>
+        <description>&lt;h1 align=&quot;center&quot;&gt;MarkdownView&lt;/h1&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;a href=&quot;https://android-arsenal.com/api?level=14&quot;&gt; &lt;img src=&quot;https://img.shields.io/badge/API-14%2B-blue.svg?style=flat&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://jitpack.io/#mukeshsolanki/MarkdownView-Android/&quot;&gt; &lt;img src=&quot;https://jitpack.io/v/mukeshsolanki/MarkdownView-Android.svg&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;http://android-arsenal.com/details/1/3980&quot;&gt; &lt;img src=&quot;https://img.shields.io/badge/Android%20Arsenal-MarkdownView--Android-brightgreen.svg?style=flat&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://travis-ci.org/mukeshsolanki/MarkdownView-Android&quot;&gt; &lt;img src=&quot;https://travis-ci.org/mukeshsolanki/MarkdownView-Android.svg?branch=master&quot; /&gt;&lt;/a&gt;
+  &lt;a href=&quot;https://www.paypal.me/mukeshsolanki&quot;&gt; &lt;img src=&quot;https://img.shields.io/badge/paypal-donate-yellow.svg&quot; /&gt;&lt;/a&gt;
+  &lt;br /&gt;&lt;br /&gt;  
+    MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/mukeshsolanki/MarkdownView-Android/master/Screenshots/demo.gif&quot;&gt;Demo&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
+&lt;p&gt;Its really simple to integrate &lt;em&gt;MarkdownView&lt;/em&gt; in android. All you need to do make the following change to you build gradle under the app module.&lt;/p&gt;
+
+&lt;p&gt;Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Step 2. Add the dependency
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+dependencies {
+    compile &#39;com.github.mukeshsolanki:MarkdownView-Android:1.0.1&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-use-markdownview&quot;&gt;How to use MarkdownView&lt;/h2&gt;
+
+&lt;p&gt;Its fairly simple and straight forward to use &lt;em&gt;MarkdownView&lt;/em&gt; in you application. Just add the following in your layout where you want to display the markdown file/text.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-XML&quot;&gt;&amp;lt;com.mukesh.MarkdownView
+    android:id=&quot;@+id/markdown_view&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and reference it in your activity/fragment and assign the markdown text/file like wise.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;Java
+MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdown_view);
+markdownView.setMarkDownText(&quot;# Hello World\nThis is a simple markdown&quot;); //Displays markdown text
+...
+markdownView.loadMarkdownFromAssets(&quot;README.md&quot;); //Loads the markdown file from the assets folder
+...
+File markdownFile=new File(&quot;filePath&quot;);
+markdownView.loadMarkdownFromFile(markdownFile); //Loads the markdown file.
+&lt;/code&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/07/MarkdownView/</link>
@@ -116,7 +664,157 @@
     
       <item>
         <title>Json2View</title>
-        <description>
+        <description>&lt;h1 id=&quot;json2view--travis-cihttpstravis-ciorgavocarrotjson2viewsvg&quot;&gt;json2view  &lt;a href=&quot;https://travis-ci.org/Avocarrot/json2view.svg&quot;&gt;travis-ci&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;json2view&lt;/strong&gt; is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your Android app without the need to update the APK.&lt;/p&gt;
+
+&lt;p&gt;This removes the hassle of updating, re-compiling and uploading the APK to Google Play everytime you want to make small or big changes in the UI.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tr style=&quot;border: 0px;&quot;&gt;
+&lt;td style=&quot;border: 0px;&quot;&gt;
+&lt;ul class=&quot;task-list&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;#common-use-cases&quot;&gt;Common use cases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#how-it-works&quot;&gt;How it works&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#examples&quot;&gt;Examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#getting-started&quot;&gt;Getting started&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#contributing&quot;&gt;Contributing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td style=&quot;width:60%; border: 0px; text-align:right;&quot;&gt;
+&lt;img alt=&quot;json2view logo&quot; src=&quot;https://github.com/Avocarrot/json2view/blob/master/example_assets/json2view.png&quot; width=&quot;250px&quot; /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;common-use-cases&quot;&gt;Common use cases&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;If you need to A/B test different UI designs without the need to re-upload your APK.&lt;/li&gt;
+  &lt;li&gt;If your app’s UI changes dynamically based on different users or scenarios.&lt;/li&gt;
+  &lt;li&gt;If you need to deploy UI fixes quickly and in real-time.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In the case of &lt;a href=&quot;http://www.avocarrot.com&quot;&gt;Avocarrot&lt;/a&gt;, we are using json2view to run A/B test experiments and quickly deploy UI enhancements that improve revenue performance of native ads integrations in our network.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
+
+&lt;p&gt;You can parse any xml through the json2view library to create a JSON that will be used at runtime to dynamically generate the Android UI using native code. This JSON can be hosted anywhere on the internet (your own server, Dropbox, Github Pages etc.) and can be fetched in your app at any point you decide.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&quot;how it works schematic&quot; src=&quot;https://github.com/Avocarrot/json2view/blob/master/example_assets/how_it_works.png&quot; width=&quot;700px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Note: Runtime creation of a view without the precompiled version of xml in apk (res/layout), especially for highly complex layouts, can be a potential latency issue.&lt;/p&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+
+&lt;h3 id=&quot;changing-text-color&quot;&gt;Changing text color&lt;/h3&gt;
+
+&lt;p&gt;Using json2view to change text color, background color and position of a view. &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Changing-Properties&quot;&gt;(more details)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Avocarrot/json2view/blob/master/example_assets/test00.png&quot;&gt;output&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;reorganizing-the-layout&quot;&gt;Reorganizing the layout&lt;/h3&gt;
+
+&lt;p&gt;Using json2view to reorganize the layout of a screen. &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Changing-Layouts&quot;&gt;(more details)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Avocarrot/json2view/blob/master/example_assets/test01.png&quot;&gt;output&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find more help and examples in the &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki&quot;&gt;wiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, a sample project for quick use of the lib can be found in the &lt;a href=&quot;https://github.com/Avocarrot/json2view/tree/master/sample&quot;&gt;sample submodule&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Download project
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+git clone https://github.com/Avocarrot/json2view.git
+&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;add json2view in your project by adding in your settings.gradle
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+include &#39;:json2view&#39;
+project(&#39;:json2view&#39;*).projectDir = new File(settingsDir, &#39;$(json2viewPath)/json2view/json2view&#39;)
+&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;add in build.gradle of application module (not project build.gradle) in &lt;code class=&quot;highlighter-rouge&quot;&gt;dependencies&lt;/code&gt; section&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile project(&#39;:json2view&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
+
+&lt;h3 id=&quot;basic-json-format&quot;&gt;Basic JSON format&lt;/h3&gt;
+&lt;p&gt;The input JSON has 3 fields for every view we want to create :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;widget&lt;/code&gt; : canonicalName of View (for views in package &lt;code class=&quot;highlighter-rouge&quot;&gt;android.widget&lt;/code&gt; you can ommit &lt;code class=&quot;highlighter-rouge&quot;&gt;android.widget&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;properties&lt;/code&gt; : list of properties for the view. (&lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Available-Properties&quot;&gt;Available Properties&lt;/a&gt;) By default we add &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_width&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_height&lt;/code&gt; with value `wrap_content’&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;views&lt;/code&gt; : children views for ViewGroup &lt;em&gt;(optional)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;eg. JSON to create a empty TextView
+&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
+{
+    &quot;widget&quot;: &quot;android.widgetTextView&quot;,
+	&quot;properties&quot;: []
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;eg. JSON to create a TextView with textSize : 12sp and text : “Hello Avocarrot”
+&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
+{
+    &quot;widget&quot;: &quot;TextView&quot;,
+	&quot;properties&quot;: [
+	    {&quot;name&quot;:&quot;textSize&quot;, &quot;type&quot;: &quot;dimen&quot;, &quot;value&quot;:&quot;13sp&quot;},
+	    {&quot;name&quot;:&quot;text&quot;, &quot;type&quot;: &quot;string&quot;, &quot;value&quot;:&quot;Hello Avocarrot&quot;}
+	]
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can find some examples for xml to JSON conversions in the wiki &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Xml-2-JSON-Examples&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can use &lt;em&gt;ConvertXML2JSON.groovy&lt;/em&gt; (from ./utils) to convert any android xml to json2view valid JSON file
+&lt;em&gt;(the script needs further development to create a valid JSON for &lt;b&gt;every&lt;/b&gt; case)&lt;/em&gt; &lt;br /&gt;
+try : &lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./gradlew runScript -Pxml=./pathToInputXmlFile.xml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;from the root folder of the project&lt;/p&gt;
+
+&lt;h3 id=&quot;loading-dynamic-layout&quot;&gt;Loading dynamic layout&lt;/h3&gt;
+&lt;p&gt;create and attach view in the specific Parent (created from xml) &lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+ViewParent viewParent = (ViewParent) findViewById(R.id.parent_view_id)
+JSONObject jsonObject = ... // load from network, sdcard etc
+View sampleView = DynamicView.createView(this, jsonObject, viewParent);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You can check some example use cases in the wiki &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Creating-Dynamic-Layouts&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;contributing&quot;&gt;Contributing&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Fork the repo&lt;/li&gt;
+  &lt;li&gt;Apply your changes&lt;/li&gt;
+  &lt;li&gt;Write tests&lt;/li&gt;
+  &lt;li&gt;Submit your pull request&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For feedback or suggestions you can drop us a line at support@avocarrot.com&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Avocarrot/json2view/blob/master/LICENSE&quot;&gt;The MIT License (MIT)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Also check out the project at &lt;a href=&quot;https://android-arsenal.com/details/1/1453&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-json2view-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/07/Json2View/</link>
@@ -131,7 +829,117 @@
     
       <item>
         <title>AnimatedSvgView</title>
-        <description>
+        <description>&lt;h1 id=&quot;animatedsvgview&quot;&gt;AnimatedSvgView&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://maven-badges.herokuapp.com/maven-central/com.jaredrummler/animated-svg-view&quot;&gt;[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.jaredrummler/animated-svg-view/badge.svg)&lt;/a&gt;
+&lt;a href=&quot;LICENSE&quot;&gt;[License](http://img.shields.io/:license-apache-blue.svg)&lt;/a&gt;
+&lt;a href=&quot;https://android-arsenal.com/api?level=14&quot;&gt;[API](https://img.shields.io/badge/API-14%2B-blue.svg?style=flat)&lt;/a&gt; 
+&lt;a href=&quot;https://twitter.com/jrummy16&quot;&gt;[Twitter Follow](https://img.shields.io/twitter/follow/jrummy16.svg?style=social)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Animated SVG Drawing for Android&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;demo/demo.gif&quot;&gt;DEMO&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;usage&quot;&gt;Usage&lt;/h1&gt;
+
+&lt;p&gt;Get SVG path data and add it to a string array:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;string-array&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;google_glyph_strings&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;M142.9,24.2C97.6,39.7,59,73.6,37.5,116.5c-7.5,14.8-12.9,30.5-16.2,46.8c-8.2,40.4-2.5,83.5,16.1,120.3   c12.1,24,29.5,45.4,50.5,62.1c19.9,15.8,43,27.6,67.6,34.1c31,8.3,64,8.1,95.2,1c28.2-6.5,54.9-20,76.2-39.6   c22.5-20.7,38.6-47.9,47.1-77.2c9.3-31.9,10.5-66,4.7-98.8c-58.3,0-116.7,0-175,0c0,24.2,0,48.4,0,72.6c33.8,0,67.6,0,101.4,0   c-3.9,23.2-17.7,44.4-37.2,57.5c-12.3,8.3-26.4,13.6-41,16.2c-14.6,2.5-29.8,2.8-44.4-0.1c-14.9-3-29-9.2-41.4-17.9   c-19.8-13.9-34.9-34.2-42.6-57.1c-7.9-23.3-8-49.2,0-72.4c5.6-16.4,14.8-31.5,27-43.9c15-15.4,34.5-26.4,55.6-30.9   c18-3.8,37-3.1,54.6,2.2c15,4.5,28.8,12.8,40.1,23.6c11.4-11.4,22.8-22.8,34.2-34.2c6-6.1,12.3-12,18.1-18.3   c-17.3-16-37.7-28.9-59.9-37.1C228.2,10.6,183.2,10.3,142.9,24.2z&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;M142.9,24.2c40.2-13.9,85.3-13.6,125.3,1.1c22.2,8.2,42.5,21,59.9,37.1c-5.8,6.3-12.1,12.2-18.1,18.3    c-11.4,11.4-22.8,22.8-34.2,34.2c-11.3-10.8-25.1-19-40.1-23.6c-17.6-5.3-36.6-6.1-54.6-2.2c-21,4.5-40.5,15.5-55.6,30.9    c-12.2,12.3-21.4,27.5-27,43.9c-20.3-15.8-40.6-31.5-61-47.3C59,73.6,97.6,39.7,142.9,24.2z&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;M21.4,163.2c3.3-16.2,8.7-32,16.2-46.8c20.3,15.8,40.6,31.5,61,47.3c-8,23.3-8,49.2,0,72.4    c-20.3,15.8-40.6,31.6-60.9,47.3C18.9,246.7,13.2,203.6,21.4,163.2z&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;M203.7,165.1c58.3,0,116.7,0,175,0c5.8,32.7,4.5,66.8-4.7,98.8c-8.5,29.3-24.6,56.5-47.1,77.2    c-19.7-15.3-39.4-30.6-59.1-45.9c19.5-13.1,33.3-34.3,37.2-57.5c-33.8,0-67.6,0-101.4,0C203.7,213.5,203.7,189.3,203.7,165.1z&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;M37.5,283.5c20.3-15.7,40.6-31.5,60.9-47.3c7.8,22.9,22.8,43.2,42.6,57.1c12.4,8.7,26.6,14.9,41.4,17.9    c14.6,3,29.7,2.6,44.4,0.1c14.6-2.6,28.7-7.9,41-16.2c19.7,15.3,39.4,30.6,59.1,45.9c-21.3,19.7-48,33.1-76.2,39.6    c-31.2,7.1-64.2,7.3-95.2-1c-24.6-6.5-47.7-18.2-67.6-34.1C67,328.9,49.6,307.5,37.5,283.5z&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string-array&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Add the colors for each path in an integer-array:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;color&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;google_red&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;#EA4335&lt;span class=&quot;nt&quot;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;color&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;google_yellow&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;#FBBC05&lt;span class=&quot;nt&quot;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;color&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;google_blue&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;#4285F4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;color&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;google_green&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;#34A853&lt;span class=&quot;nt&quot;&gt;&amp;lt;/color&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;integer-array&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;google_glyph_colors&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;@android:color/white&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;@color/google_red&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;@color/google_yellow&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;@color/google_blue&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;item&amp;gt;&lt;/span&gt;@color/google_green&lt;span class=&quot;nt&quot;&gt;&amp;lt;/item&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/integer-array&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Add the view to your layout:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.jrummyapps.android.widget.AnimatedSvgView&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/animated_svg_view&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;180dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;180dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_marginBottom=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;25dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:animatedSvgFillColors=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@array/google_glyph_colors&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:animatedSvgGlyphStrings=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@array/google_glyph_strings&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:animatedSvgFillStart=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1200&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:animatedSvgFillTime=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1000&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:animatedSvgImageSizeX=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:animatedSvgImageSizeY=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:animatedSvgTraceTime=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2000&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;app:animatedSvgTraceTimePerGlyph=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1000&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;You can also set SVG glyphs and colors dynamically (see the &lt;a href=&quot;demo&quot;&gt;demo&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h1 id=&quot;download&quot;&gt;Download&lt;/h1&gt;
+
+&lt;p&gt;Download &lt;a href=&quot;https://repo1.maven.org/maven2/com/jaredrummler/animated-svg-view/1.0.0/animated-svg-view-1.0.0.aar&quot;&gt;the latest AAR&lt;/a&gt; or grab via Gradle:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.jaredrummler:animated-svg-view:1.0.0&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;or Maven:
+```xml&lt;/p&gt;
+&lt;dependency&gt;
+  &lt;groupid&gt;com.jaredrummler&lt;/groupid&gt;
+  &lt;artifactid&gt;animated-svg-view&lt;/artifactid&gt;
+  &lt;version&gt;1.0.0&lt;/version&gt;
+  &lt;type&gt;aar&lt;/type&gt;
+&lt;/dependency&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+# Dependencies
+
+Animated Vector Drawable
+
+```groovy
+compile &#39;com.android.support:animated-vector-drawable:${latest_version}&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/romannurik/muzei/blob/master/main/src/main/java/com/google/android/apps/muzei/util/AnimatedMuzeiLogoView.java&quot;&gt;AnimatedMuzeiLogoView&lt;/a&gt; by &lt;a href=&quot;https://github.com/romannurik&quot;&gt;Roman Nurik&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/willowtreeapps/OAK/tree/master/oak-animatedsvgview&quot;&gt;oak-animatedsvgview&lt;/a&gt; by &lt;a href=&quot;https://github.com/willowtreeapps&quot;&gt;WillowTree, Inc.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright (C) 2016, Jared Rummler
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/07/AnimatedSvgView/</link>
@@ -146,7 +954,125 @@
     
       <item>
         <title>FocusResize</title>
-        <description>
+        <description>&lt;h1 id=&quot;focusresize&quot;&gt;FocusResize&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;http://borjabravo.com/focusresize&quot;&gt;Post in Spanish&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/borjabravo10/FocusResize&quot;&gt;[Build Status](https://travis-ci.org/borjabravo10/FocusResize.svg?branch=master)&lt;/a&gt;
+&lt;a href=&quot;https://android-arsenal.com/details/1/3834&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FocusResize-green.svg?style=true)&lt;/a&gt;
+&lt;a href=&quot;https://jitpack.io/#borjabravo10/FocusResize&quot;&gt;[](https://jitpack.io/v/borjabravo10/FocusResize.svg)&lt;/a&gt;
+&lt;a href=&quot;http://androidweekly.net/issues/issue-213&quot;&gt;[Android Weekly](http://img.shields.io/badge/Android%20Weekly-%23213-2CB3E5.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A custom animation with scroll listener to recycler views&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/borjabravo10/FocusResize/blob/master/resources/focusResize.gif&quot;&gt;GIF of its use&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Based in UltraVisual example of &lt;a href=&quot;http://www.raywenderlich.com/99087/swift-expanding-cells-ios-collection-views&quot;&gt;Ray Wenderlich&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+&lt;p&gt;To add the FocusResize library to your Android Studio project, simply add the following gradle dependency, with min sdk version of 19:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;borjabravo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;focusresize:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;To use the FocusResize on your app, you should create a custom adapter that extends from FocusResizeAdapter. For example:
+```java
+public class DefaultAdapter extends FocusResizeAdapter&lt;recyclerview.viewholder&gt; {&lt;/recyclerview.viewholder&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private List&amp;lt;CustomObject&amp;gt; items;
+
+public DefaultAdapter(Context context, int height) {
+    super(context, height);
+    items = new ArrayList&amp;lt;&amp;gt;();
+}
+
+@Override
+public int getFooterItemCount() {
+    // Return items size
+    return items.size();
+}
+
+@Override
+public RecyclerView.ViewHolder onCreateFooterViewHolder(ViewGroup parent, int viewType) {
+    // Inflate your custom item layout
+    View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_custom, parent, false);
+    return new DefaultCustomViewHolder(v);
+}
+
+@Override
+public void onBindFooterViewHolder(RecyclerView.ViewHolder holder, int position) {
+    // Set your data into your custom layout
+    CustomObject customObject = items.get(position);
+    fill((DefaultCustomViewHolder)holder, customObject);
+}
+
+private void fill(DefaultCustomViewHolder holder, CustomObject customObject) {
+    holder.titleTextView.setText(customObject.getTitle());
+    holder.subtitleTextView.setText(customObject.getSubTitle());
+    holder.image.setImageResource(customObject.getDrawable());
+}
+
+@Override
+public void onItemBigResize(RecyclerView.ViewHolder viewHolder, int position, int dyAbs) {
+    // The focused item will resize to big size while is scrolling
+}
+
+@Override
+public void onItemBigResizeScrolled(RecyclerView.ViewHolder viewHolder, int position, int dyAbs) {
+    // The focused item resize to big size when scrolled is finished
+}
+
+@Override
+public void onItemSmallResizeScrolled(RecyclerView.ViewHolder viewHolder, int position, int dyAbs) {
+    // All items except the focused item will resize to small size when scrolled is finished
+}
+
+@Override
+public void onItemSmallResize(RecyclerView.ViewHolder viewHolder, int position, int dyAbs) {
+    // All items except the focused item will resize to small size while is scrolling
+}
+
+@Override
+public void onItemInit(RecyclerView.ViewHolder viewHolder) {
+    // Init first item when the view is loaded
+} ``` After this, you&#39;ll add FocusResizeScrollListener to recycler view:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RecyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;recycler_view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;LinearLayoutManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linearLayoutManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;DefaultAdapter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;defaultAdapter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefaultAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;getResources&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDimension&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;dimen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;custom_item_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;defaultAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addItems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addItems&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linearLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setHasFixedSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;recyclerView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addOnScrollListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FocusResizeScrollListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;defaultAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;linearLayoutManager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Important&lt;/strong&gt;: In this version, the library only works with LinearLayoutManager.VERTICAL
+License
+=======&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Borja Bravo Álvarez
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 </description>
         <pubDate>Thu, 06 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/06/FocusResize/</link>

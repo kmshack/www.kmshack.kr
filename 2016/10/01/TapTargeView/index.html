@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Tap Target View</title>
-  <meta name="description" content="">
+  <meta name="description" content="    TapTargetView[Download](https://api.bintray.com/packages/keepsafesoftware/Android/TapTargetView/images/download.svg) An implementation of tap targets fro...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="    TapTargetView[Download](https://api.bintray.com/packages/keepsafesoftware/Android/TapTargetView/images/download.svg) An implementation of tap targets fro...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Tap Target View">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="    TapTargetView[Download](https://api.bintray.com/packages/keepsafesoftware/Android/TapTargetView/images/download.svg) An implementation of tap targets fro...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/01/TapTargeView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="    TapTargetView[Download](https://api.bintray.com/packages/keepsafesoftware/Android/TapTargetView/images/download.svg) An implementation of tap targets fro..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-01-TapTargeView.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,123 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-01-TapTargeView.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 align="center">
+<img src="/.github/video.gif" width="280" height="498" alt="Video 1" />
+<img src="/.github/screenshot1.png" width="280" height="498" alt="Screenshot 1" />
+<img src="/.github/screenshot2.png" width="280" height="498" alt="Screenshot 2" /><br />
+
+    TapTargetView
+</h1>
+
+<p><a href="https://bintray.com/keepsafesoftware/Android/TapTargetView/_latestVersion">[Download](https://api.bintray.com/packages/keepsafesoftware/Android/TapTargetView/images/download.svg) </a></p>
+
+<p>An implementation of tap targets from <a href="https://material.google.com/growth-communications/feature-discovery.html#feature-discovery-design">Google’s Material Design guidelines on feature discovery</a>.</p>
+
+<p><strong>Min SDK:</strong> 14</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>TapTargetView is distributed using <a href="https://bintray.com/keepsafesoftware/Android/TapTargetView/view">jcenter</a>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>   <span class="n">repositories</span> <span class="o">{</span> 
+        <span class="n">jcenter</span><span class="o">()</span>
+   <span class="o">}</span>
+   
+   <span class="n">dependencies</span> <span class="o">{</span>
+         <span class="n">compile</span> <span class="s1">'com.getkeepsafe.taptargetview:taptargetview:1.3.0'</span>
+   <span class="o">}</span>
+</code></pre>
+</div>
+
+<p>If you wish to use a snapshot, please follow the instructions <a href="https://jitpack.io/#KeepSafe/TapTargetView/-SNAPSHOT">here</a></p>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="simple-usage">Simple usage</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">TapTargetView</span><span class="o">.</span><span class="na">showFor</span><span class="o">(</span><span class="k">this</span><span class="o">,</span>                 <span class="c1">// `this` is an Activity</span>
+    <span class="n">TapTarget</span><span class="o">.</span><span class="na">forView</span><span class="o">(</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">target</span><span class="o">),</span> <span class="s">"This is a target"</span><span class="o">,</span> <span class="s">"We have the best targets, believe me"</span><span class="o">)</span>
+        <span class="c1">// All options below are optional</span>
+        <span class="o">.</span><span class="na">outerCircleColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">red</span><span class="o">)</span>      <span class="c1">// Specify a color for the outer circle</span>
+        <span class="o">.</span><span class="na">targetCircleColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">white</span><span class="o">)</span>   <span class="c1">// Specify a color for the target circle</span>
+        <span class="o">.</span><span class="na">textColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">blue</span><span class="o">)</span>            <span class="c1">// Specify a color for text</span>
+        <span class="o">.</span><span class="na">textTypeFace</span><span class="o">(</span><span class="n">Typeface</span><span class="o">.</span><span class="na">SANS_SERIF</span><span class="o">)</span>  <span class="c1">// Specify a typeface for the text</span>
+        <span class="o">.</span><span class="na">dimColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">black</span><span class="o">)</span>            <span class="c1">// If set, will dim behind the view with 30% opacity of the given color</span>
+        <span class="o">.</span><span class="na">drawShadow</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>                   <span class="c1">// Whether to draw a drop shadow or not</span>
+        <span class="o">.</span><span class="na">cancelable</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                  <span class="c1">// Whether tapping outside the outer circle dismisses the view</span>
+        <span class="o">.</span><span class="na">tintTarget</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>                   <span class="c1">// Whether to tint the target view's color</span>
+        <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="n">Drawable</span><span class="o">),</span>                    <span class="c1">// Specify a custom drawable to draw as the target</span>
+    <span class="k">new</span> <span class="n">TapTargetView</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>          <span class="c1">// The listener can listen for regular clicks, long clicks or cancels</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onTargetClick</span><span class="o">(</span><span class="n">TapTargetView</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">.</span><span class="na">onTargetClick</span><span class="o">(</span><span class="n">view</span><span class="o">);</span>      <span class="c1">// This call is optional</span>
+            <span class="n">doSomething</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
+</code></pre>
+</div>
+
+<p>You may also choose to target your own custom <code class="highlighter-rouge">Rect</code> with <code class="highlighter-rouge">TapTarget.forBounds(Rect, ...)</code></p>
+
+<h3 id="sequences">Sequences</h3>
+
+<p>You can easily create a sequence of tap targets with <code class="highlighter-rouge">TapTargetSequence</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="nf">TapTargetSequence</span><span class="p">(</span><span class="k">this</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">targets</span><span class="o">(</span>
+        <span class="n">TapTarget</span><span class="o">.</span><span class="na">forView</span><span class="o">(</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">never</span><span class="o">),</span> <span class="s">"Gonna"</span><span class="o">),</span>
+        <span class="n">TapTarget</span><span class="o">.</span><span class="na">forView</span><span class="o">(</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">give</span><span class="o">),</span> <span class="s">"You"</span><span class="o">,</span> <span class="s">"Up"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">dimColor</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">never</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">outerCircleColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">gonna</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">targetCircleColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">let</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">textColor</span><span class="o">(</span><span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">you</span><span class="o">),</span>
+        <span class="n">TapTarget</span><span class="o">.</span><span class="na">forBounds</span><span class="o">(</span><span class="n">rickTarget</span><span class="o">,</span> <span class="s">"Down"</span><span class="o">,</span> <span class="s">":^)"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">cancelable</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="n">rick</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">listener</span><span class="o">(</span><span class="k">new</span> <span class="n">TapTargetSequence</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// This listener will tell us when interesting(tm) events happen in regards</span>
+        <span class="c1">// to the sequence</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onSequenceFinish</span><span class="o">()</span> <span class="o">{</span>
+            <span class="c1">// Yay</span>
+        <span class="o">}</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="n">onSequenceCanceled</span><span class="o">()</span> <span class="o">{</span>
+            <span class="c1">// Boo</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
+</code></pre>
+</div>
+
+<p>A sequence is started via a call to <code class="highlighter-rouge">start()</code> on the <code class="highlighter-rouge">TapTargetSequence</code> instance</p>
+
+<p>For more examples of usage, please look at the included sample app.</p>
+
+<h2 id="license">License</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 Keepsafe Software Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+</div>
 
           <br>
           <div class="post__tags">

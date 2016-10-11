@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>InboxLayout</title>
-  <meta name="description" content="">
+  <meta name="description" content="InboxLayout模仿Google Inbox邮箱的上下拉返回效果让你的app加入真正方便的手势操作使用InboxLayout前最好来这里看看有没有更新~~~ScreenShotimageimageUsage###step 1实现类似的布局, 具体可参考demo&lt;FrameLayout    andro...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="InboxLayout模仿Google Inbox邮箱的上下拉返回效果让你的app加入真正方便的手势操作使用InboxLayout前最好来这里看看有没有更新~~~ScreenShotimageimageUsage###step 1实现类似的布局, 具体可参考demo&lt;FrameLayout    andro...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="InboxLayout">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="InboxLayout模仿Google Inbox邮箱的上下拉返回效果让你的app加入真正方便的手势操作使用InboxLayout前最好来这里看看有没有更新~~~ScreenShotimageimageUsage###step 1实现类似的布局, 具体可参考demo&lt;FrameLayout    andro...">
   <meta property="og:url" content="https://kmshack.github.io/2016/09/27/InboxLayout/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="InboxLayout模仿Google Inbox邮箱的上下拉返回效果让你的app加入真正方便的手势操作使用InboxLayout前最好来这里看看有没有更新~~~ScreenShotimageimageUsage###step 1实现类似的布局, 具体可参考demo&lt;FrameLayout    andro..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-27-InboxLayout.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,79 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-27-InboxLayout.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="inboxlayout">InboxLayout</h1>
+<p>模仿Google Inbox邮箱的上下拉返回效果</p>
+
+<p>让你的app加入真正方便的手势操作</p>
+
+<p>使用InboxLayout前最好来这里看看有没有更新~~~</p>
+
+<h1 id="screenshot">ScreenShot</h1>
+<p><a href="https://raw.githubusercontent.com/zhaozhentao/InboxLayout/master/screenshot/pic.gif">image</a></p>
+
+<p><a href="https://github.com/zhaozhentao/InboxLayout/blob/master/screenshot/pic1.gif">image</a></p>
+
+<h1 id="usage">Usage</h1>
+<p>###step 1
+实现类似的布局, 具体可参考demo</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+    
+    &lt;com.zzt.inbox.widget.InboxScrollView
+        android:scrollbars="none"
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"&gt;
+        &lt;LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"&gt;
+            &lt;--在这里布局主界面要显示的内容--&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/com.zzt.inbox.widget.InboxScrollView&gt;
+    
+    &lt;com.zzt.inbox.widget.InboxLayoutListView
+        android:id="@+id/inboxlayout"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"&gt;
+    &lt;/com.zzt.inbox.widget.InboxLayoutListView&gt;
+&lt;/FrameLayout&gt;
+</code></pre>
+</div>
+
+<p>###step 2</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>final InboxScrollView inboxScrollView = (InboxScrollView)findViewById(R.id.scroll);
+inboxLayout = (InboxLayout)findViewById(R.id.inboxlayout);             
+inboxLayout.seBackgroundScrollView(inboxScrollView); //将inboxScrollView 与 inboxlayout绑定,由inboxlayout带动inboxScrollView滚动
+</code></pre>
+</div>
+
+<p>###step 3</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>final LinearLayout dingdan = (LinearLayout)findViewById(R.id.ding_dan);
+dingdan.setOnClickListener(new View.OnClickListener() {
+  @Override
+  public void onClick(View v) {
+    inboxLayout.openWithAnim(dingdan);//给inboxLayout传入open时需要隐藏的view
+  }
+});
+</code></pre>
+</div>
+
+<h1 id="last">Last</h1>
+<p>InboxLayout目前支持底部为scrollview 顶部为listview和scrollview的情况,适用于大部分场景</p>
+
 
           <br>
           <div class="post__tags">

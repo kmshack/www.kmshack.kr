@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Sweet Alert Dialog</title>
-  <meta name="description" content="">
+  <meta name="description" content="Sweet Alert DialogSweetAlert for Android, a beautiful and clever alert dialog[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%2...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="Sweet Alert DialogSweetAlert for Android, a beautiful and clever alert dialog[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%2...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Sweet Alert Dialog">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Sweet Alert DialogSweetAlert for Android, a beautiful and clever alert dialog[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%2...">
   <meta property="og:url" content="https://kmshack.github.io/2016/09/27/SweetAlertDialog/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="Sweet Alert DialogSweetAlert for Android, a beautiful and clever alert dialog[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%2..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-27-SweetAlertDialog.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,230 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-27-SweetAlertDialog.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="sweet-alert-dialog">Sweet Alert Dialog</h1>
+<p>SweetAlert for Android, a beautiful and clever alert dialog</p>
+
+<p><a href="https://android-arsenal.com/details/1/1065">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Sweet%20Alert%20Dialog-brightgreen.svg?style=flat)</a></p>
+
+<p><a href="https://github.com/pedant/sweet-alert-dialog/blob/master/README.zh.md">中文版</a></p>
+
+<p>Inspired by JavaScript <a href="http://tristanedwards.me/sweetalert">SweetAlert</a></p>
+
+<p><a href="https://github.com/pedant/sweet-alert-dialog/releases/download/v1.1/sweet-alert-sample-v1.1.apk">Demo Download</a></p>
+
+<h2 id="screenshot">ScreenShot</h2>
+<p><a href="https://github.com/pedant/sweet-alert-dialog/raw/master/change_type.gif">image</a></p>
+
+<h2 id="setup">Setup</h2>
+<p>The simplest way to use SweetAlertDialog is to add the library as aar dependency to your build.</p>
+
+<p><strong>Maven</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;dependency&gt;
+  &lt;groupId&gt;cn.pedant.sweetalert&lt;/groupId&gt;
+  &lt;artifactId&gt;library&lt;/artifactId&gt;
+  &lt;version&gt;1.3&lt;/version&gt;
+  &lt;type&gt;aar&lt;/type&gt;
+&lt;/dependency&gt;
+</code></pre>
+</div>
+
+<p><strong>Gradle</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'cn.pedant.sweetalert:library:1.3'
+}
+</code></pre>
+</div>
+
+<h2 id="usage">Usage</h2>
+
+<p>show material progress</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>SweetAlertDialog pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
+pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+pDialog.setTitleText("Loading");
+pDialog.setCancelable(false);
+pDialog.show();
+</code></pre>
+</div>
+
+<p><a href="https://github.com/pedant/sweet-alert-dialog/raw/master/play_progress.gif">image</a></p>
+
+<p>You can customize progress bar dynamically with materialish-progress methods via <strong>SweetAlertDialog.getProgressHelper()</strong>:
+- resetCount()
+- isSpinning()
+- spin()
+- stopSpinning()
+- getProgress()
+- setProgress(float progress)
+- setInstantProgress(float progress)
+- getCircleRadius()
+- setCircleRadius(int circleRadius)
+- getBarWidth()
+- setBarWidth(int barWidth)
+- getBarColor()
+- setBarColor(int barColor)
+- getRimWidth()
+- setRimWidth(int rimWidth)
+- getRimColor()
+- setRimColor(int rimColor)
+- getSpinSpeed()
+- setSpinSpeed(float spinSpeed)</p>
+
+<p>thanks to the project <a href="https://github.com/pnikosis/materialish-progress">materialish-progress</a> and <a href="https://github.com/croccio">@croccio</a> participation.</p>
+
+<p>more usages about progress, please see the sample.</p>
+
+<p>A basic message：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this)
+    .setTitleText("Here's a message")
+    .show();
+</code></pre>
+</div>
+
+<p>A title with a text under：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this)
+    .setTitleText("Here's a message")
+    .setContentText("It's pretty, isn't it?")
+    .show();
+</code></pre>
+</div>
+
+<p>A error message：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE)
+    .setTitleText("Oops...")
+    .setContentText("Something went wrong")
+    .show();
+</code></pre>
+</div>
+
+<p>A warning message：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+    .setTitleText("Are you sure?")
+    .setContentText("Won't be able to recover this file")
+    .setConfirmText("Yes,delete it")
+    .show();
+</code></pre>
+</div>
+
+<p>A success message：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
+    .setTitleText("Good job")
+    .setContentText("You clicked the button")
+    .show();
+</code></pre>
+</div>
+
+<p>A message with a custom icon：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.CUSTOM_IMAGE_TYPE)
+    .setTitleText("Sweet")
+    .setContentText("Here's a custom image.")
+    .setCustomImage(R.drawable.custom_img)
+    .show();
+</code></pre>
+</div>
+
+<p>Bind the listener to confirm button：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+    .setTitleText("Are you sure?")
+    .setContentText("Won't be able to recover this file")
+    .setConfirmText("Yes,delete it")
+    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+        @Override
+        public void onClick(SweetAlertDialog sDialog) {
+            sDialog.dismissWithAnimation();
+        }
+    })
+    .show();
+</code></pre>
+</div>
+
+<p>Show the cancel button and bind listener to it：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+    .setTitleText("Are you sure?")
+    .setContentText("Won't be able to recover this file")
+    .setCancelText("No,cancel plx")
+    .setConfirmText("Yes,delete it")
+    .showCancelButton(true)
+    .setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+        @Override
+        public void onClick(SweetAlertDialog sDialog) {
+            sDialog.cancel();
+        }
+    })
+    .show();
+</code></pre>
+</div>
+
+<p><strong>Change</strong> the dialog style upon confirming：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+    .setTitleText("Are you sure?")
+    .setContentText("Won't be able to recover this file")
+    .setConfirmText("Yes,delete it")
+    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+        @Override
+        public void onClick(SweetAlertDialog sDialog) {
+            sDialog
+                .setTitleText("Deleted")
+                .setContentText("Your imaginary file has been deleted")
+                .setConfirmText("OK")
+                .setConfirmClickListener(null)
+                .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+        }
+    })
+    .show();
+</code></pre>
+</div>
+
+<p><a href="http://www.pedant.cn">more android tech shares: pedant.cn</a></p>
+
+<h2 id="license">License</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The MIT License (MIT)
+
+Copyright (c) 2014 Pedant(http://pedant.cn)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre>
+</div>
+
 
           <br>
           <div class="post__tags">

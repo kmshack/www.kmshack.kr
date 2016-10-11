@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Holly ViewPager</title>
-  <meta name="description" content="">
+  <meta name="description" content="HollyViewPager[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-HollyViewPager-brightgreen.svg?style=flat)[screen](https://raw.githubuserconte...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="HollyViewPager[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-HollyViewPager-brightgreen.svg?style=flat)[screen](https://raw.githubuserconte...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Holly ViewPager">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="HollyViewPager[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-HollyViewPager-brightgreen.svg?style=flat)[screen](https://raw.githubuserconte...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/01/HollyViewPager/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="HollyViewPager[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-HollyViewPager-brightgreen.svg?style=flat)[screen](https://raw.githubuserconte..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-01-HollyViewPager.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,149 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-01-HollyViewPager.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="hollyviewpager">HollyViewPager</h1>
+
+<p><a href="http://android-arsenal.com/details/1/2388">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-HollyViewPager-brightgreen.svg?style=flat)</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=4ZmjEde-Xho">[screen](https://raw.githubusercontent.com/florent37/HollyViewPager/master/screens/1024_small.png)</a></p>
+
+<p><a href="https://www.youtube.com/watch?v=4ZmjEde-Xho">[screen](http://j.gifs.com/vZ4D9G.gif)</a></p>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.github.florent37.beautifulviewpager.sample">
+  <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+</a></p>
+
+<p>#Usage</p>
+
+<p>Add a HollyViewPager in your layout</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.github.florent37.hollyviewpager.HollyViewPager</span>
+        <span class="na">android:id=</span><span class="s">"@+id/hollyViewPager"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">app:hvp_headerHeight=</span><span class="s">"150dp"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">HollyViewPager</span> <span class="n">hollyViewPager</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">hollyViewPager</span><span class="o">);</span>
+<span class="n">hollyViewPager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(...);</span>
+
+<span class="n">hollyViewPager</span><span class="o">.</span><span class="na">setConfigurator</span><span class="o">(</span><span class="k">new</span> <span class="n">HollyViewPagerConfigurator</span><span class="o">()</span> <span class="o">{</span>
+           <span class="nd">@Override</span>
+           <span class="kd">public</span> <span class="kt">float</span> <span class="n">getHeightPercentForPage</span><span class="o">(</span><span class="kt">int</span> <span class="n">page</span><span class="o">)</span> <span class="o">{</span>
+               <span class="k">return</span> <span class="n">PERCENT</span><span class="o">;</span>
+           <span class="o">}</span>
+       <span class="o">});</span>
+</code></pre>
+</div>
+
+<p>#Pages
+You pages should contain a recyclerview or a ObservableScrollView
+———-</p>
+
+<p>#RecyclerView
+<code class="highlighter-rouge">java	
+HollyViewPagerBus.registerRecyclerView(getActivity(), recyclerView);
+</code></p>
+
+<p>Adapter
+```java
+	protected static final int TYPE_HEADER = 0;
+    protected static final int TYPE_CELL = 1;</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@Override
+public int getItemViewType(int position) {
+    switch (position){
+        case 0: return TYPE_HEADER;
+        default: return TYPE_CELL;
+    }
+}
+
+@Override
+public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int type) {
+    View view;
+    switch (type){
+        case TYPE_HEADER:
+            new RecyclerView.ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.hvp_header_placeholder,viewGroup,false)) {};
+            break;
+        default:
+            ...YOUR_VIEW...
+            break;
+    }
+} ```
+</code></pre>
+</div>
+
+<p>#ScrollView</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">HollyViewPagerBus</span><span class="o">.</span><span class="na">registerScrollView</span><span class="o">(</span><span class="n">getActivity</span><span class="o">(),</span> <span class="n">scrollView</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.github.ksoichiro.android.observablescrollview.ObservableScrollView</span> 
+	<span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">android:id=</span><span class="s">"@+id/scrollView"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:scrollbars=</span><span class="s">"none"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;LinearLayout</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+        <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;include</span> <span class="na">layout=</span><span class="s">"@layout/hvp_header_placeholder"</span><span class="nt">/&gt;</span>
+
+        ... YOUR CONTENT ...
+</code></pre>
+</div>
+
+<p>#Download</p>
+
+<p>In your module <a href="https://bintray.com/florent37/maven/HollyViewPager/_latestVersion">[Download](https://api.bintray.com/packages/florent37/maven/HollyViewPager/images/download.svg)</a>
+<code class="highlighter-rouge">groovy
+compile 'com.github.florent37:hollyviewpager:1.0.1'
+compile 'com.github.ksoichiro:android-observablescrollview:1.5.2'
+</code></p>
+
+<p>#Credits</p>
+
+<p>Author: Florent Champigny <a href="http://www.florentchampigny.com/">http://www.florentchampigny.com/</a></p>
+
+<p><a href="https://plus.google.com/+florentchampigny">
+  <img alt="Follow me on Google+" src="https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/gplus.png" />
+</a>
+<a href="https://twitter.com/florent_champ">
+  <img alt="Follow me on Twitter" src="https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/twitter.png" />
+</a>
+<a href="https://www.linkedin.com/profile/view?id=297860624">
+  <img alt="Follow me on LinkedIn" src="https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/linkedin.png" />
+</a></p>
+
+<h2 id="license">License</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 florent37, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+</div>
 
           <br>
           <div class="post__tags">

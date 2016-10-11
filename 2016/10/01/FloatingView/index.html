@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Floating View</title>
-  <meta name="description" content="">
+  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshots[](./screenshot/animati...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshots[](./screenshot/animati...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Floating View">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshots[](./screenshot/animati...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/01/FloatingView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="FloatingViewThe Android project is View to display information such as chat in front.To API Level 14 or later are supportedScreenshots[](./screenshot/animati..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-01-FloatingView.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,127 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-01-FloatingView.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="floatingview">FloatingView</h1>
+<p>The Android project is View to display information such as chat in front.<br />
+To API Level 14 or later are supported</p>
+
+<h2 id="screenshots">Screenshots</h2>
+<p>[](./screenshot/animation.gif)<br />
+<img src="./screenshot/ss01.png" width="200" />
+<img src="./screenshot/ss02.png" width="200" />
+<img src="./screenshot/ss03.png" width="200" /></p>
+
+<p><em>Watch YouTube video</em><br />
+<a href="http://youtu.be/nb8M2p0agF4">SimpleFloating</a></p>
+
+<h2 id="requirements">Requirements</h2>
+<p>Target Sdk Version : 24
+Min Sdk Version : 14</p>
+
+<h2 id="how-to-use">How to use</h2>
+<p>1) Add this to your <strong>build.gradle</strong>.
+  ```java
+  repositories {
+      maven {
+          url “https://jitpack.io”
+      }
+  }</p>
+
+<p>dependencies {
+    compile ‘com.github.recruit-lifestyle:FloatingView:2.0’
+  }
+  ```</p>
+
+<p>2) Implement Service for displaying FloatingView
+<code class="highlighter-rouge">java
+public class ChatHeadService extends Service {
+  ... ...
+}
+</code></p>
+
+<p>3) You will do the setting of the View to be displayed in the FloatingView(Sample have a set in onStartCommand)
+<code class="highlighter-rouge">java
+  final LayoutInflater inflater = LayoutInflater.from(this);
+  final ImageView iconView = (ImageView) inflater.inflate(R.layout.widget_chathead, null, false);
+  iconView.setOnClickListener(......);
+</code></p>
+
+<p>4) Use the FloatingViewManager, make the setting of FloatingView
+<code class="highlighter-rouge">java
+  mFloatingViewManager = new FloatingViewManager(this, this);
+  mFloatingViewManager.setFixedTrashIconImage(R.drawable.ic_trash_fixed);
+  mFloatingViewManager.setActionTrashIconImage(R.drawable.ic_trash_action);
+  final FloatingViewManager.Options options = new FloatingViewManager.Options();
+  options.overMargin = (int) (16 * metrics.density);
+  mFloatingViewManager.addViewToWindow(iconView, options);
+</code></p>
+
+<p>The second argument of FloatingViewManager is FloatingViewListener</p>
+
+<p>Describe the process (onFinishFloatingView) that is called when you exit the FloatingView
+<code class="highlighter-rouge">java
+    @Override
+    public void onFinishFloatingView() {
+        stopSelf();
+    }
+</code></p>
+
+<p>5) Add the permission to AndroidManifest
+```xml</p>
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  
+6) Define the Service to AndroidManifest
+example)
+```java
+    &lt;application ...&gt;
+        ...
+        &lt;-- Demo --&gt;
+        &lt;service
+            android:name="jp.co.recruit_lifestyle.sample.service.ChatHeadService"
+            android:exported="false"/&gt;
+        ...
+    &lt;/application&gt;
+</code></pre>
+</div>
+
+<p>7) Describe the process to start the Service (example of Fragment)
+<code class="highlighter-rouge">java
+    final Activity activity = getActivity();
+    activity.startService(new Intent(activity, ChatHeadService.class));
+</code></p>
+
+<h2 id="credits">Credits</h2>
+
+<p>FloatingView is owned and maintained by <a href="http://www.recruit-lifestyle.co.jp/">RECRUIT LIFESTYLE CO., LTD.</a></p>
+
+<p>FloatingView was originally created by <a href="https://twitter.com/egg_sogawa">Yoshihide Sogawa</a></p>
+
+<h2 id="license">License</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 RECRUIT LIFESTYLE CO., LTD.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+</div>
+
 
           <br>
           <div class="post__tags">

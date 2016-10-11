@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Speech Recognition View</title>
-  <meta name="description" content="">
+  <meta name="description" content="SpeechRecognitionView[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat)[Release](https://jitp...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="SpeechRecognitionView[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat)[Release](https://jitp...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Speech Recognition View">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="SpeechRecognitionView[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat)[Release](https://jitp...">
   <meta property="og:url" content="https://kmshack.github.io/2016/09/30/SpeechRecognitionView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="SpeechRecognitionView[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat)[Release](https://jitp..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-30-SpeechRecognitionView.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,175 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-30-SpeechRecognitionView.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="speechrecognitionview">SpeechRecognitionView</h1>
+
+<p><a href="http://android-arsenal.com/details/1/3518">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SpeechRecognitionView-brightgreen.svg?style=flat)</a>
+<a href="https://jitpack.io/#zagum/SpeechRecognitionView">[Release](https://jitpack.io/v/zagum/SpeechRecognitionView.svg)</a></p>
+
+<p>“Google Now” style animation for <a href="http://developer.android.com/intl/ru/reference/android/speech/SpeechRecognizer.html">Speech Recognizer</a>.</p>
+
+<p><a href="https://raw.githubusercontent.com/zagum/SpeechRecognitionView/master/art/speechrecognitionview.gif">image</a></p>
+
+<h2 id="compatibility">Compatibility</h2>
+
+<p>This library is compatible from API 15 (Android 4.0.3).</p>
+
+<h2 id="download">Download</h2>
+
+<p>Add it in your root build.gradle at the end of repositories:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">allprojects</span> <span class="o">{</span>
+    <span class="n">repositories</span> <span class="o">{</span>
+        <span class="o">...</span>
+        <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s2">"https://jitpack.io"</span> <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Add the dependency</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'com.github.zagum:SpeechRecognitionView:1.0.2'</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h2 id="usage">Usage</h2>
+
+<ul>
+  <li>Xml file:</li>
+</ul>
+
+<p>Simply add view to your layout:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;com.github.zagum.speechrecognitionview.RecognitionProgressView</span>
+	<span class="na">android:id=</span><span class="s">"@+id/recognition_view"</span>
+	<span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+	<span class="na">android:layout_gravity=</span><span class="s">"center"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+<ul>
+  <li>Initialization:</li>
+</ul>
+
+<p>Init speech recognizer:
+<code class="highlighter-rouge">java
+SpeechRecognizer speechRecognizer = SpeechRecognizer.createSpeechRecognizer(context);
+</code></p>
+
+<p>Init RecognitionProgressView:
+<code class="highlighter-rouge">java
+RecognitionProgressView recognitionProgressView = (RecognitionProgressView) findViewById(R.id.recognition_view);
+recognitionProgressView.setSpeechRecognizer(speechRecognizer);
+recognitionProgressView.setRecognitionListener(new RecognitionListenerAdapter() {
+        @Override
+        public void onResults(Bundle results) {
+	        showResults(results);
+        }
+});
+</code></p>
+
+<p>When SpeechRecognizer and RecognitionProgressView inited, use your speech recognizer as usual:
+``` java
+listen.setOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		startRecognition();
+	}
+});</p>
+
+<p>private void startRecognition() {
+	Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+	intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, getPackageName());
+	intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+	speechRecognizer.startListening(intent);
+}
+```</p>
+
+<p>Start and stop RecognitionProgressView animation:
+``` java
+recognitionProgressView.play();</p>
+
+<p>recognitionProgressView.stop();
+```</p>
+
+<ul>
+  <li>Customization:</li>
+</ul>
+
+<p>Set custom colors: 
+<code class="highlighter-rouge">java
+int[] colors = {
+		ContextCompat.getColor(this, R.color.color1),
+		ContextCompat.getColor(this, R.color.color2),
+		ContextCompat.getColor(this, R.color.color3),
+		ContextCompat.getColor(this, R.color.color4),
+		ContextCompat.getColor(this, R.color.color5)
+};
+recognitionProgressView.setColors(colors);
+</code></p>
+
+<p>Set custom bars heights: 
+<code class="highlighter-rouge">java
+int[] heights = {60, 76, 58, 80, 55};
+recognitionProgressView.setBarMaxHeightsInDp(heights);
+</code>
+Don’t forget to add permission to your AndroidManifest.xml file
+``` xml</p>
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+
+* Warning
+
+From [Android Documentation](http://developer.android.com/reference/android/speech/RecognitionListener.html#onRmsChanged(float))
+For ```java public abstract void onRmsChanged (float rmsdB)``` callback ```There is no guarantee that this method will be called.```, 
+so if this callback does not return values the Bars animation will be skipped. 
+
+I found some hack to make it working every time you want to start speech recognition:
+``` java
+listen.setOnClickListener(new View.OnClickListener() {
+	@Override
+	public void onClick(View v) {
+		startRecognition();
+		recognitionProgressView.postDelayed(new Runnable() {
+			@Override
+			public void run() {
+				startRecognition();
+			}
+		}, 50);
+	}
+});
+</code></pre>
+</div>
+
+<h2 id="license">License</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2016 Evgenii Zagumennyi
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+</div>
+
 
           <br>
           <div class="post__tags">

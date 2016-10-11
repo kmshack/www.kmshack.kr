@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Material Intro Screen</title>
-  <meta name="description" content="">
+  <meta name="description" content="Android Material Intro Screen [Download](https://api.bintray.com/packages/tangoagency/maven/material-intro-screen/images/download.svg) [Build Status](https:/...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="Android Material Intro Screen [Download](https://api.bintray.com/packages/tangoagency/maven/material-intro-screen/images/download.svg) [Build Status](https:/...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Material Intro Screen">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Android Material Intro Screen [Download](https://api.bintray.com/packages/tangoagency/maven/material-intro-screen/images/download.svg) [Build Status](https:/...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/01/MaterialIntroScreen/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="Android Material Intro Screen [Download](https://api.bintray.com/packages/tangoagency/maven/material-intro-screen/images/download.svg) [Build Status](https:/..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-01-MaterialIntroScreen.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,147 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-01-MaterialIntroScreen.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="android-material-intro-screen">Android Material Intro Screen</h1>
+<p><a href="https://bintray.com/tangoagency/maven/material-intro-screen/_latestVersion"> [Download](https://api.bintray.com/packages/tangoagency/maven/material-intro-screen/images/download.svg) </a>
+<a href="https://travis-ci.org/TangoAgency/material-intro-screen">[Build Status](https://travis-ci.org/TangoAgency/material-intro-screen.svg?branch=master)</a></p>
+
+<p>Material intro screen is inspired by <a href="https://github.com/HeinrichReimer/material-intro/tree/master/library/src/main/java/com/heinrichreimersoftware/materialintro/view/parallax">Material Intro</a> and developed with love from scratch. I decided to rewrite completely almost all features in order to make Android intro screen easy to use for everyone and extensible as possible.
+## Features
+  - <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/IntroActivity.java">Easily add new slides</a>
+  - <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/CustomSlide.java">Custom slides</a>
+  - <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/res/layout/fragment_custom_slide.xml">Parallax slides</a>
+  - Easy extensible api
+  - Material design at it’s best</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/IntroActivity.java#L43">Simple slide</a></th>
+      <th style="text-align: center"><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/CustomSlide.java">Custom slide</a></th>
+      <th style="text-align: center"><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/IntroActivity.java#L52">Permission slide</a></th>
+      <th style="text-align: center"><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/IntroActivity.java#L19">Finish slide</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/images/simple_slide.gif">Simple slide</a></td>
+      <td style="text-align: center"><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/images/custom_slide.gif">Customslide</a></td>
+      <td style="text-align: center"><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/images/permissions_slide.gif">Permission slide</a></td>
+      <td style="text-align: center"><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/images/finish_slide.gif">Finish slide</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="usage">Usage</h2>
+<p>### Step 1:
+#### Add gradle dependecy
+<code class="highlighter-rouge">
+dependencies {
+  compile 'agency.tango.android:material-intro-screen:{latest_release}'
+}
+</code>
+### Step 2:
+#### First, your <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/IntroActivity.java">intro activity</a> class needs to extend MaterialIntroActivity:
+<code class="highlighter-rouge">java
+public class IntroActivity extends MaterialIntroActivity
+</code>
+### Step 3:
+#### Add activity to <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/AndroidManifest.xml#L28">manifest</a> with defined theme:
+<code class="highlighter-rouge">xml
+        &lt;activity
+            android:name=".IntroActivity"
+            android:theme="@style/Theme.Intro" /&gt;
+</code>
+### Step 4: 
+#### <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/IntroActivity.java">Add slides:</a>
+```java
+ @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    addSlide(new SlideFragmentBuilder()
+            .backgroundColor(R.color.colorPrimary)
+            .buttonsColor(R.color.colorAccent)
+            .possiblePermissions(new String[]{Manifest.permission.CALL_PHONE, Manifest.permission.READ_SMS})
+            .neededPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION})
+            .image(agency.tango.materialintroscreen.R.drawable.ic_next)
+            .title("title 3")
+            .description("Description 3")
+            .build(),
+            new MessageButtonBehaviour(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(IntroActivity.this, "We provide solutions to make you love your work", Toast.LENGTH_SHORT).show();
+                }
+            }, "Work with love")); } ``` #### Explanation of SlideFragment usage:   - ```possiblePermissions``` &amp;#8702; permissions which are not necessary to be granted   - ```neededPersmissions``` &amp;#8702; permission which are needed to be granted to move further from that slide   - ```MessageButtonBehaviour``` &amp;#8702; create a new instance only if you want to have a custom action or text on a message button
+</code></pre>
+</div>
+
+<h3 id="step-5">Step 5:</h3>
+<p>#### Customize Intro Activity:
+  - <code class="highlighter-rouge">setSkipButtonVisible()</code> ⇾ show skip button instead of back button on the left bottom of screen
+  - <code class="highlighter-rouge">hideBackButton()</code> ⇾ hides any button on the left bottom of screen
+  - <code class="highlighter-rouge">enableLastSlideAlphaExitTransition()</code> ⇾ set if the last slide should disapear with alpha hiding effect</p>
+
+<h4 id="customizing-view-animations">Customizing view animations:</h4>
+
+<p>You can set enter, default and exit translation for every view in intro activity. To achive this you need to get translation wrapper for chosen view (for example: <code class="highlighter-rouge">getNextButtonTranslationWrapper()</code>) and set there new class which will implement <code class="highlighter-rouge">IViewTranslation</code>
+<code class="highlighter-rouge">java
+getNextButtonTranslationWrapper()
+                .setEnterTranslation(new IViewTranslation() {
+                    @Override
+                    public void translate(View view, @FloatRange(from = 0, to = 1.0) float percentage) {
+                        view.setAlpha(percentage);
+                    }
+                });
+</code>
+#### Available <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/material-intro-screen/src/main/java/agency/tango/materialintroscreen/animations/ViewTranslationWrapper.java">translation wrappers</a>:
+- <code class="highlighter-rouge">getNextButtonTranslationWrapper()</code>
+- <code class="highlighter-rouge">getBackButtonTranslationWrapper()</code>
+- <code class="highlighter-rouge">getPageIndicatorTranslationWrapper()</code>
+- <code class="highlighter-rouge">getViewPagerTranslationWrapper()</code> 
+- <code class="highlighter-rouge">getSkipButtonTranslationWrapper()</code></p>
+
+<h2 id="custom-slides">Custom slides</h2>
+<p>#### Of course you are able to implement completely custom slides. You only need to extend SlideFragment and override following functions:
+ - <code class="highlighter-rouge">backgroundColor()</code>
+ - <code class="highlighter-rouge">buttonsColor()</code>
+ - <code class="highlighter-rouge">canMoveFurther()</code> (only if you want to stop user from being able to move further before he will do some action)
+ - <code class="highlighter-rouge">cantMoveFurtherErrorMessage()</code> (as above)</p>
+
+<h4 id="if-you-want-to-use-parallax-in-a-fragment-please-use-one-of-the-below-views">If you want to use parallax in a fragment please use one of the below views:</h4>
+<ul>
+  <li><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/material-intro-screen/src/main/java/agency/tango/materialintroscreen/parallax/ParallaxFrameLayout.java"><code class="highlighter-rouge">ParallaxFrameLayout</code></a></li>
+  <li><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/material-intro-screen/src/main/java/agency/tango/materialintroscreen/parallax/ParallaxLinearLayout.java"><code class="highlighter-rouge">ParallaxLinearLayout</code></a></li>
+  <li><a href="https://github.com/TangoAgency/material-intro-screen/blob/master/material-intro-screen/src/main/java/agency/tango/materialintroscreen/parallax/ParallaxRelativeLayout.java"><code class="highlighter-rouge">ParallaxRelativeLayout</code></a></li>
+</ul>
+
+<h4 id="and-set-there-the-applayoutparallaxfactorparallaxfactor-attribute">And set there the <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/material-intro-screen/src/main/res/layout/fragment_slide.xml#L29">app:layout_parallaxFactor</a> attribute:</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;agency.tango.materialintroscreen.parallax.ParallaxLinearLayout</span>
+<span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;ImageView</span>
+        <span class="na">android:id=</span><span class="s">"@+id/image_slide"</span>
+        <span class="na">app:layout_parallaxFactor=</span><span class="s">"0.6"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>All features which are not available in simple Slide Fragment are shown here: <a href="https://github.com/TangoAgency/material-intro-screen/blob/master/app/src/main/java/agency/tango/materialintro/CustomSlide.java">Custom Slide</a></p>
+
+<h2 id="things-i-have-used-to-create-this">Things I have used to create this</h2>
+<ul>
+  <li>For parallax I have used files from <a href="https://github.com/HeinrichReimer/material-intro/tree/master/library/src/main/java/com/heinrichreimersoftware/materialintro/view/parallax">Material Intro</a> by <a href="https://github.com/HeinrichReimer">@HeinrichReimer</a></li>
+  <li><a href="https://github.com/nickbutcher/plaid/blob/master/app/src/main/java/io/plaidapp/ui/widget/InkPageIndicator.java">InkPageIndicator.java</a> by <a href="https://github.com/nickbutcher">@NickButcher</a></li>
+  <li>Images used to create sample app are from <a href="http://www.freepik.com/">freepik</a></li>
+</ul>
+
 
           <br>
           <div class="post__tags">

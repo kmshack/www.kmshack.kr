@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Json2View</title>
-  <meta name="description" content="">
+  <meta name="description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Json2View">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/07/Json2View/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="json2view  travis-cijson2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your And..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-07-Json2View.png)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,164 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-07-Json2View.png)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="json2view--travis-cihttpstravis-ciorgavocarrotjson2viewsvg">json2view  <a href="https://travis-ci.org/Avocarrot/json2view.svg">travis-ci</a></h1>
+
+<p><strong>json2view</strong> is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your Android app without the need to update the APK.</p>
+
+<p>This removes the hassle of updating, re-compiling and uploading the APK to Google Play everytime you want to make small or big changes in the UI.</p>
+
+<table>
+<tr style="border: 0px;">
+<td style="border: 0px;">
+<ul class="task-list">
+<li><a href="#common-use-cases">Common use cases</a></li>
+<li><a href="#how-it-works">How it works</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+</td>
+<td style="width:60%; border: 0px; text-align:right;">
+<img alt="json2view logo" src="https://github.com/Avocarrot/json2view/blob/master/example_assets/json2view.png" width="250px" />
+</td>
+</tr>
+</table>
+
+<h2 id="common-use-cases">Common use cases</h2>
+
+<ol>
+  <li>If you need to A/B test different UI designs without the need to re-upload your APK.</li>
+  <li>If your app’s UI changes dynamically based on different users or scenarios.</li>
+  <li>If you need to deploy UI fixes quickly and in real-time.</li>
+</ol>
+
+<p>In the case of <a href="http://www.avocarrot.com">Avocarrot</a>, we are using json2view to run A/B test experiments and quickly deploy UI enhancements that improve revenue performance of native ads integrations in our network.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>You can parse any xml through the json2view library to create a JSON that will be used at runtime to dynamically generate the Android UI using native code. This JSON can be hosted anywhere on the internet (your own server, Dropbox, Github Pages etc.) and can be fetched in your app at any point you decide.</p>
+
+<p><img alt="how it works schematic" src="https://github.com/Avocarrot/json2view/blob/master/example_assets/how_it_works.png" width="700px" /></p>
+
+<p>Note: Runtime creation of a view without the precompiled version of xml in apk (res/layout), especially for highly complex layouts, can be a potential latency issue.</p>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="changing-text-color">Changing text color</h3>
+
+<p>Using json2view to change text color, background color and position of a view. <a href="https://github.com/Avocarrot/json2view/wiki/Changing-Properties">(more details)</a></p>
+
+<p><a href="https://github.com/Avocarrot/json2view/blob/master/example_assets/test00.png">output</a></p>
+
+<h3 id="reorganizing-the-layout">Reorganizing the layout</h3>
+
+<p>Using json2view to reorganize the layout of a screen. <a href="https://github.com/Avocarrot/json2view/wiki/Changing-Layouts">(more details)</a></p>
+
+<p><a href="https://github.com/Avocarrot/json2view/blob/master/example_assets/test01.png">output</a></p>
+
+<p>You can find more help and examples in the <a href="https://github.com/Avocarrot/json2view/wiki">wiki</a>.</p>
+
+<p>Also, a sample project for quick use of the lib can be found in the <a href="https://github.com/Avocarrot/json2view/tree/master/sample">sample submodule</a></p>
+
+<h2 id="installation">Installation</h2>
+<ul>
+  <li>
+    <p>Download project
+<code class="highlighter-rouge">
+git clone https://github.com/Avocarrot/json2view.git
+</code></p>
+  </li>
+  <li>
+    <p>add json2view in your project by adding in your settings.gradle
+<code class="highlighter-rouge">
+include ':json2view'
+project(':json2view'*).projectDir = new File(settingsDir, '$(json2viewPath)/json2view/json2view')
+</code></p>
+  </li>
+  <li>
+    <p>add in build.gradle of application module (not project build.gradle) in <code class="highlighter-rouge">dependencies</code> section</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>compile project(':json2view')
+</code></pre>
+</div>
+
+<h2 id="getting-started">Getting started</h2>
+
+<h3 id="basic-json-format">Basic JSON format</h3>
+<p>The input JSON has 3 fields for every view we want to create :</p>
+
+<ul>
+  <li><code class="highlighter-rouge">widget</code> : canonicalName of View (for views in package <code class="highlighter-rouge">android.widget</code> you can ommit <code class="highlighter-rouge">android.widget</code>)</li>
+  <li><code class="highlighter-rouge">properties</code> : list of properties for the view. (<a href="https://github.com/Avocarrot/json2view/wiki/Available-Properties">Available Properties</a>) By default we add <code class="highlighter-rouge">layout_width</code> &amp; <code class="highlighter-rouge">layout_height</code> with value `wrap_content’</li>
+  <li><code class="highlighter-rouge">views</code> : children views for ViewGroup <em>(optional)</em></li>
+</ul>
+
+<p>eg. JSON to create a empty TextView
+<code class="highlighter-rouge">javascript
+{
+    "widget": "android.widgetTextView",
+	"properties": []
+}
+</code></p>
+
+<p>eg. JSON to create a TextView with textSize : 12sp and text : “Hello Avocarrot”
+<code class="highlighter-rouge">javascript
+{
+    "widget": "TextView",
+	"properties": [
+	    {"name":"textSize", "type": "dimen", "value":"13sp"},
+	    {"name":"text", "type": "string", "value":"Hello Avocarrot"}
+	]
+}
+</code></p>
+
+<p>You can find some examples for xml to JSON conversions in the wiki <a href="https://github.com/Avocarrot/json2view/wiki/Xml-2-JSON-Examples">here</a></p>
+
+<p>You can use <em>ConvertXML2JSON.groovy</em> (from ./utils) to convert any android xml to json2view valid JSON file
+<em>(the script needs further development to create a valid JSON for <b>every</b> case)</em> <br />
+try : <br /></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>./gradlew runScript -Pxml=./pathToInputXmlFile.xml
+</code></pre>
+</div>
+<p>from the root folder of the project</p>
+
+<h3 id="loading-dynamic-layout">Loading dynamic layout</h3>
+<p>create and attach view in the specific Parent (created from xml) <br />
+<code class="highlighter-rouge">java
+ViewParent viewParent = (ViewParent) findViewById(R.id.parent_view_id)
+JSONObject jsonObject = ... // load from network, sdcard etc
+View sampleView = DynamicView.createView(this, jsonObject, viewParent);
+</code></p>
+
+<p>You can check some example use cases in the wiki <a href="https://github.com/Avocarrot/json2view/wiki/Creating-Dynamic-Layouts">here</a></p>
+
+<h2 id="contributing">Contributing</h2>
+
+<ol>
+  <li>Fork the repo</li>
+  <li>Apply your changes</li>
+  <li>Write tests</li>
+  <li>Submit your pull request</li>
+</ol>
+
+<p>For feedback or suggestions you can drop us a line at support@avocarrot.com</p>
+
+<h2 id="license">License</h2>
+<p><a href="https://github.com/Avocarrot/json2view/blob/master/LICENSE">The MIT License (MIT)</a></p>
+
+<p>Also check out the project at <a href="https://android-arsenal.com/details/1/1453">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-json2view-brightgreen.svg?style=flat)</a></p>
 
           <br>
           <div class="post__tags">

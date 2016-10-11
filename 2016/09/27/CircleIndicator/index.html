@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>CircleIndicator</title>
-  <meta name="description" content="">
+  <meta name="description" content="CircleIndicatorA lightweight viewpager indicator like in nexus 5 launcher [Download](https://api.bintray.com/packages/ongakuer/maven/CircleIndicator/images/d...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="CircleIndicatorA lightweight viewpager indicator like in nexus 5 launcher [Download](https://api.bintray.com/packages/ongakuer/maven/CircleIndicator/images/d...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="CircleIndicator">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="CircleIndicatorA lightweight viewpager indicator like in nexus 5 launcher [Download](https://api.bintray.com/packages/ongakuer/maven/CircleIndicator/images/d...">
   <meta property="og:url" content="https://kmshack.github.io/2016/09/27/CircleIndicator/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="CircleIndicatorA lightweight viewpager indicator like in nexus 5 launcher [Download](https://api.bintray.com/packages/ongakuer/maven/CircleIndicator/images/d..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-27-CircleIndicator.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,80 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-09-27-CircleIndicator.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="circleindicator">CircleIndicator</h1>
+<p>A lightweight viewpager indicator like in nexus 5 launcher</p>
+
+<p><a href="https://bintray.com/ongakuer/maven/CircleIndicator/_latestVersion"> [Download](https://api.bintray.com/packages/ongakuer/maven/CircleIndicator/images/download.svg) </a></p>
+
+<p><a href="/screenshot.gif">CircleIndicator</a></p>
+
+<h2 id="gradle">Gradle</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'me.relex:circleindicator:1.2.1@aar'</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h2 id="usage">Usage</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="nt">&lt;me.relex.circleindicator.CircleIndicator</span>
+		<span class="na">android:id=</span><span class="s">"@id/indicator"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"48dp"</span><span class="nt">/&gt;</span>
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="n">ViewPager</span> <span class="n">viewpager</span> <span class="o">=</span> <span class="o">(</span><span class="n">ViewPager</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">viewpager</span><span class="o">);</span>
+    <span class="n">CircleIndicator</span> <span class="n">indicator</span> <span class="o">=</span> <span class="o">(</span><span class="n">CircleIndicator</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">indicator</span><span class="o">);</span>
+    <span class="n">viewpager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mPageAdapter</span><span class="o">);</span>
+    <span class="n">indicator</span><span class="o">.</span><span class="na">setViewPager</span><span class="o">(</span><span class="n">viewpager</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<p>#####Properties:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">app:ci_width</code></li>
+  <li><code class="highlighter-rouge">app:ci_height</code></li>
+  <li><code class="highlighter-rouge">app:ci_margin</code></li>
+  <li><code class="highlighter-rouge">app:ci_drawable</code></li>
+  <li><code class="highlighter-rouge">app:ci_drawable_unselected</code></li>
+  <li><code class="highlighter-rouge">app:ci_animator</code></li>
+  <li><code class="highlighter-rouge">app:ci_animator_reverse</code></li>
+  <li><code class="highlighter-rouge">app:ci_orientation</code> (default:horizontal)</li>
+  <li><code class="highlighter-rouge">app:ci_gravity</code> (default:center)</li>
+</ul>
+
+<h2 id="changelogchangelogmd"><a href="/CHANGELOG.md">Changelog</a></h2>
+<p>##### v1.2.0 Please change like this if you used dynamic adapter</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">viewpager</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">mAdapter</span><span class="o">);</span>
+<span class="n">indicator</span><span class="o">.</span><span class="na">setViewPager</span><span class="o">(</span><span class="n">viewpager</span><span class="o">);</span>
+<span class="n">mAdapter</span><span class="o">.</span><span class="na">registerDataSetObserver</span><span class="o">(</span><span class="n">indicator</span><span class="o">.</span><span class="na">getDataSetObserver</span><span class="o">());</span>
+</code></pre>
+</div>
+
+<h2 id="license">License</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright (C) 2014 relex
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+</div>
 
           <br>
           <div class="post__tags">

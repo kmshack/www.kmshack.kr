@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>DoorSignView</title>
-  <meta name="description" content="">
+  <meta name="description" content="DoorSignView [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DoorSignView-green.svg?style=true) [](https://img.shields.io/badge/Android%20We...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="DoorSignView [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DoorSignView-green.svg?style=true) [](https://img.shields.io/badge/Android%20We...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="DoorSignView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="DoorSignView [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DoorSignView-green.svg?style=true) [](https://img.shields.io/badge/Android%20We...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/03/DoorSignView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="DoorSignView [Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DoorSignView-green.svg?style=true) [](https://img.shields.io/badge/Android%20We..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-03-DoorSignView.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,90 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-03-DoorSignView.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="doorsignview-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-doorsignview-greensvgstyletruehttpsandroid-arsenalcomdetails14342-httpsimgshieldsiobadgeandroid20weekly-23223-yellowsvghttpandroidweeklynetissuesissue-223">DoorSignView <a href="https://android-arsenal.com/details/1/4342">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DoorSignView-green.svg?style=true)</a> <a href="http://androidweekly.net/issues/issue-223">[](https://img.shields.io/badge/Android%20Weekly-%23223-yellow.svg)</a></h1>
+
+<p>Create static door signs using <a href="/library/src/main/java/com/mypopsy/doorsignview/DoorSignView.java"><code class="highlighter-rouge">DoorSignView</code></a> or, if you’re into fancy things, give a try to <a href="/library/src/main/java/com/mypopsy/doorsignview/AnimatedDoorSignView.java"><code class="highlighter-rouge">AnimatedDoorSignView</code></a> for adding a cool animation based on the device orientation sensor(s).
+ <strong>Already in production at <a href="https://play.google.com/store/apps/details?id=com.mypopsy.android">Popsy</a>.</strong></p>
+
+<p><a href="https://github.com/renaudcerrato/DoorSignView/raw/master/sample/sample-debug.apk">DEMO APK</a></p>
+
+<table>
+<tr>
+<td><p align="center"><img src="/assets/sample.png" height="500" /></p></td>
+<td><p align="center"><img src="/assets/sample.gif" height="500" /></p></td>
+</tr>
+</table>
+
+<h1 id="usage">Usage</h1>
+<p>Add an <a href="/library/src/main/java/com/mypopsy/doorsignview/AnimatedDoorSignView.java"><code class="highlighter-rouge">AnimatedDoorSignView</code></a> (or a <a href="/library/src/main/java/com/mypopsy/doorsignview/DoorSignView.java"><code class="highlighter-rouge">DoorSignView</code></a>) to your view hierarchy, be sure that <code class="highlighter-rouge">android:width</code> is set to <code class="highlighter-rouge">match_parent</code> or any fixed value:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>...
+  <span class="nt">&lt;com.mypopsy.doorsignview.AnimatedDoorSignView</span>
+          <span class="na">android:id=</span><span class="s">"@+id/doorsign"</span>
+          <span class="na">android:layout_width=</span><span class="s">"150dp"</span>
+          <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+          <span class="na">android:layout_gravity=</span><span class="s">"center"</span>
+          <span class="na">android:text=</span><span class="s">"Sorry\nWe're closed"</span>
+          <span class="na">android:textSize=</span><span class="s">"15sp"</span>
+          <span class="na">android:textColor=</span><span class="s">"#ffffff"</span>
+          <span class="na">app:dsv_signColor=</span><span class="s">"#00adef"</span>
+          <span class="na">app:dsv_textFont=</span><span class="s">"fonts/BrannbollFet.ttf"</span>
+          <span class="na">app:dsv_stringsWidth=</span><span class="s">"3dp"</span>
+          <span class="na">app:dsv_pinRadius=</span><span class="s">"10dp"</span>
+          <span class="na">app:dsv_cornerRadius=</span><span class="s">"10dp"</span>
+          <span class="na">app:dsv_textSpacingMult=</span><span class="s">"1.2"</span>
+          <span class="na">app:dsv_shadowSize=</span><span class="s">"3dp"</span>
+          <span class="nt">/&gt;</span>
+...
+</code></pre>
+</div>
+
+<p><a href="/library/src/main/java/com/mypopsy/doorsignview/AnimatedDoorSignView.java"><code class="highlighter-rouge">AnimatedDoorSignView</code></a> use <a href="http://facebook.github.io/rebound/"><code class="highlighter-rouge">rebound</code></a> under the hood, you can easily configure friction and tension through xml:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>...
+  <span class="nt">&lt;com.mypopsy.doorsignview.AnimatedDoorSignView</span>
+          <span class="err">...</span>
+          <span class="na">app:adsv_friction=</span><span class="s">"100"</span>
+          <span class="na">app:adsv_tension=</span><span class="s">"4"</span>
+          <span class="err">...</span>
+          <span class="nt">/&gt;</span>
+...
+</code></pre>
+</div>
+
+<p>See <a href="/library/src/main/res/values/attrs.xml">all the supported attributes</a>, and don’t forget to look at the <a href="/sample">sample</a>.</p>
+
+<h1 id="install">Install</h1>
+
+<p>This repository can be found on JitPack:</p>
+
+<p>https://jitpack.io/#renaudcerrato/DoorSignView</p>
+
+<p>Add it in your root build.gradle at the end of repositories:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nx">allprojects</span> <span class="p">{</span>
+		<span class="nx">repositories</span> <span class="p">{</span>
+			<span class="p">...</span>
+			<span class="nx">maven</span> <span class="p">{</span> <span class="nx">url</span> <span class="s2">"https://jitpack.io"</span> <span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Add the dependency:
+<code class="highlighter-rouge">javascript
+dependencies {
+  compile 'com.github.renaudcerrato:DoorSignView:1.0.6'
+}
+</code></p>
+
 
           <br>
           <div class="post__tags">

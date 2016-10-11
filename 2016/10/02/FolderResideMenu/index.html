@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Folder Reside Menu</title>
-  <meta name="description" content="">
+  <meta name="description" content="#Folder-ResideMenuA Special Drawer.An extension of AndroidResideMenu##ScreenshotPlease waiting for loading the images…ExamplesExamplesUsageinit ResideMenu: w...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="#Folder-ResideMenuA Special Drawer.An extension of AndroidResideMenu##ScreenshotPlease waiting for loading the images…ExamplesExamplesUsageinit ResideMenu: w...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Folder Reside Menu">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="#Folder-ResideMenuA Special Drawer.An extension of AndroidResideMenu##ScreenshotPlease waiting for loading the images…ExamplesExamplesUsageinit ResideMenu: w...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/02/FolderResideMenu/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="#Folder-ResideMenuA Special Drawer.An extension of AndroidResideMenu##ScreenshotPlease waiting for loading the images…ExamplesExamplesUsageinit ResideMenu: w..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-02-FolderResideMenu.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,122 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-02-FolderResideMenu.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="folder-residemenu">#Folder-ResideMenu</h1>
+<p>A Special Drawer.</p>
+
+<p>An extension of <strong><a href="https://github.com/SpecialCyCi/AndroidResideMenu">AndroidResideMenu</a></strong></p>
+
+<hr />
+<p>##Screenshot</p>
+
+<p>Please waiting for loading the images…</p>
+
+<p><a href="/screenshot.png">Examples</a>
+<a href="/Folder-residemenu.gif">Examples</a></p>
+
+<h2 id="usage">Usage</h2>
+<p>init ResideMenu: write these code in Activity onCreate()
+```java
+        // attach to current activity;
+        resideMenu = new ResideMenu(this);
+        resideMenu.setBackground(R.drawable.menu_background);
+        resideMenu.attachToActivity(this);</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    // create menu items;
+    String titles[] = { "Home", "Gallery", "Calendar", "Settings" };
+    int icon[] = { R.drawable.icon_home, R.drawable.icon_profile, R.drawable.icon_calendar, R.drawable.icon_settings };
+
+    for (int i = 0; i &lt; titles.length; i++){
+        ResideMenuItem item = new ResideMenuItem(this, icon[i], titles[i]);
+        item.setOnClickListener(this);
+        resideMenu.addMenuItem(item,  ResideMenu.DIRECTION_LEFT); // or  ResideMenu.DIRECTION_RIGHT
+    } ```
+*On some occasions, the slipping gesture function for locking/unlocking menu, may have conflicts with your widgets, such as viewpager. By then you can add the viewpager to ignored view, please refer to next chapter – Ignored Views.**
+</code></pre>
+</div>
+
+<p>open/close menu
+<code class="highlighter-rouge">java
+resideMenu.openMenu(ResideMenu.DIRECTION_LEFT); // or ResideMenu.DIRECTION_RIGHT
+resideMenu.closeMenu();
+</code></p>
+
+<p>listen in the menu state
+```java
+    resideMenu.setMenuListener(menuListener);
+    private ResideMenu.OnMenuListener menuListener = new ResideMenu.OnMenuListener() {
+        @Override
+        public void openMenu() {
+            Toast.makeText(mContext, “Menu is opened”, Toast.LENGTH_SHORT).show();
+        }</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    @Override
+    public void closeMenu() {
+        Toast.makeText(mContext, "Menu is closed", Toast.LENGTH_SHORT).show();
+    }
+}; ``` ##Ignored Views On some occasions, the slipping gesture function for locking/unlocking menu, may have conflicts with your widgets such as viewpager.By then you can add the viewpager to ignored view. ```java
+    // add gesture operation's ignored views
+    FrameLayout ignored_view = (FrameLayout) findViewById(R.id.ignored_view);
+    resideMenu.addIgnoredView(ignored_view); ```
+</code></pre>
+</div>
+
+<p>So that in ignored view’s workplace, the slipping gesture will not be allowed to operate menu.</p>
+
+<hr />
+
+<p>##Issue</p>
+
+<p>If you use a GridView/ListView/ScrollView, open/close menu may cause focus change,for example, GridView may auto scroll to top.
+If you don’t want this,check the code in Sample-&gt;GalleryFragment</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="n">mGridView</span><span class="o">.</span><span class="na">setFocusable</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+        <span class="n">view</span><span class="o">.</span><span class="na">setFocusable</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<hr />
+
+<p>##Thanks to</p>
+
+<p><a href="https://github.com/SpecialCyCi">@specialcyci</a>
+<a href="https://github.com/SpecialCyCi/AndroidResideMenu">AndroidResideMenu</a></p>
+
+<hr />
+
+<p>#License</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Copyright 2015 Dean Ding
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</code></pre>
+</div>
+
+<hr />
+<p>Developed By</p>
+
+<p>Dean <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#057;&#051;&#052;&#052;&#048;&#051;&#051;&#049;&#064;&#113;&#113;&#046;&#099;&#111;&#109;">&#057;&#051;&#052;&#052;&#048;&#051;&#051;&#049;&#064;&#113;&#113;&#046;&#099;&#111;&#109;</a></p>
+
+<p>Weibo：http://weibo.com/u/2699012760</p>
+
+<p>[](https://avatars0.githubusercontent.com/u/5019523?v=3&amp;s=160)</p>
 
           <br>
           <div class="post__tags">

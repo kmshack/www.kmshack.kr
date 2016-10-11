@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>ArcAnimator</title>
-  <meta name="description" content="">
+  <meta name="description" content="ArcAnimatorArcAnimator helps to create arc transition animation: 2.3+                                    ArcAnimator Demo      TransitionLoop Demo*      *Tra...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="ArcAnimatorArcAnimator helps to create arc transition animation: 2.3+                                    ArcAnimator Demo      TransitionLoop Demo*      *Tra...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="ArcAnimator">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="ArcAnimatorArcAnimator helps to create arc transition animation: 2.3+                                    ArcAnimator Demo      TransitionLoop Demo*      *Tra...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/02/ArcAnimator/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="ArcAnimatorArcAnimator helps to create arc transition animation: 2.3+                                    ArcAnimator Demo      TransitionLoop Demo*      *Tra..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-02-ArcAnimator.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,109 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-02-ArcAnimator.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="arcanimator">ArcAnimator</h1>
+<p>ArcAnimator helps to create arc transition animation: 2.3+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img width="270" height="480" src="http://i.imgur.com/DSiQxbg.gif" /></td>
+      <td><img width="270" height="480" src="http://i.imgur.com/aLcLrGk.gif" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>ArcAnimator Demo</td>
+      <td>TransitionLoop Demo*</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>*TransitionLoop Prototype  by Min-Sang Choi <a href="https://dribbble.com/shots/1828095-Chaining-Animation-with-framerjs">Dribbble</a></p>
+
+<ul>
+  <li><a href="https://www.youtube.com/watch?v=ePvGyL-_0DA" target="_blank">YouTube Video for #1 gif</a></li>
+  <li><a href="https://www.youtube.com/watch?v=jMNkmxqG0zQ" target="_blank">YouTube Video for #2 gif</a></li>
+</ul>
+
+<h1 id="usage">Usage</h1>
+<p>Add the library to your project:
+<code class="highlighter-rouge">groovy
+  compile 'com.github.asyl.animation:arcanimator:1.0.0'
+</code></p>
+
+<p>Then use it in your project code:
+```java
+  //set up clipView and coordinates where clipView will move
+  ArcAnimator.createArcAnimator(clipView, endX, endY, DEGREE, SIDE)
+                    .setDuration(500)
+                    .start();</p>
+
+<p>//or specify nestView for clipView. Animator will take center x,y coordinates of nestView
+  ArcAnimator.createArcAnimator(clipView, nestView, DEGREE, SIDE)
+                    .setDuration(500)
+                    .start();
+```</p>
+
+<h1 id="download">Download</h1>
+
+<p><a href="https://jitpack.io/#asyl/ArcAnimator">[JitPack](https://img.shields.io/github/tag/asyl/ArcAnimator.svg?label=maven)</a></p>
+
+<p>To include this library in your project add to your build.gradle:</p>
+
+<pre><code class="language-gradle">	repositories {
+	    maven { url "https://jitpack.io" }
+	}
+	
+	dependencies {
+	    compile 'com.github.asyl:ArcAnimator:v1.0.0'
+	}
+</code></pre>
+
+<h1 id="dependency">Dependency</h1>
+<ul>
+  <li>Library uses Jake Wharton’s <a href="https://github.com/JakeWharton/NineOldAndroids/">NineOldAndroids</a> to support 2.3.+ devices.</li>
+  <li>Ozodrukh’s <a href="https://github.com/ozodrukh/CircularReveal">CircularReveal</a> helped to create awesome TransitionLoop Demo</li>
+</ul>
+
+<h1 id="thanks">Thanks</h1>
+<p>I want to thank <a href="https://github.com/SherzodAgzamov">Sherzod Agzamov</a> for helping to solve some Geometry problems &amp; <a href="https://github.com/ozodrukh">Ozodrukh</a> for support and tips that help to make this library.</p>
+
+<h2 id="license">License</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>The MIT License (MIT)
+
+Copyright (c) 2015 Asylbek Isakov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+</code></pre>
+</div>
 
           <br>
           <div class="post__tags">

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Swipe Stack</title>
-  <meta name="description" content="">
+  <meta name="description" content="SwipeStackA simple, customizable and easy to use swipeable view stack for Android.[Download](https://api.bintray.com/packages/flschweiger/maven/swipestack/im...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
     
   <link rel="stylesheet" href="/css/main.css">
@@ -15,18 +15,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="https://kmshack.github.io/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="">
+  <meta name="description" content="SwipeStackA simple, customizable and easy to use swipeable view stack for Android.[Download](https://api.bintray.com/packages/flschweiger/maven/swipestack/im...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="Swipe Stack">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="SwipeStackA simple, customizable and easy to use swipeable view stack for Android.[Download](https://api.bintray.com/packages/flschweiger/maven/swipestack/im...">
   <meta property="og:url" content="https://kmshack.github.io/2016/10/04/SwipeStack/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="" />
+  <meta name="twitter:description" content="SwipeStackA simple, customizable and easy to use swipeable view stack for Android.[Download](https://api.bintray.com/packages/flschweiger/maven/swipestack/im..." />
 
   
   	<!-- Article specific OG data -->
@@ -346,11 +346,6 @@
         
     </div>
       
-     <div class="column column--left medium-12 large-2">
-         <br>
-      <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-04-SwipeStack.gif)"></div>
-    </div>
-
     <div class="column column--center medium-12 large-10">
       <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -367,8 +362,162 @@
         </header>
 
         <div class="post-content" itemprop="articleBody">
+            
+            <div class="column column--center medium-12 large-4">
+              <div class="grey-bg CoverImage FlexEmbed FlexEmbed--9by16" style="background-image: url(/images/posts/2016-10-04-SwipeStack.gif)"></div>
+            </div>
+             <br><br>
+            <hr>
           <br>
-          
+          <h1 id="swipestack">SwipeStack</h1>
+<p>A simple, customizable and easy to use swipeable view stack for Android.</p>
+
+<p><a href="https://bintray.com/flschweiger/maven/swipestack/_latestVersion">[Download](https://api.bintray.com/packages/flschweiger/maven/swipestack/images/download.svg) </a> 
+<a href="http://www.apache.org/licenses/LICENSE-2.0">[License Apache](https://img.shields.io/badge/license-Apache-blue.svg)</a>
+<a href="http://android-arsenal.com/details/1/3079">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SwipeStack-brightgreen.svg?style=flat)</a></p>
+
+<p><a href="https://raw.githubusercontent.com/flschweiger/SwipeStack/master/art/screen1.png">Demo screen 1</a>
+<a href="https://raw.githubusercontent.com/flschweiger/SwipeStack/master/art/demo.gif">Demo animation</a>
+<a href="https://raw.githubusercontent.com/flschweiger/SwipeStack/master/art/screen2.png">Demo screen 2</a></p>
+
+<h2 id="quickstart">QuickStart</h2>
+<p>### Include the Gradle dependency ###</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="err">'</span><span class="n">link</span><span class="o">.</span><span class="na">fls</span><span class="o">:</span><span class="nl">swipestack:</span><span class="mf">0.3</span><span class="o">.</span><span class="mi">0</span><span class="err">'</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="use-it-in-your-layout-file">Use it in your layout file</h3>
+<ol>
+  <li>Use the <code class="highlighter-rouge">link.fls.swipestack.SwipeStack</code> view in your XML layout file</li>
+  <li>Set the parent view’s <code class="highlighter-rouge">clipChildren</code> attribute to <code class="highlighter-rouge">false</code></li>
+</ol>
+
+<p><em>Example:</em></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;FrameLayout</span>
+    <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+    <span class="na">android:clipChildren=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;link.fls.swipestack.SwipeStack</span>
+        <span class="na">android:id=</span><span class="s">"@+id/swipeStack"</span>
+        <span class="na">android:layout_width=</span><span class="s">"320dp"</span>
+        <span class="na">android:layout_height=</span><span class="s">"240dp"</span>
+        <span class="na">android:padding=</span><span class="s">"32dp"</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/FrameLayout&gt;</span>
+</code></pre>
+</div>
+
+<h3 id="create-an-adapter">Create an adapter</h3>
+
+<p>Create an adapter which holds the data and creates the views for the stack.</p>
+
+<p><em>Example:</em></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SwipeStackAdapter</span> <span class="kd">extends</span> <span class="n">BaseAdapter</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">mData</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="n">SwipeStackAdapter</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mData</span> <span class="o">=</span> <span class="n">data</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">getCount</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mData</span><span class="o">.</span><span class="na">size</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">getItem</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mData</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">position</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">long</span> <span class="n">getItemId</span><span class="o">(</span><span class="kt">int</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">position</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">View</span> <span class="n">getView</span><span class="o">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="n">View</span> <span class="n">convertView</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">convertView</span> <span class="o">=</span> <span class="n">getLayoutInflater</span><span class="o">().</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">card</span><span class="o">,</span> <span class="n">parent</span><span class="o">,</span> <span class="kc">false</span><span class="o">);</span>
+        <span class="n">TextView</span> <span class="n">textViewCard</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">convertView</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">textViewCard</span><span class="o">);</span>
+        <span class="n">textViewCard</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">mData</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">position</span><span class="o">));</span>
+
+        <span class="k">return</span> <span class="n">convertView</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="assign-the-adapter-to-the-swipestack">Assign the adapter to the SwipeStack</h3>
+
+<p>Last, but not least, assign the adapter to the SwipeStack.</p>
+
+<p><em>Example:</em></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">SwipeStack</span> <span class="n">swipeStack</span> <span class="o">=</span> <span class="o">(</span><span class="n">SwipeStack</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">swipeStack</span><span class="o">);</span>
+<span class="n">swipeStack</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="k">new</span> <span class="n">SwipeStackAdapter</span><span class="o">(</span><span class="n">mData</span><span class="o">));</span>
+</code></pre>
+</div>
+
+<p>That’s it</p>
+
+<h2 id="callbacks">Callbacks</h2>
+
+<p>Currently SwipeStack implements the following callbacks:</p>
+
+<ul>
+  <li>the ` SwipeStackListener ` notifies you when a view was swiped to the left / right or when the stack becomes empty.</li>
+  <li>the ` SwipeProgressListener ` notifies you about the progress when the user starts / stops dragging a view around.</li>
+</ul>
+
+<h2 id="attributes">Attributes</h2>
+
+<p><em>All attributes are optional.</em></p>
+
+<p><code class="highlighter-rouge">allowed_swipe_directions</code> specifies the allowed swipe directions. <em>Default: both</em></p>
+
+<p><code class="highlighter-rouge">animation_duration</code> specifies the duration of the animations. <em>Default: 300ms</em></p>
+
+<p><code class="highlighter-rouge">stack_size</code> specifies the maximum number of visible views. <em>Default: 3</em></p>
+
+<p><code class="highlighter-rouge">stack_spacing</code> specifies the vertical distance between two views. <em>Default: 12dp</em></p>
+
+<p><code class="highlighter-rouge">stack_rotation</code> specifies the maximum random ratation (in degrees) of a card on the stack. <em>Default: 8</em></p>
+
+<p><code class="highlighter-rouge">swipe_rotation</code> specifies the rotation (in degrees) of the view when it gets swiped left / right. <em>Default: 15</em></p>
+
+<p><code class="highlighter-rouge">swipe_opacity</code> specifies the opacity of the view when it gets swiped left / right. <em>Default: 1.0</em></p>
+
+<p><code class="highlighter-rouge">scale_factor</code> specifies the scale factor of the views in the stack. <em>Default: 1.0</em></p>
+
+<p><code class="highlighter-rouge">disable_hw_acceleration</code> set to <code class="highlighter-rouge">true</code> disables hardware acceleration. <em>Default: false</em></p>
+
+<h2 id="copyright-notice">Copyright Notice</h2>
+<p>``` 
+Copyright (C) 2016 Frederik Schweiger</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the “License”);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>http://www.apache.org/licenses/LICENSE-2.0
+</code></pre>
+</div>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+ ```</p>
 
           <br>
           <div class="post__tags">
