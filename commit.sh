@@ -1,6 +1,7 @@
 #!/bin/bash
 
 git checkout source
+git add .
 git commit -am 'Add new post'
 git branch -D master
 git checkout -b master 
