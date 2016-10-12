@@ -5,21 +5,300 @@
     <description>Gather at once OpenSource Android UI.</description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Oct 2016 01:15:43 +0900</pubDate>
-    <lastBuildDate>Wed, 12 Oct 2016 01:15:43 +0900</lastBuildDate>
+    <pubDate>Wed, 12 Oct 2016 17:46:12 +0900</pubDate>
+    <lastBuildDate>Wed, 12 Oct 2016 17:46:12 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
-        <title>lyft Scissors</title>
-        <description>
+        <title>SwipeActionView</title>
+        <description>&lt;h1 id=&quot;swipe-action-view&quot;&gt;Swipe Action View&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/Tunous/SwipeActionView&quot;&gt;[Build Status](https://travis-ci.org/Tunous/SwipeActionView.svg?branch=master)&lt;/a&gt;
+&lt;a href=&quot;https://jitpack.io/#Tunous/SwipeActionView&quot;&gt;[Release](https://jitpack.io/v/Tunous/SwipeActionView.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;SwipeActionView is a swipe-able view, which allows users to perform actions by swiping it to the left or right side.&lt;/p&gt;
+
+&lt;h1 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#preview&quot;&gt;Preview&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#quick-example&quot;&gt;Quick Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#sample&quot;&gt;Sample&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#idea&quot;&gt;The idea&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#container&quot;&gt;Container&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#bg-views&quot;&gt;Background views&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#gesture-listener&quot;&gt;Gesture listener&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#disabling-gestures&quot;&gt;Disabling gestures&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#ripple-animations&quot;&gt;Ripple animations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#click-listeners&quot;&gt;Click listeners&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#attr&quot;&gt;Attributes&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#attr-alwaysDrawBackground&quot;&gt;sav_alwaysDrawBackground&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#attr-rippleTakesPadding&quot;&gt;sav_rippleTakesPadding&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#attr-swipeLeftRippleColor&quot;&gt;sav_swipeLeftRippleColor&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#attr-swipeRightRippleColor&quot;&gt;sav_swipeRightRippleColor&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#attr-tools&quot;&gt;Tools attributes&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&quot;#attr-tools-previewBackground&quot;&gt;sav_tools_previewBackground&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&quot;#attr-tools-previewRipple&quot;&gt;sav_tools_previewRipple&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#animations&quot;&gt;Animations&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#credits&quot;&gt;Credits&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;a-idpreviewpreviewa&quot;&gt;&lt;a id=&quot;preview&quot;&gt;Preview&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;art/preview.gif&quot;&gt;Preview&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;a-idinstallationinstallationa&quot;&gt;&lt;a id=&quot;installation&quot;&gt;Installation&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;Add the JitPack repository to your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+allprojects {
+    repositories {
+        maven { url &quot;https://jitpack.io&quot; }
+    }
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And add the dependency in your module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+dependencies {
+    compile &#39;com.github.Tunous:SwipeActionView:0.1.0&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;a-idquick-examplequick-examplea&quot;&gt;&lt;a id=&quot;quick-example&quot;&gt;Quick example&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;Adding &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; to your projects requires only adding it to XML and setting up &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeGestureListener&lt;/code&gt;.
+Below example will create &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt; that can be swiped both to the left or right side with two icons behind.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;me.thanel.swipeactionview.SwipeActionView&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/swipe_view&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;?colorPrimary&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;end&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swipe me&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/me.thanel.swipeactionview.SwipeActionView&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;swipe_view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSwipeGestureListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeGestureListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSwipedLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;showToast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swiped left&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSwipedRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;showToast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swiped right&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;a-idsamplesamplea&quot;&gt;&lt;a id=&quot;sample&quot;&gt;Sample&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;For an example implementation of &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; see the included &lt;a href=&quot;https://github.com/Tunous/SwipeActionView/tree/master/sample&quot;&gt;sample&lt;/a&gt; project.&lt;/p&gt;
+
+&lt;p&gt;You can manually compile the apk using source code or download from the &lt;a href=&quot;https://github.com/Tunous/SwipeActionView/releases&quot;&gt;releases page&lt;/a&gt; of this repository.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-idideathe-ideaa&quot;&gt;&lt;a id=&quot;idea&quot;&gt;The idea&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;The main idea behind this library is a concept of &lt;a href=&quot;#container&quot;&gt;container&lt;/a&gt; and &lt;a href=&quot;#bg-views&quot;&gt;background views&lt;/a&gt;. It allows for complete control over the look of the created views.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;a href=&quot;#quick-example&quot;&gt;quick example&lt;/a&gt; section you can see that the &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; has three child views. The first two are &lt;a href=&quot;#bg-views&quot;&gt;background views&lt;/a&gt;, and the last one is the &lt;a href=&quot;#container&quot;&gt;container&lt;/a&gt;. To create working version of &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt;, you are only required to specify single background view and container. Second background view can be added when you want to be able to swipe in both directions.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-idcontainercontainera&quot;&gt;&lt;a id=&quot;container&quot;&gt;Container&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;The container is a view which is drawn above other views. In the default state, this is the only visible view, and it is what gets moved when users perform swipe gestures. It can be either a simple &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt;, custom view or even some sort of view group like &lt;code class=&quot;highlighter-rouge&quot;&gt;LinearLayout&lt;/code&gt;. There is no limit for that, which allows you to gain complete control over the look of your views.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-idbg-viewsbackground-viewsa&quot;&gt;&lt;a id=&quot;bg-views&quot;&gt;Background views&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Background views are the mostly invisible part of &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt;. They get revealed only when users start performing swipe gestures.&lt;/p&gt;
+
+&lt;p&gt;You can specify for which swipe direction each of them corresponds by setting their &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_gravity&lt;/code&gt; attribute. 
+Default value or setting it to either &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt; and/or &lt;code class=&quot;highlighter-rouge&quot;&gt;start&lt;/code&gt; means that it will start appearing when users perform right swipe gesture. On the other hand setting it to &lt;code class=&quot;highlighter-rouge&quot;&gt;end&lt;/code&gt; and/or &lt;code class=&quot;highlighter-rouge&quot;&gt;right&lt;/code&gt; will result in the view to start appearing when users swipe to the left. This doesn’t mean that you aren’t allowed to use other &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_gravity&lt;/code&gt; options like &lt;code class=&quot;highlighter-rouge&quot;&gt;center&lt;/code&gt;. They will still control the view as usual and will be ignored by &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;This behavior allows you to add single background and by specifying its &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_gravity&lt;/code&gt; determine whether &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; should be possible to be swiped only to the left or right side.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; There can be only one view for each direction. This means that if one of them is placed on the left side, the second one must be put on the right side to avoid errors.&lt;/p&gt;
+
+&lt;h3 id=&quot;a-ididea-exampleexamplea&quot;&gt;&lt;a id=&quot;idea-example&quot;&gt;Example&lt;/a&gt;&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;me.thanel.swipeactionview.SwipeActionView&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/swipe_view&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;?colorPrimary&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;First&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;background&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view.&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;It&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;located&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;side&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;allow&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;perform&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;swipe&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;gesture.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Second&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;background&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view.&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;located&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;side&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;allow&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;perform&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;swipe&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;gesture&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;its&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;layout_gravity&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;changed&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&quot;end&quot;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;end&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Container.&lt;/span&gt;
+        &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;what&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;see&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;being&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;swiped.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swipe me&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/me.thanel.swipeactionview.SwipeActionView&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;a-idgesture-listenergesture-listenera&quot;&gt;&lt;a id=&quot;gesture-listener&quot;&gt;Gesture listener&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;In order to be able to perform actions when users swipe the &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; you have to setup the listener with the &lt;code class=&quot;highlighter-rouge&quot;&gt;setSwipeGestureListener(SwipeGestureListener)&lt;/code&gt; method. It takes &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeGestureListener&lt;/code&gt; as a parameter.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeGestureListener&lt;/code&gt; consists of two methods. One for performing an action when the view is swiped to the left and one when it is swiped to the right side.&lt;/p&gt;
+
+&lt;p&gt;Each of these methods returns &lt;code class=&quot;highlighter-rouge&quot;&gt;Boolean&lt;/code&gt; as a result. Most of the time you’ll want to return &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; here. Returning &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; is designed for advanced usage. By doing so, the view won’t be automatically animated to the original position but will stay at the full translation. This allows you to manipulate the content of the visible background view. One great example of this is displaying progress wheel and manually returning the view to the original position once some long action finishes execution.&lt;/p&gt;
+
+&lt;p&gt;To return the view to its original position you can call the &lt;code class=&quot;highlighter-rouge&quot;&gt;moveToOriginalPosition()&lt;/code&gt; method at any time.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSwipeGestureListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeGestureListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSwipedLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;showToast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swiped left&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Returning true automatically moves view to original position&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSwipedRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;showToast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swiped right&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;// Returning false requires calling moveToOriginalPosition() manually to&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// reset view to original position&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Here we are using optional parameter which will move our view to&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// original position after delay in ms. In this case it&#39;s 2s.&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;moveToOriginalPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;a-iddisabling-gesturesdisabling-gesturesa&quot;&gt;&lt;a id=&quot;disabling-gestures&quot;&gt;Disabling gestures&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;If you want to dynamically enable or disable gesture in a specific direction you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;setDirectionEnabled(SwipeDirection, Boolean)&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The gesture enabling part is controlled by presence and visibility of background views. This method is only provided for convenience since it can also be changed by switching visibility of background views. It was coded like this so the specific swipe directions can be disabled by default from XML using &lt;code class=&quot;highlighter-rouge&quot;&gt;visibility&lt;/code&gt; attribute on views corresponding to these directions.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDirectionEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SwipeDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;a-idripple-animationsripple-animationsa&quot;&gt;&lt;a id=&quot;ripple-animations&quot;&gt;Ripple animations&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; comes with optional support for displaying ripple animations when gestures are performed. All you have to do to enable them is to give them a color from XML or code. To do so from the code, you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;setRippleColor(SwipeDirection, Int)&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;To disable ripple animations you can enter &lt;code class=&quot;highlighter-rouge&quot;&gt;-1&lt;/code&gt; as value for color.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setRippleColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SwipeDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BLUE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;a-idclick-listenersclick-listenersa&quot;&gt;&lt;a id=&quot;click-listeners&quot;&gt;Click listeners&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; makes sure that any click listeners will work correctly. You can use &lt;code class=&quot;highlighter-rouge&quot;&gt;setClickListener(View.OnClickListener)&lt;/code&gt; as usual and they should work, including views located in the container.&lt;/p&gt;
+
+&lt;p&gt;The only exception is that you shouldn’t add click listeners for background views. This library wasn’t designed to add support for this behavior. If it’s possible then, that’s only a positive side effect. You are better of with using libraries such as &lt;a href=&quot;https://github.com/daimajia/AndroidSwipeLayout&quot;&gt;AndroidSwipeLayout&lt;/a&gt; instead.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-idattrattributesa&quot;&gt;&lt;a id=&quot;attr&quot;&gt;Attributes&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h4 id=&quot;a-idattr-alwaysdrawbackgroundappsavalwaysdrawbackgroundtruefalsea&quot;&gt;&lt;a id=&quot;attr-alwaysDrawBackground&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_alwaysDrawBackground=&quot;true|false&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;To reduce overdraw &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; only draws parts of the main background and background views which become visible due to swipe gesture. This is not always what you want as it could break any container views with transparency. A good example where you would want to use this attribute is when you had &lt;code class=&quot;highlighter-rouge&quot;&gt;CardView&lt;/code&gt; as your container.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-idattr-rippletakespaddingappsavrippletakespaddingtruefalsea&quot;&gt;&lt;a id=&quot;attr-rippleTakesPadding&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_rippleTakesPadding=&quot;true|false&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;If you want ripple effect to take padding together with container view you can set this attribute to true.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-idattr-swipeleftripplecolorappsavswipeleftripplecolorcolora&quot;&gt;&lt;a id=&quot;attr-swipeLeftRippleColor&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_swipeLeftRippleColor=&quot;@color&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Sets color for ripple displayed when users swipe left.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-idattr-swiperightripplecolorappsavswiperightripplecolorcolora&quot;&gt;&lt;a id=&quot;attr-swipeRightRippleColor&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_swipeRightRippleColor=&quot;@color&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Sets color for ripple displayed when users swipe right.&lt;/p&gt;
+
+&lt;h2 id=&quot;a-idattr-toolstools-attributesa&quot;&gt;&lt;a id=&quot;attr-tools&quot;&gt;Tools attributes&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; has special attributes used only in the editor mode. They make it possible to preview ripples or contents of background views without worrying about side effects. They are entirely ignored when running on the device.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-idattr-tools-previewbackgroundappsavtoolspreviewbackgroundswipeleftswiperighta&quot;&gt;&lt;a id=&quot;attr-tools-previewBackground&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_tools_previewBackground=&quot;swipeLeft|swipeRight&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Shows background view for swipe left or right gesture.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-idattr-tools-previewrippleappsavtoolspreviewrippleswipelefta&quot;&gt;&lt;a id=&quot;attr-tools-previewRipple&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_tools_previewRipple=&quot;swipeLeft&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;Shows ripple for swipe left or right gesture.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-idanimationsanimationsa&quot;&gt;&lt;a id=&quot;animations&quot;&gt;Animations&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; also comes with support for custom animations. There are two listeners that you can set in your code. They will be called with current swipe progress while users perform swipe gesture.&lt;/p&gt;
+
+&lt;p&gt;By default, there is only one animator included which scales the background views. You can use it as an example of how to implement custom animations or use it directly if it’s good enough for you.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-idcreditscreditsa&quot;&gt;&lt;a id=&quot;credits&quot;&gt;Credits&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;This library wouldn’t be created without help and work of &lt;a href=&quot;https://github.com/brianrobles204&quot;&gt;Brian Robles&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;His &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.brianrobles204.karmamachine&quot;&gt;KarmaMachine&lt;/a&gt; Reddit application was my direct inspiration when I was creating it for my application.
+He also created &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeRippleDrawable&lt;/code&gt; and allowed me to &lt;a href=&quot;https://github.com/Tunous/SwipeActionView/blob/master/library/src/main/kotlin/me/thanel/swipeactionview/SwipeRippleDrawable.kt&quot;&gt;reimplement&lt;/a&gt; it for purposes of this library.
+&lt;strong&gt;Huge thanks&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;a-idlicenselicensea&quot;&gt;&lt;a id=&quot;license&quot;&gt;License&lt;/a&gt;&lt;/h1&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright © 2016 Łukasz Rutkowski
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 </description>
         <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/12/Scissors/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/Scissors/</guid>
+        <link>https://kmshack.github.io/2016/10/12/SwipeActionView/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/SwipeActionView/</guid>
         
-        <category>crop</category>
-        
-        <category>view</category>
+        <category>swipe</category>
         
         
       </item>
@@ -157,6 +436,149 @@ SOFTWARE.
       </item>
     
       <item>
+        <title>CardStackView</title>
+        <description>&lt;h1 id=&quot;cardstackview&quot;&gt;CardStackView&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://opensource.org/licenses/Apache-2.0&quot;&gt;[License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)&lt;/a&gt;
+&lt;a href=&quot;https://bintray.com/yuyakaido/maven/CardStackView/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/yuyakaido/maven/CardStackView/images/download.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tinder like swipeable card view for Android&lt;/p&gt;
+
+&lt;h1 id=&quot;demo&quot;&gt;Demo&lt;/h1&gt;
+
+&lt;h2 id=&quot;swipe&quot;&gt;Swipe&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yuyakaido/CardStackView/blob/master/sample-orverview.gif&quot;&gt;Tinder like swipe&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;reverse&quot;&gt;Reverse&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yuyakaido/CardStackView/blob/master/sample-reverse.gif&quot;&gt;Reverse&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;custom-animation&quot;&gt;Custom animation&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/yuyakaido/CardStackView/blob/master/sample-custom-animation.gif&quot;&gt;Custom animation&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;requirement&quot;&gt;Requirement&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Android 4.0+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;usage&quot;&gt;Usage&lt;/h1&gt;
+
+&lt;h2 id=&quot;swipe-1&quot;&gt;Swipe&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add CardStackView in layout file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.yuyakaido.android.cardstackview.CardStackView&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/activity_main_card_stack&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;30dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:clipChildren=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:clipToPadding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Set adapter to CardStackView&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;CardStackView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main_card_stack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;reverse-1&quot;&gt;Reverse&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Call reverse method&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CardStackView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main_card_stack_view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reverseButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main_reverse_button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;reverseButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;custom-animation-1&quot;&gt;Custom animation&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Call discard mathod with custom animator&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CardStackView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main_card_stack_view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;customAnimationButton&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main_custom_animation_button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;customAnimationButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;View&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;OnClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ViewGroup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;target&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTopView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;PropertyValuesHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holderY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PropertyValuesHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ofFloat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;translationY&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;PropertyValuesHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holderAlpha&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PropertyValuesHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ofFloat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;alpha&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.8f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;PropertyValuesHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holderScaleY&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PropertyValuesHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ofFloat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;scaleY&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;PropertyValuesHolder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holderScaleX&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PropertyValuesHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ofFloat&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;scaleX&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1.0f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.3f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ObjectAnimator&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;animator&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ObjectAnimator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ofPropertyValuesHolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holderY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holderScaleY&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holderScaleX&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;holderAlpha&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;animator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;cardStackView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;discard&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;animator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;install&quot;&gt;Install&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dependencies {
+    compile &#39;com.yuyakaido.android:card-stack-view:0.7.4&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;license&quot;&gt;License&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 yuyakaido
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/12/CardStackView/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/CardStackView/</guid>
+        
+        <category>card</category>
+        
+        <category>stack</category>
+        
+        <category>view</category>
+        
+        
+      </item>
+    
+      <item>
         <title>DateTimeSeer</title>
         <description>&lt;h1 id=&quot;datetimeseer&quot;&gt;DateTimeSeer&lt;/h1&gt;
 &lt;p&gt;### A painless way to pick future time&lt;/p&gt;
@@ -228,6 +650,21 @@ SOFTWARE.
         <category>animator</category>
         
         <category>tile</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>lyft Scissors</title>
+        <description>
+</description>
+        <pubDate>Sun, 09 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/09/Scissors/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/09/Scissors/</guid>
+        
+        <category>crop</category>
+        
+        <category>view</category>
         
         
       </item>
@@ -571,47 +1008,7 @@ limitations under the License.
     
       <item>
         <title>OTP/PIN View</title>
-        <description>&lt;p&gt;&lt;a href=&quot;https://bintray.com/mukeshsolanki/maven/otpview/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/mukeshsolanki/maven/otpview/images/download.svg) &lt;/a&gt;
-&lt;a href=&quot;https://www.paypal.me/mukeshsolanki&quot;&gt; [PayPal](https://img.shields.io/badge/paypal-donate-yellow.svg) &lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;android-pinview-otpview&quot;&gt;Android PinView/ OtpView&lt;/h1&gt;
-&lt;p&gt;A custom control to enter a four digit code usually in cases of authentication.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/mukeshsolanki/android-otpview-pinview/master/screenshots/Screenshot_20160622-201727.png&quot; width=&quot;500&quot; height=&quot;839&quot; /&gt;
-&lt;br /&gt;
-&lt;img src=&quot;https://raw.githubusercontent.com/mukeshsolanki/android-otpview-pinview/master/screenshots/Screenshot_20160622-201845.png&quot; width=&quot;500&quot; height=&quot;839&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-to-integrate-into-your-app&quot;&gt;How to integrate into your app?&lt;/h2&gt;
-
-&lt;p&gt;Integrating the library into you app is extremely easy. A few changes in the build gradle and your all ready to use otpview. Make the following changes to build.gradle inside you app.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-.....
-dependencies {
-  ...
-  compile &#39;com.mukesh:otpview:1.0.1&#39;
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-to-use-the-library&quot;&gt;How to use the library?&lt;/h2&gt;
-&lt;p&gt;Okay seems like you integrated the library in your project but &lt;strong&gt;how do you use it&lt;/strong&gt;? Well its really easy just add the following to your xml design to show the otpview&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.....
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.mukesh.OtpView&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/otp_view&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#cccccc&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:inputType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;number&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;android:textColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFFFFF&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:otp=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1234&quot;&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;app:text_background_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/colorAccent&quot;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.mukesh.OtpView&amp;gt;&lt;/span&gt;
-.....
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;That’s pretty much it and your all wrapped up.&lt;/p&gt;
+        <description>
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
         <link>https://kmshack.github.io/2016/10/07/PinOtpView/</link>
@@ -738,238 +1135,6 @@ limitations under the License.
         <category>material</category>
         
         <category>showcase</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Markdown View</title>
-        <description>&lt;h1 align=&quot;center&quot;&gt;MarkdownView&lt;/h1&gt;
-&lt;p align=&quot;center&quot;&gt;
-  &lt;a href=&quot;https://android-arsenal.com/api?level=14&quot;&gt; &lt;img src=&quot;https://img.shields.io/badge/API-14%2B-blue.svg?style=flat&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://jitpack.io/#mukeshsolanki/MarkdownView-Android/&quot;&gt; &lt;img src=&quot;https://jitpack.io/v/mukeshsolanki/MarkdownView-Android.svg&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;http://android-arsenal.com/details/1/3980&quot;&gt; &lt;img src=&quot;https://img.shields.io/badge/Android%20Arsenal-MarkdownView--Android-brightgreen.svg?style=flat&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://travis-ci.org/mukeshsolanki/MarkdownView-Android&quot;&gt; &lt;img src=&quot;https://travis-ci.org/mukeshsolanki/MarkdownView-Android.svg?branch=master&quot; /&gt;&lt;/a&gt;
-  &lt;a href=&quot;https://www.paypal.me/mukeshsolanki&quot;&gt; &lt;img src=&quot;https://img.shields.io/badge/paypal-donate-yellow.svg&quot; /&gt;&lt;/a&gt;
-  &lt;br /&gt;&lt;br /&gt;  
-    MarkdownView is a simple library that helps you display Markdown text or files on Android as a html page just like Github.
-&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/mukeshsolanki/MarkdownView-Android/master/Screenshots/demo.gif&quot;&gt;Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
-&lt;p&gt;Its really simple to integrate &lt;em&gt;MarkdownView&lt;/em&gt; in android. All you need to do make the following change to you build gradle under the app module.&lt;/p&gt;
-
-&lt;p&gt;Step 1. Add the JitPack repository to your build file. Add it in your root build.gradle at the end of repositories:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Step 2. Add the dependency
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-dependencies {
-    compile &#39;com.github.mukeshsolanki:MarkdownView-Android:1.0.1&#39;
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;how-to-use-markdownview&quot;&gt;How to use MarkdownView&lt;/h2&gt;
-
-&lt;p&gt;Its fairly simple and straight forward to use &lt;em&gt;MarkdownView&lt;/em&gt; in you application. Just add the following in your layout where you want to display the markdown file/text.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-XML&quot;&gt;&amp;lt;com.mukesh.MarkdownView
-    android:id=&quot;@+id/markdown_view&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;
-/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and reference it in your activity/fragment and assign the markdown text/file like wise.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;Java
-MarkdownView markdownView = (MarkdownView) findViewById(R.id.markdown_view);
-markdownView.setMarkDownText(&quot;# Hello World\nThis is a simple markdown&quot;); //Displays markdown text
-...
-markdownView.loadMarkdownFromAssets(&quot;README.md&quot;); //Loads the markdown file from the assets folder
-...
-File markdownFile=new File(&quot;filePath&quot;);
-markdownView.loadMarkdownFromFile(markdownFile); //Loads the markdown file.
-&lt;/code&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/07/MarkdownView/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/MarkdownView/</guid>
-        
-        <category>markdown</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Json2View</title>
-        <description>&lt;h1 id=&quot;json2view--travis-cihttpstravis-ciorgavocarrotjson2viewsvg&quot;&gt;json2view  &lt;a href=&quot;https://travis-ci.org/Avocarrot/json2view.svg&quot;&gt;travis-ci&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;json2view&lt;/strong&gt; is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your Android app without the need to update the APK.&lt;/p&gt;
-
-&lt;p&gt;This removes the hassle of updating, re-compiling and uploading the APK to Google Play everytime you want to make small or big changes in the UI.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;tr style=&quot;border: 0px;&quot;&gt;
-&lt;td style=&quot;border: 0px;&quot;&gt;
-&lt;ul class=&quot;task-list&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;#common-use-cases&quot;&gt;Common use cases&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#how-it-works&quot;&gt;How it works&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#examples&quot;&gt;Examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#getting-started&quot;&gt;Getting started&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#contributing&quot;&gt;Contributing&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/td&gt;
-&lt;td style=&quot;width:60%; border: 0px; text-align:right;&quot;&gt;
-&lt;img alt=&quot;json2view logo&quot; src=&quot;https://github.com/Avocarrot/json2view/blob/master/example_assets/json2view.png&quot; width=&quot;250px&quot; /&gt;
-&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;common-use-cases&quot;&gt;Common use cases&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;If you need to A/B test different UI designs without the need to re-upload your APK.&lt;/li&gt;
-  &lt;li&gt;If your app’s UI changes dynamically based on different users or scenarios.&lt;/li&gt;
-  &lt;li&gt;If you need to deploy UI fixes quickly and in real-time.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In the case of &lt;a href=&quot;http://www.avocarrot.com&quot;&gt;Avocarrot&lt;/a&gt;, we are using json2view to run A/B test experiments and quickly deploy UI enhancements that improve revenue performance of native ads integrations in our network.&lt;/p&gt;
-
-&lt;h2 id=&quot;how-it-works&quot;&gt;How it works&lt;/h2&gt;
-
-&lt;p&gt;You can parse any xml through the json2view library to create a JSON that will be used at runtime to dynamically generate the Android UI using native code. This JSON can be hosted anywhere on the internet (your own server, Dropbox, Github Pages etc.) and can be fetched in your app at any point you decide.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt=&quot;how it works schematic&quot; src=&quot;https://github.com/Avocarrot/json2view/blob/master/example_assets/how_it_works.png&quot; width=&quot;700px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Note: Runtime creation of a view without the precompiled version of xml in apk (res/layout), especially for highly complex layouts, can be a potential latency issue.&lt;/p&gt;
-
-&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
-
-&lt;h3 id=&quot;changing-text-color&quot;&gt;Changing text color&lt;/h3&gt;
-
-&lt;p&gt;Using json2view to change text color, background color and position of a view. &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Changing-Properties&quot;&gt;(more details)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Avocarrot/json2view/blob/master/example_assets/test00.png&quot;&gt;output&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;reorganizing-the-layout&quot;&gt;Reorganizing the layout&lt;/h3&gt;
-
-&lt;p&gt;Using json2view to reorganize the layout of a screen. &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Changing-Layouts&quot;&gt;(more details)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/Avocarrot/json2view/blob/master/example_assets/test01.png&quot;&gt;output&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can find more help and examples in the &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki&quot;&gt;wiki&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Also, a sample project for quick use of the lib can be found in the &lt;a href=&quot;https://github.com/Avocarrot/json2view/tree/master/sample&quot;&gt;sample submodule&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Download project
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-git clone https://github.com/Avocarrot/json2view.git
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;add json2view in your project by adding in your settings.gradle
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-include &#39;:json2view&#39;
-project(&#39;:json2view&#39;*).projectDir = new File(settingsDir, &#39;$(json2viewPath)/json2view/json2view&#39;)
-&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;add in build.gradle of application module (not project build.gradle) in &lt;code class=&quot;highlighter-rouge&quot;&gt;dependencies&lt;/code&gt; section&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile project(&#39;:json2view&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;getting-started&quot;&gt;Getting started&lt;/h2&gt;
-
-&lt;h3 id=&quot;basic-json-format&quot;&gt;Basic JSON format&lt;/h3&gt;
-&lt;p&gt;The input JSON has 3 fields for every view we want to create :&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;widget&lt;/code&gt; : canonicalName of View (for views in package &lt;code class=&quot;highlighter-rouge&quot;&gt;android.widget&lt;/code&gt; you can ommit &lt;code class=&quot;highlighter-rouge&quot;&gt;android.widget&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;properties&lt;/code&gt; : list of properties for the view. (&lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Available-Properties&quot;&gt;Available Properties&lt;/a&gt;) By default we add &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_width&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_height&lt;/code&gt; with value `wrap_content’&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;views&lt;/code&gt; : children views for ViewGroup &lt;em&gt;(optional)&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;eg. JSON to create a empty TextView
-&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-{
-    &quot;widget&quot;: &quot;android.widgetTextView&quot;,
-	&quot;properties&quot;: []
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;eg. JSON to create a TextView with textSize : 12sp and text : “Hello Avocarrot”
-&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
-{
-    &quot;widget&quot;: &quot;TextView&quot;,
-	&quot;properties&quot;: [
-	    {&quot;name&quot;:&quot;textSize&quot;, &quot;type&quot;: &quot;dimen&quot;, &quot;value&quot;:&quot;13sp&quot;},
-	    {&quot;name&quot;:&quot;text&quot;, &quot;type&quot;: &quot;string&quot;, &quot;value&quot;:&quot;Hello Avocarrot&quot;}
-	]
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;You can find some examples for xml to JSON conversions in the wiki &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Xml-2-JSON-Examples&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can use &lt;em&gt;ConvertXML2JSON.groovy&lt;/em&gt; (from ./utils) to convert any android xml to json2view valid JSON file
-&lt;em&gt;(the script needs further development to create a valid JSON for &lt;b&gt;every&lt;/b&gt; case)&lt;/em&gt; &lt;br /&gt;
-try : &lt;br /&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;./gradlew runScript -Pxml=./pathToInputXmlFile.xml
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;from the root folder of the project&lt;/p&gt;
-
-&lt;h3 id=&quot;loading-dynamic-layout&quot;&gt;Loading dynamic layout&lt;/h3&gt;
-&lt;p&gt;create and attach view in the specific Parent (created from xml) &lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-ViewParent viewParent = (ViewParent) findViewById(R.id.parent_view_id)
-JSONObject jsonObject = ... // load from network, sdcard etc
-View sampleView = DynamicView.createView(this, jsonObject, viewParent);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;You can check some example use cases in the wiki &lt;a href=&quot;https://github.com/Avocarrot/json2view/wiki/Creating-Dynamic-Layouts&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;contributing&quot;&gt;Contributing&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Fork the repo&lt;/li&gt;
-  &lt;li&gt;Apply your changes&lt;/li&gt;
-  &lt;li&gt;Write tests&lt;/li&gt;
-  &lt;li&gt;Submit your pull request&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;For feedback or suggestions you can drop us a line at support@avocarrot.com&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/Avocarrot/json2view/blob/master/LICENSE&quot;&gt;The MIT License (MIT)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Also check out the project at &lt;a href=&quot;https://android-arsenal.com/details/1/1453&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-json2view-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/07/Json2View/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/Json2View/</guid>
-        
-        <category>view</category>
-        
-        <category>json</category>
         
         
       </item>
