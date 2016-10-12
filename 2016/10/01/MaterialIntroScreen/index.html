@@ -278,6 +278,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -391,7 +395,8 @@
           <br>
           <h1 id="android-material-intro-screen">Android Material Intro Screen</h1>
 <p><a href="https://bintray.com/tangoagency/maven/material-intro-screen/_latestVersion"> [Download](https://api.bintray.com/packages/tangoagency/maven/material-intro-screen/images/download.svg) </a>
-<a href="https://travis-ci.org/TangoAgency/material-intro-screen">[Build Status](https://travis-ci.org/TangoAgency/material-intro-screen.svg?branch=master)</a></p>
+<a href="https://travis-ci.org/TangoAgency/material-intro-screen">[Build Status](https://travis-ci.org/TangoAgency/material-intro-screen.svg?branch=master)</a>
+<a href="http://android-arsenal.com/details/1/4368">[Android Arsenal Material Intro Screen](https://img.shields.io/badge/Android%20Arsenal-Material–Intro–Screen-green.svg?style=true)</a></p>
 
 <p>Material intro screen is inspired by <a href="https://github.com/HeinrichReimer/material-intro/tree/master/library/src/main/java/com/heinrichreimersoftware/materialintro/view/parallax">Material Intro</a> and developed with love from scratch. I decided to rewrite completely almost all features in order to make Android intro screen easy to use for everyone and extensible as possible.
 ## Features
@@ -459,7 +464,7 @@ public class IntroActivity extends MaterialIntroActivity
             new MessageButtonBehaviour(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(IntroActivity.this, "We provide solutions to make you love your work", Toast.LENGTH_SHORT).show();
+                    showMessage("We provide solutions to make you love your work");
                 }
             }, "Work with love")); } ``` #### Explanation of SlideFragment usage:   - ```possiblePermissions``` &amp;#8702; permissions which are not necessary to be granted   - ```neededPersmissions``` &amp;#8702; permission which are needed to be granted to move further from that slide   - ```MessageButtonBehaviour``` &amp;#8702; create a new instance only if you want to have a custom action or text on a message button
 </code></pre>
@@ -475,7 +480,7 @@ public class IntroActivity extends MaterialIntroActivity
 
 <p>You can set enter, default and exit translation for every view in intro activity. To achive this you need to get translation wrapper for chosen view (for example: <code class="highlighter-rouge">getNextButtonTranslationWrapper()</code>) and set there new class which will implement <code class="highlighter-rouge">IViewTranslation</code>
 <code class="highlighter-rouge">java
-getNextButtonTranslationWrapper()
+getBackButtonTranslationWrapper()
                 .setEnterTranslation(new IViewTranslation() {
                     @Override
                     public void translate(View view, @FloatRange(from = 0, to = 1.0) float percentage) {
@@ -522,6 +527,21 @@ getNextButtonTranslationWrapper()
   <li><a href="https://github.com/nickbutcher/plaid/blob/master/app/src/main/java/io/plaidapp/ui/widget/InkPageIndicator.java">InkPageIndicator.java</a> by <a href="https://github.com/nickbutcher">@NickButcher</a></li>
   <li>Images used to create sample app are from <a href="http://www.freepik.com/">freepik</a></li>
 </ul>
+
+<h2 id="getting-help">Getting Help</h2>
+
+<p>To report a specific problem or feature request, <a href="https://github.com/TangoAgency/material-intro-screen/issues/new">open a new issue on Github</a>.</p>
+
+<h2 id="company">Company</h2>
+
+<p><a href="https://www.facebook.com/TangoDigitalAgency">[Facebook](https://github.com/TangoAgency/material-intro-screen/blob/master/images/facebook.png)</a>     <a href="https://twitter.com/Tango_Agency">[Twitter](https://github.com/TangoAgency/material-intro-screen/blob/master/images/twitter.png)</a>     <a href="https://www.linkedin.com/company/tango-digital-agency">[LinkedIn](https://github.com/TangoAgency/material-intro-screen/blob/master/images/linkedin.png)</a></p>
+
+<p><a href="https://github.com/TangoAgency/">Here</a> you can see open source work developed by Tango Agency.</p>
+
+<p>Whether you’re searching for a new partner or trusted team for creating your new great product we are always ready to start work with you.</p>
+
+<p>You can contact us via contact@tango.agency.
+Thanks in advance.</p>
 
 
           <br>

@@ -5,8 +5,8 @@
     <description>Gather at once OpenSource Android UI.</description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 12 Oct 2016 17:46:12 +0900</pubDate>
-    <lastBuildDate>Wed, 12 Oct 2016 17:46:12 +0900</lastBuildDate>
+    <pubDate>Wed, 12 Oct 2016 21:49:05 +0900</pubDate>
+    <lastBuildDate>Wed, 12 Oct 2016 21:49:05 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -299,6 +299,19 @@ limitations under the License.
         <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/SwipeActionView/</guid>
         
         <category>swipe</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Plaid</title>
+        <description>
+</description>
+        <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/12/Plaid/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/Plaid/</guid>
+        
+        <category>plaid</category>
         
         
       </item>
@@ -650,21 +663,6 @@ limitations under the License.
         <category>animator</category>
         
         <category>tile</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>lyft Scissors</title>
-        <description>
-</description>
-        <pubDate>Sun, 09 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/09/Scissors/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/09/Scissors/</guid>
-        
-        <category>crop</category>
-        
-        <category>view</category>
         
         
       </item>
