@@ -360,7 +360,7 @@ th {
 
 .wrapper {
   padding: 25px 0; }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     .wrapper {
       padding: 32px 0;
       margin-left: 290px; } }
@@ -489,7 +489,7 @@ a {
   margin-bottom: 25px;
   overflow: hidden;
   border-bottom: 1px solid #ECF0F1; }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     .box {
       padding-bottom: 32px;
       margin-bottom: 32px; } }
@@ -516,7 +516,7 @@ a {
   .box--author, .box--news-letter {
     padding: 25px;
     background-color: #FAFAFA; }
-    @media only screen and (min-width: 64.063em) {
+    @media only screen and (min-width: 70.063em) {
       .box--author, .box--news-letter {
         padding: 32px; } }
 
@@ -596,11 +596,11 @@ p code {
     padding: 0;
     margin-right: -13px;
     margin-left: -13px; }
-    @media only screen and (min-width: 64.063em) {
+    @media only screen and (min-width: 70.063em) {
       .row .row {
         margin-right: -16px;
         margin-left: -16px; } }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     .row {
       padding-left: 16px;
       padding-right: 16px; } }
@@ -613,7 +613,7 @@ p code {
   padding-right: 13px;
   padding-left: 13px;
   width: 100%; }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     .column {
       padding-right: 16px;
       padding-left: 16px; } }
@@ -694,7 +694,7 @@ p code {
 
   .medium-12 {
     width: 100%; } }
-@media only screen and (min-width: 64.063em) {
+@media only screen and (min-width: 70.063em) {
   .large-1 {
     width: 8.33333%; }
 
@@ -751,7 +751,7 @@ textarea {
   appearance: none;
   border-radius: 0;
   transition: 0.4s; }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     input[type='text'],
     input[type='tel'],
     input[type='number'],
@@ -950,7 +950,7 @@ textarea {
     bottom: 8px;
     left: 8px;
     fill: #fff; }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     .post-card {
       margin-bottom: 32px;
       padding-bottom: 32px; } }
@@ -1025,8 +1025,12 @@ textarea {
 .FlexEmbed--4by3:before {
   padding-bottom: 75%; }
 
-.FlexEmbed--9by16:before {
-  padding-bottom: 180%; }
+@media only screen and (min-width: 70.063em) {
+  .FlexEmbed--9by16:before {
+    padding-bottom: 180%; } }
+@media only screen and (max-width: 70em) {
+  .FlexEmbed--9by16:before {
+    padding-bottom: 80%; } }
 
 .CoverImage {
   max-height: 600px;
@@ -1177,7 +1181,7 @@ textarea {
   .highlight .il {
     color: #099; }
 
-@media only screen and (min-width: 64.063em) {
+@media only screen and (min-width: 70.063em) {
   .navigation {
     margin-bottom: 25px;
     padding-bottom: 25px;
@@ -1189,7 +1193,7 @@ textarea {
   line-height: 25px; }
   .navigation li:last-child {
     margin-bottom: 0; }
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 70em) {
     .navigation li {
       display: block;
       text-align: center;
@@ -1198,13 +1202,13 @@ textarea {
 .navigation a {
   transition: 0.4s;
   text-decoration: none; }
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 70em) {
     .navigation a {
       display: block;
       padding-top: 8px;
       padding-bottom: 8px;
       border-bottom: 1px solid #ECF0F1; } }
-@media only screen and (max-width: 64em) {
+@media only screen and (max-width: 70em) {
   .navigation {
     margin-bottom: 8px; } }
 
@@ -1221,7 +1225,7 @@ textarea {
       fill: #7E7E7E; }
   .social-nav li {
     display: inline-block; }
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 70em) {
     .social-nav {
       text-align: center; } }
 
@@ -1277,11 +1281,11 @@ textarea {
 .sidebar {
   padding: 13px 0;
   line-height: 25px; }
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 70em) {
     .sidebar {
       background-color: #fff;
       border-bottom: 1px solid #ECF0F1; } }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     .sidebar {
       position: fixed;
       top: 0;
@@ -1300,7 +1304,7 @@ textarea {
       letter-spacing: 1px; }
       .sidebar__logo a:hover {
         color: #7E7E7E; }
-    @media only screen and (max-width: 64em) {
+    @media only screen and (max-width: 70em) {
       .sidebar__logo {
         margin-bottom: 0;
         line-height: 25px; } }
@@ -1308,24 +1312,24 @@ textarea {
     margin-bottom: 25px;
     padding-bottom: 25px;
     border-bottom: 1px solid #DADFE1; }
-    @media only screen and (max-width: 64em) {
+    @media only screen and (max-width: 70em) {
       .sidebar__description {
         display: none; } }
   .sidebar__bottom {
     text-align: center; }
-    @media only screen and (min-width: 64.063em) {
+    @media only screen and (min-width: 70.063em) {
       .sidebar__bottom {
         position: absolute;
         right: 0;
         left: 0;
         bottom: 32px; } }
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 70em) {
     .home-template .sidebar {
       border-bottom: 1px solid #ECF0F1; } }
 
 .off-canvas-toggle {
   display: none; }
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 70em) {
     .off-canvas-toggle {
       float: right;
       display: block;
@@ -1333,7 +1337,7 @@ textarea {
       font-size: 14px;
       cursor: pointer; } }
 
-@media only screen and (max-width: 64em) {
+@media only screen and (max-width: 70em) {
   html,
   body {
     overflow-x: hidden; }
@@ -1453,7 +1457,7 @@ textarea {
       .author-image .img {
         height: 64px;
         width: 64px; } }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     .author-image {
       margin-right: 32px; } }
 
@@ -1474,7 +1478,7 @@ textarea {
   @media only screen and (min-width: 40.063em) {
     .post {
       top: -64px; } }
-  @media only screen and (min-width: 64.063em) {
+  @media only screen and (min-width: 70.063em) {
     .post {
       top: -96px;
       padding: 64px; } }
