@@ -5,9 +5,73 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 13 Oct 2016 11:39:54 +0900</pubDate>
-    <lastBuildDate>Thu, 13 Oct 2016 11:39:54 +0900</lastBuildDate>
+    <pubDate>Thu, 13 Oct 2016 15:57:47 +0900</pubDate>
+    <lastBuildDate>Thu, 13 Oct 2016 15:57:47 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>FoldableLayout</title>
+        <description>&lt;h1 id=&quot;foldablelayout&quot;&gt;FoldableLayout&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://maven-badges.herokuapp.com/maven-central/com.alexvasilkov/foldable-layout&quot;&gt;[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.alexvasilkov/foldable-layout/badge.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Android widgets to implement folding animation.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=-_QcWMh-O5g&quot;&gt;[Demo video](http://img.youtube.com/vi/-_QcWMh-O5g/0.jpg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;sample-app&quot;&gt;Sample app&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://play.google.com/store/apps/details?id=com.alexvasilkov.foldablelayout.sample&quot;&gt;
+&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png&quot; height=&quot;64&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;usage&quot;&gt;Usage&lt;/h4&gt;
+
+&lt;p&gt;Note: &lt;strong&gt;minimum Android SDK version is 14&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Add dependency to your build.gradle file:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+compile &#39;com.alexvasilkov:foldable-layout:1.2.0&#39;
+&lt;/code&gt;
+&lt;a href=&quot;https://github.com/alexvasilkov/FoldableLayout/wiki/Unfoldable-details-usage&quot;&gt;Unfoldable details usage&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/alexvasilkov/FoldableLayout/wiki/Foldable-list-usage&quot;&gt;Foldable list usage&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/alexvasilkov/FoldableLayout/wiki/API-reference&quot;&gt;API reference&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://github.com/alexvasilkov/FoldableLayout/tree/master/sample&quot;&gt;sample app sources&lt;/a&gt; for complete usage example.&lt;/p&gt;
+
+&lt;h4 id=&quot;basic-library-concepts&quot;&gt;Basic library concepts&lt;/h4&gt;
+
+&lt;p&gt;Read &lt;a href=&quot;http://cases.azoft.com/creating-paper-folding-animation-in-android/&quot;&gt;this blog post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;license&quot;&gt;License&lt;/h4&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Thu, 13 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/13/FoldableLayout/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/13/FoldableLayout/</guid>
+        
+        <category>fold</category>
+        
+        <category>layout</category>
+        
+        
+      </item>
     
       <item>
         <title>SwipeActionView</title>
@@ -1835,206 +1899,6 @@ dependencies {
         <category>recyclerview</category>
         
         <category>tree</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>RecyclerRefreshLayout</title>
-        <description>&lt;h2 id=&quot;recyclerrefreshlayout&quot;&gt;RecyclerRefreshLayout&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/3383&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RecyclerRefreshLayout-green.svg?style=true)&lt;/a&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;English&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/README-ZH.md&quot;&gt;中文版&lt;/a&gt;&lt;br /&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout&quot;&gt;RecyclerRefreshLayout&lt;/a&gt; 
-based on the {@link android.support.v4.widget.SwipeRefreshLayout}
-The &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt; should be used whenever the user can refresh the
-contents of a &lt;code class=&quot;highlighter-rouge&quot;&gt;view&lt;/code&gt; via a vertical swipe gesture. The activity that
-instantiates this view should add an &lt;code class=&quot;highlighter-rouge&quot;&gt;OnRefreshListener&lt;/code&gt; to be notified
-whenever the swipe to refresh gesture is completed. The &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt;
-will notify the listener each and every time the gesture is completed again;
-the listener is responsible for correctly determining when to actually
-initiate a refresh of its content. If the listener determines there should
-not be a refresh, it must call &lt;code class=&quot;highlighter-rouge&quot;&gt;setRefreshing(false)&lt;/code&gt; to cancel any visual
-indication of a refresh. If an activity wishes to show just the progress
-animation, it should call &lt;code class=&quot;highlighter-rouge&quot;&gt;setRefreshing(true)&lt;/code&gt;. To disable the gesture and
-progress animation, call &lt;code class=&quot;highlighter-rouge&quot;&gt;setEnabled(false)&lt;/code&gt; on the &lt;code class=&quot;highlighter-rouge&quot;&gt;view&lt;/code&gt;.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Note: The &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt; supports all of the views: &lt;code class=&quot;highlighter-rouge&quot;&gt;ListView&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;GridView&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;ScrollView&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;FrameLayout&lt;/code&gt;, or Even a single &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNormal.gif?width=300)
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutFloat.gif?width=300)
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutPinned.gif?width=300)&lt;br /&gt;
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadMore.gif?width=300)
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutNoData.gif?width=300)
-[](https://raw.githubusercontent.com/dinuscxj/RecyclerRefreshLayout/master/Preview/RecyclerRefreshLayoutLoadError.gif?width=300)&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;Add the following dependency to your build.gradle file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;    dependencies {
-        compile &#39;com.dinuscxj:recyclerrefreshlayout:2.0.1&#39;
-    }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;h4 id=&quot;config-in-xml&quot;&gt;Config in xml&lt;/h4&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.dinuscxj.refresh.RecyclerRefreshLayout&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
- &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/refresh_layout&quot;&lt;/span&gt;
- &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
- &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;android.support.v7.widget.RecyclerView&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/recycler_view&quot;&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-     &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/app.dinus.com.refresh.RecyclerRefreshLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;configure-the-attributes-must&quot;&gt;Configure the attributes(* must)&lt;/h4&gt;
-&lt;p&gt;Set the listener to be notified when a refresh is triggered via the swipe gesture. 
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setOnRefreshListener(OnRefreshListener);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Notify the widget that refresh state has changed. Do not call this 
-when refresh is triggered by a swipe gesture.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setRefreshing(boolean);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;configure-the-attributesoptional&quot;&gt;Configure the attributes(optional)&lt;/h4&gt;
-&lt;p&gt;Set the interpolator used by the animation that move the refresh view 
-the release point to the refreshing point.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setAnimateToRefreshInterpolator(Interpolator);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Set the interpolator used by the animation that move the refresh view 
-from the refreshing point or (the release point) to the start point.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setAnimateToStartInterpolator(Interpolator);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Set the duration used by the animation that move the refresh view 
-the release point to the refreshing point.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setAnimateToRefreshDuration(int);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Set the duration used by the animation that move the refresh view 
-from the refreshing point or (the release point) to the start point.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setAnimateToStartDuration(int);
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Set the top position of the RefreshView relative to its parent.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayoutsetRefreshInitialOffset(float)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Set The minimum distance that trigger refresh
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setRefreshTargetOffset(float)
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Set the style of the RefreshView
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setRefreshStyle(@NonNull RefreshStyle) 
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;customize&quot;&gt;Customize&lt;/h2&gt;
-
-&lt;p&gt;Customize a refresh view (need to implements &lt;code class=&quot;highlighter-rouge&quot;&gt;IRefreshStatus&lt;/code&gt;) for &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt;.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-public interface IRefreshStatus {
-/**
-* When the content view has reached top and refresh has been completed, view will be reset.
-*/
-void reset();
-/**
-* Refresh View is refreshing
-*/
-void refreshing();
-/**
-* Refresh View is dropped down to the refresh point
-*/
-void pullToRefresh();
-/**
-* Refresh View is released into the refresh point
-*/
-void releaseToRefresh();
-/**
-* @param pullDistance The drop-down distance of the refresh View
-* @param pullProgress The drop-down progress of the refresh View and the pullProgress may be more than 1.0f
-*                     pullProgress = pullDistance / refreshTargetOffset
-*/
-void pullProgress(float pullDistance, float pullProgress);
-}
-&lt;/code&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java 
-RecyclerRefreshLayout.setRefreshView(View, LayoutParams);
-&lt;/code&gt;
-Eg. &lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyclerrefreshlayout/src/main/java/com/dinuscxj/refresh/RefreshView.java&quot;&gt;RefreshView&lt;/a&gt; or &lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/tree/master/app/src/main/java/com/dinuscxj/example/demo/RefreshViewEg.java&quot;&gt;RefreshViewEg&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Customize a drag distance converter (need to implements &lt;code class=&quot;highlighter-rouge&quot;&gt;IDragDistanceConverter&lt;/code&gt;) for &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerRefreshLayout&lt;/code&gt;.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-public interface IDragDistanceConverter {
- /**
-  * @param scrollDistance the distance between the ACTION_DOWN point and the ACTION_MOVE point
-  * @param refreshDistance the distance between the refresh point and the start point
-  * @return the real distance of the refresh view moved
-  */
- float convert(float scrollDistance, float refreshDistance);
-}
-&lt;/code&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-RecyclerRefreshLayout.setDragDistanceConverter(@NonNull IDragDistanceConverter) 
-&lt;/code&gt;
-Eg. &lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/blob/master/recyclerrefreshlayout/src/main/java/com/dinuscxj/refresh/MaterialDragDistanceConverter.java&quot;&gt;MaterialDragDistanceConverter&lt;/a&gt; or &lt;a href=&quot;https://github.com/dinuscxj/RecyclerRefreshLayout/tree/master/app/src/main/java/com/dinuscxj/example/demo/DragDistanceConverterEg.java&quot;&gt;DragDistanceConverterEg&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;QQ Group:&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;342748245&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2015-2019 dinus
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Fri, 07 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/07/RecyclerRefreshLayout/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/07/RecyclerRefreshLayout/</guid>
-        
-        <category>recyclerview</category>
-        
-        <category>refresh</category>
         
         
       </item>
