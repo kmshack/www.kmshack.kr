@@ -299,6 +299,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -450,7 +454,7 @@
    <span class="o">}</span>
    
    <span class="n">dependencies</span> <span class="o">{</span>
-         <span class="n">compile</span> <span class="s1">'com.getkeepsafe.taptargetview:taptargetview:1.3.0'</span>
+         <span class="n">compile</span> <span class="s1">'com.getkeepsafe.taptargetview:taptargetview:1.4.1'</span>
    <span class="o">}</span>
 </code></pre>
 </div>
@@ -466,12 +470,17 @@
         <span class="c1">// All options below are optional</span>
         <span class="o">.</span><span class="na">outerCircleColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">red</span><span class="o">)</span>      <span class="c1">// Specify a color for the outer circle</span>
         <span class="o">.</span><span class="na">targetCircleColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">white</span><span class="o">)</span>   <span class="c1">// Specify a color for the target circle</span>
-        <span class="o">.</span><span class="na">textColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">blue</span><span class="o">)</span>            <span class="c1">// Specify a color for text</span>
+        <span class="o">.</span><span class="na">titleTextSize</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span>                  <span class="c1">// Specify the size (in sp) of the title text</span>
+        <span class="o">.</span><span class="na">titleTextColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">white</span><span class="o">)</span>      <span class="c1">// Specify the color of the title text</span>
+        <span class="o">.</span><span class="na">descriptionTextSize</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>            <span class="c1">// Specify the size (in sp) of the description text</span>
+        <span class="o">.</span><span class="na">descriptionTextColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">red</span><span class="o">)</span>  <span class="c1">// Specify the color of the description text</span>
+        <span class="o">.</span><span class="na">textColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">blue</span><span class="o">)</span>            <span class="c1">// Specify a color for both the title and description text</span>
         <span class="o">.</span><span class="na">textTypeFace</span><span class="o">(</span><span class="n">Typeface</span><span class="o">.</span><span class="na">SANS_SERIF</span><span class="o">)</span>  <span class="c1">// Specify a typeface for the text</span>
         <span class="o">.</span><span class="na">dimColor</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">color</span><span class="o">.</span><span class="na">black</span><span class="o">)</span>            <span class="c1">// If set, will dim behind the view with 30% opacity of the given color</span>
         <span class="o">.</span><span class="na">drawShadow</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>                   <span class="c1">// Whether to draw a drop shadow or not</span>
         <span class="o">.</span><span class="na">cancelable</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                  <span class="c1">// Whether tapping outside the outer circle dismisses the view</span>
         <span class="o">.</span><span class="na">tintTarget</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>                   <span class="c1">// Whether to tint the target view's color</span>
+        <span class="o">.</span><span class="na">transparentTarget</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>           <span class="c1">// Specify whether the target is transparent (displays the content underneath)</span>
         <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="n">Drawable</span><span class="o">),</span>                    <span class="c1">// Specify a custom drawable to draw as the target</span>
     <span class="k">new</span> <span class="n">TapTargetView</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>          <span class="c1">// The listener can listen for regular clicks, long clicks or cancels</span>
         <span class="nd">@Override</span>
