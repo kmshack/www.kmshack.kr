@@ -1,5 +1,6 @@
 #!/bin/bash
 
+bundle exec jekyll serve
 git checkout source
 git add .
 git commit -am 'Add new post'

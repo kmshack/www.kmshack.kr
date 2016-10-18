@@ -5,9 +5,250 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>https://kmshack.github.io/</link>
     <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Oct 2016 10:40:27 +0900</pubDate>
-    <lastBuildDate>Mon, 17 Oct 2016 10:40:27 +0900</lastBuildDate>
+    <pubDate>Wed, 19 Oct 2016 01:32:17 +0900</pubDate>
+    <lastBuildDate>Wed, 19 Oct 2016 01:32:17 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>MaterialCamera</title>
+        <description>&lt;h1 id=&quot;material-camera&quot;&gt;Material Camera&lt;/h1&gt;
+
+&lt;p&gt;Android’s video recording APIs are very difficult to figure out, especially since a lot of manufacturers
+like to mount their camera sensors upside down or sideways. This library is a result of lots of research
+and experimentation to get video recording to work universally.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/afollestad/material-camera/master/art/showcase.png&quot; width=&quot;400px&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;notice&quot;&gt;Notice&lt;/h1&gt;
+
+&lt;p&gt;Please report any issues you have, and include device information. Camera behavior can be unpredictable
+across different Android manufacturers and versions, especially on pre-Lollipop devices. I’ve done quite
+a bit of testing, but it’s possible I missed something.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Some of this documentation may be outdated, exploration of the library is encouraged.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;gradle-dependency&quot;&gt;Gradle Dependency&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bintray.com/drummer-aidan/maven/material-camera/_latestVersion&quot;&gt; [jCenter](https://api.bintray.com/packages/drummer-aidan/maven/material-camera/images/download.svg) &lt;/a&gt;
+&lt;a href=&quot;https://travis-ci.org/afollestad/material-camera&quot;&gt;[Build Status](https://travis-ci.org/afollestad/material-camera.svg)&lt;/a&gt;
+&lt;a href=&quot;https://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;[License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The Gradle dependency is available via &lt;a href=&quot;https://bintray.com/drummer-aidan/maven/material-camera/view&quot;&gt;jCenter&lt;/a&gt;.
+jCenter is the default Maven repository used by Android Studio.&lt;/p&gt;
+
+&lt;h3 id=&quot;dependency&quot;&gt;Dependency&lt;/h3&gt;
+
+&lt;p&gt;Add Bintray to your repositories, for some reason this specific library doesn’t seem to work via jCenter
+even though all of my other libraries do.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;repositories {
+    jcenter()
+    maven { url &quot;https://dl.bintray.com/drummer-aidan/maven&quot; }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Add this in your module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;dependencies {
+    // ... other dependencies
+
+    compile &#39;com.afollestad:material-camera:0.4.1&#39;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;basics&quot;&gt;Basics&lt;/h1&gt;
+
+&lt;h3 id=&quot;android-manifest&quot;&gt;Android Manifest&lt;/h3&gt;
+
+&lt;p&gt;First, you have to register two library Activities from your app’s &lt;code class=&quot;highlighter-rouge&quot;&gt;AndroidManifest.xml&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;activity&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.afollestad.materialcamera.CaptureActivity&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:theme=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@style/MaterialCamera.CaptureActivity&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;activity&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.afollestad.materialcamera.CaptureActivity2&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:theme=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@style/MaterialCamera.CaptureActivity&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Feel free to use your own custom theme. The included themes give the activities a good default look. 
+See the sample project for more details.&lt;/p&gt;
+
+&lt;h3 id=&quot;code-for-video&quot;&gt;Code for Video&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6969&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
+
+&lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;saveFolder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Environment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getExternalStorageDirectory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MaterialCamera Sample&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;saveFolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mkdirs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RuntimeException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Unable to create save directory, make sure WRITE_EXTERNAL_STORAGE permission is granted.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                               &lt;span class=&quot;c1&quot;&gt;// Constructor takes an Activity&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;allowRetry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                  &lt;span class=&quot;c1&quot;&gt;// Whether or not &#39;Retry&#39; is visible during playback&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;autoSubmit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;// Whether or not user is allowed to playback videos after recording. This can affect other things, discussed in the next section.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;saveDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;saveFolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                               &lt;span class=&quot;c1&quot;&gt;// The folder recorded videos are saved to&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;primaryColorAttr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorPrimary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// The theme color used for the camera, defaults to colorPrimary of Activity in the constructor&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showPortraitWarning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// Whether or not a warning is displayed if the user presses record in portrait orientation&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;defaultToFrontFacing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                       &lt;span class=&quot;c1&quot;&gt;// Whether or not the camera will initially show the front facing camera&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;retryExits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;// If true, the &#39;Retry&#39; button in the playback screen will exit the camera instead of going back to the recorder&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;restartTimerOnRetry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// If true, the countdown timer is reset to 0 when the user taps &#39;Retry&#39; in playback&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;continueTimerInPlayback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;// If true, the countdown timer will continue to go down during playback, rather than pausing.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;videoEncodingBitRate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1024000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                     &lt;span class=&quot;c1&quot;&gt;// Sets a custom bit rate for video recording.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;audioEncodingBitRate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                       &lt;span class=&quot;c1&quot;&gt;// Sets a custom bit rate for audio recording.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;videoFrameRate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                &lt;span class=&quot;c1&quot;&gt;// Sets a custom frame rate (FPS) for video recording.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;qualityProfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;QUALITY_HIGH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// Sets a quality profile, manually setting bit rates or frame rates with other settings will overwrite individual quality profile settings&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;videoPreferredHeight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;720&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// Sets a preferred height for the recorded video output.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;videoPreferredAspect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                     &lt;span class=&quot;c1&quot;&gt;// Sets a preferred aspect ratio for the recorded video output.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;maxAllowedFileSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;               &lt;span class=&quot;c1&quot;&gt;// Sets a max file size of 5MB, recording will stop if file reaches this limit. Keep in mind, the FAT file system has a file size limit of 4GB.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_action_capture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon for the button used to start recording&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconStop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_action_stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon for the button used to stop recording&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconFrontCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_camera_front&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon for the button used to switch to the front camera&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconRearCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_camera_rear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon for the button used to switch to the rear camera&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconPlay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;evp_action_play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon used to start playback&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconPause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;evp_action_pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon used to pause playback&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconRestart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;evp_action_restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon used to restart playback&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;labelRetry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_retry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;// Sets a custom button label for the button used to retry recording, when available&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;labelConfirm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_use_video&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// Sets a custom button label for the button used to confirm/submit a recording&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;autoRecordWithDelaySec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// The video camera will start recording automatically after a 5 second countdown. This disables switching between the front and back camera initially.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;autoRecordWithDelayMs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                       &lt;span class=&quot;c1&quot;&gt;// Same as the above, expressed with milliseconds instead of seconds.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;audioDisabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                              &lt;span class=&quot;c1&quot;&gt;// Set to true to record video without any audio.&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;// Starts the camera activity, the result will be sent back to the current Activity&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: For &lt;code class=&quot;highlighter-rouge&quot;&gt;retryExists(true)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;onActivityResult()&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Activity&lt;/code&gt; that starts the camera will
+receive &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialCamera.STATUS_RETRY&lt;/code&gt; as the value of the &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialCamera.STATUS_EXTRA&lt;/code&gt; intent extra.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;length-limiting&quot;&gt;Length Limiting&lt;/h1&gt;
+
+&lt;p&gt;You can specify a time limit for recording. &lt;code class=&quot;highlighter-rouge&quot;&gt;countdownMillis(long)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;countdownSeconds(float)&lt;/code&gt;, 
+and &lt;code class=&quot;highlighter-rouge&quot;&gt;countdownMinutes(float)&lt;/code&gt; are all methods for length limiting.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;countdownMinutes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.5f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When the countdown reaches 0, recording stops. There are different behaviors that can occur after this based on
+&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;autoRetry&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit(false)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;allowRetry(true)&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The user will be able to playback the recording, and the ‘Retry’ button will be visible. This is default behavior.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit(false)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;allowRetry(false)&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The user will be able to playback the recording, but the ‘Retry’ button will be hidden.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit(true)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;allowRetry(false)&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The user won’t be able to playback the recording, the result will immediately be returned to the starting Activity.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit(true)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;allowRetry(true)&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;If you don’t specify a length limit, the behavior will be the same as number 3. If you do specify a length limit, the user is allowed to retry, but the countdown timer will continue until it reaches 0. When the countdown is complete, the result will be returned to the starting Activity automatically.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you want the countdown to start immediately when the camera is open, as opposed to when the user presses
+‘Record’, you can set &lt;code class=&quot;highlighter-rouge&quot;&gt;countdownImmediately(true)&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;countdownMinutes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.5f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;countdownImmediately&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;code-for-stillshots-pictures&quot;&gt;Code for Stillshots (Pictures)&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/** all the previous methods can be called, but video ones would be ignored */&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stillShot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// launches the Camera in stillshot mode&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;receiving-results&quot;&gt;Receiving Results&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppCompatActivity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6969&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;setContentView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onActivityResult&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Intent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onActivityResult&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// Received recording or error from MaterialCamera&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RESULT_OK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Saved to: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSerializableExtra&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ERROR_EXTRA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;licenselicensemd&quot;&gt;&lt;a href=&quot;/LICENSE.md&quot;&gt;LICENSE&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h6 id=&quot;copyright-2016-aidan-follestad&quot;&gt;Copyright 2016 Aidan Follestad&lt;/h6&gt;
+
+&lt;p&gt;Licensed under the Apache License, Version 2.0 (the “License”);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at&lt;/p&gt;
+
+&lt;p&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/p&gt;
+
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 19 Oct 2016 00:00:00 +0900</pubDate>
+        <link>https://kmshack.github.io/2016/10/19/MaterialCamera/</link>
+        <guid isPermaLink="true">https://kmshack.github.io/2016/10/19/MaterialCamera/</guid>
+        
+        <category>material</category>
+        
+        <category>camera</category>
+        
+        
+      </item>
     
       <item>
         <title>ImageTransition</title>
@@ -647,6 +888,10 @@ Still under active development.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
+&lt;p&gt;You can modify indicators using a preset of styles, below is an example, but few other combinations are also possible:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/SundeepK/CompactCalendarView/blob/master/images/compact-calendar-customised-indicators.png&quot;&gt;ScreenShot&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;Note that the calendar makes no attempt to de-duplicate events for the same exact DateTime. This is something that you must handle your self if it is important to your use case.&lt;/p&gt;
 
 &lt;h1 id=&quot;locale-specific-settings&quot;&gt;Locale specific settings&lt;/h1&gt;
@@ -660,7 +905,7 @@ Still under active development.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/SundeepK/CompactCalendarView/blob/master/images/chinese-locale-daynames.png&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;dependencies {
-    compile &#39;com.github.sundeepk:compact-calendar-view:1.9.1&#39;
+    compile &#39;com.github.sundeepk:compact-calendar-view:1.9.2&#39;
 }
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -1934,21 +2179,6 @@ public void onUserIllegallyRequestedNextPage() {
         <category>datetime</category>
         
         <category>view</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>AnimatorDurationTile</title>
-        <description>
-</description>
-        <pubDate>Mon, 10 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/10/AnimatorDurationTile/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/10/AnimatorDurationTile/</guid>
-        
-        <category>animator</category>
-        
-        <category>tile</category>
         
         
       </item>
