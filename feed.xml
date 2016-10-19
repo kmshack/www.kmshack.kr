@@ -3,10 +3,10 @@
   <channel>
     <title>Android UI OpenSource</title>
     <description>Collection of OpenSource for Android UI.</description>
-    <link>https://kmshack.github.io/</link>
-    <atom:link href="https://kmshack.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 19 Oct 2016 01:32:17 +0900</pubDate>
-    <lastBuildDate>Wed, 19 Oct 2016 01:32:17 +0900</lastBuildDate>
+    <link>http://android.kmshack.kr/</link>
+    <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 20 Oct 2016 02:34:49 +0900</pubDate>
+    <lastBuildDate>Thu, 20 Oct 2016 02:34:49 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -240,8 +240,8 @@ limitations under the License.&lt;/p&gt;
 
 </description>
         <pubDate>Wed, 19 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/19/MaterialCamera/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/19/MaterialCamera/</guid>
+        <link>http://android.kmshack.kr/2016/10/19/MaterialCamera/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/19/MaterialCamera/</guid>
         
         <category>material</category>
         
@@ -429,8 +429,8 @@ limitations under the License.
 
 </description>
         <pubDate>Sun, 16 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/16/ImageTransition/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/16/ImageTransition/</guid>
+        <link>http://android.kmshack.kr/2016/10/16/ImageTransition/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/16/ImageTransition/</guid>
         
         <category>transition</category>
         
@@ -491,8 +491,8 @@ limitations under the License.
 
 </description>
         <pubDate>Thu, 13 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/13/FoldableLayout/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/13/FoldableLayout/</guid>
+        <link>http://android.kmshack.kr/2016/10/13/FoldableLayout/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/13/FoldableLayout/</guid>
         
         <category>fold</category>
         
@@ -787,8 +787,8 @@ limitations under the License.
 
 </description>
         <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/12/SwipeActionView/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/SwipeActionView/</guid>
+        <link>http://android.kmshack.kr/2016/10/12/SwipeActionView/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/12/SwipeActionView/</guid>
         
         <category>swipe</category>
         
@@ -800,8 +800,8 @@ limitations under the License.
         <description>
 </description>
         <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/12/Plaid/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/Plaid/</guid>
+        <link>http://android.kmshack.kr/2016/10/12/Plaid/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/12/Plaid/</guid>
         
         <category>plaid</category>
         
@@ -936,8 +936,8 @@ SOFTWARE.
 
 </description>
         <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/12/CompactCalendarView/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/CompactCalendarView/</guid>
+        <link>http://android.kmshack.kr/2016/10/12/CompactCalendarView/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/12/CompactCalendarView/</guid>
         
         <category>calendar</category>
         
@@ -1050,7 +1050,7 @@ SOFTWARE.
 &lt;h1 id=&quot;install&quot;&gt;Install&lt;/h1&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dependencies {
-    compile &#39;com.yuyakaido.android:card-stack-view:0.7.4&#39;
+    compile &#39;com.yuyakaido.android:card-stack-view:0.7.5&#39;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -1075,8 +1075,8 @@ limitations under the License.
 
 </description>
         <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/12/CardStackView/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/12/CardStackView/</guid>
+        <link>http://android.kmshack.kr/2016/10/12/CardStackView/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/12/CardStackView/</guid>
         
         <category>card</category>
         
@@ -1778,8 +1778,8 @@ If a Return Transition is defined that one is executed instead.&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 11 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/11/MaterialAnimations/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/11/MaterialAnimations/</guid>
+        <link>http://android.kmshack.kr/2016/10/11/MaterialAnimations/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/11/MaterialAnimations/</guid>
         
         <category>material</category>
         
@@ -2114,8 +2114,8 @@ public void onUserIllegallyRequestedNextPage() {
 
 </description>
         <pubDate>Tue, 11 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/11/AppIntro/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/11/AppIntro/</guid>
+        <link>http://android.kmshack.kr/2016/10/11/AppIntro/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/11/AppIntro/</guid>
         
         <category>intro</category>
         
@@ -2173,8 +2173,8 @@ public void onUserIllegallyRequestedNextPage() {
 
 </description>
         <pubDate>Mon, 10 Oct 2016 00:00:00 +0900</pubDate>
-        <link>https://kmshack.github.io/2016/10/10/DateTimeSeer/</link>
-        <guid isPermaLink="true">https://kmshack.github.io/2016/10/10/DateTimeSeer/</guid>
+        <link>http://android.kmshack.kr/2016/10/10/DateTimeSeer/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/10/DateTimeSeer/</guid>
         
         <category>datetime</category>
         
