@@ -5,9 +5,321 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://android.kmshack.kr/</link>
     <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 20 Oct 2016 02:46:31 +0900</pubDate>
-    <lastBuildDate>Thu, 20 Oct 2016 02:46:31 +0900</lastBuildDate>
+    <pubDate>Mon, 24 Oct 2016 01:42:45 +0900</pubDate>
+    <lastBuildDate>Mon, 24 Oct 2016 01:42:45 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>PageIndicatorView</title>
+        <description>
+&lt;p&gt;###&lt;strong&gt;PageIndicatorView&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; will simplify your life while you working with Android &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewPager&lt;/code&gt; and need to indicate selected page. It’s easy to setup and customize as you need with run-time preview rendering.&lt;/p&gt;
+
+&lt;p&gt;[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/animation_worm.gif?raw=true)&lt;/p&gt;
+
+&lt;p&gt;###&lt;strong&gt;Integration&lt;/strong&gt;
+To add &lt;code class=&quot;highlighter-rouge&quot;&gt;pageindicatorview&lt;/code&gt; to your project, first make sure in root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; you have specified the following repository:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+    repositories {
+        jcenter()
+    }
+&lt;/code&gt;
+&lt;em&gt;Note: by creating new project in Android Studio it will have &lt;code class=&quot;highlighter-rouge&quot;&gt;jcenter&lt;/code&gt; repository specified by default, so you will not need to add it manually.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you make sure you have &lt;code class=&quot;highlighter-rouge&quot;&gt;jcenter&lt;/code&gt; repository in your project, all you need to do is to add the following line in &lt;code class=&quot;highlighter-rouge&quot;&gt;dependencies&lt;/code&gt; section of your project &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;See latest library version &lt;a href=&quot;https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) &lt;/a&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+compile &#39;com.romandanylyk:pageindicatorview:X.X.X&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;###&lt;strong&gt;Usage Sample&lt;/strong&gt;
+During implementation of &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; I tried to make it’s setup as easy as possible. 
+After you set adapter to your &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewPager&lt;/code&gt;, all you need to do is to &lt;code class=&quot;highlighter-rouge&quot;&gt;setViewPager()&lt;/code&gt; and that’s it &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; will get count from your adapter and start working with instance of your &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewPager&lt;/code&gt; automatically.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ViewPager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewPager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;viewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;viewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//instance of android.support.v4.view.PagerAdapter adapter&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;PageIndicatorView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pageIndicatorView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PageIndicatorView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pageIndicatorView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pageIndicatorView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setViewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Keep in mind that all public methods are also exist as attributes, so you can even setup and customize page indicator without any java code.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.rd.PageIndicatorView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/pageIndicatorView&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;attrs:viewPager=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@id/viewPager&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;###&lt;strong&gt;Customization&lt;/strong&gt;
+One of the most important feature of every custom view is ability to customize its look as user need. By calling the following methods (or attributes) you will be able to customize &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; as you need.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//set size&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setDynamicCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dynamicCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;setRadius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radiusDp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setPadding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paddingDp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//set color&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setUnselectedColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setSelectedColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//set animation&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setAnimationDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setAnimationType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AnimationType&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setInteractiveAnimation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isInteractive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//set selection&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setProgress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selectingPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;setSelection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/attributes.gif?raw=true)&lt;/p&gt;
+
+&lt;p&gt;Here you can see all the animations &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; support.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Preview&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.COLOR&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_color.gif&quot;&gt;preview_anim_color&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.SCALE&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_scale.gif&quot;&gt;preview_anim_scale&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.SLIDE&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_slide.gif&quot;&gt;preview_anim_slide&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.WORM&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_worm.gif&quot;&gt;preview_anim_worm&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;###&lt;strong&gt;Release Note&lt;/strong&gt;
+See release notes on &lt;a href=&quot;https://github.com/romandanylyk/PageIndicatorView/releases&quot;&gt;github releases&lt;/a&gt; or &lt;a href=&quot;https://bintray.com/romandanylyk/maven/pageindicatorview#release&quot;&gt;Bintray release notes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;###&lt;strong&gt;License&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Roman Danylyk
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sat, 22 Oct 2016 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2016/10/22/PageIndicatorView/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/22/PageIndicatorView/</guid>
+        
+        <category>indicator</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>DiagonalLayout</title>
+        <description>&lt;h1 id=&quot;diagonallayout&quot;&gt;DiagonalLayout&lt;/h1&gt;
+
+&lt;p&gt;With Diagonal Layout explore new styles and approaches on material design&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample.gif)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;usage&quot;&gt;Usage&lt;/h1&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.florent37.diagonallayout.DiagonalLayout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;diagonal:diagonal_angle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;diagonal:diagonal_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left|right|top|bottom&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;YOUR&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;CONTENT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.github.florent37.diagonallayout.DiagonalLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;sample&quot;&gt;Sample&lt;/h1&gt;
+
+&lt;h2 id=&quot;bottom&quot;&gt;Bottom&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample2_elevation.png)&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.florent37.diagonallayout.DiagonalLayout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:diagonal_angle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:diagonal_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right|bottom&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:scaleType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/mountains&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.github.florent37.diagonallayout.DiagonalLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;top&quot;&gt;Top&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample2_bottom.png)&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.florent37.diagonallayout.DiagonalLayout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:diagonal_angle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:diagonal_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right|top&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:scaleType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/mountains&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.github.florent37.diagonallayout.DiagonalLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;elevation&quot;&gt;Elevation&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Do not forget to add elevation with&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;android:elevation=&quot;**dp&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/with_elevation_small.png)&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;kenburns&quot;&gt;KenBurns&lt;/h1&gt;
+
+&lt;p&gt;Using &lt;a href=&quot;https://github.com/flavioarfaria/KenBurnsView&quot;&gt;https://github.com/flavioarfaria/KenBurnsView&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample.gif)&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.florent37.diagonallayout.DiagonalLayout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/diagonalLayout&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;diagonal:diagonal_angle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;diagonal:diagonal_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;30dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.flaviofaria.kenburnsview.KenBurnsView&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:scaleType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
+            &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/background&quot;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+        ...
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.github.florent37.diagonallayout.DiagonalLayout&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;#Inspirations&lt;/p&gt;
+
+&lt;p&gt;Exploration of some new styles and approaches on material design. This one here is a user profile for Hollywood personas&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://material.uplabs.com/posts/user-profile-concept&quot;&gt;https://material.uplabs.com/posts/user-profile-concept&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://material.uplabs.com/posts/user-profile-concept&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/materialup.png)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;#Download&lt;/p&gt;
+
+&lt;p&gt;In your module &lt;a href=&quot;https://bintray.com/florent37/maven/DiagonalLayout/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/florent37/maven/DiagonalLayout/images/download.svg)&lt;/a&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+compile &#39;com.github.florent37:diagonallayout:1.0.2&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;#Logs&lt;/p&gt;
+
+&lt;p&gt;##1.0.1&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Added Elevation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##1.0.2&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Can setup the diagonal on &lt;em&gt;top&lt;/em&gt; or &lt;em&gt;bottom&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Fixed angle calculation&lt;/li&gt;
+  &lt;li&gt;Added flag attributes &lt;code class=&quot;highlighter-rouge&quot;&gt;top|bottom|left|right&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#Credits&lt;/p&gt;
+
+&lt;p&gt;Author: Florent Champigny &lt;a href=&quot;http://www.florentchampigny.com/&quot;&gt;http://www.florentchampigny.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://plus.google.com/+florentchampigny&quot;&gt;
+  &lt;img alt=&quot;Follow me on Google+&quot; src=&quot;https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/gplus.png&quot; /&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://twitter.com/florent_champ&quot;&gt;
+  &lt;img alt=&quot;Follow me on Twitter&quot; src=&quot;https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/twitter.png&quot; /&gt;
+&lt;/a&gt;
+&lt;a href=&quot;https://www.linkedin.com/in/florentchampigny&quot;&gt;
+  &lt;img alt=&quot;Follow me on LinkedIn&quot; src=&quot;https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/linkedin.png&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 florent37, Inc.
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sat, 22 Oct 2016 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2016/10/22/DiagonalLayout/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/22/DiagonalLayout/</guid>
+        
+        <category>diagonal</category>
+        
+        <category>layout</category>
+        
+        
+      </item>
     
       <item>
         <title>MaterialCamera</title>
@@ -905,7 +1217,7 @@ Still under active development.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://github.com/SundeepK/CompactCalendarView/blob/master/images/chinese-locale-daynames.png&quot; width=&quot;400&quot; /&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;dependencies {
-    compile &#39;com.github.sundeepk:compact-calendar-view:1.9.2&#39;
+    compile &#39;com.github.sundeepk:compact-calendar-view:1.9.3&#39;
 }
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -1049,8 +1361,12 @@ SOFTWARE.
 
 &lt;h1 id=&quot;install&quot;&gt;Install&lt;/h1&gt;
 
+&lt;ul&gt;
+  &lt;li&gt;Latest version is &lt;a href=&quot;https://api.bintray.com/packages/yuyakaido/maven/CardStackView/images/download.svg&quot;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dependencies {
-    compile &#39;com.yuyakaido.android:card-stack-view:0.7.5&#39;
+    compile &quot;com.yuyakaido.android:card-stack-view:${LatestVersion}&quot;
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -1784,401 +2100,6 @@ If a Return Transition is defined that one is executed instead.&lt;/p&gt;
         <category>material</category>
         
         <category>animations</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>AppIntro</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://search.maven.org/#browse%7C2137414099&quot;&gt;[Maven Central](https://img.shields.io/badge/maven%20central-appintro-green.svg)&lt;/a&gt;
-&lt;a href=&quot;https://android-arsenal.com/details/1/1939&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppIntro-green.svg?style=flat)&lt;/a&gt;
-&lt;a href=&quot;http://www.android-gems.com/lib/PaoloRotolo/AppIntro&quot;&gt;[Android Gems](http://www.android-gems.com/badge/PaoloRotolo/AppIntro.svg?branch=master)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Sample App:&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=paolorotolo.github.com.appintroexample&amp;amp;utm_source=global_co&amp;amp;utm_medium=prtnr&amp;amp;utm_content=Mar2515&amp;amp;utm_campaign=PartBadge&amp;amp;pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png&quot; width=&quot;300&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;appintro&quot;&gt;AppIntro&lt;/h1&gt;
-&lt;p&gt;AppIntro is an Android Library that helps you make a &lt;strong&gt;cool intro&lt;/strong&gt; for your app, like the ones in Google apps.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Watch YouTube video &lt;a href=&quot;https://www.youtube.com/watch?v=OlAugnH3jFY&amp;amp;feature=youtu.be&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/intro.png&quot; width=&quot;300&quot; /&gt;
-&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/layout2.png&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;h3 id=&quot;basic-usage&quot;&gt;Basic usage&lt;/h3&gt;
-
-&lt;p&gt;Add this to your &lt;strong&gt;build.gradle&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;mavenCentral&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&#39;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;paolorotolo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;appintro:&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;4.1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Create a new &lt;strong&gt;Activity that extends AppIntro&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IntroActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppIntro&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Note here that we DO NOT use setContentView();&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Add your slide fragments here.&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// AppIntro will automatically generate the dots indicator and buttons.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;addSlide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;addSlide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;secondFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;addSlide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;thirdFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;addSlide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fourthFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Instead of fragments, you can also use our default slide&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Just set a title, description, background and image. AppIntro will do the rest.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;addSlide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AppIntroFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;newInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// OPTIONAL METHODS&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Override bar/separator color.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setBarColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;parseColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#3F51B5&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setSeparatorColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;parseColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#2196F3&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Hide Skip/Done button.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;showSkipButton&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setProgressButtonEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Turn vibration on and set intensity.&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// NOTE: you will probably need to ask VIBRATE permission in Manifest.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setVibrate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setVibrateIntensity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSkipPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onSkipPressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Do something when users tap on Skip button.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onDonePressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;currentFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onDonePressed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;currentFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Do something when users tap on Done button.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSlideChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;oldFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Fragment&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onSlideChanged&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;oldFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;newFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// Do something when the slide changes.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;Note above that we DID NOT use setContentView();&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Finally, declare the activity in your Manifest like so:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;activity&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.example.example.intro&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:label=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@string/app_intro&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Do not declare the intro as your main app launcher unless you want the intro to launch every time your app starts.
-Refer to the &lt;a href=&quot;https://github.com/PaoloRotolo/AppIntro/wiki/How-to-Use#show-the-intro-once&quot;&gt;wiki&lt;/a&gt; for an example of how to launch the intro once from your main activity.&lt;/p&gt;
-
-&lt;h4 id=&quot;alternative-layout&quot;&gt;Alternative layout&lt;/h4&gt;
-&lt;p&gt;If you want to try an alternative layout (as seen in Google’s Photo app), just extend &lt;strong&gt;AppIntro2&lt;/strong&gt; in your Activity. That’s all :)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IntroActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppIntro2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/layout2.png&quot; width=&quot;300&quot; /&gt;
-&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/layout2_2.png&quot; width=&quot;300&quot; /&gt;
-&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;slides&quot;&gt;Slides&lt;/h4&gt;
-
-&lt;h5 id=&quot;basic-slides&quot;&gt;Basic slides&lt;/h5&gt;
-
-&lt;p&gt;AppIntro provides two simple classes, &lt;code class=&quot;highlighter-rouge&quot;&gt;AppIntroFragment&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;AppIntro2Fragment&lt;/code&gt; which one can use to build simple slides.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;addSlide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AppIntroFragment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;newInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;backgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h5 id=&quot;custom-slides-example&quot;&gt;Custom slides example&lt;/h5&gt;
-
-&lt;p&gt;One may also define custom slides as seen in the example project:
- * Copy the class &lt;strong&gt;SampleSlide&lt;/strong&gt; from my &lt;a href=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/example/src/main/java/com/github/paolorotolo/appintroexample/SampleSlide.java&quot;&gt;example project&lt;/a&gt;.
- * Add a new slide with &lt;code class=&quot;highlighter-rouge&quot;&gt;addSlide(SampleSlide.newInstance(R.layout.your_slide_here));&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;There’s no need to create one class for fragment anymore. :)&lt;/p&gt;
-
-&lt;h3 id=&quot;extended-usage&quot;&gt;Extended usage&lt;/h3&gt;
-
-&lt;h4 id=&quot;animations&quot;&gt;Animations&lt;/h4&gt;
-&lt;p&gt;AppIntro comes with some pager animations.
-Choose the one you like and then activate it with:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;setFadeAnimation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Available animations:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-setFadeAnimation()
-setZoomAnimation()
-setFlowAnimation()
-setSlideOverAnimation()
-setDepthAnimation()
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;If you want to create nice parallax effect or your own custom animation, create your own &lt;strong&gt;PageTransformer&lt;/strong&gt; and call:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-
-    &lt;span class=&quot;n&quot;&gt;setCustomTransformer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;transformer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Click &lt;a href=&quot;https://github.com/PaoloRotolo/AppIntro/blob/90a513fda9b70a5e5df35435a7f2984832727eeb/AppIntroExample/app/src/main/java/com/github/paolorotolo/appintroexample/animations/CustomAnimation.java&quot;&gt;here&lt;/a&gt; to see how I did it in the example app.&lt;/p&gt;
-
-&lt;h4 id=&quot;background-color-transitions&quot;&gt;Background color transitions&lt;/h4&gt;
-
-&lt;p&gt;AppIntro supports background color transitions:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;art/background_color_transition.gif&quot; style=&quot;width: 250px&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In order to setup the transitions, simply implement &lt;code class=&quot;highlighter-rouge&quot;&gt;ISlideBackgroundColorHolder&lt;/code&gt;:
-```java
-public final class MySlide extends Fragment implements ISlideBackgroundColorHolder {
-    @Override
-    public int getDefaultBackgroundColor() {
-        // Return the default background color of the slide.
-        return Color.parseColor(“#000000”);
-    }&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
-public void setBackgroundColor(@ColorInt int backgroundColor) {
-    // Set the background color of the view within your slide to which the transition should be applied.
-    if (layoutContainer = null) {
-        layoutContainer.setBackgroundColor(backgroundColor);
-    }
-} } ```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The API is quite low-level, therefore highly customizable. The interface contains two methods:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getDefaultBackgroundColor&lt;/code&gt;: Return the default background color (i.e. the background color the slide has in non-sliding state) of the slide here.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setBackgroundColor(int)&lt;/code&gt;: This method will be called while swiping between two slides. Update the background color of the view to which the transition should be applied.
-This is normally the root view of your Fragment’s layout. But one may also apply the color transition to some other view only (i.e. a Button).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&quot;runtime-permissions-android-60&quot;&gt;Runtime Permissions (Android 6.0+)&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/permissions.png&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Android 6.0 introduced a new permissions model for developers. Now all your apps have to request permissions which can be a tedious thing to implement.&lt;/p&gt;
-
-&lt;p&gt;However, AppIntro simplifies this down to one single line of code&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@Nullable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Ask for CAMERA permission on the second slide&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;askForPermissions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Manifest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;permission&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CAMERA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// OR&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// This will ask for the camera permission AND the contacts permission on the same slide.&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Ensure your slide talks about both so as not to confuse the user.&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;askForPermissions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Manifest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;permission&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CAMERA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Manifest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;permission&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;READ_CONTACTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; It is advised that you only put one permission in the String array unless you want the app to ask for multiple permissions on the same slide.&lt;/p&gt;
-
-&lt;h4 id=&quot;slide-policies&quot;&gt;Slide Policies&lt;/h4&gt;
-
-&lt;p&gt;If you want to restrict navigation between your slides (i.e. the user has to toggle a checkbox in order to continue), our &lt;strong&gt;Slide Policy&lt;/strong&gt; feature might help you.&lt;/p&gt;
-
-&lt;p&gt;All you have to do is implement &lt;code class=&quot;highlighter-rouge&quot;&gt;ISlidePolicy&lt;/code&gt; in your slides:
-```java
-public final class MySlide extends Fragment implements ISlidePolicy {
-    @Override
-    public boolean isPolicyRespected() {
-        return // If user should be allowed to leave this slide
-    }&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
-public void onUserIllegallyRequestedNextPage() {
-    // User illegally requested next slide
-} } ``` The interface contains two methods:
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;isPolicyRespected&lt;/code&gt;: The return value of this method defines if the user can leave this slide, i.e. navigate to another one&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;onUserIllegallyRequestedNextPage&lt;/code&gt;: This method gets called if the user tries to leave the slide although &lt;code class=&quot;highlighter-rouge&quot;&gt;isPolicyRespected&lt;/code&gt; returned false. One may show some error message here.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;example-app&quot;&gt;Example App&lt;/h2&gt;
-&lt;p&gt;See example code &lt;a href=&quot;https://github.com/PaoloRotolo/AppIntro/tree/master/example&quot;&gt;here&lt;/a&gt; on GitHub. You can also see it live by downloading our example on &lt;a href=&quot;https://play.google.com/store/apps/details?id=paolorotolo.github.com.appintroexample&quot;&gt;Google Play&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;real-life-examples&quot;&gt;Real life examples&lt;/h2&gt;
-&lt;p&gt;Do you need inspiration? A lot of apps are using AppIntro out there:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Planets&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/planets.png&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Hermes - Material IRC Client&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/Screenshot_2015-06-03-12-41-59.png&quot; width=&quot;300&quot; /&gt;
-&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/Screenshot_2015-06-03-12-42-02.png&quot; width=&quot;300&quot; /&gt;
-&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/Screenshot_2015-06-03-12-42-07.png&quot; width=&quot;300&quot; /&gt;
-&lt;img src=&quot;https://github.com/PaoloRotolo/AppIntro/blob/master/art/Screenshot_2015-06-03-12-42-10.png&quot; width=&quot;300&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;apps-using-appintro&quot;&gt;Apps using AppIntro&lt;/h2&gt;
-&lt;p&gt;If you are using AppIntro in your app and would like to be listed here, please let us know by commenting in &lt;a href=&quot;https://github.com/PaoloRotolo/AppIntro/issues/325&quot;&gt;this issue&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=org.numixproject.hermes&quot;&gt;Numix Hermes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.brandon.audioreminderpro&quot;&gt;Audio Reminder Pro&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.wizrapp&quot;&gt;Wizr Daily Quotes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.andrewq.planets&quot;&gt;Planets&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.felkertech.n.weatherdelta&quot;&gt;Weather Delta&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.pdfme&quot;&gt;PDF Me&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.felipejoglar.circles&quot;&gt;Circles&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.cr5315.taskmaster&quot;&gt;Task Master&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.skykonig.smoothierecipes&quot;&gt;Smoothie Recipes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.app.floating.notes&quot;&gt;SideBar Notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=scientist.jobless.foodmana&quot;&gt;Just food&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.qhutch.alarmsms&quot;&gt;AlarmSMS&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.bunemekyakilika.aware&quot;&gt;Aware&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.appmindlab.nano&quot;&gt;neutriNote&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.lyk.immersivenote&amp;amp;hl=en&quot;&gt;Handwriting Note&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.crioltech.roulette&quot;&gt;Friends Roulette&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.fabreax.android.kartingtools.activity&quot;&gt;Karting Tools&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.jonasng.chinesedictionary&quot;&gt;ChineseDictionary (粵韻漢典離線粵語普通話發聲中文字典)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=sifter.social.network.archaeologist&quot;&gt;Sifter: the Insta of Timehop&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.fallenritemonk.ludus&quot;&gt;Ludus&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.om.snipit&quot;&gt;Snipit&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=notes.service.com.servicenotes&quot;&gt;Service Notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=anaware.salarybarometer&quot;&gt;Salary Barometer&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=anaware.bestidea&quot;&gt;Best Business Idea&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.rusdelphi.wifipassword&quot;&gt;Wi-Fi Password Reminder&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=software.codeplus.safenotes&quot;&gt;Safe Notes&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.dunrite.xpaper&amp;amp;hl=en&quot;&gt;Xpaper&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ofirmiron.findmycarandroidwear&quot;&gt;Find My Parked Car&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=de.luckyworks.boxplay&quot;&gt;BoxPlay Music Player&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.stasbar.vapetoolpro&quot;&gt;Vape Tool Pro&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=de.logtainment.nebelnieksoundboard&quot;&gt;NebelNiek Soundboard&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.sdiwi.app&quot;&gt;sdiwi&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=org.yasam.hsy.helalvesaglikliyasam&quot;&gt;Helal ve Sağlıklı Yaşam&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.hipcar.android&quot;&gt;HipCar&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=se.zinokader.schematiskt&quot;&gt;Schematiskt&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.miragestacks.thirdeye&quot;&gt;Third Eye&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=mindstorm.crypton&quot;&gt;Crypton&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.instantbits.cast.webvideo&quot;&gt;Web Video Caster&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.github.dstaflund.geomemorial&quot;&gt;Sask. Geo-Memorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.deenysoft.schoolbox&quot;&gt;SchoolBox&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.isidroid.fitchallenge&quot;&gt;Fitness Challenge&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.figsandolives.ice.free&quot;&gt;ICE: Emergency Button&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=tech.salroid.filmy&quot;&gt;Filmy - Your Movie Guide&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.androidvip.hebf&quot;&gt;HEBF Optimizer ▪ Root&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.anantharam.wificaptivelogin&quot;&gt;Wifi Captive Login&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.javierd.iifym&quot;&gt;IIFYM&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Tue, 11 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/11/AppIntro/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/11/AppIntro/</guid>
-        
-        <category>intro</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>DateTimeSeer</title>
-        <description>&lt;h1 id=&quot;datetimeseer&quot;&gt;DateTimeSeer&lt;/h1&gt;
-&lt;p&gt;### A painless way to pick future time&lt;/p&gt;
-
-&lt;p&gt;DateTimeSeer is an android seer who gets visions of the date and time you are thinking.&lt;/p&gt;
-
-&lt;p&gt;It tells you what you might be thinking and helps in what modern people call as autocompletion. Unfortunately, he currently knows only english.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;demo/demo.gif&quot;&gt;Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Gradle&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Add the seer to &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; and you are good to go,&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.pv:datetimeseer:1.0.0&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The library exposes &lt;code class=&quot;highlighter-rouge&quot;&gt;SeerFilter&lt;/code&gt; which extends android’s &lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt; class and so can be hooked to anything which implements &lt;code class=&quot;highlighter-rouge&quot;&gt;Filterable&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Use the &lt;code class=&quot;highlighter-rouge&quot;&gt;ConfigBuilder&lt;/code&gt; to provide Date/Time formats.&lt;/p&gt;
-
-&lt;p&gt;The sample app here demonstrate the usage of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Filter&lt;/code&gt; with the &lt;code class=&quot;highlighter-rouge&quot;&gt;AutoCompleteTextView&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;contributing&quot;&gt;Contributing&lt;/h3&gt;
-
-&lt;p&gt;For other languages support,&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Checkout the &lt;code class=&quot;highlighter-rouge&quot;&gt;dev&lt;/code&gt; branch&lt;/li&gt;
-  &lt;li&gt;Implement the changes for the language in &lt;a href=&quot;https://github.com/p-v/DateTimeSeer/tree/dev/library/src/main/java/com/pv/datetimeseer/parser/handler&quot;&gt;this package&lt;/a&gt;. Check the &lt;a href=&quot;https://github.com/p-v/DateTimeSeer/tree/dev/library/src/main/java/com/pv/datetimeseer/parser/handler/english&quot;&gt;english language implementation&lt;/a&gt; for reference.&lt;/li&gt;
-  &lt;li&gt;Add the &lt;code class=&quot;highlighter-rouge&quot;&gt;strings.xml&lt;/code&gt;  file for the language&lt;/li&gt;
-  &lt;li&gt;Add the language to &lt;code class=&quot;highlighter-rouge&quot;&gt;Config.java&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Update &lt;code class=&quot;highlighter-rouge&quot;&gt;getLocaleFromLanguage&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;DateTimeUtils.java&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Initialize the handlers created in &lt;code class=&quot;highlighter-rouge&quot;&gt;SeerParserInitializer.java&lt;/code&gt; for the language&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Feel free to create an issue in case of any implementation issues. Or email me at the address present on my profile.&lt;/p&gt;
-
-&lt;h3 id=&quot;todos&quot;&gt;TODOS&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Add more documentation&lt;/li&gt;
-  &lt;li&gt;Some dirty code clean up&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Mon, 10 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/10/DateTimeSeer/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/10/DateTimeSeer/</guid>
-        
-        <category>datetime</category>
-        
-        <category>view</category>
         
         
       </item>
