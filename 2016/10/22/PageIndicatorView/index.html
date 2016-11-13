@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>PageIndicatorView</title>
-  <meta name="description" content="###PageIndicatorViewPageIndicatorView will simplify your life while you working with Android ViewPager and need to indicate selected page. It’s easy to setup...">
+  <meta name="description" content="###PageIndicatorView [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) [Android Arsenal](https://img.shie...">
   <meta name="google-site-verification" content="SdS3Myp0gxMT0PW20YZJgY62fN2dwUJXm98qUMV-pWk" />
   <meta name="naver-site-verification" content="4e434557f6ef7e194c75ee4b683b81f01894af85"/>
     
@@ -16,18 +16,18 @@
   <link rel="alternate" type="application/rss+xml" title="Android UI OpenSource" href="http://android.kmshack.kr/feed.xml">
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
     
-  <meta name="description" content="###PageIndicatorViewPageIndicatorView will simplify your life while you working with Android ViewPager and need to indicate selected page. It’s easy to setup...">
+  <meta name="description" content="###PageIndicatorView [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) [Android Arsenal](https://img.shie...">
 
 
   <meta name="author" content="kmshack" />
 
   <meta property="og:title" content="PageIndicatorView">
   <meta property="og:site_name" content="Android UI OpenSource" />
-  <meta property="og:description" content="###PageIndicatorViewPageIndicatorView will simplify your life while you working with Android ViewPager and need to indicate selected page. It’s easy to setup...">
+  <meta property="og:description" content="###PageIndicatorView [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) [Android Arsenal](https://img.shie...">
   <meta property="og:url" content="http://android.kmshack.kr/2016/10/22/PageIndicatorView/" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:site" content="@kmshack" />
-  <meta name="twitter:description" content="###PageIndicatorViewPageIndicatorView will simplify your life while you working with Android ViewPager and need to indicate selected page. It’s easy to setup..." />
+  <meta name="twitter:description" content="###PageIndicatorView [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) [Android Arsenal](https://img.shie..." />
 
   
   	<!-- Article specific OG data -->
@@ -102,6 +102,10 @@
                   <li>
                     <a class="page-link" href="/about.html">About</a>
                   </li>
+                
+              
+            
+              
                 
               
             
@@ -450,11 +454,13 @@
             <hr>
           <br>
           
-<p>###<strong>PageIndicatorView</strong></p>
+<p>###<strong>PageIndicatorView</strong>
+<a href="https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion"> [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) </a><a href="https://android-arsenal.com/details/1/4555">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PageIndicatorView-green.svg?style=true)</a><br />
+<a href="https://android-arsenal.com/api?level=14">[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)</a></p>
 
 <p><code class="highlighter-rouge">PageIndicatorView</code> will simplify your life while you working with Android <code class="highlighter-rouge">ViewPager</code> and need to indicate selected page. It’s easy to setup and customize as you need with run-time preview rendering.</p>
 
-<p>[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/animation_worm.gif?raw=true)</p>
+<p>[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/preview_anim_thin_worm.gif?raw=true)</p>
 
 <p>###<strong>Integration</strong>
 To add <code class="highlighter-rouge">pageindicatorview</code> to your project, first make sure in root <code class="highlighter-rouge">build.gradle</code> you have specified the following repository:
@@ -470,7 +476,8 @@ To add <code class="highlighter-rouge">pageindicatorview</code> to your project,
 <p>See latest library version <a href="https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion"> [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) </a>
 <code class="highlighter-rouge">java
 compile 'com.romandanylyk:pageindicatorview:X.X.X'
-</code></p>
+</code>
+Keep in mind, that <code class="highlighter-rouge">PageIndicatorView</code> has min <a href="https://developer.android.com/about/dashboards/index.html">API level 14</a></p>
 
 <p>###<strong>Usage Sample</strong>
 During implementation of <code class="highlighter-rouge">PageIndicatorView</code> I tried to make it’s setup as easy as possible. 
@@ -491,7 +498,7 @@ After you set adapter to your <code class="highlighter-rouge">ViewPager</code>, 
         <span class="na">android:id=</span><span class="s">"@+id/pageIndicatorView"</span>
         <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
         <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
-        <span class="na">attrs:viewPager=</span><span class="s">"@id/viewPager"</span><span class="nt">/&gt;</span>
+        <span class="na">attrs:piv_viewPager=</span><span class="s">"@id/viewPager"</span><span class="nt">/&gt;</span>
 </code></pre>
 </div>
 
@@ -504,6 +511,7 @@ One of the most important feature of every custom view is ability to customize i
 
 <span class="n">setRadius</span><span class="o">(</span><span class="kt">int</span> <span class="n">radiusDp</span><span class="o">)</span>
 <span class="n">setPadding</span><span class="o">(</span><span class="kt">int</span> <span class="n">paddingDp</span><span class="o">)</span>
+<span class="n">setStrokeWidth</span><span class="o">(</span><span class="kt">int</span> <span class="n">strokeDp</span><span class="o">)</span>
 
 <span class="c1">//set color</span>
 <span class="n">setUnselectedColor</span><span class="o">(</span><span class="kt">int</span> <span class="n">color</span><span class="o">)</span>
@@ -520,7 +528,7 @@ One of the most important feature of every custom view is ability to customize i
 </code></pre>
 </div>
 
-<p>[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/attributes.gif?raw=true)</p>
+<p>[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/prev_attributes.gif?raw=true)</p>
 
 <p>Here you can see all the animations <code class="highlighter-rouge">PageIndicatorView</code> support.</p>
 
@@ -528,25 +536,45 @@ One of the most important feature of every custom view is ability to customize i
   <thead>
     <tr>
       <th>Name</th>
+      <th>Support version</th>
       <th>Preview</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td><code class="highlighter-rouge">AnimationType.NONE</code></td>
+      <td>0.0.1</td>
+      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_none.gif">anim_prev_none</a></td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">AnimationType.COLOR</code></td>
-      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_color.gif">preview_anim_color</a></td>
+      <td>0.0.1</td>
+      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_color.gif">anim_prev_color</a></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">AnimationType.SCALE</code></td>
-      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_scale.gif">preview_anim_scale</a></td>
+      <td>0.0.1</td>
+      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_scale.gif">anim_prev_scale</a></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">AnimationType.SLIDE</code></td>
-      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_slide.gif">preview_anim_slide</a></td>
+      <td>0.0.1</td>
+      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_slide.gif">anim_prev_slide</a></td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">AnimationType.WORM</code></td>
-      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/preview_anim_worm.gif">preview_anim_worm</a></td>
+      <td>0.0.1</td>
+      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_worm.gif">anim_prev_worm</a></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">AnimationType.FILL</code></td>
+      <td>0.0.6</td>
+      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_fill.gif">anim_prev_worm</a></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">AnimationType.THIN_WORM</code></td>
+      <td>0.0.7</td>
+      <td><a href="https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_thin_worm.gif">anim_prev_thin_worm</a></td>
     </tr>
   </tbody>
 </table>

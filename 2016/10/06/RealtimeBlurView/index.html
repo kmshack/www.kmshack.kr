@@ -321,6 +321,10 @@
                 
               
             
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -478,10 +482,10 @@
 <p>Add dependencies in your <code class="highlighter-rouge">build.gradle</code>:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>	<span class="n">dependencies</span> <span class="o">{</span>
-	    <span class="n">compile</span> <span class="s1">'com.github.mmin18:realtimeblurview:1.0.4'</span>
+	    <span class="n">compile</span> <span class="s1">'com.github.mmin18:realtimeblurview:1.0.6'</span>
 	<span class="o">}</span>
 	<span class="n">android</span> <span class="o">{</span>
-		<span class="n">buildToolsVersion</span> <span class="s1">'23.0.3'</span>                 <span class="c1">// Use 23.0.3 or higher</span>
+		<span class="n">buildToolsVersion</span> <span class="s1">'24.0.2'</span>                 <span class="c1">// Use 23.0.3 or higher</span>
 		<span class="n">defaultConfig</span> <span class="o">{</span>
 			<span class="n">minSdkVersion</span> <span class="mi">15</span>
 			<span class="n">renderscriptTargetApi</span> <span class="mi">19</span>
@@ -503,7 +507,16 @@
 
 <h1 id="changelog">Changelog</h1>
 
-<h3 id="section">1.0.4 (2016-9-28)</h3>
+<h3 id="section">1.0.6 (2016-11-7)</h3>
+
+<p>Fix crash when view is very small (draw at least 1px)</p>
+
+<h3 id="section-1">1.0.5 (2016-11-5)</h3>
+
+<p>Support Popup Window (Use it as dialog background)
+Ignore UnsatisfiedLinkError if APK is not debuggable.</p>
+
+<h3 id="section-2">1.0.4 (2016-9-28)</h3>
 
 <p>Support custom shape (by override drawBlurredBitmap()), support view in ContextThemeWrapper.</p>
 
