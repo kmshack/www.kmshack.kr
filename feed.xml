@@ -5,8 +5,13 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://android.kmshack.kr/</link>
     <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
+<<<<<<< HEAD
     <pubDate>Mon, 14 Nov 2016 10:43:39 +0900</pubDate>
     <lastBuildDate>Mon, 14 Nov 2016 10:43:39 +0900</lastBuildDate>
+=======
+    <pubDate>Mon, 14 Nov 2016 10:08:18 +0900</pubDate>
+    <lastBuildDate>Mon, 14 Nov 2016 10:08:18 +0900</lastBuildDate>
+>>>>>>> 6ed3d51e3437619e214bc566dcde35cc529b599c
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -164,15 +169,23 @@ SOFTWARE.
         <link>http://android.kmshack.kr/2016/11/14/CircularBarPager/</link>
         <guid isPermaLink="true">http://android.kmshack.kr/2016/11/14/CircularBarPager/</guid>
         
+<<<<<<< HEAD
         <category>circular</category>
         
         <category>progress</category>
+=======
+        <category>layoutmanager</category>
+>>>>>>> 6ed3d51e3437619e214bc566dcde35cc529b599c
         
         
       </item>
     
       <item>
+<<<<<<< HEAD
         <title>PageIndicatorView</title>
+=======
+        <title>ChipsLayoutManager</title>
+>>>>>>> 6ed3d51e3437619e214bc566dcde35cc529b599c
         <description>&lt;h1 id=&quot;chipslayoutmanager-img-altchipslayoutmanager-is-an-android-library-srchttpswwwcleveroadcompubliccomerciallabel-androidsvg-height19-minsdk-for-chipslayoutmanagerhttpsimgshieldsiobadgeminsdk-15-greensvg-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-chipslayoutmanager-brightgreensvgstyleflathttpsandroid-arsenalcomdetails14568&quot;&gt;ChipsLayoutManager &lt;img alt=&quot;ChipsLayoutManager is an android library&quot; src=&quot;https://www.cleveroad.com/public/comercial/label-android.svg&quot; height=&quot;19&quot; /&gt; &lt;a href=&quot;#&quot;&gt;[minSdk for ChipsLayoutManager](https://img.shields.io/badge/minSdk-15-green.svg)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/4568#&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ChipsLayoutManager-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;/images/header.png&quot;&gt;ChipsLayoutManager for RecyclerView. Custom layout manager for RecyclerView&lt;/a&gt;&lt;/p&gt;
 
@@ -510,7 +523,11 @@ limitations under the License.
         <link>http://android.kmshack.kr/2016/11/13/QRCodeReaderView/</link>
         <guid isPermaLink="true">http://android.kmshack.kr/2016/11/13/QRCodeReaderView/</guid>
         
+<<<<<<< HEAD
         <category>qrcode</category>
+=======
+        <category>layoutmanager</category>
+>>>>>>> 6ed3d51e3437619e214bc566dcde35cc529b599c
         
         
       </item>
