@@ -5,9 +5,24 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://android.kmshack.kr/</link>
     <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 14 Nov 2016 11:46:53 +0900</pubDate>
-    <lastBuildDate>Mon, 14 Nov 2016 11:46:53 +0900</lastBuildDate>
+    <pubDate>Thu, 17 Nov 2016 13:53:17 +0900</pubDate>
+    <lastBuildDate>Thu, 17 Nov 2016 13:53:17 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Depth-LIB-Android</title>
+        <description>
+</description>
+        <pubDate>Thu, 17 Nov 2016 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2016/11/17/Depth_LIB/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/17/Depth_LIB/</guid>
+        
+        <category>depth</category>
+        
+        <category>thickness</category>
+        
+        
+      </item>
     
       <item>
         <title>CircularBarPager</title>
@@ -191,7 +206,7 @@ but with support of CRUD animations i decided to make such stuff and share it.&l
 
 &lt;p&gt;with gradle
 &lt;code class=&quot;highlighter-rouge&quot;&gt;GRADLE 
-compile &#39;com.beloo.widget:ChipsLayoutManager:0.2.2&#39;
+compile &#39;com.beloo.widget:ChipsLayoutManager:0.2.4@aar&#39;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Assuming you have installed jCenter provider:
@@ -323,6 +338,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
 </description>
         <pubDate>Mon, 14 Nov 2016 00:00:00 +0900</pubDate>
         <link>http://android.kmshack.kr/2016/11/14/ChipsLayoutManager/</link>
@@ -1646,19 +1662,6 @@ limitations under the License.
         <guid isPermaLink="true">http://android.kmshack.kr/2016/10/12/SwipeActionView/</guid>
         
         <category>swipe</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Plaid</title>
-        <description>
-</description>
-        <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/12/Plaid/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/12/Plaid/</guid>
-        
-        <category>plaid</category>
         
         
       </item>
