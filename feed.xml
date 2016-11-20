@@ -5,9 +5,613 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://android.kmshack.kr/</link>
     <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Nov 2016 14:18:10 +0900</pubDate>
-    <lastBuildDate>Thu, 17 Nov 2016 14:18:10 +0900</lastBuildDate>
+    <pubDate>Mon, 21 Nov 2016 01:51:53 +0900</pubDate>
+    <lastBuildDate>Mon, 21 Nov 2016 01:51:53 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>LongPressPopup</title>
+        <description>&lt;h1 id=&quot;longpresspopup&quot;&gt;LongPressPopup&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;sample.gif&quot; title=&quot;sample&quot; /&gt;
+&lt;br /&gt;
+You can try the demo app on google play store. &lt;br /&gt;
+https://play.google.com/store/apps/details?id=rm.com.longpresspopupsample &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;A library that let you implement a behaviour similar to the Instagram’s &lt;br /&gt;
+long press to show detail one, with the option to put every kind of views inside it, &lt;br /&gt;
+(even web views, lists, pagers and so on) show tooltips on drag over &lt;br /&gt;
+and handle the release of the finger over Views &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;[Changelog] (CHANGELOG.md)&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+&lt;p&gt;####Gradle:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+compile &#39;com.rm:longpresspopup:1.0.0&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;##Usage&lt;/p&gt;
+
+&lt;p&gt;####Basic
+Here’s a basic example &lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ActivityMain&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppCompatActivity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        
+    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
+        &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;setContentView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;Button&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;btn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;btn_popup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            
+            &lt;span class=&quot;c1&quot;&gt;// Create a foo TextView&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello, Foo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;LongPressPopup&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;popup&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LongPressPopupBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// A Context object for the builder constructor&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTarget&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;btn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// The View which will open the popup if long pressed&lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setPopupView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// The View to show when long pressed &lt;/span&gt;
+                    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// This will give you a LongPressPopup object&lt;/span&gt;
+                    
+            &lt;span class=&quot;c1&quot;&gt;// You can also chain it to the .build() mehod call above without declaring the &quot;popup&quot; variable before &lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;popup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// From this moment, the touch events are registered and, if long pressed, will show the given view inside the popup, call unregister() to stop&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;sample_short.gif&quot; title=&quot;sample&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;####Advanced
+Here’s a complete example with all the options &lt;br /&gt;
+```java
+public class ActivityMain extends AppCompatActivity implements PopupInflaterListener,
+            PopupStateListener, PopupOnHoverListener, View.OnClickListener {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private static final String TAG = ActivityMain.class.getSimpleName();
+ 
+private TextView mTxtPopup;   
+    
+@Override
+public void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    
+    Button btn = (Button) findViewById(R.id.btn_popup);
+    
+    LongPressPopup popup = new LongPressPopupBuilder(this)
+                    .setTarget(btn)
+                    //.setPopupView(textView)// Not using this time
+                    .setPopupView(R.layout.popup_layout, this)
+                    .setLongPressDuration(750)
+                    .setDismissOnLongPressStop(false)
+                    .setDismissOnTouchOutside(false)
+                    .setDismissOnBackPressed(false)
+                    .setCancelTouchOnDragOutsideView(true)
+                    .setLongPressReleaseListener(this)
+                    .setOnHoverListener(this)
+                    .setPopupListener(this)
+                    .setTag(&quot;PopupFoo&quot;)
+                    .setAnimationType(LongPressPopup.ANIMATION_TYPE_FROM_CENTER)
+                    .build();
+            
+    // You can also chain it to the .build() mehod call above without declaring the &quot;popup&quot; variable before 
+    popup.register();
+}
+
+
+// Popup inflater listener
+@Override
+public void onViewInflated(@Nullable String popupTag, View root) {
+    mTxtPopup = (TextView) root.findViewById(R.id.txt_popup);
+}
+
+
+// Touch released on a View listener
+@Override
+public void onClick(View view) {
+    if (mTxtPopup = null &amp;amp;&amp;amp; view.getId() == mTxtPopup.getId()) {
+        Toast.makeText(ActivityMain.this, &quot;TextView Clicked&quot;, Toast.LENGTH_SHORT).show();
+    }
+}
+
+
+// PopupStateListener
+@Override
+public void onPopupShow(@Nullable String popupTag) {
+    if(mTxtPopup = null) {
+        mTxtPopup.setText(&quot;FooBar&quot;);
+    }
+}
+
+@Override
+public void onPopupDismiss(@Nullable String popupTag) {
+    Toast.makeText(this, &quot;Popup dismissed&quot;, Toast.LENGTH_SHORT).show();
+}
+
+
+// Hover state listener
+@Override
+public void onHoverChanged(View view, boolean isHovered) {
+    Log.e(TAG, &quot;Hover change: &quot; + isHovered + &quot; on View &quot; + view.getClass().getSimpleName());
+} } ``` &amp;lt;br /&amp;gt; &amp;lt;br /&amp;gt; And here are the functions you can use to customize the Popup and it&#39;s behaviour from the LongPressPopupBuilder class: &amp;lt;br /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setTarget(View target)&lt;/code&gt; &lt;b&gt;(null by default) &lt;/b&gt; &lt;br /&gt;
+  Select which view will show the popup view if long pressed &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setPopupView(View popupView)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
+  Select the view that will be shown inside the popup &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setPopupView(@LayoutRes int popupViewRes, PopupInflaterListener inflaterListener)&lt;/code&gt; &lt;b&gt;(0, null by default)&lt;/b&gt; &lt;br /&gt;
+  Select the view that will be shown inside the popup, and give the popup that will be &lt;br /&gt;
+  called when the view is inflated (not necessarily when shown, so not load images and so on in this callback, &lt;br /&gt;
+  just take the views like in the OnCreate method of an Activity) &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setLongPressDuration(@IntRange(from = 1) int duration)&lt;/code&gt; &lt;b&gt;(500 by default)&lt;/b&gt; &lt;br /&gt;
+  Pretty self explanatory right? **Captain here, the long press time needed to show the popup &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setDismissOnLongPressStop(boolean dismissOnPressStop)&lt;/code&gt; &lt;b&gt;(true by default)&lt;/b&gt; &lt;br /&gt;
+  Set if the popup will be dismissed when the user releases the finger (if released on a View inside &lt;br /&gt;
+  the popup, the View’s or the given OnClickListener will be called) &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setDismissOnTouchOutside(boolean dismissOnTouchOutside)&lt;/code&gt; &lt;b&gt;(true by default)&lt;/b&gt; &lt;br /&gt;
+  If &lt;code class=&quot;highlighter-rouge&quot;&gt;setDismissOnLongPressStop(boolean dismissOnPressStop)&lt;/code&gt; is set to false, you can choose to make &lt;br /&gt;
+  the popup dismiss or not if the user touch outside it with this boolean &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setDismissOnBackPressed(boolean dismissOnBackPressed)&lt;/code&gt;  &lt;b&gt;(true by default)&lt;/b&gt; &lt;br /&gt;
+  If &lt;code class=&quot;highlighter-rouge&quot;&gt;setDismissOnLongPressStop(boolean dismissOnPressStop)&lt;/code&gt; is set to false, you can choose to make &lt;br /&gt;
+  the popup dismiss or not if the user press the back button &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setCancelTouchOnDragOutsideView(boolean cancelOnDragOutside)&lt;/code&gt; &lt;b&gt;(true by default)&lt;/b&gt; &lt;br /&gt;
+  Set if the long press timer will stop or not if the user drag the finger outside the target View &lt;br /&gt;
+  (If the target View is inside a scrolling parent, when scrolling vertically the long press timer &lt;br /&gt;
+  will be automatically stopped &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setLongPressReleaseListener(View.OnClickListener listener)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
+  This is a standard OnClickListener, which will be called if the user release the finger on a view inside &lt;br /&gt;
+  the popup, you can use this method or set a standard OnClickListener on the View you want, it will be called &lt;br /&gt;
+  automatically for you &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setOnHoverListener(PopupOnHoverListener listener)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
+  This listener will be called every time the user keeps dragging it’s finger inside or outside the popup &lt;br /&gt;
+  views, with a View reference and a boolean with the hover state &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setPopupListener(PopupStateListener popupListener)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
+  This listener will be called when the popup is shown or dismissed, use this listener to load images or compile text views and so on &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setTag(String tag)&lt;/code&gt; &lt;b&gt;(null by default)&lt;/b&gt; &lt;br /&gt;
+  This method sets a tag on the LongPressPopup, the given tag will be returned in all the listeners. You can also set it in the build(String tag) &lt;br /&gt; 
+  method &lt;br /&gt; &lt;br /&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public LongPressPopupBuilder setAnimationType(@LongPressPopup.AnimationType int animationType)&lt;/code&gt; &lt;b&gt;(none by default)&lt;/b&gt; &lt;br /&gt;
+  This method set the opening and closing animation for the popup, can be none or from-to Bottom, Top, Right, Left, Center&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Also, the LongPressPopup class gives some utility methods, like &lt;br /&gt; 
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;public void register()&lt;/code&gt; &lt;br /&gt;
+    Which means that the popup is listening for touch events on the given view to show itself &lt;br /&gt; &lt;br /&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;public void unregister()&lt;/code&gt; &lt;br /&gt;
+    Which makes to popup stop listening for touch events and dismiss itself if open  &lt;br /&gt; &lt;br /&gt;
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;public void showNow()&lt;/code&gt; &lt;br /&gt;
+    Which shows immediately the popup
+* &lt;code class=&quot;highlighter-rouge&quot;&gt;public void dismissNow()&lt;/code&gt; &lt;br /&gt;
+    Which dismiss immediately the popup if open&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Riccardo Moro.
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and 
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 21 Nov 2016 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2016/11/21/LongPressPopup/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/21/LongPressPopup/</guid>
+        
+        <category>popup</category>
+        
+        <category>3dtouch</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Crescento</title>
+        <description>&lt;h1 id=&quot;crescento&quot;&gt;Crescento&lt;/h1&gt;
+
+&lt;p&gt;Android library that adds a curve at the below of image views and relative layouts. &lt;strong&gt;CrescentoImageView&lt;/strong&gt; and &lt;strong&gt;CrescentoContainer&lt;/strong&gt; are the image view and relative layout respectively. You can change the radius of curve with &lt;strong&gt;attribute:curvature&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/art/sample1_nexus4_angle1.png&quot;&gt;Sample Image 2&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Crescento&lt;/strong&gt; provides following advantages:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Curve Bottom&lt;/strong&gt;: It adds a curve bottom as stated above.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Tint&lt;/strong&gt;: It add tint on &lt;strong&gt;CrescentoImageView&lt;/strong&gt; by using &lt;strong&gt;attribute:tintColor&lt;/strong&gt;. It pick color automatically from the image if &lt;strong&gt;tintMode&lt;/strong&gt; is set to &lt;strong&gt;automatic&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Alpha&lt;/strong&gt;: Add transparency in tint by using &lt;strong&gt;attribute:tintAlpha&lt;/strong&gt;. Varies from 0 to 255.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/developer-shivam/crescento/blob/master/demo.apk&quot;&gt;Sample Apk&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;use-with-kenburnsview&quot;&gt;Use with &lt;strong&gt;&lt;a href=&quot;https://github.com/flavioarfaria/KenBurnsView&quot;&gt;KenBurnsView&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/art/sample2.gif&quot;&gt;Sample Image 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;shivam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CrescentoContainer&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/crescentoContainer&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;elevation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scaleType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
+        &lt;span class=&quot;nl&quot;&gt;attribute:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;curvature&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50dp&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+
+        &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;flaviofaria&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;kenburnsview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;KenBurnsView&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;layout_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+            &lt;span class=&quot;nl&quot;&gt;android:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/wallpaper2&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;developer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;shivam&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;CrescentoContainer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;donations&quot;&gt;Donations&lt;/h2&gt;
+
+&lt;p&gt;This project needs you If you would like to support this project’s further development, the creator of this project or the continuous maintenance of this project, feel free to donate. Your donation is highly appreciated (and I love food, coffee and beer). Thank you&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PayPal&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/5&quot;&gt;Donate $5&lt;/a&gt;&lt;/strong&gt;: Thank’s for creating this project, here’s a coffee (or some beer) for you&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/10&quot;&gt;Donate $10&lt;/a&gt;&lt;/strong&gt;: Wow, I am stunned. Let me take you to the movies&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/15&quot;&gt;Donate $15&lt;/a&gt;&lt;/strong&gt;: I really appreciate your work, let’s grab some lunch&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/25&quot;&gt;Donate $25&lt;/a&gt;&lt;/strong&gt;: That’s some awesome stuff you did right there, dinner is on me&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/50&quot;&gt;Donate $50&lt;/a&gt;&lt;/strong&gt;: I really really want to support this project, great job&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/100&quot;&gt;Donate $100&lt;/a&gt;&lt;/strong&gt;: You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://www.paypal.me/developerShivam/2799&quot;&gt;Donate $2799&lt;/a&gt;&lt;/strong&gt;: Go buddy, buy Macbook Pro for yourself
+Of course, you can also choose what you want to donate, all donations are awesome&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;Here is a very good example of how to use &lt;code class=&quot;highlighter-rouge&quot;&gt;Crescento&lt;/code&gt;. &lt;strong&gt;Zsolt Szilvai&lt;/strong&gt; has made a very good design and I’ve illustrated using crescento.&lt;/p&gt;
+
+&lt;p&gt;https://material.uplabs.com/posts/cinema-application-interface&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/art/sample2.png&quot;&gt;Sample of Zsolt Szilvai’s design&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;gradle-integration&quot;&gt;Gradle Integration&lt;/h2&gt;
+
+&lt;p&gt;If you are using gradle then add these lines in build.gradle file at project level.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+	allprojects {
+        repositories {
+            ...
+            maven { url &quot;https://jitpack.io&quot; }
+        }
+    }
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Add below lines in build.gradle at app level.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+	compile &#39;com.github.developer-shivam:crescento:1.0.0&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-usage&quot;&gt;Basic Usage&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;For a working implementation, see &lt;code class=&quot;highlighter-rouge&quot;&gt;/app&lt;/code&gt; folder&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CrescentoImageView&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;developer.shivam.library.CrescentoImageView&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/crescentoImageView&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:scaleType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;attribute:curvature=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;attribute:tintMode=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;manual&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;attribute:tintColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#FFFFFF&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;attribute:tintAlpha=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;CrescentoContainer&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;developer.shivam.library.CrescentoContainer&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/crescentoContainer&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20dp&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;attribute:curvature=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;50dp&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Your&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;code&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;here&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/developer.shivam.library.CrescentoContainer&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;attributes&quot;&gt;Attributes&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;curvature&lt;/strong&gt;: To change the size of curve.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;tintColor&lt;/strong&gt;: To add tint on image view.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;tintMode&lt;/strong&gt;: To add tint &lt;strong&gt;manually&lt;/strong&gt; or &lt;strong&gt;automatically&lt;/strong&gt;. If &lt;strong&gt;automatically&lt;/strong&gt; it will pick color from image you have set.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;tintAlpha&lt;/strong&gt;: To set the amount of tint. 0 for 100% transparent and 255 for opaque.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;question--contact-me--hire-me&quot;&gt;Question / Contact Me / Hire Me&lt;/h2&gt;
+&lt;p&gt;Please feel free to ping me at &lt;strong&gt;dr.droid27@gmail.com&lt;/strong&gt;. Expected package would be 12 lpa.&lt;/p&gt;
+
+&lt;p&gt;#License&lt;/p&gt;
+
+&lt;p&gt;MIT License&lt;/p&gt;
+
+&lt;p&gt;Copyright (c) 2016 Shivam Satija&lt;/p&gt;
+
+&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:&lt;/p&gt;
+
+&lt;p&gt;The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.&lt;/p&gt;
+
+&lt;p&gt;THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 21 Nov 2016 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2016/11/21/Crescento/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/21/Crescento/</guid>
+        
+        <category>imageview</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>RMSwitch</title>
+        <description>&lt;h1 id=&quot;rmswitch&quot;&gt;RMSwitch&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;switch-sample.gif&quot; title=&quot;sample&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A simple View that works like a switch, but with more customizations. &lt;br /&gt;
+With the option to choose between two or three states. (from v1.1.0) &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;#####** If you’re upgrading from a version &amp;lt; 1.2.0, check the changelog of the 1.2.0 version, there are breaking changes &lt;br /&gt;
+[Changelog] (CHANGELOG.md)&lt;/p&gt;
+
+&lt;h5 id=&quot;from-version-120-you-can-choose-between-three-switch-design-br-&quot;&gt;From version 1.2.0 you can choose between three switch design: &lt;br /&gt;&lt;/h5&gt;
+&lt;p&gt;-“Slim” &lt;br /&gt;
+-“Large” &lt;br /&gt;
+-“Android” &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;switch_design_samples.png&quot; title=&quot;design_sample&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+&lt;p&gt;####Gradle:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+compile &#39;com.rm:rmswitch:1.2.0&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;To use them, just add this to your layout file&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Two&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;states&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.rm.rmswitch.RMSwitch&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/your_id&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+                
+                &lt;span class=&quot;na&quot;&gt;app:checked=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:forceAspectRatio=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:enabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchDesign=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;android&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchBkgCheckedColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/green&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchBkgNotCheckedColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/red&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleCheckedColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/green&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleCheckedImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/happy&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleNotCheckedColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/red&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleNotCheckedImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/sad&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Three&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;states&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;                
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.rm.rmswitch.RMTristateSwitch&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/your_id2&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
+                
+                &lt;span class=&quot;na&quot;&gt;app:forceAspectRatio=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:state=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:enabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchDesign=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;large&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchBkgLeftColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/red&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchBkgMiddleColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/grey&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchBkgRightColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/green&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleLeftColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/red&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleLeftImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/sad&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleMiddleColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/grey&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleMiddleImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/neutral&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleRightColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@color/green&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;app:switchToggleRightImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/happy&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;… if you need to use this View’s custom xml attributes (shown in a table below or in the example above) do not forget to add this to your root layout
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To see how it looks in the preview screen of Android Studio, build your project first&lt;/p&gt;
+
+&lt;p&gt;And this in your Activity
+```java
+public class MainActivity extends AppCompatActivity {
+    RMSwitch mSwitch;
+    RMTristateSwitch mTristateSwitch;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    
+    mSwitch = (RMSwitch) findViewById(R.id.your_id);
+    mTristateSwitch = (RMTristateSwitch) findViewById(R.id.your_id2);
+    
+    
+    // Setup the switch
+    mSwitch.setChecked(true);
+    mSwitch.setEnabled(true);
+    mSwitch.setForceAspectRatio(false);
+    mSwitch.setSwitchBkgCheckedColor(Color.GREEN);
+    mSwitch.setSwitchBkgNotCheckedColor(Color.RED);
+    mSwitch.setSwitchToggleCheckedColor(Color.BLACK);
+    mSwitch.setSwitchToggleNotCheckedColor(Color.BLACK);
+    mSwitch.setSwitchDesign(RMTristateSwitch.DESIGN_ANDROID);
+    
+    
+    // You can choose if use drawable or drawable resource
+    //mSwitch.setSwitchToggleCheckedDrawableRes(android.R.drawable.ic_media_next);
+    mSwitch.setSwitchToggleCheckedDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_next));
+    
+    //mSwitch.setSwitchToggleNotCheckedDrawableRes(android.R.drawable.ic_media_previous);
+    mSwitch.setSwitchToggleNotCheckedDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_previous));
+    
+    
+    // Setup the tristate switch
+    mTristateSwitch.setState(RMTristateSwitch.STATE_LEFT);
+    mTristateSwitch.setForceAspectRatio(true);
+    mTristateSwitch.setEnabled(true);
+    mTristateSwitch.setRightToLeft(false);
+    mTristateSwitch.setSwitchDesign(RMTristateSwitch.DESIGN_LARGE);
+    mTristateSwitch.setSwitchToggleLeftColor(Color.DKGRAY);
+    mTristateSwitch.setSwitchToggleMiddleColor(Color.DKGRAY);
+    mTristateSwitch.setSwitchToggleRightColor(Color.DKGRAY);
+    mTristateSwitch.setSwitchBkgLeftColor(Color.LTGRAY);
+    mTristateSwitch.setSwitchBkgMiddleColor(Color.LTGRAY);
+    mTristateSwitch.setSwitchBkgRightColor(Color.LTGRAY);
+    
+    
+    // You can choose if use drawable or drawable resource
+    //mTristateSwitch.setSwitchToggleLeftDrawableRes(android.R.drawable.ic_media_previous);
+    mTristateSwitch.setSwitchToggleLeftDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_previous));
+    
+    //mTristateSwitch.setSwitchToggleMiddleDrawableRes(android.R.drawable.ic_media_play);
+    mTristateSwitch.setSwitchToggleMiddleDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_play));
+    
+    //mTristateSwitch.setSwitchToggleRightDrawableRes(android.R.drawable.ic_media_next);
+    mTristateSwitch.setSwitchToggleRightDrawable(ContextCompat.getDrawable(this, android.R.drawable.ic_media_next));
+    
+    
+    // Add a Switch state observer
+    mSwitch.addSwitchObserver(new RMSwitch.RMSwitchObserver() {
+        @Override
+        public void onCheckStateChange(RMSwitch switchView, boolean isChecked) {
+                            Toast.makeText(MainActivity.this, 
+                                    &quot;Switch state: &quot; + 
+                                    (isChecked ? &quot;checked&quot; : &quot;not checked&quot;), Toast.LENGTH_LONG)
+                                    .show();
+        }
+    });
+    
+    mTristateSwitch.addSwitchObserver(new RMTristateSwitch.RMTristateSwitchObserver() {
+        @Override
+        public void onCheckStateChange(RMTristateSwitch switchView, @RMTristateSwitch.State int state) {
+            Toast
+                    .makeText(MainActivity.this,
+                            state == RMTristateSwitch.STATE_LEFT ?
+                                    &quot;Left&quot; :
+                                    state == RMTristateSwitch.STATE_MIDDLE ?
+                                            &quot;Middle&quot; :
+                                            &quot;Right&quot;,
+                            Toast.LENGTH_SHORT).show();
+        }
+    });
+} } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;####Supported Attributes
+RMSwitch
+——
+| XML Attribute                 | Java method                                                     	| Description                                                                                                     	| Default value                                      	                                        |
+|————————-	    |—————————————————————–	|—————————————————————————————————————–	|———————————————————————————————  |
+| checked                  	    | setChecked(boolean checked)                                     	| The initial state of the Switch, if checked or not                                                              	| false                                              	                                        |
+| enabled                  	    | setEnabled(boolean enabled)                                     	| If not enabled, the Switch will not be clickable, but it is still possible to change its state programmatically 	| true                                               	                                        |
+| forceAspectRatio         	    | setForceAspectRatio(boolean forceAspectRatio)                   	| Force the Switch aspect ratio                                                                                   	| true                                               	                                        |
+| switchBkgCheckedColor    	    | setSwitchBkgCheckedColor(@ColorInt int color)                   	| The background color of the Switch if checked                                                                   	| your current theme colorControlHighlight attribute 	                                        |
+| switchBkgNotCheckedColor 	    | setSwitchBkgNotCheckedColor(@ColorInt int color)                	| The background color of the Switch if not checked                                                               	| the same as switchBkgCheckedColor                	                                            |
+| switchToggleCheckedColor      | setSwitchToggleCheckedColor(@ColorInt int color)                	| The color of the Switch toggle if checked                                                                       	| your current theme colorAccent attribute           	                                        |
+| switchToggleNotCheckedColor   | setSwitchToggleNotCheckedColor(@ColorInt int color)             	| The color of the Switch toggle if not checked                                                                   	| white                                              	                                        |
+| switchToggleCheckedImage      | setSwitchToggleCheckedDrawableRes(@DrawableRes int drawable)    	| The image to be shown on the toggle if checked                                                                  	| the same as switchToggleNotCheckedImage if set, none otherwise                                |
+|                               | setSwitchToggleCheckedDrawable(Drawable drawable)                 |                                                                                                                   |                                                                                               |
+| switchToggleNotCheckedImage   | setSwitchToggleNotCheckedDrawableRes(@DrawableRes int drawable) 	| The image to be shown on the toggle if not checked                                                              	| the same as switchToggleCheckedImage if set, none otherwise                                   |
+|                               | setSwitchToggleNotCheckedDrawable(Drawable drawable)                 |                                                                                                                   |                                                                                            |
+| switchDesign                  | setSwitchDesign(@SwitchDesign int switchDesign)                   | The switch design, one of the RMAbstractSwitch.DESIGN_*** constants, changes the appearance of the switch         | RMAbstractSwitch.DESIGN_LARGE                                                                 |&lt;/p&gt;
+
+&lt;h2 id=&quot;rmtristateswitch&quot;&gt;RMTristateSwitch&lt;/h2&gt;
+&lt;p&gt;| XML Attribute                 | Java method                                                     	| Description                                                                                                     	| Default value                                      	                                        |
+|————————-	    |—————————————————————–	|—————————————————————————————————————–	|———————————————————————————————  |
+| state                  	    | setState(@State int state)                                     	| The initial state of the Switch, if left, middle or right                                                         | left                                              	                                        |
+| enabled                  	    | setEnabled(boolean enabled)                                     	| If not enabled, the Switch will not be clickable, but it is still possible to change its state programmatically 	| true                                               	                                        |
+| forceAspectRatio         	    | setForceAspectRatio(boolean forceAspectRatio)                   	| Force the Switch aspect ratio                                                                                   	| true                                               	                                        |
+| right_to_left                 | setRightToLeft(boolean rightToLeft)                               | The direction of the switch at every tap, if from left to right or right to left                                  | false                                                                                         |
+| switchBkgLeftColor    	    | setSwitchBkgLeftColor(@ColorInt int color)                   	    | The background color of the Switch if in the left state                                                           | your current theme colorControlHighlight attribute 	                                        |
+| switchBkgMiddleColor    	    | setSwitchBkgMiddleColor(@ColorInt int color)                   	| The background color of the Switch if in the middle state                                                         | the same as switchBkgLeftColor                      	                                        |
+| switchBkgRightColor    	    | setSwitchBkgRightColor(@ColorInt int color)                   	| The background color of the Switch if in the right state                                                     	    | the same as switchBkgLeftColor                     	                                        |
+| switchToggleLeftColor    	    | setSwitchToggleLeftColor(@ColorInt int color)                   	| The background color of the Switch if in the left state                                                           | white                                              	                                        |
+| switchToggleMiddleColor    	| setSwitchToggleMiddleColor(@ColorInt int color)                   | The background color of the Switch if in the middle state                                                         | your current theme primaryColor attribute          	                                        |
+| switchToggleRightColor    	| setSwitchToggleRightColor(@ColorInt int color)                   	| The background color of the Switch Toggle if in the right state                                                   | your current theme accentColor attribute          	                                        |
+| switchToggleLeftImage    	    | setSwitchToggleLeftDrawableRes(@ColorInt int color)               | The toggle image of the Switch if in the left state                                                               | the same as the one of the other states toggle image if at least one set, none otherwise 	    |
+|                               | setSwitchToggleLeftDrawable(Drawable drawable)                    |                                                                                                                   |                                                                                               |
+| switchToggleMiddleImage    	| setSwitchToggleMiddleDrawableRes(@ColorInt int color)             | The toggle image of the Switch if in the middle state                                                             | the same as the one of the other states toggle image if at least one set, none otherwise 	    |
+|                               | setSwitchToggleMiddleDrawable(Drawable drawable)                  |                                                                                                                   |                                                                                               |
+| switchToggleRightImage    	| setSwitchToggleRightDrawableRes(@ColorInt int color)              | The toggle image of the Switch if in the right state                                                              | the same as the one of the other states toggle image if at least one set, none otherwise 	    |
+|                               | setSwitchToggleRightDrawable(Drawable drawable)                   |                                                                                                                   |                                                                                               |
+| switchDesign                  | setSwitchDesign(@SwitchDesign int switchDesign)                   | The switch design, one of the RMAbstractSwitch.DESIGN_*** constants, changes the appearance of the switch         | RMAbstractSwitch.DESIGN_LARGE                                                                 |&lt;/p&gt;
+
+&lt;p&gt;The changes between the Switch states will be automatically cross-faded, to obtain a smooth experience&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Riccardo Moro.
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and 
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 20 Nov 2016 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2016/11/20/RMSwitch/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/20/RMSwitch/</guid>
+        
+        <category>switch</category>
+        
+        
+      </item>
     
       <item>
         <title>Depth-LIB-Android</title>
@@ -514,14 +1118,6 @@ limitations under the License.
   &lt;li&gt;&lt;a href=&quot;https://www.swapcard.com/&quot;&gt;Swapcard&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;contributors&quot;&gt;Contributors&lt;/h2&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/dlazaro66&quot;&gt;David Lázaro Esparcia&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/saguinav&quot;&gt;Samuel Guirado Navarro&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/danicomas&quot;&gt;Daniel Comas Fernández&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/kboyarshinov&quot;&gt;Kirill Boyarshinov&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2013 David Lázaro
@@ -985,6 +1581,7 @@ See the sample project for more details.&lt;/p&gt;
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;primaryColorAttr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorPrimary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// The theme color used for the camera, defaults to colorPrimary of Activity in the constructor&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showPortraitWarning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// Whether or not a warning is displayed if the user presses record in portrait orientation&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;defaultToFrontFacing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                       &lt;span class=&quot;c1&quot;&gt;// Whether or not the camera will initially show the front facing camera&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;allowChangeCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                           &lt;span class=&quot;c1&quot;&gt;// Allows the user to change cameras. &lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;retryExits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;// If true, the &#39;Retry&#39; button in the playback screen will exit the camera instead of going back to the recorder&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;restartTimerOnRetry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// If true, the countdown timer is reset to 0 when the user taps &#39;Retry&#39; in playback&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;continueTimerInPlayback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;// If true, the countdown timer will continue to go down during playback, rather than pausing.&lt;/span&gt;
@@ -1136,551 +1733,6 @@ limitations under the License.&lt;/p&gt;
         <category>material</category>
         
         <category>camera</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>ImageTransition</title>
-        <description>&lt;h1 id=&quot;imagetransition&quot;&gt;ImageTransition&lt;/h1&gt;
-
-&lt;p&gt;… is a small android library to transition between a circular ImageView from one Activity to a rectangular ImageView in the launched Activity.&lt;/p&gt;
-
-&lt;h2 id=&quot;gradle-dependency&quot;&gt;Gradle dependency&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;compile &#39;com.appeaser.imagetransitionlibrary:imagetransitionlibrary:0.0.1&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;walkthrough&quot;&gt;Walkthrough&lt;/h2&gt;
-&lt;p&gt;Following gif has been taken from the sample application available here: &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.appeaser.imagetransition&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; height=&quot;45px&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;img src=&quot;https://github.com/vikramkakkar/ImageTransition/blob/master/img/image_transition.gif?raw=true&quot; width=&quot;300&quot; height=&quot;533&quot; /&gt;
-&lt;/p&gt;
-
-&lt;p&gt;The transition has been slowed down for demo purposes.&lt;/p&gt;
-
-&lt;h2 id=&quot;components&quot;&gt;Components&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;ImageTransition:&lt;/strong&gt; &lt;a href=&quot;https://developer.android.com/reference/android/transition/Transition.html&quot;&gt;Transition&lt;/a&gt; based on &lt;a href=&quot;https://developer.android.com/reference/android/transition/ChangeBounds.html&quot;&gt;ChangeBounds&lt;/a&gt; that provides animation support between a circular and rectangular ImageView (implemented as TransitionImageView) residing in two different activities. Works on API version &amp;gt;= 21.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;TransitionImageView:&lt;/strong&gt; A modified version of Henning Dodenhof’s &lt;a href=&quot;https://github.com/hdodenhof/CircleImageView&quot;&gt;CircleImageView&lt;/a&gt;. Transition animators are run on this widget.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ImageTransitionUtils:&lt;/strong&gt; Provides &lt;a href=&quot;https://developer.android.com/reference/android/support/v4/app/SharedElementCallback.html&quot;&gt;SharedElementCallback&lt;/a&gt; that is used to set values accessed in &lt;code class=&quot;highlighter-rouge&quot;&gt;ImageTransition&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;ImageTransitionCompat:&lt;/strong&gt; &lt;em&gt;under development&lt;/em&gt; &lt;a href=&quot;https://developer.android.com/reference/android/support/transition/Transition.html&quot;&gt;Transition&lt;/a&gt; based on &lt;a href=&quot;https://developer.android.com/reference/android/support/transition/ChangeBounds.html&quot;&gt;ChangeBounds&lt;/a&gt; that provides animation support between a circular and rectangular ImageView (implemented as TransitionImageView) residing in the same activity or fragment. Requires API version &amp;gt;= 14.&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Use com.appeaser.imagetransitionlibrary.TransitionImageView in place of ImageView. The &lt;code class=&quot;highlighter-rouge&quot;&gt;rounding&lt;/code&gt; value can be set using &lt;code class=&quot;highlighter-rouge&quot;&gt;app:tiv_rounding&lt;/code&gt; attribute. Value must be within [0,1] - &lt;strong&gt;0&lt;/strong&gt; for no rounding, &lt;strong&gt;1&lt;/strong&gt; for perfect rounding. Set &lt;code class=&quot;highlighter-rouge&quot;&gt;android:transitionName&lt;/code&gt; attribute.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;com.appeaser.imagetransitionlibrary.TransitionImageView
-    android:id=&quot;@+id/image&quot;
-    android:layout_width=&quot;80dp&quot;
-    android:layout_height=&quot;80dp&quot;
-    android:scaleType=&quot;centerCrop&quot;
-    android:transitionName=&quot;@string/iv_transition_name&quot;
-    app:tiv_rounding=&quot;0&quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Note: &lt;code class=&quot;highlighter-rouge&quot;&gt;com.appeaser.imagetransitionlibrary.TransitionImageView&lt;/code&gt; only works with &lt;code class=&quot;highlighter-rouge&quot;&gt;scaleType=&quot;centerCrop&quot;&lt;/code&gt;. This restriction has been inherited from Henning Dodenhof’s &lt;a href=&quot;https://github.com/hdodenhof/CircleImageView&quot;&gt;CircleImageView&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Provide &lt;code class=&quot;highlighter-rouge&quot;&gt;@transition/itl_image_transition&lt;/code&gt; as the value for &lt;code class=&quot;highlighter-rouge&quot;&gt;android:windowSharedElementEnterTransition&lt;/code&gt; &amp;amp; &lt;code class=&quot;highlighter-rouge&quot;&gt;android:windowSharedElementExitTransition&lt;/code&gt; under your Activity theme in &lt;code class=&quot;highlighter-rouge&quot;&gt;styles.xml&lt;/code&gt;:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.Light.DarkActionBar&quot;&amp;gt;
-	&amp;lt;item name=&quot;colorPrimary&quot;&amp;gt;...&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&quot;colorPrimaryDark&quot;&amp;gt;...&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&quot;colorAccent&quot;&amp;gt;...&amp;lt;/item&amp;gt;
-
-    ....
-    ....
-
-    &amp;lt;-- @transition/itl_image_transition is provided by ImageTransition library --&amp;gt;
-    &amp;lt;item name=&quot;android:windowSharedElementEnterTransition&quot;&amp;gt;@transition/itl_image_transition&amp;lt;/item&amp;gt;
-    &amp;lt;item name=&quot;android:windowSharedElementExitTransition&quot;&amp;gt;@transition/itl_image_transition&amp;lt;/item&amp;gt;
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;This should ideally be placed in your &lt;code class=&quot;highlighter-rouge&quot;&gt;values-v21/styles.xml&lt;/code&gt; file. Refer to the sample app for an example.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;In the second Activity’s &lt;code class=&quot;highlighter-rouge&quot;&gt;onCreate(Bundle)&lt;/code&gt; method, add the following line of code:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class SecondActivity extends AppCompatActivity {
-
-    ....
-    ....
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        ....
-        ....
-
-        // SharedElementCallback needs be set in the second Activity.
-        // See ImageTrainsitionUtil for more info.
-        setEnterSharedElementCallback(ImageTransitionUtil.DEFAULT_SHARED_ELEMENT_CALLBACK);
-    }
-
-    ....
-    ....
-
-    @Override
-    public void onBackPressed() {
-        supportFinishAfterTransition();
-        super.onBackPressed();
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The sample app shows this approach.&lt;/p&gt;
-
-&lt;p&gt;Note: &lt;code class=&quot;highlighter-rouge&quot;&gt;ImageTransitionUtil.DEFAULT_SHARED_ELEMENT_CALLBACK&lt;/code&gt; can be used only when transitioning from &lt;code class=&quot;highlighter-rouge&quot;&gt;tiv_rounding=&quot;1&quot;&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;tiv_rounding=&quot;0&quot;&lt;/code&gt;. If you’re transitioning between any other values, use:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;setEnterSharedElementCallback(ImageTransitionUtil
-    .prepareSharedElementCallbackFor(_your start rounding value_, _your end rounding value_));
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;If you’d like to change the duration of the transition, or use the transition within your own set of transitions, or use a different interpolator, include the following:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;transitionSet
-    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
-    android:interpolator=&quot;your interpolator&quot;&amp;gt;
-
-    ....
-    ....
-
-    &amp;lt;transition
-        class=&quot;com.appeaser.imagetransitionlibrary.ImageTransition&quot;
-        android:duration=&quot;your duration&quot; /&amp;gt;
-
-    ....
-    ....
-
-&amp;lt;/transitionSet&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The library declares its min SDK version as 14. If your app’s &lt;em&gt;minSdkVersion&lt;/em&gt; is set to a lower value, include the following in your app’s manifest:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;manifest&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:android=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/apk/res/android&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;xmlns:tools=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.android.com/tools&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;package=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;...&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;uses-sdk&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;tools:overrideLibrary=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.appeaser.imagetransitionlibrary&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;application&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        ...
-        ...
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/application&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/manifest&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;api-version-requirements&quot;&gt;API version requirements&lt;/h2&gt;
-&lt;p&gt;For image transition between activities, version 21 or above is required.
-&lt;em&gt;Under development&lt;/em&gt; For image transition within an activity, use &lt;code class=&quot;highlighter-rouge&quot;&gt;ImageTransitionCompat&lt;/code&gt; which works on API 14 and above. Note that &lt;code class=&quot;highlighter-rouge&quot;&gt;ImageTransitionCompat&lt;/code&gt; will not work if defined in XML.&lt;/p&gt;
-
-&lt;h2 id=&quot;acknowledgements&quot;&gt;Acknowledgements&lt;/h2&gt;
-
-&lt;p&gt;As mentioned above, the library depends on Henning Dodenhof’s &lt;a href=&quot;https://github.com/hdodenhof/CircleImageView&quot;&gt;CircleImageView&lt;/a&gt;, released under Apache Licence, version 2.0. Many thanks to Henning Dodenhof for open-sourcing their work.&lt;/p&gt;
-
-&lt;p&gt;The example app uses &lt;a href=&quot;http://square.github.io/picasso/&quot;&gt;Picasso&lt;/a&gt;, released under Apache Licence, version 2.0.&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright (c) 2016 Vikram Kakkar
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 16 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/16/ImageTransition/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/16/ImageTransition/</guid>
-        
-        <category>transition</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>FoldableLayout</title>
-        <description>&lt;h1 id=&quot;foldablelayout&quot;&gt;FoldableLayout&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://maven-badges.herokuapp.com/maven-central/com.alexvasilkov/foldable-layout&quot;&gt;[Maven Central](https://maven-badges.herokuapp.com/maven-central/com.alexvasilkov/foldable-layout/badge.svg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Android widgets to implement folding animation.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.youtube.com/watch?v=-_QcWMh-O5g&quot;&gt;[Demo video](http://img.youtube.com/vi/-_QcWMh-O5g/0.jpg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;sample-app&quot;&gt;Sample app&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://play.google.com/store/apps/details?id=com.alexvasilkov.foldablelayout.sample&quot;&gt;
-&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png&quot; height=&quot;64&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;usage&quot;&gt;Usage&lt;/h4&gt;
-
-&lt;p&gt;Note: &lt;strong&gt;minimum Android SDK version is 14&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Add dependency to your build.gradle file:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-compile &#39;com.alexvasilkov:foldable-layout:1.2.0&#39;
-&lt;/code&gt;
-&lt;a href=&quot;https://github.com/alexvasilkov/FoldableLayout/wiki/Unfoldable-details-usage&quot;&gt;Unfoldable details usage&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/alexvasilkov/FoldableLayout/wiki/Foldable-list-usage&quot;&gt;Foldable list usage&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/alexvasilkov/FoldableLayout/wiki/API-reference&quot;&gt;API reference&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://github.com/alexvasilkov/FoldableLayout/tree/master/sample&quot;&gt;sample app sources&lt;/a&gt; for complete usage example.&lt;/p&gt;
-
-&lt;h4 id=&quot;basic-library-concepts&quot;&gt;Basic library concepts&lt;/h4&gt;
-
-&lt;p&gt;Read &lt;a href=&quot;http://cases.azoft.com/creating-paper-folding-animation-in-android/&quot;&gt;this blog post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h4 id=&quot;license&quot;&gt;License&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Thu, 13 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/13/FoldableLayout/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/13/FoldableLayout/</guid>
-        
-        <category>fold</category>
-        
-        <category>layout</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>SwipeActionView</title>
-        <description>&lt;h1 id=&quot;swipe-action-view&quot;&gt;Swipe Action View&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/Tunous/SwipeActionView&quot;&gt;[Build Status](https://travis-ci.org/Tunous/SwipeActionView.svg?branch=master)&lt;/a&gt;
-&lt;a href=&quot;https://jitpack.io/#Tunous/SwipeActionView&quot;&gt;[Release](https://jitpack.io/v/Tunous/SwipeActionView.svg)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;SwipeActionView is a swipe-able view, which allows users to perform actions by swiping it to the left or right side.&lt;/p&gt;
-
-&lt;h1 id=&quot;table-of-contents&quot;&gt;Table of contents&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#preview&quot;&gt;Preview&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#installation&quot;&gt;Installation&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#quick-example&quot;&gt;Quick Example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#sample&quot;&gt;Sample&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#idea&quot;&gt;The idea&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#container&quot;&gt;Container&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#bg-views&quot;&gt;Background views&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#gesture-listener&quot;&gt;Gesture listener&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#disabling-gestures&quot;&gt;Disabling gestures&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#ripple-animations&quot;&gt;Ripple animations&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#click-listeners&quot;&gt;Click listeners&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#attr&quot;&gt;Attributes&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;#attr-alwaysDrawBackground&quot;&gt;sav_alwaysDrawBackground&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#attr-rippleTakesPadding&quot;&gt;sav_rippleTakesPadding&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#attr-swipeLeftRippleColor&quot;&gt;sav_swipeLeftRippleColor&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#attr-swipeRightRippleColor&quot;&gt;sav_swipeRightRippleColor&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#attr-tools&quot;&gt;Tools attributes&lt;/a&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#attr-tools-previewBackground&quot;&gt;sav_tools_previewBackground&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#attr-tools-previewRipple&quot;&gt;sav_tools_previewRipple&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#animations&quot;&gt;Animations&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#credits&quot;&gt;Credits&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;a-idpreviewpreviewa&quot;&gt;&lt;a id=&quot;preview&quot;&gt;Preview&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;art/preview.gif&quot;&gt;Preview&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;a-idinstallationinstallationa&quot;&gt;&lt;a id=&quot;installation&quot;&gt;Installation&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;Add the JitPack repository to your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-allprojects {
-    repositories {
-        maven { url &quot;https://jitpack.io&quot; }
-    }
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;And add the dependency in your module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-dependencies {
-    compile &#39;com.github.Tunous:SwipeActionView:0.1.0&#39;
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;a-idquick-examplequick-examplea&quot;&gt;&lt;a id=&quot;quick-example&quot;&gt;Quick example&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;Adding &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; to your projects requires only adding it to XML and setting up &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeGestureListener&lt;/code&gt;.
-Below example will create &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt; that can be swiped both to the left or right side with two icons behind.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;me.thanel.swipeactionview.SwipeActionView&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/swipe_view&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;?colorPrimary&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;end&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swipe me&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/me.thanel.swipeactionview.SwipeActionView&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;swipe_view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSwipeGestureListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeGestureListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSwipedLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;showToast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swiped left&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSwipedRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;showToast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swiped right&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;a-idsamplesamplea&quot;&gt;&lt;a id=&quot;sample&quot;&gt;Sample&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;For an example implementation of &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; see the included &lt;a href=&quot;https://github.com/Tunous/SwipeActionView/tree/master/sample&quot;&gt;sample&lt;/a&gt; project.&lt;/p&gt;
-
-&lt;p&gt;You can manually compile the apk using source code or download from the &lt;a href=&quot;https://github.com/Tunous/SwipeActionView/releases&quot;&gt;releases page&lt;/a&gt; of this repository.&lt;/p&gt;
-
-&lt;h1 id=&quot;a-idideathe-ideaa&quot;&gt;&lt;a id=&quot;idea&quot;&gt;The idea&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;The main idea behind this library is a concept of &lt;a href=&quot;#container&quot;&gt;container&lt;/a&gt; and &lt;a href=&quot;#bg-views&quot;&gt;background views&lt;/a&gt;. It allows for complete control over the look of the created views.&lt;/p&gt;
-
-&lt;p&gt;In the &lt;a href=&quot;#quick-example&quot;&gt;quick example&lt;/a&gt; section you can see that the &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; has three child views. The first two are &lt;a href=&quot;#bg-views&quot;&gt;background views&lt;/a&gt;, and the last one is the &lt;a href=&quot;#container&quot;&gt;container&lt;/a&gt;. To create working version of &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt;, you are only required to specify single background view and container. Second background view can be added when you want to be able to swipe in both directions.&lt;/p&gt;
-
-&lt;h3 id=&quot;a-idcontainercontainera&quot;&gt;&lt;a id=&quot;container&quot;&gt;Container&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;The container is a view which is drawn above other views. In the default state, this is the only visible view, and it is what gets moved when users perform swipe gestures. It can be either a simple &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt;, custom view or even some sort of view group like &lt;code class=&quot;highlighter-rouge&quot;&gt;LinearLayout&lt;/code&gt;. There is no limit for that, which allows you to gain complete control over the look of your views.&lt;/p&gt;
-
-&lt;h3 id=&quot;a-idbg-viewsbackground-viewsa&quot;&gt;&lt;a id=&quot;bg-views&quot;&gt;Background views&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;Background views are the mostly invisible part of &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt;. They get revealed only when users start performing swipe gestures.&lt;/p&gt;
-
-&lt;p&gt;You can specify for which swipe direction each of them corresponds by setting their &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_gravity&lt;/code&gt; attribute. 
-Default value or setting it to either &lt;code class=&quot;highlighter-rouge&quot;&gt;left&lt;/code&gt; and/or &lt;code class=&quot;highlighter-rouge&quot;&gt;start&lt;/code&gt; means that it will start appearing when users perform right swipe gesture. On the other hand setting it to &lt;code class=&quot;highlighter-rouge&quot;&gt;end&lt;/code&gt; and/or &lt;code class=&quot;highlighter-rouge&quot;&gt;right&lt;/code&gt; will result in the view to start appearing when users swipe to the left. This doesn’t mean that you aren’t allowed to use other &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_gravity&lt;/code&gt; options like &lt;code class=&quot;highlighter-rouge&quot;&gt;center&lt;/code&gt;. They will still control the view as usual and will be ignored by &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;This behavior allows you to add single background and by specifying its &lt;code class=&quot;highlighter-rouge&quot;&gt;layout_gravity&lt;/code&gt; determine whether &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; should be possible to be swiped only to the left or right side.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; There can be only one view for each direction. This means that if one of them is placed on the left side, the second one must be put on the right side to avoid errors.&lt;/p&gt;
-
-&lt;h3 id=&quot;a-ididea-exampleexamplea&quot;&gt;&lt;a id=&quot;idea-example&quot;&gt;Example&lt;/a&gt;&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;me.thanel.swipeactionview.SwipeActionView&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/swipe_view&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;?colorPrimary&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;First&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;background&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view.&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt;It&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;located&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;side&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;allow&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;perform&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;swipe&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;gesture.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Second&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;background&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view.&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;one&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;be&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;located&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;right&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;side&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;allow&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;perform&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt;left&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;swipe&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;gesture&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;its&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;layout_gravity&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;changed&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;&quot;end&quot;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;end&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@mipmap/ic_launcher&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-        
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;Container.&lt;/span&gt;
-        &lt;span class=&quot;err&quot;&gt;This&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;what&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;users&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;will&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;see&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;the&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;view&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;being&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;swiped.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swipe me&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/me.thanel.swipeactionview.SwipeActionView&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;a-idgesture-listenergesture-listenera&quot;&gt;&lt;a id=&quot;gesture-listener&quot;&gt;Gesture listener&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;In order to be able to perform actions when users swipe the &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; you have to setup the listener with the &lt;code class=&quot;highlighter-rouge&quot;&gt;setSwipeGestureListener(SwipeGestureListener)&lt;/code&gt; method. It takes &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeGestureListener&lt;/code&gt; as a parameter.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeGestureListener&lt;/code&gt; consists of two methods. One for performing an action when the view is swiped to the left and one when it is swiped to the right side.&lt;/p&gt;
-
-&lt;p&gt;Each of these methods returns &lt;code class=&quot;highlighter-rouge&quot;&gt;Boolean&lt;/code&gt; as a result. Most of the time you’ll want to return &lt;code class=&quot;highlighter-rouge&quot;&gt;true&lt;/code&gt; here. Returning &lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt; is designed for advanced usage. By doing so, the view won’t be automatically animated to the original position but will stay at the full translation. This allows you to manipulate the content of the visible background view. One great example of this is displaying progress wheel and manually returning the view to the original position once some long action finishes execution.&lt;/p&gt;
-
-&lt;p&gt;To return the view to its original position you can call the &lt;code class=&quot;highlighter-rouge&quot;&gt;moveToOriginalPosition()&lt;/code&gt; method at any time.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSwipeGestureListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeGestureListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSwipedLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;showToast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swiped left&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Returning true automatically moves view to original position&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onSwipedRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;@NotNull&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SwipeActionView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;showToast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Swiped right&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        
-        &lt;span class=&quot;c1&quot;&gt;// Returning false requires calling moveToOriginalPosition() manually to&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// reset view to original position&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Here we are using optional parameter which will move our view to&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// original position after delay in ms. In this case it&#39;s 2s.&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;swipeActionView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;moveToOriginalPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;a-iddisabling-gesturesdisabling-gesturesa&quot;&gt;&lt;a id=&quot;disabling-gestures&quot;&gt;Disabling gestures&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;If you want to dynamically enable or disable gesture in a specific direction you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;setDirectionEnabled(SwipeDirection, Boolean)&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The gesture enabling part is controlled by presence and visibility of background views. This method is only provided for convenience since it can also be changed by switching visibility of background views. It was coded like this so the specific swipe directions can be disabled by default from XML using &lt;code class=&quot;highlighter-rouge&quot;&gt;visibility&lt;/code&gt; attribute on views corresponding to these directions.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setDirectionEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SwipeDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;a-idripple-animationsripple-animationsa&quot;&gt;&lt;a id=&quot;ripple-animations&quot;&gt;Ripple animations&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; comes with optional support for displaying ripple animations when gestures are performed. All you have to do to enable them is to give them a color from XML or code. To do so from the code, you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;setRippleColor(SwipeDirection, Int)&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;To disable ripple animations you can enter &lt;code class=&quot;highlighter-rouge&quot;&gt;-1&lt;/code&gt; as value for color.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;swipeView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setRippleColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SwipeDirection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BLUE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;a-idclick-listenersclick-listenersa&quot;&gt;&lt;a id=&quot;click-listeners&quot;&gt;Click listeners&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; makes sure that any click listeners will work correctly. You can use &lt;code class=&quot;highlighter-rouge&quot;&gt;setClickListener(View.OnClickListener)&lt;/code&gt; as usual and they should work, including views located in the container.&lt;/p&gt;
-
-&lt;p&gt;The only exception is that you shouldn’t add click listeners for background views. This library wasn’t designed to add support for this behavior. If it’s possible then, that’s only a positive side effect. You are better of with using libraries such as &lt;a href=&quot;https://github.com/daimajia/AndroidSwipeLayout&quot;&gt;AndroidSwipeLayout&lt;/a&gt; instead.&lt;/p&gt;
-
-&lt;h1 id=&quot;a-idattrattributesa&quot;&gt;&lt;a id=&quot;attr&quot;&gt;Attributes&lt;/a&gt;&lt;/h1&gt;
-
-&lt;h4 id=&quot;a-idattr-alwaysdrawbackgroundappsavalwaysdrawbackgroundtruefalsea&quot;&gt;&lt;a id=&quot;attr-alwaysDrawBackground&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_alwaysDrawBackground=&quot;true|false&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;To reduce overdraw &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; only draws parts of the main background and background views which become visible due to swipe gesture. This is not always what you want as it could break any container views with transparency. A good example where you would want to use this attribute is when you had &lt;code class=&quot;highlighter-rouge&quot;&gt;CardView&lt;/code&gt; as your container.&lt;/p&gt;
-
-&lt;h4 id=&quot;a-idattr-rippletakespaddingappsavrippletakespaddingtruefalsea&quot;&gt;&lt;a id=&quot;attr-rippleTakesPadding&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_rippleTakesPadding=&quot;true|false&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;If you want ripple effect to take padding together with container view you can set this attribute to true.&lt;/p&gt;
-
-&lt;h4 id=&quot;a-idattr-swipeleftripplecolorappsavswipeleftripplecolorcolora&quot;&gt;&lt;a id=&quot;attr-swipeLeftRippleColor&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_swipeLeftRippleColor=&quot;@color&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Sets color for ripple displayed when users swipe left.&lt;/p&gt;
-
-&lt;h4 id=&quot;a-idattr-swiperightripplecolorappsavswiperightripplecolorcolora&quot;&gt;&lt;a id=&quot;attr-swipeRightRippleColor&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_swipeRightRippleColor=&quot;@color&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Sets color for ripple displayed when users swipe right.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-idattr-toolstools-attributesa&quot;&gt;&lt;a id=&quot;attr-tools&quot;&gt;Tools attributes&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; has special attributes used only in the editor mode. They make it possible to preview ripples or contents of background views without worrying about side effects. They are entirely ignored when running on the device.&lt;/p&gt;
-
-&lt;h4 id=&quot;a-idattr-tools-previewbackgroundappsavtoolspreviewbackgroundswipeleftswiperighta&quot;&gt;&lt;a id=&quot;attr-tools-previewBackground&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_tools_previewBackground=&quot;swipeLeft|swipeRight&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Shows background view for swipe left or right gesture.&lt;/p&gt;
-
-&lt;h4 id=&quot;a-idattr-tools-previewrippleappsavtoolspreviewrippleswipelefta&quot;&gt;&lt;a id=&quot;attr-tools-previewRipple&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;app:sav_tools_previewRipple=&quot;swipeLeft&quot;&lt;/code&gt;&lt;/a&gt;&lt;/h4&gt;
-&lt;p&gt;Shows ripple for swipe left or right gesture.&lt;/p&gt;
-
-&lt;h1 id=&quot;a-idanimationsanimationsa&quot;&gt;&lt;a id=&quot;animations&quot;&gt;Animations&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeActionView&lt;/code&gt; also comes with support for custom animations. There are two listeners that you can set in your code. They will be called with current swipe progress while users perform swipe gesture.&lt;/p&gt;
-
-&lt;p&gt;By default, there is only one animator included which scales the background views. You can use it as an example of how to implement custom animations or use it directly if it’s good enough for you.&lt;/p&gt;
-
-&lt;h1 id=&quot;a-idcreditscreditsa&quot;&gt;&lt;a id=&quot;credits&quot;&gt;Credits&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;This library wouldn’t be created without help and work of &lt;a href=&quot;https://github.com/brianrobles204&quot;&gt;Brian Robles&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;His &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.brianrobles204.karmamachine&quot;&gt;KarmaMachine&lt;/a&gt; Reddit application was my direct inspiration when I was creating it for my application.
-He also created &lt;code class=&quot;highlighter-rouge&quot;&gt;SwipeRippleDrawable&lt;/code&gt; and allowed me to &lt;a href=&quot;https://github.com/Tunous/SwipeActionView/blob/master/library/src/main/kotlin/me/thanel/swipeactionview/SwipeRippleDrawable.kt&quot;&gt;reimplement&lt;/a&gt; it for purposes of this library.
-&lt;strong&gt;Huge thanks&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;a-idlicenselicensea&quot;&gt;&lt;a id=&quot;license&quot;&gt;License&lt;/a&gt;&lt;/h1&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright © 2016 Łukasz Rutkowski
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Wed, 12 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/12/SwipeActionView/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/12/SwipeActionView/</guid>
-        
-        <category>swipe</category>
         
         
       </item>
