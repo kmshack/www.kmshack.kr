@@ -5,8 +5,8 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://android.kmshack.kr/</link>
     <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Nov 2016 01:51:53 +0900</pubDate>
-    <lastBuildDate>Mon, 21 Nov 2016 01:51:53 +0900</lastBuildDate>
+    <pubDate>Sat, 17 Dec 2016 13:09:47 +0900</pubDate>
+    <lastBuildDate>Sat, 17 Dec 2016 13:09:47 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -229,7 +229,12 @@ limitations under the License.
 
 &lt;p&gt;Android library that adds a curve at the below of image views and relative layouts. &lt;strong&gt;CrescentoImageView&lt;/strong&gt; and &lt;strong&gt;CrescentoContainer&lt;/strong&gt; are the image view and relative layout respectively. You can change the radius of curve with &lt;strong&gt;attribute:curvature&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;/art/sample1_nexus4_angle1.png&quot;&gt;Sample Image 2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/api?level=11&quot;&gt;[API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;https://android-arsenal.com/details/1/4684&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Crescento-green.svg?style=true)&lt;/a&gt;
+&lt;a href=&quot;http://androidweekly.net/issues/issue-232&quot;&gt;[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23232-blue.svg)&lt;/a&gt;
+&lt;a href=&quot;https://www.androiddevdigest.com/digest-119/&quot;&gt;[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23119-blue.svg)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/art/sample_image.jpg&quot;&gt;Sample Image 2&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
 
@@ -239,6 +244,7 @@ limitations under the License.
   &lt;li&gt;&lt;strong&gt;Curve Bottom&lt;/strong&gt;: It adds a curve bottom as stated above.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Tint&lt;/strong&gt;: It add tint on &lt;strong&gt;CrescentoImageView&lt;/strong&gt; by using &lt;strong&gt;attribute:tintColor&lt;/strong&gt;. It pick color automatically from the image if &lt;strong&gt;tintMode&lt;/strong&gt; is set to &lt;strong&gt;automatic&lt;/strong&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Alpha&lt;/strong&gt;: Add transparency in tint by using &lt;strong&gt;attribute:tintAlpha&lt;/strong&gt;. Varies from 0 to 255.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Gradient&lt;/strong&gt; : Add gradient on the imageview.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://github.com/developer-shivam/crescento/blob/master/demo.apk&quot;&gt;Sample Apk&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -301,7 +307,7 @@ Of course, you can also choose what you want to donate, all donations are awesom
 
 &lt;p&gt;Add below lines in build.gradle at app level.
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
-	compile &#39;com.github.developer-shivam:crescento:1.0.0&#39;
+	compile &#39;com.github.developer-shivam:crescento:1.0.1&#39;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;basic-usage&quot;&gt;Basic Usage&lt;/h2&gt;
@@ -340,37 +346,43 @@ Of course, you can also choose what you want to donate, all donations are awesom
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;curvature&lt;/strong&gt;: To change the size of curve.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;curvatureDirection&lt;/strong&gt; : To change the direction of curvature. Whether &lt;strong&gt;inward&lt;/strong&gt; or &lt;strong&gt;outward&lt;/strong&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;tintColor&lt;/strong&gt;: To add tint on image view.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;tintMode&lt;/strong&gt;: To add tint &lt;strong&gt;manually&lt;/strong&gt; or &lt;strong&gt;automatically&lt;/strong&gt;. If &lt;strong&gt;automatically&lt;/strong&gt; it will pick color from image you have set.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;tintAlpha&lt;/strong&gt;: To set the amount of tint. 0 for 100% transparent and 255 for opaque.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;gradientDirection&lt;/strong&gt; : To set the direction of gradient. Supported direction are &lt;strong&gt;TOP_TO_BOTTOM&lt;/strong&gt;, &lt;strong&gt;BOTTOM_TO_TOP&lt;/strong&gt;, &lt;strong&gt;LEFT_TO_RIGHT&lt;/strong&gt; and &lt;strong&gt;RIGHT_TO_LEFT&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;gradientStartColor&lt;/strong&gt; : gradient start color.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;gradientEndColor&lt;/strong&gt; : gradient end color.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;question--contact-me--hire-me&quot;&gt;Question / Contact Me / Hire Me&lt;/h2&gt;
-&lt;p&gt;Please feel free to ping me at &lt;strong&gt;dr.droid27@gmail.com&lt;/strong&gt;. Expected package would be 12 lpa.&lt;/p&gt;
+&lt;p&gt;Please feel free to ping me at &lt;strong&gt;dr.droid27@gmail.com&lt;/strong&gt;. Expected package would be &lt;strong&gt;12 lpa&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;#License&lt;/p&gt;
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
 
-&lt;p&gt;MIT License&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;MIT License
 
-&lt;p&gt;Copyright (c) 2016 Shivam Satija&lt;/p&gt;
+Copyright (c) 2016 Shivam Satija
 
-&lt;p&gt;Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the “Software”), to deal
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:&lt;/p&gt;
+furnished to do so, subject to the following conditions:
 
-&lt;p&gt;The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.&lt;/p&gt;
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-&lt;p&gt;THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.&lt;/p&gt;
+SOFTWARE.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 </description>
         <pubDate>Mon, 21 Nov 2016 00:00:00 +0900</pubDate>
@@ -404,7 +416,7 @@ With the option to choose between two or three states. (from v1.1.0) &lt;br /&gt
 &lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
 &lt;p&gt;####Gradle:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-compile &#39;com.rm:rmswitch:1.2.0&#39;
+compile &#39;com.rm:rmswitch:1.2.1&#39;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
@@ -829,7 +841,7 @@ but with support of CRUD animations i decided to make such stuff and share it.&l
 
 &lt;p&gt;with gradle
 &lt;code class=&quot;highlighter-rouge&quot;&gt;GRADLE 
-compile &#39;com.beloo.widget:ChipsLayoutManager:0.2.4@aar&#39;
+compile &#39;com.beloo.widget:ChipsLayoutManager:0.3.4@aar&#39;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Assuming you have installed jCenter provider:
@@ -848,7 +860,7 @@ allprojects {
 or custom &lt;code class=&quot;highlighter-rouge&quot;&gt;FlowLayout&lt;/code&gt;s.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;supports &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;’s features, such as default animations while CRUD items &amp;amp; custom &lt;code class=&quot;highlighter-rouge&quot;&gt;ItemAnimator&lt;/code&gt;s, &lt;code class=&quot;highlighter-rouge&quot;&gt;ItemDecorator&lt;/code&gt;s, scrolling etc. &lt;code class=&quot;highlighter-rouge&quot;&gt;wrap_content&lt;/code&gt; of height is supported&lt;/li&gt;
+  &lt;li&gt;supports &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;’s/&lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutManager&lt;/code&gt;’s features, such as default animations while CRUD items &amp;amp; custom &lt;code class=&quot;highlighter-rouge&quot;&gt;ItemAnimator&lt;/code&gt;s, &lt;code class=&quot;highlighter-rouge&quot;&gt;ItemDecorator&lt;/code&gt;s, scrolling etc. &lt;code class=&quot;highlighter-rouge&quot;&gt;wrap_content&lt;/code&gt; of height is supported&lt;/li&gt;
   &lt;li&gt;vertical scrolling is supported. Horizontal scrolling isn’t supported. It is possible to disable vertical scrolling as well. Supported padding/margin, clipToPadding parameter of &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;supports different height and width of items&lt;/li&gt;
   &lt;li&gt;recycling items support (another advantage over &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt; approach)&lt;/li&gt;
@@ -858,6 +870,7 @@ or custom &lt;code class=&quot;highlighter-rouge&quot;&gt;FlowLayout&lt;/code&gt
   &lt;li&gt;predictive animations supported (animate view movement outside of visible bounds)&lt;/li&gt;
   &lt;li&gt;setting max count of view in row&lt;/li&gt;
   &lt;li&gt;you are able to break row due to your conditions&lt;/li&gt;
+  &lt;li&gt;justified views in row with spaces or additional view size&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;table&gt;
@@ -875,25 +888,43 @@ or custom &lt;code class=&quot;highlighter-rouge&quot;&gt;FlowLayout&lt;/code&gt
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;###Layout Directions&lt;/p&gt;
+&lt;p&gt;####Layout Directions&lt;/p&gt;
 &lt;center&gt;
 
-| Left to Right  | Right to Left  |
-|---|---|
-|[Left to Right implementation of ChipsLayoutManager](/images/ltr.png) |[Right to Left implementation of ChipsLayoutManager](/images/rtl.png)|
+|  | Left to Right  | Right to Left  |
+|---|---|---|
+|  &lt;b&gt;Horizontal&lt;/b&gt; |[Left to Right Rows implementation of ChipsLayoutManager](/images/ltr_horizontal.png) |[Right to Left implementation of ChipsLayoutManager](/images/rtl_horizontal.png)|
+|  &lt;b&gt;Vertical&lt;/b&gt;   |[Left to Right Columns implementation of ChipsLayoutManager](/images/ltr_vertical.png) ||
 
 &lt;/center&gt;
+
+&lt;p&gt;####Fill strategy
+Any row has some space left, where is impossible to place the next view, because that space is too small.
+But we could distribute that space for available views in that row.&lt;/p&gt;
+
+&lt;p&gt;Row strategy is a mode of distribution left space.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STRATEGY_DEFAULT&lt;/code&gt; - is used by default. Left space is placed at the end of the row.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STRATEGY_FILL_VIEW&lt;/code&gt; - available space is distributed among views.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STRATEGY_FILL_SPACE&lt;/code&gt; - available space is distributed among spaces between views, start &amp;amp; end views are docked to a nearest border.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STRATEGY_CENTER&lt;/code&gt; - available space is distributed among spaces between views, start &amp;amp; end spaces included. Views are placed in center of canvas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In such layouts by default last row isn’t considered completed. So strategy isn’t applied for last row.
+But you can also enable opposite behaviour.&lt;/p&gt;
 
 &lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&quot;language-JAVA&quot;&gt;ChipsLayoutManager chipsLayoutManager = ChipsLayoutManager.newBuilder()
         //set vertical gravity for all items in a row. Default = Gravity.CENTER_VERTICAL
         .setChildGravity(Gravity.TOP)
-        //whether RecyclerView can scroll
+        //whether RecyclerView can scroll. TRUE by default
         .setScrollingEnabled(true)
         //set maximum views count in a particular row
         .setMaxViewsInRow(2)
-        //set gravity resolver where you can determine gravity for item in position. This method have priority over previous one
+        //set gravity resolver where you can determine gravity for item in position. 
+        //This method have priority over previous one
         .setGravityResolver(new IChildGravityResolver() {
             @Override
             public int getItemGravity(int position) {
@@ -907,11 +938,18 @@ or custom &lt;code class=&quot;highlighter-rouge&quot;&gt;FlowLayout&lt;/code&gt
                 return position == 6 || position == 11 || position == 2;
             }
         })
+        //a layoutOrientation of layout manager, could be VERTICAL OR HORIZONTAL. HORIZONTAL by default
+        .setOrientation(ChipsLayoutManager.HORIZONTAL)
+        // row strategy for views in completed row, could be STRATEGY_DEFAULT, STRATEGY_FILL_VIEW, 
+        //STRATEGY_FILL_SPACE or STRATEGY_CENTER
+        .setRowStrategy(ChipsLayoutManager.STRATEGY_FILL_SPACE)
+        // whether strategy is applied to last row. FALSE by default
+        .withLastRow(true)
         .build();
 rv.setLayoutManager(chipsLayoutManager);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Notice that if you changed gravity resolver or row breaker conditions in runtime - it won’t affect already drew items and cached item positions. 
+&lt;p&gt;Notice that if you changed gravity resolver or row breaker conditions in runtime - it won’t affect already drown items and cached item positions.
 You have to call &lt;code class=&quot;highlighter-rouge&quot;&gt;notifyItemChanged&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsLayoutManager&lt;/code&gt; otherwise layout won’t be predictable.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Device current direction&lt;/strong&gt; have been chosen by default.

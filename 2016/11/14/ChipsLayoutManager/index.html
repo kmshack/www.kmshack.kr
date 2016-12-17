@@ -404,15 +404,16 @@
       <div class="sidebar__bottom">
         <div class="column small-12 large-12">
             
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- android.kmshack.kr -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:250px;height:250px"
-                 data-ad-client="ca-pub-2770700228376888"
-                 data-ad-slot="9689432013"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- androidui -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:250px;height:250px"
+             data-ad-client="ca-pub-9975139260149901"
+             data-ad-slot="5123612274"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
             
           <div class="font-tiny">
               <br>
@@ -507,7 +508,7 @@ but with support of CRUD animations i decided to make such stuff and share it.</
 
 <p>with gradle
 <code class="highlighter-rouge">GRADLE 
-compile 'com.beloo.widget:ChipsLayoutManager:0.2.4@aar'
+compile 'com.beloo.widget:ChipsLayoutManager:0.3.4@aar'
 </code></p>
 
 <p>Assuming you have installed jCenter provider:
@@ -526,7 +527,7 @@ allprojects {
 or custom <code class="highlighter-rouge">FlowLayout</code>s.</p>
 
 <ul>
-  <li>supports <code class="highlighter-rouge">RecyclerView</code>’s features, such as default animations while CRUD items &amp; custom <code class="highlighter-rouge">ItemAnimator</code>s, <code class="highlighter-rouge">ItemDecorator</code>s, scrolling etc. <code class="highlighter-rouge">wrap_content</code> of height is supported</li>
+  <li>supports <code class="highlighter-rouge">RecyclerView</code>’s/<code class="highlighter-rouge">LayoutManager</code>’s features, such as default animations while CRUD items &amp; custom <code class="highlighter-rouge">ItemAnimator</code>s, <code class="highlighter-rouge">ItemDecorator</code>s, scrolling etc. <code class="highlighter-rouge">wrap_content</code> of height is supported</li>
   <li>vertical scrolling is supported. Horizontal scrolling isn’t supported. It is possible to disable vertical scrolling as well. Supported padding/margin, clipToPadding parameter of <code class="highlighter-rouge">RecyclerView</code></li>
   <li>supports different height and width of items</li>
   <li>recycling items support (another advantage over <code class="highlighter-rouge">TextView</code> approach)</li>
@@ -536,6 +537,7 @@ or custom <code class="highlighter-rouge">FlowLayout</code>s.</p>
   <li>predictive animations supported (animate view movement outside of visible bounds)</li>
   <li>setting max count of view in row</li>
   <li>you are able to break row due to your conditions</li>
+  <li>justified views in row with spaces or additional view size</li>
 </ul>
 
 <table>
@@ -553,25 +555,43 @@ or custom <code class="highlighter-rouge">FlowLayout</code>s.</p>
   </tbody>
 </table>
 
-<p>###Layout Directions</p>
+<p>####Layout Directions</p>
 <center>
 
-| Left to Right  | Right to Left  |
-|---|---|
-|[Left to Right implementation of ChipsLayoutManager](/images/ltr.png) |[Right to Left implementation of ChipsLayoutManager](/images/rtl.png)|
+|  | Left to Right  | Right to Left  |
+|---|---|---|
+|  <b>Horizontal</b> |[Left to Right Rows implementation of ChipsLayoutManager](/images/ltr_horizontal.png) |[Right to Left implementation of ChipsLayoutManager](/images/rtl_horizontal.png)|
+|  <b>Vertical</b>   |[Left to Right Columns implementation of ChipsLayoutManager](/images/ltr_vertical.png) ||
 
 </center>
+
+<p>####Fill strategy
+Any row has some space left, where is impossible to place the next view, because that space is too small.
+But we could distribute that space for available views in that row.</p>
+
+<p>Row strategy is a mode of distribution left space.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">STRATEGY_DEFAULT</code> - is used by default. Left space is placed at the end of the row.</li>
+  <li><code class="highlighter-rouge">STRATEGY_FILL_VIEW</code> - available space is distributed among views.</li>
+  <li><code class="highlighter-rouge">STRATEGY_FILL_SPACE</code> - available space is distributed among spaces between views, start &amp; end views are docked to a nearest border.</li>
+  <li><code class="highlighter-rouge">STRATEGY_CENTER</code> - available space is distributed among spaces between views, start &amp; end spaces included. Views are placed in center of canvas.</li>
+</ul>
+
+<p>In such layouts by default last row isn’t considered completed. So strategy isn’t applied for last row.
+But you can also enable opposite behaviour.</p>
 
 <h3 id="usage">Usage</h3>
 
 <pre><code class="language-JAVA">ChipsLayoutManager chipsLayoutManager = ChipsLayoutManager.newBuilder()
         //set vertical gravity for all items in a row. Default = Gravity.CENTER_VERTICAL
         .setChildGravity(Gravity.TOP)
-        //whether RecyclerView can scroll
+        //whether RecyclerView can scroll. TRUE by default
         .setScrollingEnabled(true)
         //set maximum views count in a particular row
         .setMaxViewsInRow(2)
-        //set gravity resolver where you can determine gravity for item in position. This method have priority over previous one
+        //set gravity resolver where you can determine gravity for item in position. 
+        //This method have priority over previous one
         .setGravityResolver(new IChildGravityResolver() {
             @Override
             public int getItemGravity(int position) {
@@ -585,11 +605,18 @@ or custom <code class="highlighter-rouge">FlowLayout</code>s.</p>
                 return position == 6 || position == 11 || position == 2;
             }
         })
+        //a layoutOrientation of layout manager, could be VERTICAL OR HORIZONTAL. HORIZONTAL by default
+        .setOrientation(ChipsLayoutManager.HORIZONTAL)
+        // row strategy for views in completed row, could be STRATEGY_DEFAULT, STRATEGY_FILL_VIEW, 
+        //STRATEGY_FILL_SPACE or STRATEGY_CENTER
+        .setRowStrategy(ChipsLayoutManager.STRATEGY_FILL_SPACE)
+        // whether strategy is applied to last row. FALSE by default
+        .withLastRow(true)
         .build();
 rv.setLayoutManager(chipsLayoutManager);
 </code></pre>
 
-<p>Notice that if you changed gravity resolver or row breaker conditions in runtime - it won’t affect already drew items and cached item positions. 
+<p>Notice that if you changed gravity resolver or row breaker conditions in runtime - it won’t affect already drown items and cached item positions.
 You have to call <code class="highlighter-rouge">notifyItemChanged</code> on <code class="highlighter-rouge">ChipsLayoutManager</code> otherwise layout won’t be predictable.</p>
 
 <p><strong>Device current direction</strong> have been chosen by default.

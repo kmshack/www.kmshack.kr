@@ -404,15 +404,16 @@
       <div class="sidebar__bottom">
         <div class="column small-12 large-12">
             
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- android.kmshack.kr -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:250px;height:250px"
-                 data-ad-client="ca-pub-2770700228376888"
-                 data-ad-slot="9689432013"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- androidui -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:250px;height:250px"
+             data-ad-client="ca-pub-9975139260149901"
+             data-ad-slot="5123612274"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
             
           <div class="font-tiny">
               <br>
@@ -493,7 +494,12 @@
 
 <p>Android library that adds a curve at the below of image views and relative layouts. <strong>CrescentoImageView</strong> and <strong>CrescentoContainer</strong> are the image view and relative layout respectively. You can change the radius of curve with <strong>attribute:curvature</strong>.</p>
 
-<p><a href="/art/sample1_nexus4_angle1.png">Sample Image 2</a></p>
+<p><a href="https://android-arsenal.com/api?level=11">[API](https://img.shields.io/badge/API-9%2B-orange.svg?style=flat)</a>
+<a href="https://android-arsenal.com/details/1/4684">[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Crescento-green.svg?style=true)</a>
+<a href="http://androidweekly.net/issues/issue-232">[Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23232-blue.svg)</a>
+<a href="https://www.androiddevdigest.com/digest-119/">[AndroidDev Digest](https://img.shields.io/badge/AndroidDev%20Digest-%23119-blue.svg)</a></p>
+
+<p><a href="/art/sample_image.jpg">Sample Image 2</a></p>
 
 <h2 id="overview">Overview</h2>
 
@@ -503,6 +509,7 @@
   <li><strong>Curve Bottom</strong>: It adds a curve bottom as stated above.</li>
   <li><strong>Tint</strong>: It add tint on <strong>CrescentoImageView</strong> by using <strong>attribute:tintColor</strong>. It pick color automatically from the image if <strong>tintMode</strong> is set to <strong>automatic</strong>.</li>
   <li><strong>Alpha</strong>: Add transparency in tint by using <strong>attribute:tintAlpha</strong>. Varies from 0 to 255.</li>
+  <li><strong>Gradient</strong> : Add gradient on the imageview.</li>
 </ul>
 
 <p><strong><a href="https://github.com/developer-shivam/crescento/blob/master/demo.apk">Sample Apk</a></strong></p>
@@ -565,7 +572,7 @@ Of course, you can also choose what you want to donate, all donations are awesom
 
 <p>Add below lines in build.gradle at app level.
 <code class="highlighter-rouge">java
-	compile 'com.github.developer-shivam:crescento:1.0.0'
+	compile 'com.github.developer-shivam:crescento:1.0.1'
 </code></p>
 
 <h2 id="basic-usage">Basic Usage</h2>
@@ -604,37 +611,43 @@ Of course, you can also choose what you want to donate, all donations are awesom
 
 <ul>
   <li><strong>curvature</strong>: To change the size of curve.</li>
+  <li><strong>curvatureDirection</strong> : To change the direction of curvature. Whether <strong>inward</strong> or <strong>outward</strong>.</li>
   <li><strong>tintColor</strong>: To add tint on image view.</li>
   <li><strong>tintMode</strong>: To add tint <strong>manually</strong> or <strong>automatically</strong>. If <strong>automatically</strong> it will pick color from image you have set.</li>
   <li><strong>tintAlpha</strong>: To set the amount of tint. 0 for 100% transparent and 255 for opaque.</li>
+  <li><strong>gradientDirection</strong> : To set the direction of gradient. Supported direction are <strong>TOP_TO_BOTTOM</strong>, <strong>BOTTOM_TO_TOP</strong>, <strong>LEFT_TO_RIGHT</strong> and <strong>RIGHT_TO_LEFT</strong>.</li>
+  <li><strong>gradientStartColor</strong> : gradient start color.</li>
+  <li><strong>gradientEndColor</strong> : gradient end color.</li>
 </ul>
 
 <h2 id="question--contact-me--hire-me">Question / Contact Me / Hire Me</h2>
-<p>Please feel free to ping me at <strong>dr.droid27@gmail.com</strong>. Expected package would be 12 lpa.</p>
+<p>Please feel free to ping me at <strong>dr.droid27@gmail.com</strong>. Expected package would be <strong>12 lpa</strong>.</p>
 
-<p>#License</p>
+<h2 id="license">License</h2>
 
-<p>MIT License</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>MIT License
 
-<p>Copyright (c) 2016 Shivam Satija</p>
+Copyright (c) 2016 Shivam Satija
 
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the “Software”), to deal
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
+furnished to do so, subject to the following conditions:
 
-<p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</p>
+SOFTWARE.
+</code></pre>
+</div>
 
 
           <br>

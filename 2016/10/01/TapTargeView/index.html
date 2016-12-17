@@ -404,15 +404,16 @@
       <div class="sidebar__bottom">
         <div class="column small-12 large-12">
             
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- android.kmshack.kr -->
-            <ins class="adsbygoogle"
-                 style="display:inline-block;width:250px;height:250px"
-                 data-ad-client="ca-pub-2770700228376888"
-                 data-ad-slot="9689432013"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- androidui -->
+        <ins class="adsbygoogle"
+             style="display:inline-block;width:250px;height:250px"
+             data-ad-client="ca-pub-9975139260149901"
+             data-ad-slot="5123612274"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
             
           <div class="font-tiny">
               <br>
@@ -512,7 +513,7 @@
    <span class="o">}</span>
    
    <span class="n">dependencies</span> <span class="o">{</span>
-         <span class="n">compile</span> <span class="s1">'com.getkeepsafe.taptargetview:taptargetview:1.5.2'</span>
+         <span class="n">compile</span> <span class="s1">'com.getkeepsafe.taptargetview:taptargetview:1.6.0'</span>
    <span class="o">}</span>
 </code></pre>
 </div>
@@ -539,7 +540,8 @@
         <span class="o">.</span><span class="na">cancelable</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>                  <span class="c1">// Whether tapping outside the outer circle dismisses the view</span>
         <span class="o">.</span><span class="na">tintTarget</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>                   <span class="c1">// Whether to tint the target view's color</span>
         <span class="o">.</span><span class="na">transparentTarget</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>           <span class="c1">// Specify whether the target is transparent (displays the content underneath)</span>
-        <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="n">Drawable</span><span class="o">),</span>                    <span class="c1">// Specify a custom drawable to draw as the target</span>
+        <span class="o">.</span><span class="na">icon</span><span class="o">(</span><span class="n">Drawable</span><span class="o">)</span>                     <span class="c1">// Specify a custom drawable to draw as the target</span>
+        <span class="o">.</span><span class="na">targetRadius</span><span class="o">(</span><span class="mi">60</span><span class="o">),</span>                  <span class="c1">// Specify the target radius (in dp)</span>
     <span class="k">new</span> <span class="n">TapTargetView</span><span class="o">.</span><span class="na">Listener</span><span class="o">()</span> <span class="o">{</span>          <span class="c1">// The listener can listen for regular clicks, long clicks or cancels</span>
         <span class="nd">@Override</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="n">onTargetClick</span><span class="o">(</span><span class="n">TapTargetView</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
@@ -551,6 +553,8 @@
 </div>
 
 <p>You may also choose to target your own custom <code class="highlighter-rouge">Rect</code> with <code class="highlighter-rouge">TapTarget.forBounds(Rect, ...)</code></p>
+
+<p>Additionally, each color can be specified via a <code class="highlighter-rouge">@ColorRes</code> or a <code class="highlighter-rouge">@ColorInt</code>. Functions that have the suffix <code class="highlighter-rouge">Int</code> take a <code class="highlighter-rouge">@ColorInt</code>.</p>
 
 <h3 id="sequences">Sequences</h3>
 
