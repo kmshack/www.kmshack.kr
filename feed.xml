@@ -5,9 +5,183 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://android.kmshack.kr/</link>
     <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 17 Dec 2016 13:09:47 +0900</pubDate>
-    <lastBuildDate>Sat, 17 Dec 2016 13:09:47 +0900</lastBuildDate>
+    <pubDate>Fri, 23 Dec 2016 01:16:08 +0900</pubDate>
+    <lastBuildDate>Fri, 23 Dec 2016 01:16:08 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>stencil</title>
+        <description>&lt;h2 id=&quot;stencil&quot;&gt;stencil&lt;/h2&gt;
+&lt;p&gt;Android library, written exclusively in &lt;a href=&quot;https://kotlinlang.org/&quot;&gt;Kotlin&lt;/a&gt;, for animating the path created from text&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;img src=”https://images.thoughtbot.com/blog-vellum-image-uploads/jZpvwqUR8muyhDIT5SSu_stencil.gif” width=300/&amp;gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1. Add the JitPack repository to your root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file&lt;/strong&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
+allprojects {
+  repositories {
+    ...
+    maven { url &#39;https://jitpack.io&#39; }
+  }
+}
+&lt;/code&gt;
+&lt;strong&gt;Step 2. Add the dependency to your app’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file&lt;/strong&gt;
+```groovy&lt;/p&gt;
+
+&lt;p&gt;dependencies {
+  compile ‘com.github.thoughtbot:stencil:1.0’
+}
+```&lt;/p&gt;
+
+&lt;h2 id=&quot;contributing&quot;&gt;Contributing&lt;/h2&gt;
+
+&lt;p&gt;See the &lt;a href=&quot;CONTRIBUTING.md&quot;&gt;CONTRIBUTING&lt;/a&gt; document. Thank you, &lt;a href=&quot;https://github.com/thoughtbot/stencil/graphs/contributors&quot;&gt;contributors&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;p&gt;stencil is Copyright (c) 2016 thoughtbot, inc. It is free software, and may be redistributed under the terms specified in the &lt;a href=&quot;/LICENSE&quot;&gt;LICENSE&lt;/a&gt; file.&lt;/p&gt;
+
+&lt;h2 id=&quot;about&quot;&gt;About&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://thoughtbot.com/logo.png&quot;&gt;thoughtbot&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;stencil is maintained and funded by thoughtbot, inc. The names and logos for thoughtbot are trademarks of thoughtbot, inc.&lt;/p&gt;
+
+&lt;p&gt;We love open source software See &lt;a href=&quot;https://thoughtbot.com/tools?utm_source=github&quot;&gt;our other projects&lt;/a&gt; or &lt;a href=&quot;https://thoughtbot.com/hire-us?utm_source=github&quot;&gt;hire us&lt;/a&gt; to help build your product.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 22 Dec 2016 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2016/12/22/stencil/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/12/22/stencil/</guid>
+        
+        <category>stencil</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>FolioReader</title>
+        <description>&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/FolioReader/FolioReaderKit/assets/folioreader.png&quot;&gt;FolioReader logo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/FolioReader/FolioReader-Android&quot;&gt;[Build Status](https://api.travis-ci.org/FolioReader/FolioReader-Android.svg?branch=master)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;FolioReader-Android is an ePub reader and parser framework written in Java.&lt;/p&gt;
+
+&lt;h3 id=&quot;features&quot;&gt;Features&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[x] Custom Fonts&lt;/li&gt;
+  &lt;li&gt;[x] Custom Text Size&lt;/li&gt;
+  &lt;li&gt;[x] Themes / Day mode / Night mode&lt;/li&gt;
+  &lt;li&gt;[x] Text Highlighting&lt;/li&gt;
+  &lt;li&gt;[x] List / Edit / Delete Highlights&lt;/li&gt;
+  &lt;li&gt;[x] Handle Internal and External Links&lt;/li&gt;
+  &lt;li&gt;[x] Portrait / Landscape&lt;/li&gt;
+  &lt;li&gt;[x] Reading Time Left / Pages left&lt;/li&gt;
+  &lt;li&gt;[ ] In-App Dictionary&lt;/li&gt;
+  &lt;li&gt;[x] Media Overlays (Sync text rendering with audio playback)&lt;/li&gt;
+  &lt;li&gt;[x] TTS - Text to Speech Support&lt;/li&gt;
+  &lt;li&gt;[ ] Parse epub cover image&lt;/li&gt;
+  &lt;li&gt;[ ] PDF support&lt;/li&gt;
+  &lt;li&gt;[ ] Book Search&lt;/li&gt;
+  &lt;li&gt;[x] Add Notes to a Highlight&lt;/li&gt;
+  &lt;li&gt;[ ] Better Documentation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;##### Custom Fonts
+&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1277242/19012915/0661c7b2-87e0-11e6-81d6-8c71051e1074.gif&quot;&gt;Custom fonts&lt;/a&gt;
+##### Day and Night Mode
+&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1277242/19012914/f42059c4-87df-11e6-97f8-29e61a79e8aa.gif&quot;&gt;Day night mode&lt;/a&gt;
+##### Text Highlighting 
+&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1277242/19012904/c2700c3a-87df-11e6-97ed-507765b3ddf0.gif&quot;&gt;Highlight&lt;/a&gt;
+##### Media Overlays 
+&lt;a href=&quot;https://cloud.githubusercontent.com/assets/1277242/19012908/d61f3ce2-87df-11e6-8652-d72b6a1ad9a3.gif&quot;&gt;Media Overlay&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;gradle&quot;&gt;Gradle&lt;/h3&gt;
+&lt;p&gt;Add following dependency to your app build.gradle
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+compile &#39;com.folioreader:folioreader:0.2.3&#39;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
+
+&lt;p&gt;To use FolioReader, you need to call FolioReaderActivity with following parameters:
+1. INTENT_EPUB_SOURCE_TYPE - your epub can come from raw or assets folder or from SD card. Use enum FolioActivity.EpubSourceType.
+2. INTENT_EPUB_SOURCE_PATH - assets/SD card path of the epub file or raw ID of epub file if epub file is in raw folder&lt;/p&gt;
+
+&lt;p&gt;Reading from assets folder
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+Intent intent = new Intent(HomeActivity.this, FolioActivity.class);
+intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.ASSESTS);
+intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, &quot;epub/The Silver Chair.epub&quot;);
+startActivity(intent);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Reading from raw folder of resources
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+Intent intent = new Intent(HomeActivity.this, FolioActivity.class);
+intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_TYPE, FolioActivity.EpubSourceType.RAW);
+intent.putExtra(FolioActivity.INTENT_EPUB_SOURCE_PATH, R.raw.adventures);
+startActivity(intent);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For reading from SD card, just retrieve absolute path of epub file and pass that in INTENT_EPUB_SOURCE_PATH.&lt;/p&gt;
+
+&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/daimajia/AndroidSwipeLayout&quot;&gt;SwipeLayout&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ormlite.com/&quot;&gt;ORMLite&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/julianharty/new-android-daisy-reader&quot;&gt;SMIL parsing&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;author&quot;&gt;Author&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/hebertialmeida&quot;&gt;&lt;strong&gt;Heberti Almeida&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Follow me on &lt;strong&gt;Twitter&lt;/strong&gt;: &lt;a href=&quot;https://twitter.com/hebertialmeida&quot;&gt;&lt;strong&gt;@hebertialmeida&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Contact me on &lt;strong&gt;LinkedIn&lt;/strong&gt;: &lt;a href=&quot;http://linkedin.com/in/hebertialmeida&quot;&gt;&lt;strong&gt;hebertialmeida&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/mahavir155&quot;&gt;&lt;strong&gt;Mahavir Jain&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Follow me on &lt;strong&gt;Twitter&lt;/strong&gt;: &lt;a href=&quot;https://twitter.com/mahavir155&quot;&gt;&lt;strong&gt;@mahavir155&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Contact me on &lt;strong&gt;LinkedIn&lt;/strong&gt;: &lt;a href=&quot;http://linkedin.com/in/mahavir155&quot;&gt;&lt;strong&gt;mahavir155&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;donations&quot;&gt;Donations&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;This project needs you&lt;/strong&gt; If you would like to support this project’s further development, the creator of this project or the continuous maintenance of this project, &lt;strong&gt;feel free to donate&lt;/strong&gt;. Your donation is highly appreciated. Thank you&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PayPal&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;[&lt;strong&gt;Donate 5 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=5%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): Thank’s for creating this project, here’s a tea (or some juice) for you&lt;/li&gt;
+  &lt;li&gt;[&lt;strong&gt;Donate 10 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=10%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): Wow, I am stunned. Let me take you to the movies&lt;/li&gt;
+  &lt;li&gt;[&lt;strong&gt;Donate 15 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=15%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): I really appreciate your work, let’s grab some lunch&lt;/li&gt;
+  &lt;li&gt;[&lt;strong&gt;Donate 25 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=25%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): That’s some awesome stuff you did right there, dinner is on me&lt;/li&gt;
+  &lt;li&gt;[&lt;strong&gt;Donate 50 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=50%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): I really really want to support this project, great job&lt;/li&gt;
+  &lt;li&gt;[&lt;strong&gt;Donate 100 $&lt;/strong&gt;] (https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;amount=100%2e00&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted): You are the man This project saved me hours (if not days) of struggle and hard work, simply awesome&lt;/li&gt;
+  &lt;li&gt;Of course, you can also &lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=hebertialmeida%40gmail%2ecom&amp;amp;lc=US&amp;amp;item_name=FolioReader%20Libraries&amp;amp;currency_code=USD&amp;amp;bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted&quot;&gt;&lt;strong&gt;choose what you want to donate&lt;/strong&gt;&lt;/a&gt;, all donations are awesome&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+&lt;p&gt;FolioReaderKit is available under the BSD license. See the &lt;a href=&quot;https://github.com/FolioReader/FolioReader-Android/blob/master/License.md&quot;&gt;LICENSE&lt;/a&gt; file.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 22 Dec 2016 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2016/12/22/FolioReader/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2016/12/22/FolioReader/</guid>
+        
+        <category>reader</category>
+        
+        <category>view</category>
+        
+        
+      </item>
     
       <item>
         <title>LongPressPopup</title>
@@ -16,7 +190,9 @@
 &lt;p&gt;&lt;img src=&quot;sample.gif&quot; title=&quot;sample&quot; /&gt;
 &lt;br /&gt;
 You can try the demo app on google play store. &lt;br /&gt;
-https://play.google.com/store/apps/details?id=rm.com.longpresspopupsample &lt;br /&gt;&lt;/p&gt;
+https://play.google.com/store/apps/details?id=rm.com.longpresspopupsample &lt;br /&gt; &lt;br /&gt;
+Or see the full video demo on YouTube. &lt;br /&gt;
+https://youtu.be/oSETieldmyw &lt;br /&gt; &lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;A library that let you implement a behaviour similar to the Instagram’s &lt;br /&gt;
 long press to show detail one, with the option to put every kind of views inside it, &lt;br /&gt;
@@ -30,6 +206,10 @@ and handle the release of the finger over Views &lt;br /&gt;&lt;/p&gt;
 &lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
 compile &#39;com.rm:longpresspopup:1.0.0&#39;
 &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;Min SDK version: 10 (Android 2.3.3) &lt;/b&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;##Usage&lt;/p&gt;
 
@@ -416,8 +596,12 @@ With the option to choose between two or three states. (from v1.1.0) &lt;br /&gt
 &lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
 &lt;p&gt;####Gradle:
 &lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-compile &#39;com.rm:rmswitch:1.2.1&#39;
+compile &#39;com.rm:rmswitch:1.2.2&#39;
 &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;Min API level: 16 (Android 4.1) &lt;/b&gt;
+&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
 
@@ -841,7 +1025,7 @@ but with support of CRUD animations i decided to make such stuff and share it.&l
 
 &lt;p&gt;with gradle
 &lt;code class=&quot;highlighter-rouge&quot;&gt;GRADLE 
-compile &#39;com.beloo.widget:ChipsLayoutManager:0.3.4@aar&#39;
+compile &#39;com.beloo.widget:ChipsLayoutManager:0.3.4.1@aar&#39;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Assuming you have installed jCenter provider:
@@ -1339,438 +1523,6 @@ limitations under the License.
         <guid isPermaLink="true">http://android.kmshack.kr/2016/10/22/PageIndicatorView/</guid>
         
         <category>indicator</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>DiagonalLayout</title>
-        <description>&lt;h1 id=&quot;diagonallayout&quot;&gt;DiagonalLayout&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://android-arsenal.com/details/1/4530&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-DiagonalLayout-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;With Diagonal Layout explore new styles and approaches on material design&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample.gif)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;usage&quot;&gt;Usage&lt;/h1&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.florent37.diagonallayout.DiagonalLayout&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;diagonal:diagonal_angle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;diagonal:diagonal_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left|right|top|bottom&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;--&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;YOUR&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;CONTENT&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.github.florent37.diagonallayout.DiagonalLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;sample&quot;&gt;Sample&lt;/h1&gt;
-
-&lt;h2 id=&quot;bottom&quot;&gt;Bottom&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample2_elevation.png)&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.florent37.diagonallayout.DiagonalLayout&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:diagonal_angle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:diagonal_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right|bottom&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:scaleType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/mountains&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.github.florent37.diagonallayout.DiagonalLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;top&quot;&gt;Top&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample2_bottom.png)&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.florent37.diagonallayout.DiagonalLayout&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:diagonal_angle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;app:diagonal_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right|top&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ImageView&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:scaleType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/mountains&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.github.florent37.diagonallayout.DiagonalLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;elevation&quot;&gt;Elevation&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;Do not forget to add elevation with&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;android:elevation=&quot;**dp&quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/with_elevation_small.png)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;kenburns&quot;&gt;KenBurns&lt;/h1&gt;
-
-&lt;p&gt;Using &lt;a href=&quot;https://github.com/flavioarfaria/KenBurnsView&quot;&gt;https://github.com/flavioarfaria/KenBurnsView&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.github.com/florent37/DiagonalLayout&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/sample.gif)&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.florent37.diagonallayout.DiagonalLayout&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/diagonalLayout&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;diagonal:diagonal_angle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;diagonal:diagonal_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:elevation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;30dp&quot;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.flaviofaria.kenburnsview.KenBurnsView&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:scaleType=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;centerCrop&quot;&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;android:src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/background&quot;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-        ...
-
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/com.github.florent37.diagonallayout.DiagonalLayout&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;#Inspirations&lt;/p&gt;
-
-&lt;p&gt;Exploration of some new styles and approaches on material design. This one here is a user profile for Hollywood personas&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://material.uplabs.com/posts/user-profile-concept&quot;&gt;https://material.uplabs.com/posts/user-profile-concept&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://material.uplabs.com/posts/user-profile-concept&quot;&gt;[screen](https://raw.githubusercontent.com/florent37/DiagonalLayout/master/media/materialup.png)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;#Download&lt;/p&gt;
-
-&lt;p&gt;In your module &lt;a href=&quot;https://bintray.com/florent37/maven/DiagonalLayout/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/florent37/maven/DiagonalLayout/images/download.svg)&lt;/a&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;groovy
-compile &#39;com.github.florent37:diagonallayout:1.0.2&#39;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;#Logs&lt;/p&gt;
-
-&lt;p&gt;##1.0.1&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Added Elevation&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;##1.0.2&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Can setup the diagonal on &lt;em&gt;top&lt;/em&gt; or &lt;em&gt;bottom&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;Fixed angle calculation&lt;/li&gt;
-  &lt;li&gt;Added flag attributes &lt;code class=&quot;highlighter-rouge&quot;&gt;top|bottom|left|right&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;##1.0.3&lt;/p&gt;
-
-&lt;p&gt;Thanks to &lt;a href=&quot;https://github.com/ZieIony&quot;&gt;ZieIony&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Changed clipping method&lt;/li&gt;
-  &lt;li&gt;Changed shadow casting method&lt;/li&gt;
-  &lt;li&gt;Removed unnecessary content layout&lt;/li&gt;
-  &lt;li&gt;added support for padding&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;#Credits&lt;/p&gt;
-
-&lt;p&gt;Author: Florent Champigny &lt;a href=&quot;http://www.florentchampigny.com/&quot;&gt;http://www.florentchampigny.com/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://plus.google.com/+florentchampigny&quot;&gt;
-  &lt;img alt=&quot;Follow me on Google+&quot; src=&quot;https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/gplus.png&quot; /&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://twitter.com/florent_champ&quot;&gt;
-  &lt;img alt=&quot;Follow me on Twitter&quot; src=&quot;https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/twitter.png&quot; /&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://www.linkedin.com/in/florentchampigny&quot;&gt;
-  &lt;img alt=&quot;Follow me on LinkedIn&quot; src=&quot;https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/linkedin.png&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 florent37, Inc.
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Sat, 22 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/22/DiagonalLayout/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/22/DiagonalLayout/</guid>
-        
-        <category>diagonal</category>
-        
-        <category>layout</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>MaterialCamera</title>
-        <description>&lt;h1 id=&quot;material-camera&quot;&gt;Material Camera&lt;/h1&gt;
-
-&lt;p&gt;Android’s video recording APIs are very difficult to figure out, especially since a lot of manufacturers
-like to mount their camera sensors upside down or sideways. This library is a result of lots of research
-and experimentation to get video recording to work universally.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/afollestad/material-camera/master/art/showcase1.png&quot; width=&quot;800px&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;notice&quot;&gt;Notice&lt;/h1&gt;
-
-&lt;p&gt;Please report any issues you have, and include device information. Camera behavior can be unpredictable
-across different Android manufacturers and versions, especially on pre-Lollipop devices. I’ve done quite
-a bit of testing, but it’s possible I missed something.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Some of this documentation may be outdated, exploration of the library is encouraged.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;gradle-dependency&quot;&gt;Gradle Dependency&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://bintray.com/drummer-aidan/maven/material-camera/_latestVersion&quot;&gt; [jCenter](https://api.bintray.com/packages/drummer-aidan/maven/material-camera/images/download.svg) &lt;/a&gt;
-&lt;a href=&quot;https://travis-ci.org/afollestad/material-camera&quot;&gt;[Build Status](https://travis-ci.org/afollestad/material-camera.svg)&lt;/a&gt;
-&lt;a href=&quot;https://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;[License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The Gradle dependency is available via &lt;a href=&quot;https://bintray.com/drummer-aidan/maven/material-camera/view&quot;&gt;jCenter&lt;/a&gt;.
-jCenter is the default Maven repository used by Android Studio.&lt;/p&gt;
-
-&lt;h3 id=&quot;dependency&quot;&gt;Dependency&lt;/h3&gt;
-
-&lt;p&gt;Add Bintray to your repositories, for some reason this specific library doesn’t seem to work via jCenter
-even though all of my other libraries do.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;repositories {
-    jcenter()
-    maven { url &quot;https://dl.bintray.com/drummer-aidan/maven&quot; }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Add this in your module’s &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-gradle&quot;&gt;dependencies {
-    // ... other dependencies
-
-    compile &#39;com.afollestad:material-camera:0.4.4&#39;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;basics&quot;&gt;Basics&lt;/h1&gt;
-
-&lt;h3 id=&quot;android-manifest&quot;&gt;Android Manifest&lt;/h3&gt;
-
-&lt;p&gt;First, you have to register two library Activities from your app’s &lt;code class=&quot;highlighter-rouge&quot;&gt;AndroidManifest.xml&lt;/code&gt; file:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;activity&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.afollestad.materialcamera.CaptureActivity&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:theme=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@style/MaterialCamera.CaptureActivity&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;activity&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.afollestad.materialcamera.CaptureActivity2&quot;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;android:theme=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@style/MaterialCamera.CaptureActivity&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Feel free to use your own custom theme. The included themes give the activities a good default look. 
-See the sample project for more details.&lt;/p&gt;
-
-&lt;h3 id=&quot;code-for-video&quot;&gt;Code for Video&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6969&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; 
-
-&lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;saveFolder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Environment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getExternalStorageDirectory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;MaterialCamera Sample&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;saveFolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mkdirs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RuntimeException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Unable to create save directory, make sure WRITE_EXTERNAL_STORAGE permission is granted.&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                               &lt;span class=&quot;c1&quot;&gt;// Constructor takes an Activity&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;allowRetry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                  &lt;span class=&quot;c1&quot;&gt;// Whether or not &#39;Retry&#39; is visible during playback&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;autoSubmit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;// Whether or not user is allowed to playback videos after recording. This can affect other things, discussed in the next section.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;saveDir&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;saveFolder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                               &lt;span class=&quot;c1&quot;&gt;// The folder recorded videos are saved to&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;primaryColorAttr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;attr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorPrimary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// The theme color used for the camera, defaults to colorPrimary of Activity in the constructor&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;showPortraitWarning&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// Whether or not a warning is displayed if the user presses record in portrait orientation&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;defaultToFrontFacing&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                       &lt;span class=&quot;c1&quot;&gt;// Whether or not the camera will initially show the front facing camera&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;allowChangeCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                           &lt;span class=&quot;c1&quot;&gt;// Allows the user to change cameras. &lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;retryExits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;// If true, the &#39;Retry&#39; button in the playback screen will exit the camera instead of going back to the recorder&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;restartTimerOnRetry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                        &lt;span class=&quot;c1&quot;&gt;// If true, the countdown timer is reset to 0 when the user taps &#39;Retry&#39; in playback&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;continueTimerInPlayback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                    &lt;span class=&quot;c1&quot;&gt;// If true, the countdown timer will continue to go down during playback, rather than pausing.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;videoEncodingBitRate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1024000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                     &lt;span class=&quot;c1&quot;&gt;// Sets a custom bit rate for video recording.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;audioEncodingBitRate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                       &lt;span class=&quot;c1&quot;&gt;// Sets a custom bit rate for audio recording.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;videoFrameRate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;24&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                                &lt;span class=&quot;c1&quot;&gt;// Sets a custom frame rate (FPS) for video recording.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;qualityProfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;QUALITY_HIGH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// Sets a quality profile, manually setting bit rates or frame rates with other settings will overwrite individual quality profile settings&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;videoPreferredHeight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;720&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// Sets a preferred height for the recorded video output.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;videoPreferredAspect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                     &lt;span class=&quot;c1&quot;&gt;// Sets a preferred aspect ratio for the recorded video output.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;maxAllowedFileSize&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;               &lt;span class=&quot;c1&quot;&gt;// Sets a max file size of 5MB, recording will stop if file reaches this limit. Keep in mind, the FAT file system has a file size limit of 4GB.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_action_capture&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon for the button used to start recording&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconStop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_action_stop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon for the button used to stop recording&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconFrontCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_camera_front&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;     &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon for the button used to switch to the front camera&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconRearCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_camera_rear&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;       &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon for the button used to switch to the rear camera&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconPlay&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;evp_action_play&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon used to start playback&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconPause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;evp_action_pause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;            &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon used to pause playback&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iconRestart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;drawable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;evp_action_restart&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// Sets a custom icon used to restart playback&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;labelRetry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_retry&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                   &lt;span class=&quot;c1&quot;&gt;// Sets a custom button label for the button used to retry recording, when available&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;labelConfirm&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;mcam_use_video&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;// Sets a custom button label for the button used to confirm/submit a recording&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;autoRecordWithDelaySec&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                         &lt;span class=&quot;c1&quot;&gt;// The video camera will start recording automatically after a 5 second countdown. This disables switching between the front and back camera initially.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;autoRecordWithDelayMs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                       &lt;span class=&quot;c1&quot;&gt;// Same as the above, expressed with milliseconds instead of seconds.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;audioDisabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;                              &lt;span class=&quot;c1&quot;&gt;// Set to true to record video without any audio.&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;// Starts the camera activity, the result will be sent back to the current Activity&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: For &lt;code class=&quot;highlighter-rouge&quot;&gt;retryExists(true)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;onActivityResult()&lt;/code&gt; in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Activity&lt;/code&gt; that starts the camera will
-receive &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialCamera.STATUS_RETRY&lt;/code&gt; as the value of the &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialCamera.STATUS_EXTRA&lt;/code&gt; intent extra.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;length-limiting&quot;&gt;Length Limiting&lt;/h1&gt;
-
-&lt;p&gt;You can specify a time limit for recording. &lt;code class=&quot;highlighter-rouge&quot;&gt;countdownMillis(long)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;countdownSeconds(float)&lt;/code&gt;, 
-and &lt;code class=&quot;highlighter-rouge&quot;&gt;countdownMinutes(float)&lt;/code&gt; are all methods for length limiting.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;countdownMinutes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.5f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;When the countdown reaches 0, recording stops. There are different behaviors that can occur after this based on
-&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;autoRetry&lt;/code&gt;:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit(false)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;allowRetry(true)&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The user will be able to playback the recording, and the ‘Retry’ button will be visible. This is default behavior.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit(false)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;allowRetry(false)&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The user will be able to playback the recording, but the ‘Retry’ button will be hidden.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit(true)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;allowRetry(false)&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;The user won’t be able to playback the recording, the result will immediately be returned to the starting Activity.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;autoSubmit(true)&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;allowRetry(true)&lt;/code&gt;
-    &lt;ul&gt;
-      &lt;li&gt;If you don’t specify a length limit, the behavior will be the same as number 3. If you do specify a length limit, the user is allowed to retry, but the countdown timer will continue until it reaches 0. When the countdown is complete, the result will be returned to the starting Activity automatically.&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;If you want the countdown to start immediately when the camera is open, as opposed to when the user presses
-‘Record’, you can set &lt;code class=&quot;highlighter-rouge&quot;&gt;countdownImmediately(true)&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;countdownMinutes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.5f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;countdownImmediately&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&quot;code-for-stillshots-pictures&quot;&gt;Code for Stillshots (Pictures)&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;cm&quot;&gt;/** all the previous methods can be called, but video ones would be ignored */&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stillShot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// launches the Camera in stillshot mode&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;receiving-results&quot;&gt;Receiving Results&lt;/h1&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AppCompatActivity&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6969&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setContentView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_main&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        
-        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onActivityResult&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Intent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onActivityResult&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Received recording or error from MaterialCamera&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CAMERA_RQ&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resultCode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RESULT_OK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Saved to: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Exception&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getSerializableExtra&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MaterialCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ERROR_EXTRA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getMessage&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_LONG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;licenselicensemd&quot;&gt;&lt;a href=&quot;/LICENSE.md&quot;&gt;LICENSE&lt;/a&gt;&lt;/h1&gt;
-
-&lt;h6 id=&quot;copyright-2016-aidan-follestad&quot;&gt;Copyright 2016 Aidan Follestad&lt;/h6&gt;
-
-&lt;p&gt;Licensed under the Apache License, Version 2.0 (the “License”);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at&lt;/p&gt;
-
-&lt;p&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/p&gt;
-
-&lt;p&gt;Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an “AS IS” BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 19 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/19/MaterialCamera/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/19/MaterialCamera/</guid>
-        
-        <category>material</category>
-        
-        <category>camera</category>
         
         
       </item>
