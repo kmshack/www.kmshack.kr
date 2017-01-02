@@ -369,6 +369,26 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -425,7 +445,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2016 Android UI OpenSource
+            &copy; 2017 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -542,7 +562,10 @@ Still under active development.</p>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
         <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
         <span class="kd">final</span> <span class="n">CompactCalendarView</span> <span class="n">compactCalendarView</span> <span class="o">=</span> <span class="o">(</span><span class="n">CompactCalendarView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">compactcalendar_view</span><span class="o">);</span>
-        
+        <span class="c1">// Set first day of week to Monday, defaults to Monday so calling setFirstDayOfWeek is not necessary</span>
+        <span class="c1">// Use constants provided by Java Calendar class</span>
+        <span class="n">compactCalendarView</span><span class="o">.</span><span class="na">setFirstDayOfWeek</span><span class="o">(</span><span class="n">Calendar</span><span class="o">.</span><span class="na">MONDAY</span><span class="o">);</span>
+       
         <span class="c1">// Add event 1 on Sun, 07 Jun 2015 18:20:51 GMT</span>
         <span class="n">Event</span> <span class="n">ev1</span> <span class="k">new</span> <span class="n">Event</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">GREEN</span><span class="o">,</span> <span class="mi">1433701251000L</span><span class="o">,</span> <span class="s">"Some extra data that I want to store."</span><span class="o">);</span>
         <span class="n">compactCalendar</span><span class="o">.</span><span class="na">addEvent</span><span class="o">(</span><span class="n">ev1</span><span class="o">);</span>
@@ -594,7 +617,7 @@ Still under active development.</p>
 <p><img src="https://github.com/SundeepK/CompactCalendarView/blob/master/images/chinese-locale-daynames.png" width="400" /></p>
 
 <pre><code class="language-gradle">dependencies {
-    compile 'com.github.sundeepk:compact-calendar-view:1.9.5'
+    compile 'com.github.sundeepk:compact-calendar-view:1.9.6'
 }
 
 </code></pre>

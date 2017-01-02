@@ -369,6 +369,26 @@
                 
               
             
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
+              
+                
+              
+            
             <li><a class="subscribe-button icon-feed" href="/feed.xml">RSS</a></li>
           </ul>
         </nav>
@@ -425,7 +445,7 @@
             
           <div class="font-tiny">
               <br>
-            &copy; 2016 Android UI OpenSource
+            &copy; 2017 Android UI OpenSource
           </div>
         </div>
       </div>
@@ -518,163 +538,99 @@
     }
 
     dependencies {
-        compile 'com.mxn.soul:flowingdrawer-core:1.2.5'
+        compile 'com.mxn.soul:flowingdrawer-core:2.0.0'
         compile 'com.nineoldandroids:library:2.4.0'
     }
 </code></pre>
 
-<h2 id="v122">V1.2.2</h2>
+<h2 id="v200-features">V2.0.0 Features</h2>
 
-<p>add onOpenMenu and onCloseMenu event Listener to catch open and close event . Add these two 
-method in MyMenuFragment extends MenuFragment.</p>
+<ul>
+  <li>The menu can be positioned along two edges:left and right .</li>
+  <li>Allows the drawer to be opened by dragging the edge or the entire screen.</li>
+</ul>
 
 <h2 id="usage">Usage</h2>
 
-<p><em>For a working implementation of this project see the <code class="highlighter-rouge">app/</code> folder.</em></p>
-
-<p>MainActivity:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="n">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
-           <span class="o">....</span>
-        <span class="n">mLeftDrawerLayout</span> <span class="o">=</span> <span class="o">(</span><span class="n">LeftDrawerLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">id_drawerlayout</span><span class="o">);</span>
-        <span class="n">FragmentManager</span> <span class="n">fm</span> <span class="o">=</span> <span class="n">getSupportFragmentManager</span><span class="o">();</span>
-        <span class="n">MyMenuFragment</span> <span class="n">mMenuFragment</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyMenuFragment</span><span class="o">)</span> <span class="n">fm</span><span class="o">.</span><span class="na">findFragmentById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">id_container_menu</span><span class="o">);</span>
-        <span class="n">FlowingView</span> <span class="n">mFlowingView</span> <span class="o">=</span> <span class="o">(</span><span class="n">FlowingView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sv</span><span class="o">);</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">mMenuFragment</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">fm</span><span class="o">.</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">id_container_menu</span><span class="o">,</span> <span class="n">mMenuFragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyMenuFragment</span><span class="o">()).</span><span class="na">commit</span><span class="o">();</span>
-        <span class="o">}</span>
-        <span class="n">mLeftDrawerLayout</span><span class="o">.</span><span class="na">setFluidView</span><span class="o">(</span><span class="n">mFlowingView</span><span class="o">);</span>
-        <span class="n">mLeftDrawerLayout</span><span class="o">.</span><span class="na">setMenuFragment</span><span class="o">(</span><span class="n">mMenuFragment</span><span class="o">);</span>
-        <span class="o">...</span>
-    <span class="o">}</span>
-</code></pre>
-</div>
+<p><em>For a working implementation of this project see the <code class="highlighter-rouge">app/</code> folder and check out the sample app</em></p>
 
 <p>activity_main.xml:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;com.mxn.soul.flowingdrawer_core.LeftDrawerLayout</span>
-        <span class="na">android:id=</span><span class="s">"@+id/id_drawerlayout"</span>
-        <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
-        <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
-        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-        <span class="na">android:clipChildren=</span><span class="s">"false"</span>
-        <span class="nt">&gt;</span>
-
-        <span class="nt">&lt;--content--&gt;</span>
-        <span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span>
-            <span class="na">android:id=</span><span class="s">"@+id/content"</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>    <span class="nt">&lt;com.mxn.soul.flowingdrawer_core.FlowingDrawer</span>
+            <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+            <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+            <span class="na">android:id=</span><span class="s">"@+id/drawerlayout"</span>
             <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
             <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-            <span class="na">android:orientation=</span><span class="s">"vertical"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
-
-        <span class="nt">&lt;--menu--&gt;</span>
-        <span class="nt">&lt;RelativeLayout</span>
-            <span class="na">android:layout_width=</span><span class="s">"280dp"</span>
-            <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-            <span class="na">android:layout_gravity=</span><span class="s">"start"</span>
             <span class="na">android:clipChildren=</span><span class="s">"false"</span>
-            <span class="nt">&gt;</span>
-            <span class="nt">&lt;com.mxn.soul.flowingdrawer_core.FlowingView</span>
-                <span class="na">android:id=</span><span class="s">"@+id/sv"</span>
+            <span class="na">android:clipToPadding=</span><span class="s">"false"</span>
+            <span class="na">app:edPosition=</span><span class="s">"1"</span>
+            <span class="na">app:edMenuSize=</span><span class="s">"260dp"</span>
+            <span class="na">app:edMenuBackground=</span><span class="s">"#dddddd"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;--content--&gt;</span>
+        <span class="nt">&lt;RelativeLayout</span>
+                <span class="na">android:id=</span><span class="s">"@+id/content"</span>
                 <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
                 <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;FrameLayout</span>
-                <span class="na">android:id=</span><span class="s">"@+id/id_container_menu"</span>
+
+        <span class="nt">&lt;--menu--&gt;</span>
+        <span class="nt">&lt;com.mxn.soul.flowingdrawer_core.FlowingMenuLayout</span>
+                <span class="na">android:id=</span><span class="s">"@+id/menulayout"</span>
                 <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-                <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-                <span class="na">android:layout_alignParentLeft=</span><span class="s">"true"</span>
-                <span class="na">android:layout_marginRight=</span><span class="s">"25dp"</span>
-                <span class="na">android:paddingRight=</span><span class="s">"10dp"</span>
-                <span class="nt">/&gt;</span>
-        <span class="nt">&lt;/RelativeLayout&gt;</span>
+                <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">&gt;</span>
 
-    <span class="nt">&lt;/com.mxn.soul.flowingdrawer_core.LeftDrawerLayout&gt;</span>
+            <span class="nt">&lt;FrameLayout</span>
+                    <span class="na">android:id=</span><span class="s">"@+id/id_container_menu"</span>
+                    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+                    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;/com.mxn.soul.flowingdrawer_core.FlowingMenuLayout&gt;</span>
+
+    <span class="nt">&lt;/com.mxn.soul.flowingdrawer_core.FlowingDrawer&gt;</span>
 </code></pre>
 </div>
 
-<ul>
-  <li>
-    <p>use LeftDrawerLayout as the root of xml.</p>
-  </li>
-  <li>
-    <p>The root has two child, first for content,second for menu.</p>
-  </li>
-  <li>
-    <p>menu’root alse has two child , first for FlowingView to display flowing effects,second for
-fragment .</p>
-  </li>
-  <li>
-    <p>fragment need to has a ‘marginRight’, for example 25dp.
-marginRight here is important .
-‘marginRight’  have effect on drawer’s elasticity. The more  ‘marginRight’ is  the more elastic.
-Try to set ‘10dp’, ‘25dp’ ,’50dp’ to see the difference.</p>
-  </li>
-  <li>
-    <p>make the fragment of menu extends MenuFragment.</p>
-  </li>
-  <li>
-    <p>pay attention to MenuFragment’s onCreateView: return setupReveal(root) ;</p>
-  </li>
-</ul>
+<p>To use a FlowingDrawer, position FlowingDrawer as the root , position your primary content view as the
+first child with width and height of match_parent . Add FlowingMenuLayout as child views after the main
+content view . FlowingMenuLayout commonly use match_parent for height and width.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="n">View</span> <span class="n">onCreateView</span><span class="o">(</span><span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_menu</span><span class="o">,</span> <span class="n">container</span><span class="o">,</span>
-                    <span class="kc">false</span><span class="o">);</span>
-            <span class="o">.......</span>
-            <span class="k">return</span>  <span class="n">setupReveal</span><span class="o">(</span><span class="n">view</span><span class="o">)</span> <span class="o">;</span>
-        <span class="o">}</span>
+<p>Don’t set any background on FlowingMenuLayout or FlowingMenuLayout’s children, it means their background
+should be transparent.</p>
+
+<p>Don’t set FlowingMenuLayout’s width with a fixed width, it’s not a useful way to change it’s width .</p>
+
+<p>You can change menu’s attribute in FlowingDrawer layout node use custom attribute,like edMenuBackground,edMenuSize,
+edPosition.</p>
+
+<p>Use edPosition attribute corresponding to which side of the view you want the drawer
+to emerge from: left or right.Left menu : edPosition =1 ; Right menu: edPosition =2 .</p>
+
+<p>For more custom attribute ,you can see in attrs.xml.</p>
+
+<p>MainActivity:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>     <span class="n">mDrawer</span> <span class="o">=</span> <span class="o">(</span><span class="n">FlowingDrawer</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">drawerlayout</span><span class="o">);</span>
+     <span class="n">mDrawer</span><span class="o">.</span><span class="na">setTouchMode</span><span class="o">(</span><span class="n">ElasticDrawer</span><span class="o">.</span><span class="na">TOUCH_MODE_BEZEL</span><span class="o">);</span>
+     <span class="n">mDrawer</span><span class="o">.</span><span class="na">setOnDrawerStateChangeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">ElasticDrawer</span><span class="o">.</span><span class="na">OnDrawerStateChangeListener</span><span class="o">()</span> <span class="o">{</span>
+                 <span class="nd">@Override</span>
+                 <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDrawerStateChange</span><span class="o">(</span><span class="kt">int</span> <span class="n">oldState</span><span class="o">,</span> <span class="kt">int</span> <span class="n">newState</span><span class="o">)</span> <span class="o">{</span>
+                     <span class="k">if</span> <span class="o">(</span><span class="n">newState</span> <span class="o">==</span> <span class="n">ElasticDrawer</span><span class="o">.</span><span class="na">STATE_CLOSED</span><span class="o">)</span> <span class="o">{</span>
+                         <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"MainActivity"</span><span class="o">,</span> <span class="s">"Drawer STATE_CLOSED"</span><span class="o">);</span>
+                     <span class="o">}</span>
+                 <span class="o">}</span>
+
+                 <span class="nd">@Override</span>
+                 <span class="kd">public</span> <span class="kt">void</span> <span class="n">onDrawerSlide</span><span class="o">(</span><span class="kt">float</span> <span class="n">openRatio</span><span class="o">,</span> <span class="kt">int</span> <span class="n">offsetPixels</span><span class="o">)</span> <span class="o">{</span>
+                     <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">"MainActivity"</span><span class="o">,</span> <span class="s">"openRatio="</span> <span class="o">+</span> <span class="n">openRatio</span> <span class="o">+</span> <span class="s">" ,offsetPixels="</span> <span class="o">+</span> <span class="n">offsetPixels</span><span class="o">);</span>
+                 <span class="o">}</span>
+             <span class="o">});</span>
 </code></pre>
 </div>
-
-<ul>
-  <li>
-    <p>in MenuFragment’xml ,add ‘android:background=”@android:color/transparent” ‘</p>
-  </li>
-  <li>
-    <p>in MainActivity,use</p>
-  </li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">mMenuFragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MyMenuFragment</span><span class="o">();</span>
-<span class="n">mLeftDrawerLayout</span><span class="o">.</span><span class="na">setFluidView</span><span class="o">(</span><span class="n">mFlowingView</span><span class="o">);</span>
-<span class="n">mLeftDrawerLayout</span><span class="o">.</span><span class="na">setMenuFragment</span><span class="o">(</span><span class="n">mMenuFragment</span><span class="o">);</span>
-</code></pre>
-</div>
-
-<p>in order .</p>
-
-<ul>
-  <li>
-    <p>you can call mLeftDrawerLayout.closeDrawer()  and  mLeftDrawerLayout.openDrawer() to close or
-open drawer automatically.</p>
-  </li>
-  <li>
-    <p>change background color for drawer by “paint_color” in colors.xml.This is not a good way,and 
-will be improved in the next version.</p>
-  </li>
-</ul>
-
-<h2 id="todo">TODO</h2>
-
-<ul>
-  <li>use spring dynamics models to make more bouncing effects.</li>
-  <li>close by touch effect need to enhance.</li>
-  <li>improve the lines to be smoother when open and close drawer.</li>
-  <li>some part of the code need to simplify.</li>
-</ul>
-
-<h2 id="contribution">Contribution</h2>
-
-<p>First of all, thank you  As you see ,the project is not as good as the original design
-sketch and thank you for watch and star. At present we still have a lot of things to do .
-I would love to get some help on the TODO list .So if you find a bug in the library or want a feature
-and think you can fix it yourself,fork + pull request and i will greatly appreciate it</p>
+<p>setTouchMode can allows the drawer to be opened by dragging the edge or the entire screen.
+setOnDrawerStateChangeListener can be used to monitor the state and motion of drawer views.
+Avoid performing expensive operations such as layout during animation as it can cause stuttering.
+ElasticDrawer.OnDrawerStateChangeListener offers default/no-op implementations of each callback method.</p>
 
 <h1 id="license">License</h1>
 

@@ -5,9 +5,500 @@
     <description>Collection of OpenSource for Android UI.</description>
     <link>http://android.kmshack.kr/</link>
     <atom:link href="http://android.kmshack.kr/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Dec 2016 01:16:08 +0900</pubDate>
-    <lastBuildDate>Fri, 23 Dec 2016 01:16:08 +0900</lastBuildDate>
+    <pubDate>Mon, 02 Jan 2017 22:35:43 +0900</pubDate>
+    <lastBuildDate>Mon, 02 Jan 2017 22:35:43 +0900</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Text Decorator</title>
+        <description>&lt;h1 id=&quot;text-decorator&quot;&gt;Text Decorator&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/nntuyen/text-decorator&quot;&gt;[Build Status](https://travis-ci.org/nntuyen/text-decorator.svg?branch=master)&lt;/a&gt;
+&lt;a href=&quot;http://android-arsenal.com/details/1/4982&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Text%20Decorator-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Decorate your TextView easily&lt;/p&gt;
+
+&lt;p&gt;[](screenshot/screenshot2.gif)&lt;/p&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;TextDecorator&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;decorate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;textView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorAccent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorPrimary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;strikethrough&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;26&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Typeface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BOLD&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Typeface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ITALIC&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTypeface&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;serif&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;70&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;77&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSuperscript&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;78&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;86&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSubscript&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;87&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;92&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;120&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;blur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BlurMaskFilter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Blur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;NORMAL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeTextClickable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnTextClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MainActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;250&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;270&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;TextDecorator&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;decorate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tvContent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorAccent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Lorem&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;amet&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackgroundColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;colorPrimary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;dolor&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;elit&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;strikethrough&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Duis&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Praesent&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;underline&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sodales&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;quam&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setSubscript&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;vitae&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeTextClickable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnTextClickListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+          &lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onClick&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;View&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;makeText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MainActivity&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Toast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LENGTH_SHORT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;show&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+          &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;porta&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;commodo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;tempor venenatis nulla&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTextColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;android&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;holo_green_light&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;porta&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;commodo&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;tempor venenatis nulla&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;Add this to your root build.gradle
+&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
+allprojects {
+  repositories {
+    ...
+    maven { 
+        url &quot;https://oss.sonatype.org/content/repositories/snapshots&quot; 
+    }
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.tuyenmonkey:text-decorator:1.0.0-SNAPSHOT&#39;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Tuyen Monkey
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2017/01/02/text_decorator/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2017/01/02/text_decorator/</guid>
+        
+        <category>text</category>
+        
+        <category>decorator</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Snowfall</title>
+        <description>&lt;h1 id=&quot;android-snowfall&quot;&gt;Android-Snowfall&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/4952&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android–Snowfall-brightgreen.svg?style=flat)&lt;/a&gt;
+&lt;a href=&quot;https://jitpack.io/#jetradarmobile/android-snowfall&quot;&gt;[Release](https://jitpack.io/v/jetradarmobile/android-snowfall.svg)&lt;/a&gt;
+&lt;a href=&quot;https://android-arsenal.com/api?level=16&quot;&gt;[API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Fully customizable implementation of “Snowfall View” on Android.&lt;/p&gt;
+
+&lt;p&gt;That’s how we use it in our app “Hotellook”&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/JetradarMobile/android-snowfall/master/art/hotellook-demo.gif&quot;&gt;image&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt;
+
+&lt;p&gt;This library is compatible from API 16 (Android 4.1).&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;Add it in your root build.gradle at the end of repositories:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Add the dependency&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.github.jetradarmobile:android-snowfall:1.1.6&#39;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;Default implementation with round snowflakes:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.jetradarmobile.snowfall.SnowfallView&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Fully customized implementation:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;com.jetradarmobile.snowfall.SnowfallView&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakesNum=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;250&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakeAlphaMin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakeAlphaMax=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;255&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakeAngleMax=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;5&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakeSizeMin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;8dp&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakeSizeMax=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32dp&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakeSpeedMin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;4&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakeSpeedMax=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakesFadingEnabled=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakesAlreadyFalling=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;app:snowflakeImage=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@drawable/snowflake&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 JetRadar
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2017/01/02/snowfall/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2017/01/02/snowfall/</guid>
+        
+        <category>snow</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>material about</title>
+        <description>&lt;p&gt;#material-about-library&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#daniel-stoneuk/material-about-library&quot;&gt;[Release][101]&lt;/a&gt;
+&lt;a href=&quot;https://www.apache.org/licenses/LICENSE-2.0.html&quot;&gt;[Apache License 2.0][103]&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;If there are any icon designers out there that are willing to design a free icon for this libraries’ demo app, please contact me&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Makes it easy to create a beautiful about screen for your app.&lt;/p&gt;
+
+&lt;p&gt;Idea from here: &lt;a href=&quot;https://github.com/HeinrichReimer/open-source-library-request-manager/issues/3&quot;&gt;Heinrich Reimer’s open-source-library-request-manager&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Design inspired by Phonograph.&lt;/p&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.danielstone.materialaboutlibrarydemo&amp;amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&quot;&gt;&lt;img alt=&quot;Get it on Google Play&quot; src=&quot;https://play.google.com/intl/en_gb/badges/images/generic/en_badge_web_generic.png&quot; height=&quot;60&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Demo App&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Example&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/2d63NFS.png&quot;&gt;Demo App&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;http://i.imgur.com/1k4rcN7.png&quot;&gt;Monitor&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutActivity.java&quot;&gt;&lt;em&gt;ExampleMaterialAboutActivity.java&lt;/em&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.danielstone.energyhive&quot;&gt;&lt;em&gt;Monitor&lt;/em&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;features&quot;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Material design&lt;/li&gt;
+  &lt;li&gt;Modular backend&lt;/li&gt;
+  &lt;li&gt;Easy to implement&lt;/li&gt;
+  &lt;li&gt;Simple but intuitive API&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;dependency&quot;&gt;Dependency&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;material-about-library&lt;/em&gt; is available on &lt;a href=&quot;https://jitpack.io&quot;&gt;&lt;strong&gt;jitpack.io&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Gradle dependency:&lt;/strong&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
+allprojects {
+    repositories {
+        maven { url &#39;https://jitpack.io&#39; }
+    }
+}
+&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;gradle
+dependencies {
+    compile &#39;com.github.daniel-stoneuk:material-about-library:1.1.1&#39;
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;setup&quot;&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; Your &lt;code class=&quot;highlighter-rouge&quot;&gt;Activity&lt;/code&gt; must extend &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/library/src/main/java/com/danielstone/materialaboutlibrary/MaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActivity&lt;/code&gt;&lt;/a&gt; and be in your &lt;em&gt;AndroidManifest.java&lt;/em&gt;:
+```java
+public class ExampleMaterialAboutActivity extends MaterialAboutActivity {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
+protected MaterialAboutList getMaterialAboutList() {
+    return new MaterialAboutList.Builder()
+            .build();
+}
+
+@Override
+protected CharSequence getActivityTitle() {
+    return getString(R.string.mal_title_about);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;}
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+Ensure that the theme extends &#39;Theme.Mal&#39;, and apply primary &amp;amp; accent colours.
+&lt;/code&gt;xml
+&amp;lt;manifest …&amp;gt;
+    &amp;lt;application …&amp;gt;
+        &lt;activity android:name=&quot;.ExampleMaterialAboutActivity&quot; android:theme=&quot;@style/AppTheme.MaterialAboutActivity&quot;&gt;&lt;/activity&gt;
+    &amp;lt;/application&amp;gt;
+&amp;lt;/manifest&amp;gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+&lt;/code&gt;xml
+    &lt;style name=&quot;AppTheme.MaterialAboutActivity&quot; parent=&quot;Theme.Mal&quot;&gt;
+        &amp;lt;-- Customize your theme here. --&amp;gt;
+        &lt;item name=&quot;colorPrimary&quot;&gt;@color/colorPrimary&lt;/item&gt;
+        &lt;item name=&quot;colorPrimaryDark&quot;&gt;@color/colorPrimaryDark&lt;/item&gt;
+        &lt;item name=&quot;colorAccent&quot;&gt;@color/colorAccent&lt;/item&gt;
+    &lt;/style&gt;
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Add Cards:&lt;/p&gt;
+
+&lt;p&gt;Start building a “card” using &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutCard.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutCard.Builder()&lt;/code&gt;&lt;/a&gt;
+```java
+public class ExampleMaterialAboutActivity extends MaterialAboutActivity {&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Override
+protected MaterialAboutList getMaterialAboutList() {
+    MaterialAboutCard.Builder appCardBuilder = new MaterialAboutCard.Builder(); ``` Give the card a title by calling `.title` on the `Builder` ```java
+    authorCardBuilder.title(&quot;Author&quot;); ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; Add Items:&lt;/p&gt;
+
+&lt;p&gt;There are currently two types of item you can add to a card - &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;&lt;/a&gt; and &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;&lt;/a&gt;. Planned items include “person” items which feature buttons to showcase a single person. Feel free to submit a PR or Issue for more item ideas.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;: Standard item with text, icon and optional subtext.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;: Larger item with large icon (eg app icon) and larger text.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem&lt;/code&gt;&lt;/a&gt; is created with &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutTitleItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutTitleItem.Builder()&lt;/code&gt;&lt;/a&gt; and lets you specify &lt;strong&gt;text&lt;/strong&gt; and an &lt;strong&gt;icon&lt;/strong&gt;.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+        appCardBuilder.addItem(new MaterialAboutTitleItem.Builder()
+                .text(&quot;Material About Library&quot;)
+                .icon(R.mipmap.ic_launcher)
+                .build());
+&lt;/code&gt;
+&lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem&lt;/code&gt;&lt;/a&gt; is created with &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutActionItem.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutActionItem.Builder()&lt;/code&gt;&lt;/a&gt; and lets you specify &lt;strong&gt;text&lt;/strong&gt;, &lt;strong&gt;sub-text&lt;/strong&gt;, an &lt;strong&gt;icon&lt;/strong&gt; and an &lt;strong&gt;OnClickListener&lt;/strong&gt;.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+        appCardBuilder.addItem(new MaterialAboutActionItem.Builder()
+                .text(&quot;Version&quot;)
+                .subText(&quot;1.0.0&quot;)
+                .icon(R.drawable.ic_about_info)
+                .setOnClickListener(new MaterialAboutActionItem.OnClickListener() {
+                    @Override
+                    public void onClick() {
+                        Toast.makeText(ExampleMaterialAboutActivity.this, &quot;Version Tapped&quot;, Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .build());
+&lt;/code&gt;
+&lt;strong&gt;Step 4:&lt;/strong&gt; Return the list:
+Create a &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutList&lt;/code&gt;&lt;/a&gt; using &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/ce35cdc99d33af1faf40c7a1cddf2889898be4e7/library/src/main/java/com/danielstone/materialaboutlibrary/model/MaterialAboutList.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutList.Builder()&lt;/code&gt;&lt;/a&gt;, passing in the cards you would like to display.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;java
+        return new MaterialAboutList.Builder()
+                .addCard(supportCardBuilder.build())
+                .build();
+    }
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Check out a working example in &lt;a href=&quot;https://github.com/daniel-stoneuk/material-about-library/blob/master/app/src/main/java/com/danielstone/materialaboutlibrarydemo/ExampleMaterialAboutActivity.java&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ExampleMaterialAboutActivity.java&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; You can either use &lt;em&gt;Strings&lt;/em&gt; / &lt;em&gt;Drawables&lt;/em&gt; or &lt;em&gt;Resources&lt;/em&gt; when creating &lt;code class=&quot;highlighter-rouge&quot;&gt;MaterialAboutItem&lt;/code&gt;’s&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Daniel Stone
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2017/01/02/material_about/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2017/01/02/material_about/</guid>
+        
+        <category>material</category>
+        
+        <category>about</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Android ExpandIcon</title>
+        <description>&lt;h1 id=&quot;android-expandicon&quot;&gt;Android-ExpandIcon&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jitpack.io/#zagum/Android-ExpandIcon&quot;&gt;[Release](https://jitpack.io/v/zagum/Android-ExpandIcon.svg)&lt;/a&gt;
+&lt;a href=&quot;https://android-arsenal.com/api?level=15&quot;&gt;[API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Nice and simple customizable implementation of Google style up/down arrow.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/zagum/Android-ExpandIcon/blob/master/art/expand_icon_demo.gif&quot;&gt;image&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Another nice example of using this library: https://github.com/hearsilent/PixelSlide&lt;/p&gt;
+
+&lt;h2 id=&quot;compatibility&quot;&gt;Compatibility&lt;/h2&gt;
+
+&lt;p&gt;This library is compatible from API 15 (Android 4.0.3).&lt;/p&gt;
+
+&lt;h2 id=&quot;download&quot;&gt;Download&lt;/h2&gt;
+
+&lt;p&gt;Add it in your root build.gradle at the end of repositories:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;allprojects&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;repositories&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;maven&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://jitpack.io&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Add the dependency&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.github.zagum:Android-ExpandIcon:1.1.1&#39;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;Default implementation:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.zagum.expandicon.ExpandIconView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;24dp&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Fully customized implementation:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.github.zagum.expandicon.ExpandIconView&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;48dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;48dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_gravity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;center_horizontal&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;android:layout_marginTop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;56dp&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:eiv_animationDuration=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;300&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:eiv_color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#000&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:eiv_colorLess=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#f00&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:eiv_colorMore=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#00f&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:eiv_roundedCorners=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;false&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:eiv_switchColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;true&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;app:eiv_padding=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;8dp&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Public methods:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;n&quot;&gt;expandIconView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;switchState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;expandIconView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ExpandIconView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;LESS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;expandIconView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFraction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(.&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;See sample project for more information&lt;/p&gt;
+
+&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Evgenii Zagumennyi
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</description>
+        <pubDate>Mon, 02 Jan 2017 00:00:00 +0900</pubDate>
+        <link>http://android.kmshack.kr/2017/01/02/AndroidExpandIcon/</link>
+        <guid isPermaLink="true">http://android.kmshack.kr/2017/01/02/AndroidExpandIcon/</guid>
+        
+        <category>icon</category>
+        
+        
+      </item>
     
       <item>
         <title>stencil</title>
@@ -103,7 +594,7 @@ allprojects {
 &lt;h3 id=&quot;gradle&quot;&gt;Gradle&lt;/h3&gt;
 &lt;p&gt;Add following dependency to your app build.gradle
 &lt;code class=&quot;highlighter-rouge&quot;&gt;java
-compile &#39;com.folioreader:folioreader:0.2.3&#39;
+compile &#39;com.folioreader:folioreader:0.2.5&#39;
 &lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
@@ -839,690 +1330,6 @@ limitations under the License.
         <category>depth</category>
         
         <category>thickness</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>CircularBarPager</title>
-        <description>&lt;h1 id=&quot;circularbarpager-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-circularbarpager-brightgreensvgstyleflathttpsandroid-arsenalcomdetails11426&quot;&gt;CircularBarPager &lt;a href=&quot;https://android-arsenal.com/details/1/1426&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-CircularBarPager-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;A Lollipop material design styled CircularBarPager library (API 10+).&lt;/p&gt;
-
-&lt;p&gt;To include in your project, add this to your build.gradle file:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   //CircularBarPager
-   compile &#39;com.github.orangegangsters:library:1.3.4@aar&#39;
-   //CirclePageIndicator
-   compile &#39;com.viewpagerindicator:library:2.4.1@aar&#39;
-   //Animations and progress value easing
-   compile &#39;com.nineoldandroids:library:2.4.0&#39;
-   compile &#39;com.daimajia.easing:library:1.0.1@aar&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;a href=&quot;app/src/main/res/raw/github_gif.gif&quot;&gt;Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;========
-### By
-Developers:
-        &lt;a href=&quot;https://github.com/olivierg13&quot;&gt;Olivier Goutay&lt;/a&gt; and &lt;a href=&quot;https://github.com/StoyanD&quot;&gt;Stoyan Dimitrov&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Designers:
-        &lt;a href=&quot;http://danielwaldron.com/&quot;&gt;Daniel Waldron&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
-
-&lt;p&gt;Look at the example app for a live example on how to use the library.&lt;/p&gt;
-
-&lt;h4 id=&quot;preparing-dependencies&quot;&gt;Preparing dependencies&lt;/h4&gt;
-
-&lt;p&gt;In order to use the CirclePageIndicator by Square, you need to add a repo to your main build.gradle file:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-allprojects {
-    repositories {
-        maven { url &#39;http://dl.bintray.com/populov/maven/&#39; }
-        jcenter()
-    }
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;in-xml&quot;&gt;In XML:&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;com.github.OrangeGangsters.circularbarpager.library.CircularBarPager
-        android:id=&quot;@+id/circularBarPager&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:layout_width=&quot;match_parent&quot;
-        android:paddingLeft=&quot;30dp&quot;
-        android:paddingRight=&quot;30dp&quot;
-        android:layout_centerInParent=&quot;true&quot;
-        style=&quot;@style/CircularBarPagerStyle&quot;/&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h4 id=&quot;in-stylesxml&quot;&gt;In styles.xml&lt;/h4&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;style name=&quot;CircularBarPagerStyle&quot;&amp;gt;
-        &amp;lt;item name=&quot;android:layout_height&quot;&amp;gt;match_parent&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;android:layout_width&quot;&amp;gt;match_parent&amp;lt;/item&amp;gt;
-
-        &amp;lt;item name=&quot;progress_arc_max&quot;&amp;gt;100&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;arc_progress&quot;&amp;gt;0&amp;lt;/item&amp;gt;
-
-
-
-        &amp;lt;item name=&quot;progress_arc_clockwise_outline_width&quot;&amp;gt;0.75dp&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;progress_arc_counter_clockwise_outline_width&quot;&amp;gt;0.75dp&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;progress_arc_clockwise_width&quot;&amp;gt;8dp&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;progress_arc_counter_clockwise_width&quot;&amp;gt;8dp&amp;lt;/item&amp;gt;
-        
-        &amp;lt;item name=&quot;progress_start_line_enabled&quot;&amp;gt;true&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;progress_pager_on_click_enabled&quot;&amp;gt;true&amp;lt;/item&amp;gt;
-        &amp;lt;item name=&quot;progress_pager_fill_circle_color&quot;&amp;gt;#00000000&amp;lt;/item&amp;gt;
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;========&lt;/p&gt;
-
-&lt;h3 id=&quot;customization&quot;&gt;Customization&lt;/h3&gt;
-
-&lt;p&gt;You can change several attributes in the XML file:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;app:arc_progress [integer def:0 0-100] –&amp;gt; The default arc progress when start up&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_max [integer def:100 0-100] –&amp;gt; The maximum arc progress&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_clockwise_color [color hex] –&amp;gt; The main color in clockwise mode&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_clockwise_outline_color [color hex] –&amp;gt; The outline color in clockwise mode&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_counter_clockwise_color [color hex] –&amp;gt; The outline color in counter-clockwise mode&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_counter_clockwise_outline_color [color hex] –&amp;gt; The outline color in counter-clockwise mode&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_clockwise_width [integer dp] –&amp;gt; The width size of the main color in clockwise mode&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_clockwise_outline_width [integer dp] –&amp;gt; The width size of the outline color in clockwise mode&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_counter_clockwise_width [integer dp] –&amp;gt; The width size of the color in counter-clockwise mode&lt;/li&gt;
-  &lt;li&gt;app:progress_arc_counter_clockwise_outline_width [integer dp] –&amp;gt; The width size of the outline color in counter-clockwise mode&lt;/li&gt;
-  &lt;li&gt;app:progress_pager_on_click_enabled [boolean] –&amp;gt; The boolean that enables or disables the click enabled (on click, changes page)&lt;/li&gt;
-  &lt;li&gt;app:progress_start_line_enabled [boolean] –&amp;gt; The boolean that enables the line that displays the starting position of the pager&lt;/li&gt;
-  &lt;li&gt;app:progress_pager_on_click_enabled [boolean] –&amp;gt; The boolean that enables the user to change pages with a click as well as a slide&lt;/li&gt;
-  &lt;li&gt;app:progress_pager_fill_circle_color [color hex] –&amp;gt; The color to fill the circle, transparent as default&lt;/li&gt;
-  &lt;li&gt;app:progress_pager_fill_mode [enum int] –&amp;gt; The mode to fill the circle, “default_mode” or “pie_mode”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You can access every components programmatically by getting the CircularBarPager object:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CircularBarPager mCircularBarPager = (CircularBarPager) findViewById(R.id.circularBarPager);
-CircularBar circularBar = mCircularBarPager.getCircularBar();
-ViewPager viewPager = mCircularBarPager.getViewPager();
-CirclePageIndicator circlePageIndicator = mCircularBarPager.getCirclePageIndicator();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;========&lt;/p&gt;
-
-&lt;h3 id=&quot;credits&quot;&gt;Credits&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;We used ViewPagerIndicator from JakeWharton (https://github.com/JakeWharton/ViewPagerIndicator) for the page indicator at the bottom of the CircularBarPager&lt;/li&gt;
-  &lt;li&gt;We used NineOldAndroids from JakeWharton (https://github.com/JakeWharton/NineOldAndroids/) to use beautiful animations on API 10+&lt;/li&gt;
-  &lt;li&gt;We used AnimationEasingFunctions from daimajia (https://github.com/daimajia/AnimationEasingFunctions) to also use beautiful animations on API 10+&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;========&lt;/p&gt;
-
-&lt;h3 id=&quot;license&quot;&gt;License&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;The MIT License (MIT)
-
-Copyright (c) 2015 OrangeGangsters
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 14 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/11/14/CircularBarPager/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/14/CircularBarPager/</guid>
-        
-        <category>circular</category>
-        
-        <category>progress</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>PageIndicatorView</title>
-        <description>&lt;h1 id=&quot;chipslayoutmanager-img-altchipslayoutmanager-is-an-android-library-srchttpswwwcleveroadcompubliccomerciallabel-androidsvg-height19-minsdk-for-chipslayoutmanagerhttpsimgshieldsiobadgeminsdk-15-greensvg-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-chipslayoutmanager-brightgreensvgstyleflathttpsandroid-arsenalcomdetails14568&quot;&gt;ChipsLayoutManager &lt;img alt=&quot;ChipsLayoutManager is an android library&quot; src=&quot;https://www.cleveroad.com/public/comercial/label-android.svg&quot; height=&quot;19&quot; /&gt; &lt;a href=&quot;#&quot;&gt;[minSdk for ChipsLayoutManager](https://img.shields.io/badge/minSdk-15-green.svg)&lt;/a&gt; &lt;a href=&quot;https://android-arsenal.com/details/1/4568#&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ChipsLayoutManager-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;/images/header.png&quot;&gt;ChipsLayoutManager for RecyclerView. Custom layout manager for RecyclerView&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;this-is-chipslayoutmanager---custom-recycler-views-layoutmanager-which-moves-item-to-the-next-line-when-no-space-left-on-the-current&quot;&gt;This is ChipsLayoutManager - custom Recycler View’s LayoutManager which moves item to the next line when no space left on the current&lt;/h2&gt;
-&lt;p&gt;This layout manager could represent &lt;a href=&quot;https://material.google.com/components/chips.html#&quot;&gt;Google Chips material design pattern&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;As an android developer i see that google isn’t so polite to support all our wishes, and when i faced with such common task like create spannable list
-but with support of CRUD animations i decided to make such stuff and share it.&lt;/p&gt;
-
-&lt;p align=&quot;center&quot;&gt;
-    &lt;img src=&quot;/images/demo.gif&quot; alt=&quot;Chips layout manager gif with scrolling&quot; /&gt;
-&lt;/p&gt;
-
-&lt;h2 id=&quot;setup-and-usage&quot;&gt;Setup and usage&lt;/h2&gt;
-&lt;p&gt;### Installation &lt;a href=&quot;https://bintray.com/beloo/widget/ChipsLayoutManager/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/beloo/widget/ChipsLayoutManager/images/download.svg) &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;with gradle
-&lt;code class=&quot;highlighter-rouge&quot;&gt;GRADLE 
-compile &#39;com.beloo.widget:ChipsLayoutManager:0.3.4.1@aar&#39;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Assuming you have installed jCenter provider:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;GRADLE
-allprojects {
-    repositories {
-        jcenter()
-    }
-}
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;or just import &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsLayoutManager&lt;/code&gt; module to your project.&lt;/p&gt;
-
-&lt;h3 id=&quot;features&quot;&gt;Features&lt;/h3&gt;
-&lt;p&gt;Layout manager represents chips or spanned or “bubble” structure of list items and is a good replace for typical implementations of such issue based on spans in &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt; 
-or custom &lt;code class=&quot;highlighter-rouge&quot;&gt;FlowLayout&lt;/code&gt;s.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;supports &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;’s/&lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutManager&lt;/code&gt;’s features, such as default animations while CRUD items &amp;amp; custom &lt;code class=&quot;highlighter-rouge&quot;&gt;ItemAnimator&lt;/code&gt;s, &lt;code class=&quot;highlighter-rouge&quot;&gt;ItemDecorator&lt;/code&gt;s, scrolling etc. &lt;code class=&quot;highlighter-rouge&quot;&gt;wrap_content&lt;/code&gt; of height is supported&lt;/li&gt;
-  &lt;li&gt;vertical scrolling is supported. Horizontal scrolling isn’t supported. It is possible to disable vertical scrolling as well. Supported padding/margin, clipToPadding parameter of &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;supports different height and width of items&lt;/li&gt;
-  &lt;li&gt;recycling items support (another advantage over &lt;code class=&quot;highlighter-rouge&quot;&gt;TextView&lt;/code&gt; approach)&lt;/li&gt;
-  &lt;li&gt;items gravity inside row support. For all items or only for required ones&lt;/li&gt;
-  &lt;li&gt;LTR and RTL support&lt;/li&gt;
-  &lt;li&gt;activity orientation change support&lt;/li&gt;
-  &lt;li&gt;predictive animations supported (animate view movement outside of visible bounds)&lt;/li&gt;
-  &lt;li&gt;setting max count of view in row&lt;/li&gt;
-  &lt;li&gt;you are able to break row due to your conditions&lt;/li&gt;
-  &lt;li&gt;justified views in row with spaces or additional view size&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Insert/delete&lt;/th&gt;
-      &lt;th&gt;Move&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;/images/insert_delete_animations.gif&quot;&gt;Insert/delete animations with ChipsLayoutManager&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;/images/move_animations.gif&quot;&gt;Move animations with ChipsLayoutManager&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;####Layout Directions&lt;/p&gt;
-&lt;center&gt;
-
-|  | Left to Right  | Right to Left  |
-|---|---|---|
-|  &lt;b&gt;Horizontal&lt;/b&gt; |[Left to Right Rows implementation of ChipsLayoutManager](/images/ltr_horizontal.png) |[Right to Left implementation of ChipsLayoutManager](/images/rtl_horizontal.png)|
-|  &lt;b&gt;Vertical&lt;/b&gt;   |[Left to Right Columns implementation of ChipsLayoutManager](/images/ltr_vertical.png) ||
-
-&lt;/center&gt;
-
-&lt;p&gt;####Fill strategy
-Any row has some space left, where is impossible to place the next view, because that space is too small.
-But we could distribute that space for available views in that row.&lt;/p&gt;
-
-&lt;p&gt;Row strategy is a mode of distribution left space.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STRATEGY_DEFAULT&lt;/code&gt; - is used by default. Left space is placed at the end of the row.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STRATEGY_FILL_VIEW&lt;/code&gt; - available space is distributed among views.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STRATEGY_FILL_SPACE&lt;/code&gt; - available space is distributed among spaces between views, start &amp;amp; end views are docked to a nearest border.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;STRATEGY_CENTER&lt;/code&gt; - available space is distributed among spaces between views, start &amp;amp; end spaces included. Views are placed in center of canvas.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In such layouts by default last row isn’t considered completed. So strategy isn’t applied for last row.
-But you can also enable opposite behaviour.&lt;/p&gt;
-
-&lt;h3 id=&quot;usage&quot;&gt;Usage&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-JAVA&quot;&gt;ChipsLayoutManager chipsLayoutManager = ChipsLayoutManager.newBuilder()
-        //set vertical gravity for all items in a row. Default = Gravity.CENTER_VERTICAL
-        .setChildGravity(Gravity.TOP)
-        //whether RecyclerView can scroll. TRUE by default
-        .setScrollingEnabled(true)
-        //set maximum views count in a particular row
-        .setMaxViewsInRow(2)
-        //set gravity resolver where you can determine gravity for item in position. 
-        //This method have priority over previous one
-        .setGravityResolver(new IChildGravityResolver() {
-            @Override
-            public int getItemGravity(int position) {
-                return Gravity.CENTER;
-            }
-        })
-        //you are able to break row due to your conditions. Row breaker should return true for that views
-        .setRowBreaker(new IRowBreaker() {
-            @Override
-            public boolean isItemBreakRow(@IntRange(from = 0) int position) {
-                return position == 6 || position == 11 || position == 2;
-            }
-        })
-        //a layoutOrientation of layout manager, could be VERTICAL OR HORIZONTAL. HORIZONTAL by default
-        .setOrientation(ChipsLayoutManager.HORIZONTAL)
-        // row strategy for views in completed row, could be STRATEGY_DEFAULT, STRATEGY_FILL_VIEW, 
-        //STRATEGY_FILL_SPACE or STRATEGY_CENTER
-        .setRowStrategy(ChipsLayoutManager.STRATEGY_FILL_SPACE)
-        // whether strategy is applied to last row. FALSE by default
-        .withLastRow(true)
-        .build();
-rv.setLayoutManager(chipsLayoutManager);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Notice that if you changed gravity resolver or row breaker conditions in runtime - it won’t affect already drown items and cached item positions.
-You have to call &lt;code class=&quot;highlighter-rouge&quot;&gt;notifyItemChanged&lt;/code&gt; on &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsLayoutManager&lt;/code&gt; otherwise layout won’t be predictable.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Device current direction&lt;/strong&gt; have been chosen by default.
-You can manipulate with layout direction (&lt;strong&gt;LTR&lt;/strong&gt; or &lt;strong&gt;RTL&lt;/strong&gt;)&lt;br /&gt;
-&lt;em&gt;On Api &amp;gt;= 17:&lt;/em&gt;
-```XML&lt;/p&gt;
-&lt;android.support.v7.widget.recyclerview android:layout_width=&quot;match_parent&quot; android:layout_height=&quot;match_parent&quot; android:layoutdirection=&quot;rtl&quot; /&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;or programmatically (_on all supported Api:_):
-```JAVA
-ViewCompat.setLayoutDirection(recyclerView, ViewCompat.LAYOUT_DIRECTION_RTL);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;For example look at sample application.
-&lt;br /&gt;
-### Bonus
-You may need an &lt;code class=&quot;highlighter-rouge&quot;&gt;RecyclerView.ItemDecoration&lt;/code&gt; to work with &lt;code class=&quot;highlighter-rouge&quot;&gt;ChipsLayoutManager&lt;/code&gt; for fast setup as showed in sample. &lt;br /&gt;
-It contained in same package and named &lt;code class=&quot;highlighter-rouge&quot;&gt;SpacingItemDecoration&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;support&quot;&gt;Support&lt;/h2&gt;
-&lt;p&gt;BETA is going.
-I respond to your founded issues. Just create a ticket if you found something goes wrong.&lt;/p&gt;
-
-&lt;h3 id=&quot;contributors&quot;&gt;Contributors&lt;/h3&gt;
-&lt;p&gt;All pull requests are welcome. I’ve tried to make code clean &amp;amp; readable, so the next is up to you. 
-I appreciate any help and contributors will be mentioned here.&lt;/p&gt;
-
-&lt;h3 id=&quot;known-issues&quot;&gt;Known issues&lt;/h3&gt;
-&lt;p&gt;I create issues in tracking board of known problems.
-These issues are going to be fixed in next versions.&lt;/p&gt;
-
-&lt;h3 id=&quot;license-license-for-chipslayoutmanagerhttpsimgshieldsiocrateslrustc-serializesvg&quot;&gt;License &lt;a href=&quot;#&quot;&gt;[license for ChipsLayoutManager](https://img.shields.io/crates/l/rustc-serialize.svg)&lt;/a&gt;&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Beloy Oleg, Ukraine.
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Mon, 14 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/11/14/ChipsLayoutManager/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/14/ChipsLayoutManager/</guid>
-        
-        <category>layoutmanager</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>QRCodeReaderView</title>
-        <description>&lt;h1 id=&quot;qrcodereaderview-downloadhttpsapibintraycompackagesdlazaro66mavenqrcodereaderviewimagesdownloadsvg-httpsbintraycomdlazaro66mavenqrcodereaderviewlatestversion-android-arsenalhttpsimgshieldsiobadgeandroid20arsenal-qrcodereaderview-brightgreensvgstyleflathttpandroid-arsenalcomdetails11891&quot;&gt;QRCodeReaderView &lt;a href=&quot;https://bintray.com/dlazaro66/maven/QRCodeReaderView/_latestVersion&quot;&gt;[Download](https://api.bintray.com/packages/dlazaro66/maven/QRCodeReaderView/images/download.svg) &lt;/a&gt; &lt;a href=&quot;http://android-arsenal.com/details/1/1891&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-QRCodeReaderView-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/h1&gt;
-
-&lt;h4 id=&quot;modification-of-zxing-barcode-scanner-project-for-easy-android-qr-code-detection-and-ar-purposes&quot;&gt;Modification of ZXING Barcode Scanner project for easy Android QR-Code detection and AR purposes.&lt;/h4&gt;
-
-&lt;p&gt;This project implements an Android view which show camera and notify when there’s a QR code inside the preview.&lt;/p&gt;
-
-&lt;p&gt;Some Classes of camera controls and autofocus are taken and slightly modified from Barcode Scanner Android App.&lt;/p&gt;
-
-&lt;p&gt;You can also use this for Augmented Reality purposes, as you get QR control points coordinates when decoding.&lt;/p&gt;
-
-&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Add a “QRCodeReaderView” in the layout editor like you actually do with a button for example.&lt;/li&gt;
-  &lt;li&gt;In your onCreate method, you can find the view as usual, using findViewById() function.&lt;/li&gt;
-  &lt;li&gt;Create an Activity which implements &lt;code class=&quot;highlighter-rouge&quot;&gt;onQRCodeReadListener&lt;/code&gt;, and let implements required methods or set a &lt;code class=&quot;highlighter-rouge&quot;&gt;onQRCodeReadListener&lt;/code&gt; to the QRCodeReaderView object&lt;/li&gt;
-  &lt;li&gt;Make sure you have camera permissions in order to use the library. (https://developer.android.com/training/permissions/requesting.html)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
- &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.dlazaro66.qrcodereaderview.QRCodeReaderView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/qrdecoderview&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;match_parent&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Start &amp;amp; Stop camera preview in onPause() and onResume() overriden methods.&lt;/li&gt;
-  &lt;li&gt;You can place widgets or views over QRDecoderView.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DecoderActivity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Activity&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OnQRCodeReadListener&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-
-    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;TextView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;resultTextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;QRCodeReaderView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;qrCodeReaderView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-
-	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onCreate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;savedInstanceState&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;setContentView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;activity_decoder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        
-        &lt;span class=&quot;n&quot;&gt;mydecoderview&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;QRCodeReaderView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;qrdecoderview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mydecoderview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setOnQRCodeReadListener&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-    	&lt;span class=&quot;c1&quot;&gt;// Use this function to enable/disable decoding&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mydecoderview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setQRDecodingEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Use this function to change the autofocus interval (default is 5 secs)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mydecoderview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAutofocusInterval&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2000L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Use this function to enable/disable Torch&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mydecoderview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setTorchEnabled&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Use this function to set front camera preview&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mydecoderview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFrontCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-        &lt;span class=&quot;c1&quot;&gt;// Use this function to set back camera preview&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;mydecoderview&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBackCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;// Called when a QR is decoded&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// &quot;text&quot; : the text encoded in QR&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// &quot;points&quot; : points where QR control points are placed in View&lt;/span&gt;
-	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onQRCodeRead&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PointF&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;points&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;resultTextView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setText&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    
-	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onResume&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onResume&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;qrCodeReaderView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;startCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-	
-	&lt;span class=&quot;nd&quot;&gt;@Override&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;onPause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;onPause&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;n&quot;&gt;qrCodeReaderView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stopCamera&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;add-it-to-your-project&quot;&gt;Add it to your project&lt;/h2&gt;
-
-&lt;p&gt;Add QRCodeReaderView dependency to your build.gradle&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.1&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Note: There is an issue with gradle 2.10, if you declare your dependency and it can’t be found in jCenter repository (&lt;code class=&quot;highlighter-rouge&quot;&gt;could not find qrcodereaderview.jar Searched in the following locations:&lt;/code&gt; or similar), try to declare the library dependency like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
-&lt;span class=&quot;n&quot;&gt;dependencies&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;compile&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;com.dlazaro66.qrcodereaderview:qrcodereaderview:2.0.1@aar&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;transitive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;And in some cases, you need to clean your Gradle cache
-&lt;code class=&quot;highlighter-rouge&quot;&gt;./gradlew build --refresh-dependencies&lt;/code&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;do-you-want-to-contribute&quot;&gt;Do you want to contribute?&lt;/h2&gt;
-
-&lt;p&gt;Please send a PR or open an issue with your comments&lt;/p&gt;
-
-&lt;h2 id=&quot;libraries-used-in-this-project&quot;&gt;Libraries used in this project&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/zxing/zxing/&quot;&gt;ZXING&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;../master/readme_images/app-example.gif?raw=true&quot;&gt;Image&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;developed-by&quot;&gt;Developed By&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;David Lázaro Esparcia&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/_dlazaro&quot;&gt;
-  &lt;img alt=&quot;Follow me on Twitter&quot; src=&quot;../master/readme_images/logo-twitter.png?raw=true&quot; /&gt;
-&lt;/a&gt;
-&lt;a href=&quot;https://es.linkedin.com/pub/david-lázaro-esparcia/49/4b3/342&quot;&gt;
-  &lt;img alt=&quot;Add me to Linkedin&quot; src=&quot;../master/readme_images/logo-linkedin.png?raw=true&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;whos-using-it&quot;&gt;Who’s using it&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;Does your app use QRCodeReaderView? If you want to be featured on this list drop me a line.&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.swapcard.com/&quot;&gt;Swapcard&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;license&quot;&gt;License&lt;/h2&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2013 David Lázaro
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Sun, 13 Nov 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/11/13/QRCodeReaderView/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/11/13/QRCodeReaderView/</guid>
-        
-        <category>qrcode</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>PageIndicatorView</title>
-        <description>
-&lt;p&gt;###&lt;strong&gt;PageIndicatorView&lt;/strong&gt;
-&lt;a href=&quot;https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) &lt;/a&gt;&lt;a href=&quot;https://android-arsenal.com/details/1/4555&quot;&gt;[Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-PageIndicatorView-green.svg?style=true)&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&quot;https://android-arsenal.com/api?level=14&quot;&gt;[API](https://img.shields.io/badge/API-14%2B-brightgreen.svg?style=flat)&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; will simplify your life while you working with Android &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewPager&lt;/code&gt; and need to indicate selected page. It’s easy to setup and customize as you need with run-time preview rendering.&lt;/p&gt;
-
-&lt;p&gt;[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/preview_anim_thin_worm.gif?raw=true)&lt;/p&gt;
-
-&lt;p&gt;###&lt;strong&gt;Integration&lt;/strong&gt;
-To add &lt;code class=&quot;highlighter-rouge&quot;&gt;pageindicatorview&lt;/code&gt; to your project, first make sure in root &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt; you have specified the following repository:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-    repositories {
-        jcenter()
-    }
-&lt;/code&gt;
-&lt;em&gt;Note: by creating new project in Android Studio it will have &lt;code class=&quot;highlighter-rouge&quot;&gt;jcenter&lt;/code&gt; repository specified by default, so you will not need to add it manually.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Once you make sure you have &lt;code class=&quot;highlighter-rouge&quot;&gt;jcenter&lt;/code&gt; repository in your project, all you need to do is to add the following line in &lt;code class=&quot;highlighter-rouge&quot;&gt;dependencies&lt;/code&gt; section of your project &lt;code class=&quot;highlighter-rouge&quot;&gt;build.gradle&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;See latest library version &lt;a href=&quot;https://bintray.com/romandanylyk/maven/pageindicatorview/_latestVersion&quot;&gt; [Download](https://api.bintray.com/packages/romandanylyk/maven/pageindicatorview/images/download.svg) &lt;/a&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;java
-compile &#39;com.romandanylyk:pageindicatorview:X.X.X&#39;
-&lt;/code&gt;
-Keep in mind, that &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; has min &lt;a href=&quot;https://developer.android.com/about/dashboards/index.html&quot;&gt;API level 14&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;###&lt;strong&gt;Usage Sample&lt;/strong&gt;
-During implementation of &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; I tried to make it’s setup as easy as possible. 
-After you set adapter to your &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewPager&lt;/code&gt;, all you need to do is to &lt;code class=&quot;highlighter-rouge&quot;&gt;setViewPager()&lt;/code&gt; and that’s it &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; will get count from your adapter and start working with instance of your &lt;code class=&quot;highlighter-rouge&quot;&gt;ViewPager&lt;/code&gt; automatically.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ViewPager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;viewPager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ViewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;viewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;viewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAdapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;adapter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//instance of android.support.v4.view.PagerAdapter adapter&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;PageIndicatorView&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pageIndicatorView&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PageIndicatorView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;view&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;findViewById&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;R&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;pageIndicatorView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pageIndicatorView&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setViewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewPager&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Keep in mind that all public methods are also exist as attributes, so you can even setup and customize page indicator without any java code.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;com.rd.PageIndicatorView&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@+id/pageIndicatorView&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;android:layout_height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wrap_content&quot;&lt;/span&gt;
-        &lt;span class=&quot;na&quot;&gt;attrs:piv_viewPager=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;@id/viewPager&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;###&lt;strong&gt;Customization&lt;/strong&gt;
-One of the most important feature of every custom view is ability to customize its look as user need. By calling the following methods (or attributes) you will be able to customize &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; as you need.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//set size&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setDynamicCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dynamicCount&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;setRadius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;radiusDp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setPadding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;paddingDp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setStrokeWidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strokeDp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//set color&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setUnselectedColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setSelectedColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//set animation&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setAnimationDuration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setAnimationType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;AnimationType&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setInteractiveAnimation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;boolean&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isInteractive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;//set selection&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setProgress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;selectingPosition&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;float&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;progress&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;setSelection&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;[](https://github.com/romandanylyk/PageIndicatorView/blob/master/assets/prev_attributes.gif?raw=true)&lt;/p&gt;
-
-&lt;p&gt;Here you can see all the animations &lt;code class=&quot;highlighter-rouge&quot;&gt;PageIndicatorView&lt;/code&gt; support.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Name&lt;/th&gt;
-      &lt;th&gt;Support version&lt;/th&gt;
-      &lt;th&gt;Preview&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.NONE&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;0.0.1&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_none.gif&quot;&gt;anim_prev_none&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.COLOR&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;0.0.1&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_color.gif&quot;&gt;anim_prev_color&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.SCALE&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;0.0.1&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_scale.gif&quot;&gt;anim_prev_scale&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.SLIDE&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;0.0.1&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_slide.gif&quot;&gt;anim_prev_slide&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.WORM&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;0.0.1&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_worm.gif&quot;&gt;anim_prev_worm&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.FILL&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;0.0.6&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_fill.gif&quot;&gt;anim_prev_worm&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AnimationType.THIN_WORM&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;0.0.7&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;https://raw.githubusercontent.com/romandanylyk/PageIndicatorView/master/assets/anim_prev_thin_worm.gif&quot;&gt;anim_prev_thin_worm&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;###&lt;strong&gt;Release Note&lt;/strong&gt;
-See release notes on &lt;a href=&quot;https://github.com/romandanylyk/PageIndicatorView/releases&quot;&gt;github releases&lt;/a&gt; or &lt;a href=&quot;https://bintray.com/romandanylyk/maven/pageindicatorview#release&quot;&gt;Bintray release notes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;###&lt;strong&gt;License&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Copyright 2016 Roman Danylyk
-
-Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-</description>
-        <pubDate>Sat, 22 Oct 2016 00:00:00 +0900</pubDate>
-        <link>http://android.kmshack.kr/2016/10/22/PageIndicatorView/</link>
-        <guid isPermaLink="true">http://android.kmshack.kr/2016/10/22/PageIndicatorView/</guid>
-        
-        <category>indicator</category>
         
         
       </item>
