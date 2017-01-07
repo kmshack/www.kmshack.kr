@@ -1,2 +1,2 @@
-# kmshack.github.com
-android.kmshack.kr
+# kmshack.github.io
+kmshack.github.io
