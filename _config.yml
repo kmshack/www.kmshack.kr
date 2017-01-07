@@ -1,5 +1,5 @@
 # Site settings
-title: Android Developer, Blogger
+title: Think Simple
 email: kmshack@naver.com
 description: kmshack
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -7,7 +7,7 @@ url: "kmshack.github.io" # the base hostname & protocol for your site
 
 # Identity
 your-name: Minsoo Kim
-your-title: Think Simple
+your-title: Android Developer, Blogger
 
 # Social settings
 500px_url: 
