@@ -1,5 +1,5 @@
 # Site settings
-title: Think Simple
+title: Android Developer, Blogger
 email: kmshack@naver.com
 description: kmshack
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -11,10 +11,10 @@ your-title: Think Simple
 
 # Social settings
 500px_url: 
-facebook_url: https://facebook.com/l,sjacl
-github_url: 
+facebook_url: https://facebook.com/kmshack
+github_url: https://github.com/kmshack
 gitlab_url: 
-googleplus_url: 
+googleplus_url: https://plus.google.com/+KMSHACK
 instagram_url: 
 linkedin_url: 
 pinterest_url: 
