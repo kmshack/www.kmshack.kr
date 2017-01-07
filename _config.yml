@@ -1,0 +1,25 @@
+# Site settings
+title: Think Simple
+email: kmshack@naver.com
+description: kmshack
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "kmshack.github.io" # the base hostname & protocol for your site
+
+# Identity
+your-name: Minsoo Kim
+your-title: Think Simple
+
+# Social settings
+500px_url: 
+facebook_url: https://facebook.com/l,sjacl
+github_url: 
+gitlab_url: 
+googleplus_url: 
+instagram_url: 
+linkedin_url: 
+pinterest_url: 
+slack_url: 
+twitter_url: https://twitter.com/kmshack_kr
+
+# Build settings
+markdown: kramdown
