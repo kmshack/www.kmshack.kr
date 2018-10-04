@@ -1,0 +1,36 @@
+---
+layout: default
+title: Projects
+description: Simples is a super simple blogging theme for Jekyll.
+featured_image: /images/social.jpg
+---
+
+<section class="listing single">
+
+	<div class="wrap">
+
+		{% for project in site.projects reversed %}
+
+		<article class="listing-post">
+
+			<div class="listing-post__header">
+				<h2 class="listing-post__title"><a href="{{ project.url }}">{{ project.title }}</a></h2>
+				<p class="listing-post__subtitle">{{ project.subtitle }}</p>
+			</div>
+
+			{% if project.featured_image %}
+			<a href="{{ project.url }}" class="listing-post__image" style="background-image: url({{ project.featured_image  }});"></a>
+			{% endif %}
+
+			<div class="listing-post__content">
+				<p>{{ project.excerpt }}</p>
+				<p><a href="{{ project.url }}" class="button">View Project</a>
+			</div>
+
+		</article>
+
+		{% endfor %}
+
+	</div>
+
+</section>

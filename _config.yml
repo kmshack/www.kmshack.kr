@@ -1,25 +1,54 @@
-# Site settings
-title: Think Simple
-email: kmshack@naver.com
-description: kmshack
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "kmshack.github.io" # the base hostname & protocol for your site
+site: Kmshack
 
-# Identity
-your-name: Minsoo Kim
-your-title: Android Developer, Blogger
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  posts:
+    output: true
+    permalink: /blog/:slug
+  projects:
+    output: true
+    permalink: /project/:slug
 
-# Social settings
-500px_url: 
-facebook_url: https://facebook.com/kmshack
-github_url: https://github.com/kmshack
-gitlab_url: 
-googleplus_url: https://plus.google.com/+KMSHACK
-instagram_url: 
-linkedin_url: 
-pinterest_url: 
-slack_url: 
-twitter_url: https://twitter.com/kmshack_kr
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
-# Build settings
 markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+paginate: 15
+paginate_path: "/blog/page:num/"
+  
