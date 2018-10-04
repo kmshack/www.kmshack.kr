@@ -1,10 +1,10 @@
 basic_settings:
-  site_title: Kmshack
-  site_tagline: Android Developer
-  favicon_image: /images/profile_black.jpg
+  site_title: Minsoo, Kim
+  site_tagline: Eat. Sleep. Android🤘
+  favicon_image: /images/profile.png
 
 header_settings:
-  avatar_image: /images/profile_black.jpg
+  avatar_image: /images/profile.png
   logo_image: 
   logo_width: 200
 
@@ -12,10 +12,8 @@ menu_settings:
   menu_items:
     - title: 'Latest'
       url: '/'
-    - title: 'Post'
-      url: '/post'
-    - title: 'Project'
-      url: '/project'
+    - title: 'Projects'
+      url: '/projects'
     - title: 'About'
       url: '/about'
 
@@ -61,16 +59,16 @@ color_settings:
   overlay_text_color: '#ffffff'
 
 font_settings:
-  font_embed: '<link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet">'
-  title_font: '"Jeju Gothic", sans-serif'
-  body_font: '"Jeju Gothic", sans-serif'
-  regular_weight: 400
-  bold_weight: 600
+  font_embed: '<link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">'
+  title_font: '"Noto Sans KR", sans-serif'
+  body_font: '"Noto Sans KR", sans-serif'
+  regular_weight: 200
+  bold_weight: 400
   site_title:
     small_size: 27
     medium_size: 32
     large_size: 40
-    weight: 600
+    weight: 500
     letter_spacing: 0
   site_tagline:
     small_size: 16
@@ -83,20 +81,20 @@ font_settings:
     small_size: 16
     medium_size: 18
     large_size: 20
-    weight: 600
+    weight: 500
     letter_spacing: 0
   h1:
     small_size: 27
     medium_size: 38
     large_size: 50
-    weight: 600
+    weight: 500
     letter_spacing: -0.02
     line_height: 1.2
   h2:
     small_size: 27
     medium_size: 38
     large_size: 50
-    weight: 600
+    weight: 500
     letter_spacing: -0.02
     line_height: 1.2
   h3:
@@ -142,7 +140,7 @@ font_settings:
     letter_spacing: -0.02
     line_height: 1.6
   buttons:
-    weight: 600
+    weight: 500
     letter_spacing: 0
 
 advanced_settings:
