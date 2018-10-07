@@ -7,11 +7,13 @@ excerpt: You can see the open source UI on Android at once. We will help you to 
 
 <br>
 
-You can see the open source UI on Android at once. We will help you to demonstrate your creativity through the latest design and interesting UI.
+[https://kmshack.github.io/AndroidUICollection](https://kmshack.github.io/AndroidUICollection)
 
 <br>
 
-[https://kmshack.github.io/AndroidUICollection](https://kmshack.github.io/AndroidUICollection)
+You can see the open source UI on Android at once. We will help you to demonstrate your creativity through the latest design and interesting UI.
+
+<br>
 
 
 ---
