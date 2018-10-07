@@ -10,12 +10,11 @@ header_settings:
 
 menu_settings:
   menu_items:
-    - title: 'Latest'
-      url: '/'
-    - title: 'Projects'
-      url: '/projects/'
     - title: 'About'
       url: '/about'
+    - title: 'Projects'
+      url: '/projects/'
+
 
 grid_settings:
   grid_spacing: 10
