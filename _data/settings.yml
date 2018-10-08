@@ -59,9 +59,9 @@ color_settings:
   overlay_text_color: '#ffffff'
 
 font_settings:
-  font_embed: '<link href="http://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">'
-  title_font: '"Noto Sans KR", sans-serif'
-  body_font: '"Noto Sans KR", sans-serif'
+  font_embed: '<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600" rel="stylesheet" />'
+  title_font: '"Nunito", 'Nunito', sans-serif'
+  body_font: '"Nunito", 'Nunito', sans-serif'
   regular_weight: 200
   bold_weight: 400
   site_title:
