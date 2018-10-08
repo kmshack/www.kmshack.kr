@@ -9,11 +9,11 @@ header_settings:
 
 menu_settings:
   menu_items:
-    - title: 'Blog'
+    - title: 'BLOG'
       url: 'https://blog.kmshack.kr'
-    - title: 'Android UI Collection'
+    - title: 'AUC'
       url: 'https://kmshack.github.io/AndroidUICollection'
-    - title: 'About'
+    - title: 'ABOUT'
       url: '/about'
      
 
