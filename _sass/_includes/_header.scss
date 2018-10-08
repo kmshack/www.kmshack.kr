@@ -94,10 +94,10 @@
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Menu
 
 .menu {
-	margin-top: 20px;
+	margin-top: 80px;
 
 	@include mq(laptop) {
-		margin-top: 120px;
+		margin-top: 80px;
 	}
 }
 
