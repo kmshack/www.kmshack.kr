@@ -12,10 +12,8 @@ menu_settings:
   menu_items:
     - title: 'Blog'
     url: 'https://blog.kmshack.kr'
-    
     - title: 'Android UI Collection'
     url: 'https://github.com/kmshack/AndroidUICollection'
-      
     - title: 'About'
       url: '/about'
      
