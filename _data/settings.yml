@@ -1,6 +1,6 @@
 basic_settings:
-  site_title: MINSOO, KIM
-  site_tagline: EAT. SLEEP. ANDROID🤘
+  site_title: Minsoo, Kim
+  site_tagline: Eat. Sleep. Android🤘
 
 header_settings:
   avatar_image: /images/profile.png
@@ -9,11 +9,11 @@ header_settings:
 
 menu_settings:
   menu_items:
-    - title: 'ABOUT'
+    - title: 'About'
       url: '/about'
-    - title: 'BLOG'
+    - title: 'Blog'
       url: 'https://blog.kmshack.kr'
-    - title: 'ANDROID UI'
+    - title: 'Android UI'
       url: 'https://kmshack.github.io/AndroidUICollection'
      
 
