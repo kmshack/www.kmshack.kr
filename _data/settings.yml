@@ -13,7 +13,7 @@ menu_settings:
     - title: 'About'
       url: '/about'
     - title: 'Projects'
-      url: '/projects/'
+      url: '/projects'
 
 
 grid_settings:
