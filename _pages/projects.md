@@ -1,3 +1,8 @@
+---
+featured_image: /images/profile_black.jpg
+---
+
+<br>
 
 ### Android UI Collection  
 Collection of OpenSource for Android UI.  
