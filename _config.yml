@@ -1,5 +1,7 @@
 site: Kmshack
 
+url: https://www.kmshack.kr
+
 collections:
   pages:
     output: true
@@ -48,6 +50,7 @@ sass:
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-feed 
 
 paginate: 15
 paginate_path: "/blog/page:num/"
