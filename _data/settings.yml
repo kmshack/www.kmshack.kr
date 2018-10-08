@@ -60,8 +60,8 @@ color_settings:
 
 font_settings:
   font_embed: '<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600" rel="stylesheet">'
-  title_font: '"Nunito", 'Nunito', sans-serif'
-  body_font: '"Nunito", 'Nunito', sans-serif'
+  title_font: '"Nunito", sans-serif'
+  body_font: '"Nunito", sans-serif'
   regular_weight: 200
   bold_weight: 400
   site_title:
