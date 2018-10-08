@@ -12,9 +12,6 @@ menu_settings:
   menu_items:
     - title: 'About'
       url: '/about'
-    - title: 'Services'
-      url: '/service'
-
 
 grid_settings:
   grid_spacing: 10
