@@ -3,14 +3,12 @@ featured_image: /images/profile_black.jpg
 ---
 
 <br>
-I'm working as an Android developer in Kakao.I love Android developers to develop and better. There is a lot of interest in UI development. I like UI/UX development, and sometimes I like to post on Blog. 
+I have been working as an Android developer for 10 years. I'm interested in UI/UX. I also run blogs to share development knowledge. I often make fun apps for my hobby.
 
 <br>
 <br>
 
 #### Blog  
-Get the latest Android and related technical information on your blog.  
-
 [https://blog.kmshack.kr](https://blog.kmshack.kr)
 
 <br>
@@ -29,6 +27,11 @@ Apps that launch and exit apps, connect (Wi-Fi, bluetooth, Earphone) events and 
 
 [https://play.google.com/store/apps/details?id=com.kmshack.autoset](https://play.google.com/store/apps/details?id=com.kmshack.autoset)
 
+<br>
+
+#### ONE Wallet  
+Integrated management of barcode and QRcode
+[https://play.google.com/store/apps/details?id=com.kmshack.onewallet](https://play.google.com/store/apps/details?id=com.kmshack.onewallet)
 
 <br>
 <br>
