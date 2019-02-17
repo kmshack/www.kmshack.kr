@@ -30,7 +30,7 @@ Apps that launch and exit apps, connect (Wi-Fi, bluetooth, Earphone) events and 
 <br>
 
 #### ONE Wallet  
-Integrated management of barcode and QRcode
+Integrated management of barcode and QRcode  
 [https://play.google.com/store/apps/details?id=com.kmshack.onewallet](https://play.google.com/store/apps/details?id=com.kmshack.onewallet)
 
 <br>
