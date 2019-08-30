@@ -17,6 +17,7 @@ Apps that launch and exit apps, connect (Wi-Fi, bluetooth, Earphone) events and 
 
 [https://play.google.com/store/apps/details?id=com.kmshack.autoset](https://play.google.com/store/apps/details?id=com.kmshack.autoset)
 
+### ONE Wallet for Android
 
 ### Blog  
 Get the latest Android and related technical information on your blog.  
