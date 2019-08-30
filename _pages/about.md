@@ -8,7 +8,7 @@ I've been working as an Android developer for 10 years, especially interested in
 <br>
 <br>
 
-#### Blog  
+#### Develop Blog  
 [https://blog.kmshack.kr](https://blog.kmshack.kr)
 
 <br>
